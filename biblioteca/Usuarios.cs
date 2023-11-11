@@ -18,6 +18,9 @@ namespace biblioteca
         {
             Nombre = nombre;
             Contraseña = contraseña;
+
+            // Hash de la contraseña
+            Contraseña = Hash.GetHash(contraseña);
         }
     }
 }

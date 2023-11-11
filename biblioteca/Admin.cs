@@ -21,7 +21,7 @@ namespace biblioteca
         public void CambiarContraseña(string nuevaContraseña)
         {
             // Hash de la nueva contraseña
-            nuevaContraseña = Hash.GetHash(nuevaContraseña);
+            Contraseña = Hash.GetHash(nuevaContraseña);
         }
     }
 }
