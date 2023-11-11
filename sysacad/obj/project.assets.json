@@ -2359,11 +2359,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\sysacad\\sysacad.csproj",
+      "projectUniqueName": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\sysacad\\sysacad.csproj",
       "projectName": "sysacad",
-      "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\sysacad\\sysacad.csproj",
+      "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\sysacad\\sysacad.csproj",
       "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\sysacad\\obj\\",
+      "outputPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\sysacad\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2384,8 +2384,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj": {
-              "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj"
+            "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj": {
+              "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj"
             }
           }
         }

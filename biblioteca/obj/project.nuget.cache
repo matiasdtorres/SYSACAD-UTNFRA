@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LsSZIL/UGTgUzGYzejKd4ow7nK0J1fU9jJR4Xb9TeqQfM2VjXwSrLG4n4jtXbPHFbCsSZntkgSMV35iGcYoWyA==",
+  "dgSpecHash": "XUDgLO0XkSZQXs5eNtKnRuWotZHcKi6SrmoP/MxNzzlWdcko3/thSxGUMqbmwN31UT5OCroTwUpszGYG8AB42w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj",
+  "projectFilePath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matia\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

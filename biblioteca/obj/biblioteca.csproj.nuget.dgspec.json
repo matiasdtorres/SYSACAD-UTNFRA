@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj": {}
+    "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj": {
+    "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj",
         "projectName": "biblioteca",
-        "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\biblioteca.csproj",
+        "projectPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\biblioteca.csproj",
         "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD\\biblioteca\\obj\\",
+        "outputPath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
