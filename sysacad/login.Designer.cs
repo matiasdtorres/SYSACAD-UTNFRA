@@ -109,6 +109,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sysacad - Torres Matías";

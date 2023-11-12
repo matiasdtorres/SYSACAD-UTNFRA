@@ -106,3 +106,6 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-wi
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.pdb
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.genruntimeconfig.cache
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\ref\sysacad.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.agregarEstudiante.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.gestionarCurso.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.Test.resources

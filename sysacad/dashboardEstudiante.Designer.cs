@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btncerrar = new Button();
-            button1 = new Button();
             SuspendLayout();
             // 
             // panel1
@@ -77,26 +77,20 @@
             btncerrar.UseVisualStyleBackColor = false;
             btncerrar.Click += btncerrar_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(250, 70);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // dashboardEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1026, 522);
-            Controls.Add(button1);
             Controls.Add(btncerrar);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Name = "dashboardEstudiante";
             StartPosition = FormStartPosition.CenterScreen;
@@ -111,6 +105,5 @@
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btncerrar;
-        private Button button1;
     }
 }
