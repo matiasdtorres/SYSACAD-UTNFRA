@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HotTrack;
-            ClientSize = new Size(801, 472);
+            ClientSize = new Size(1060, 614);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Test";
             StartPosition = FormStartPosition.CenterScreen;

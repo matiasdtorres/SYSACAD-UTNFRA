@@ -50,7 +50,7 @@ namespace biblioteca
             using (conexion)
             {
                 conexion.Open();
-                string query = "SELECT * FROM estudiante WHERE legajo = @Legajo";
+                string query = "SELECT * FROM estudiantes WHERE legajo = @Legajo";
                 SqlCommand comando = new SqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Legajo", legajo);

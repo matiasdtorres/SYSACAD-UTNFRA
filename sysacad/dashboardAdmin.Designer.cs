@@ -42,22 +42,22 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(btncerrar);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1026, 46);
+            panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 0;
             // 
             // btncerrar
             // 
-            btncerrar.BackColor = Color.Black;
+            btncerrar.BackColor = Color.White;
             btncerrar.FlatAppearance.BorderSize = 0;
             btncerrar.FlatStyle = FlatStyle.Popup;
-            btncerrar.ForeColor = Color.White;
-            btncerrar.Location = new Point(948, 12);
+            btncerrar.ForeColor = Color.Black;
+            btncerrar.Location = new Point(1197, 12);
             btncerrar.Name = "btncerrar";
             btncerrar.Size = new Size(75, 23);
             btncerrar.TabIndex = 4;
@@ -68,8 +68,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.Black;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(3, 9);
             label1.Name = "label1";
             label1.Size = new Size(221, 30);
@@ -85,7 +86,7 @@
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(220, 476);
+            flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // btnagregarestudiante
@@ -139,7 +140,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1026, 522);
+            ClientSize = new Size(1284, 665);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             DoubleBuffered = true;

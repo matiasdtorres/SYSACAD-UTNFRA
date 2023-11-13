@@ -86,6 +86,7 @@
             passwordtxt.Name = "passwordtxt";
             passwordtxt.Size = new Size(171, 23);
             passwordtxt.TabIndex = 4;
+            passwordtxt.UseSystemPasswordChar = true;
             // 
             // button1
             // 

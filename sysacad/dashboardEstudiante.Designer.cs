@@ -30,25 +30,41 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
+            btncerrar = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btncerrar = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(btncerrar);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1026, 46);
+            panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
+            // 
+            // btncerrar
+            // 
+            btncerrar.BackColor = Color.White;
+            btncerrar.FlatAppearance.BorderSize = 0;
+            btncerrar.FlatStyle = FlatStyle.Popup;
+            btncerrar.Location = new Point(1197, 12);
+            btncerrar.Name = "btncerrar";
+            btncerrar.Size = new Size(75, 23);
+            btncerrar.TabIndex = 4;
+            btncerrar.Text = "X";
+            btncerrar.UseVisualStyleBackColor = false;
+            btncerrar.Click += btncerrar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.Black;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(3, 9);
             label1.Name = "label1";
             label1.Size = new Size(221, 30);
@@ -61,21 +77,8 @@
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(220, 476);
+            flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 3;
-            // 
-            // btncerrar
-            // 
-            btncerrar.BackColor = Color.White;
-            btncerrar.FlatAppearance.BorderSize = 0;
-            btncerrar.FlatStyle = FlatStyle.Popup;
-            btncerrar.Location = new Point(948, 12);
-            btncerrar.Name = "btncerrar";
-            btncerrar.Size = new Size(75, 23);
-            btncerrar.TabIndex = 4;
-            btncerrar.Text = "X";
-            btncerrar.UseVisualStyleBackColor = false;
-            btncerrar.Click += btncerrar_Click;
             // 
             // dashboardEstudiante
             // 
@@ -83,8 +86,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1026, 522);
-            Controls.Add(btncerrar);
+            ClientSize = new Size(1284, 665);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -95,6 +97,7 @@
             Name = "dashboardEstudiante";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "dashboardEstudiante";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
