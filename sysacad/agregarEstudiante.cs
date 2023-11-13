@@ -1,4 +1,5 @@
-﻿using System;
+﻿using biblioteca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace sysacad
 {
     public partial class agregarEstudiante : Form
     {
+        private ManejadorEstudiantes manejadorEstudiantes;
+
         public agregarEstudiante()
         {
             InitializeComponent();
+            manejadorEstudiantes = new ManejadorEstudiantes();
         }
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            if (nombretxt.Text == "" || apellidotxt.Text == "" || direcciontxt.Text == "" || emailtxt.Text == "")
+            if (nombretxt.Text == "" || apellidotxt.Text == "" || direcciontxt.Text == "" || telefonotxt.Text == "" || emailtxt.Text == "" || legajotxt.Text == "" || contraseñaTemporaltxt.Text == "")
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
@@ -28,9 +32,54 @@ namespace sysacad
                 string nombre = nombretxt.Text;
                 string apellido = apellidotxt.Text;
                 string direccion = direcciontxt.Text;
+                string telefono = telefonotxt.Text;
                 string email = emailtxt.Text;
-                MessageBox.Show("Estudiante registrado con exito");
+                string contraseñaTemporal = contraseñaTemporaltxt.Text;
+                string legajo = legajotxt.Text;
+
+
+                // Hashear la contraseña temporal antes de almacenarla en la base de datos
+                string contraseña = Hash.GetHash(contraseñaTemporal);
+
+                Estudiante nuevoEstudiante = new Estudiante(legajo, nombre, apellido, direccion, telefono, email, contraseña);
+
+                int filasAfectadas = nuevoEstudiante.AgregarEstudiante();
+
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Estudiante agregado correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo agregar el estudiante");
+                }
             }
         }
+
+        private void btncrearcontraseña_Click(object sender, EventArgs e)
+        {
+            // Generar una contraseña temporal aleatoria utilizando la clase de utilidad
+            string contraseñaTemporal = GeneradorContraseñaTemporal.GenerarContraseña();
+
+            // Mostrar la contraseña temporal en el TextBox
+            contraseñaTemporaltxt.Text = contraseñaTemporal;
+        }
+
+        private void btncrearlegajo_Click(object sender, EventArgs e)
+        {
+            int ultimoLegajo;
+
+            if (manejadorEstudiantes.ObtenerUltimoLegajo(out ultimoLegajo))
+            {
+                legajotxt.Text = (ultimoLegajo + 1).ToString("D5");
+            }
+            else
+            {
+                MessageBox.Show("Error al obtener el último legajo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }
