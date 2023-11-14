@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
+            btnlogout = new Button();
             btncerrar = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            btnlogout = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,6 +47,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
+            // 
+            // btnlogout
+            // 
+            btnlogout.BackColor = Color.White;
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.Location = new Point(1116, 12);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Size = new Size(75, 23);
+            btnlogout.TabIndex = 5;
+            btnlogout.Text = "logout";
+            btnlogout.UseVisualStyleBackColor = false;
+            btnlogout.Click += btnlogout_Click;
             // 
             // btncerrar
             // 
@@ -81,18 +94,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 3;
-            // 
-            // btnlogout
-            // 
-            btnlogout.BackColor = Color.White;
-            btnlogout.FlatAppearance.BorderSize = 0;
-            btnlogout.FlatStyle = FlatStyle.Flat;
-            btnlogout.Location = new Point(1116, 12);
-            btnlogout.Name = "btnlogout";
-            btnlogout.Size = new Size(75, 23);
-            btnlogout.TabIndex = 5;
-            btnlogout.Text = "logout";
-            btnlogout.UseVisualStyleBackColor = false;
             // 
             // dashboardEstudiante
             // 
