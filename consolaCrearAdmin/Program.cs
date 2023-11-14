@@ -1,5 +1,6 @@
 ﻿using biblioteca;
-using System.Data.SqlClient;
+using System;
+using MySql.Data.MySqlClient;
 
 namespace ConsolaTests
 {
@@ -7,7 +8,7 @@ namespace ConsolaTests
     {
         static void Main()
         {
-            string connectionString = "Data Source=DESKTOP-29H8DBT;Initial Catalog=sysacad;Integrated Security=True"; // Reemplaza con tu cadena de conexión
+            string connectionString = "server=localhost;port=3306;database=sysacad;Uid=root;pwd=;";
             string usuario = "matias";
             string contraseña = "123";
 
@@ -15,20 +16,20 @@ namespace ConsolaTests
             string contraseñaHasheada = Hash.GetHash(contraseña);
 
             // Insertar el administrador en la base de datos
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
                 // Verificar si la tabla existe
-                string checkTableQuery = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'admin') BEGIN CREATE TABLE admin (ID INT PRIMARY KEY IDENTITY(1,1), Usuario NVARCHAR(50) UNIQUE NOT NULL, Hash NVARCHAR(64) NOT NULL) END";
-                using (SqlCommand checkTableCommand = new SqlCommand(checkTableQuery, connection))
+                string checkTableQuery = "CREATE TABLE IF NOT EXISTS admin (ID INT AUTO_INCREMENT PRIMARY KEY, Usuario NVARCHAR(50) UNIQUE NOT NULL, Hash NVARCHAR(64) NOT NULL)";
+                using (MySqlCommand checkTableCommand = new MySqlCommand(checkTableQuery, connection))
                 {
                     checkTableCommand.ExecuteNonQuery();
                 }
 
                 // Insertar el administrador en la base de datos
                 string insertQuery = "INSERT INTO admin (Usuario, Hash) VALUES (@Usuario, @Contraseña)";
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
                 {
                     command.Parameters.AddWithValue("@Usuario", usuario);
                     command.Parameters.AddWithValue("@Contraseña", contraseñaHasheada);

@@ -20,7 +20,7 @@ namespace biblioteca
             Contraseña = contraseña;
 
             // Hash de la contraseña
-            Contraseña = Hash.GetHash(contraseña);
+            //Contraseña = Hash.GetHash(contraseña);
         }
     }
 }

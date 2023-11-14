@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,72 +9,66 @@ namespace biblioteca
 {
     public class VerificarDatos
     {
+        private const string ConnectionString = "server=localhost;port=3306;database=sysacad;Uid=root;pwd=;";
+
+
         public static bool VerificoAdmin(string usuario, string contraseña)
         {
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-29H8DBT; database=sysacad ;integrated Security=True; TrustServerCertificate=true");
-
-            using (conexion)
+            using (MySqlConnection conexion = new MySqlConnection(ConnectionString))
             {
                 conexion.Open();
-                string query = "SELECT * FROM admin WHERE usuario = @Usuario";
-                SqlCommand comando = new SqlCommand(query, conexion);
+                string query = "SELECT hash FROM admin WHERE usuario = @Usuario";
 
-                comando.Parameters.AddWithValue("@Usuario", usuario);
-                SqlDataReader leer = comando.ExecuteReader();
-
-                if (leer.Read())
+                using (MySqlCommand comando = new MySqlCommand(query, conexion))
                 {
-                    string hash = leer["hash"].ToString();
+                    comando.Parameters.AddWithValue("@Usuario", usuario);
 
-                    if (Hash.ValidatePassword(contraseña, hash))
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
+                        string hash = result.ToString();
+                        return Hash.ValidatePassword(contraseña, hash);
                     }
                 }
-                else
-                {
-                    return false;
-                }
-
             }
+
+            return false;
         }
 
+        //ahora para Estudiante
         public static bool VerificoEstudiante(string legajo, string contraseña)
         {
-            SqlConnection conexion = new SqlConnection("server=DESKTOP-29H8DBT; database=sysacad ;integrated Security=True; TrustServerCertificate=true");
-
-            using (conexion)
+            using (MySqlConnection conexion = new MySqlConnection(ConnectionString))
             {
                 conexion.Open();
-                string query = "SELECT * FROM estudiantes WHERE legajo = @Legajo";
-                SqlCommand comando = new SqlCommand(query, conexion);
+                string query = "SELECT contraseña FROM estudiantes WHERE legajo = @Legajo";
 
-                comando.Parameters.AddWithValue("@Legajo", legajo);
-                SqlDataReader leer = comando.ExecuteReader();
-
-                if (leer.Read())
+                using (MySqlCommand comando = new MySqlCommand(query, conexion))
                 {
-                    string hash = leer["hash"].ToString();
+                    comando.Parameters.AddWithValue("@Legajo", legajo);
 
-                    if (Hash.ValidatePassword(contraseña, hash))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+                    object result = comando.ExecuteScalar();
 
+                    if (result != null)
+                    {
+                        string hash = result.ToString();
+                        return Hash.ValidatePassword(contraseña, hash);
+                    }
+
+                    //chequea si la contraseña de contraseñaTemporaltxt es igual a la contraseña de la base de datos (todo es sin hash)
+                    //MySqlDataReader reader = comando.ExecuteReader();
+                    //while (reader.Read())
+                    //{
+                    //    if (reader["contraseña"].ToString() == contraseña)
+                    //    {
+                    //        return true;
+                    //    }
+                    //}
+                }
             }
+
+            return false;
         }
     }
 }

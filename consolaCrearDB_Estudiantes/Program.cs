@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace consolaCrearDB_Estudiantes
 {
@@ -6,9 +6,9 @@ namespace consolaCrearDB_Estudiantes
     {
         static void Main()
         {
-            string connectionString = "Data Source=DESKTOP-29H8DBT;Initial Catalog=sysacad;Integrated Security=True";
+            string connectionString = "server=localhost;port=3306;database=sysacad;Uid=root;pwd=;";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
 
@@ -26,21 +26,21 @@ namespace consolaCrearDB_Estudiantes
             }
         }
 
-        static bool TableExists(SqlConnection connection, string tableName)
+        static bool TableExists(MySqlConnection connection, string tableName)
         {
             string checkTableQuery = $@"
             SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{tableName}'";
 
-            using (SqlCommand checkTableCommand = new SqlCommand(checkTableQuery, connection))
+            using (MySqlCommand checkTableCommand = new MySqlCommand(checkTableQuery, connection))
             {
-                using (SqlDataReader reader = checkTableCommand.ExecuteReader())
+                using (MySqlDataReader reader = checkTableCommand.ExecuteReader())
                 {
                     return reader.HasRows;
                 }
             }
         }
 
-        static void CreateTable(SqlConnection connection, string tableName)
+        static void CreateTable(MySqlConnection connection, string tableName)
         {
             string createTableQuery = $@"
             CREATE TABLE {tableName}
@@ -51,10 +51,10 @@ namespace consolaCrearDB_Estudiantes
                 direccion VARCHAR(50),
                 telefono VARCHAR(50),
                 email VARCHAR(50),
-                hash NVARCHAR(128)
+                contraseña NVARCHAR(128)
             )";
 
-            using (SqlCommand createTableCommand = new SqlCommand(createTableQuery, connection))
+            using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
             {
                 createTableCommand.ExecuteNonQuery();
             }

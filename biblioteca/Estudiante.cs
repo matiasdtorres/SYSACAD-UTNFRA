@@ -1,9 +1,9 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace biblioteca
 {
@@ -18,7 +18,7 @@ namespace biblioteca
         public string Telefono { get; set; }
         public string Email { get; set; }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-29H8DBT; database=sysacad ;integrated Security=True; TrustServerCertificate=true");
+        MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         //Constructor de la clase Estudiante
         public Estudiante(string legajo, string nombre, string apellido, string direccion, string telefono, string email, string contraseña) : base(nombre, contraseña)
@@ -44,8 +44,8 @@ namespace biblioteca
             using (conexion)
             {
                 conexion.Open();
-                string query = "INSERT INTO estudiantes (legajo, nombre, apellido, direccion, telefono, email, hash) VALUES (@Legajo, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Hash)";
-                SqlCommand comando = new SqlCommand(query, conexion);
+                string query = "INSERT INTO estudiantes (legajo, nombre, apellido, direccion, telefono, email, contraseña) VALUES (@Legajo, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Contraseña)";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Legajo", Legajo);
                 comando.Parameters.AddWithValue("@Nombre", Nombre);
@@ -53,7 +53,7 @@ namespace biblioteca
                 comando.Parameters.AddWithValue("@Direccion", Direccion);
                 comando.Parameters.AddWithValue("@Telefono", Telefono);
                 comando.Parameters.AddWithValue("@Email", Email);
-                comando.Parameters.AddWithValue("@Hash", Contraseña);
+                comando.Parameters.AddWithValue("@Contraseña", Contraseña);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
 

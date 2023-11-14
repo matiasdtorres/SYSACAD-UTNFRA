@@ -1,6 +1,6 @@
 using biblioteca;
 using Microsoft.Win32;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using Hash = biblioteca.Hash;
@@ -18,7 +18,7 @@ namespace sysacad
             InitializeComponent();
         }
 
-        SqlConnection conexion = new SqlConnection("server=DESKTOP-29H8DBT; database=sysacad ;integrated Security=True");
+        MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         private void button1_Click(object sender, EventArgs e)
         {

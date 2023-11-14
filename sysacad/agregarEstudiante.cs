@@ -23,7 +23,7 @@ namespace sysacad
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            if (nombretxt.Text == "" || apellidotxt.Text == "" || direcciontxt.Text == "" || telefonotxt.Text == "" || emailtxt.Text == "" || legajotxt.Text == "" || contraseñaTemporaltxt.Text == "")
+            if (string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(apellidotxt.Text) || string.IsNullOrEmpty(direcciontxt.Text) || string.IsNullOrEmpty(telefonotxt.Text) || string.IsNullOrEmpty(emailtxt.Text) || string.IsNullOrEmpty(legajotxt.Text) || string.IsNullOrEmpty(contraseñaTemporaltxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
@@ -37,33 +37,46 @@ namespace sysacad
                 string contraseñaTemporal = contraseñaTemporaltxt.Text;
                 string legajo = legajotxt.Text;
 
-
-                // Hashear la contraseña temporal antes de almacenarla en la base de datos
-                string contraseña = Hash.GetHash(contraseñaTemporal);
-
-                Estudiante nuevoEstudiante = new Estudiante(legajo, nombre, apellido, direccion, telefono, email, contraseña);
-
-                int filasAfectadas = nuevoEstudiante.AgregarEstudiante();
-
-                if (filasAfectadas > 0)
+                try
                 {
-                    MessageBox.Show("Estudiante agregado correctamente");
-                    this.Close();
+                    // Hashear la contraseña temporal antes de almacenarla en la base de datos
+                    string contraseña = Hash.GetHash(contraseñaTemporal);
+
+                    Estudiante nuevoEstudiante = new Estudiante(legajo, nombre, apellido, direccion, telefono, email, contraseña);
+
+                    int filasAfectadas = nuevoEstudiante.AgregarEstudiante();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Estudiante agregado correctamente");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo agregar el estudiante");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No se pudo agregar el estudiante");
+                    MessageBox.Show("Error al registrar estudiante: " + ex.Message);
                 }
             }
         }
 
         private void btncrearcontraseña_Click(object sender, EventArgs e)
         {
-            // Generar una contraseña temporal aleatoria utilizando la clase de utilidad
-            string contraseñaTemporal = GeneradorContraseñaTemporal.GenerarContraseña();
+            try
+            {
+                // Generar una contraseña temporal aleatoria utilizando la clase de utilidad
+                string contraseñaTemporal = GeneradorContraseñaTemporal.GenerarContraseña();
 
-            // Mostrar la contraseña temporal en el TextBox
-            contraseñaTemporaltxt.Text = contraseñaTemporal;
+                // Mostrar la contraseña temporal en el TextBox
+                contraseñaTemporaltxt.Text = contraseñaTemporal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar contraseña temporal: " + ex.Message);
+            }
         }
 
         private void btncrearlegajo_Click(object sender, EventArgs e)

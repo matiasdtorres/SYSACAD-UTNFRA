@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +16,12 @@ namespace biblioteca
 
             try
             {
-                using (SqlConnection conexion = new SqlConnection("server=DESKTOP-29H8DBT; database=sysacad ;integrated Security=True; TrustServerCertificate=true"))
+                using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
                 {
                     conexion.Open();
 
                     string consulta = "SELECT MAX(legajo) FROM Estudiantes";
-                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         object resultado = comando.ExecuteScalar();
                         if (resultado != null && resultado != DBNull.Value)
