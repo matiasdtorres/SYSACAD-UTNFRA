@@ -82,12 +82,14 @@
             label21 = new Label();
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
+            cursos = new DataGridView();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cursos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -439,6 +441,7 @@
             btneditar.TabIndex = 29;
             btneditar.Text = "Editar";
             btneditar.UseVisualStyleBackColor = false;
+            btneditar.Click += btneditar_Click;
             // 
             // groupBox2
             // 
@@ -695,12 +698,25 @@
             label23.TabIndex = 4;
             label23.Text = "Nombre";
             // 
+            // cursos
+            // 
+            cursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            cursos.Location = new Point(347, 62);
+            cursos.Name = "cursos";
+            cursos.ReadOnly = true;
+            cursos.RowTemplate.Height = 25;
+            cursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            cursos.Size = new Size(354, 406);
+            cursos.TabIndex = 30;
+            cursos.CellClick += cursos_CellClick;
+            // 
             // gestionarCurso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
+            Controls.Add(cursos);
             Controls.Add(groupBox2);
             Controls.Add(btneditar);
             Controls.Add(btneliminar);
@@ -712,6 +728,7 @@
             Name = "gestionarCurso";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "gestionarCurso";
+            Load += gestionarCurso_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -722,6 +739,7 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cursos).EndInit();
             ResumeLayout(false);
         }
 
@@ -781,5 +799,6 @@
         private Label label21;
         private TextBox nombreeditarcursotxt;
         private Label label23;
+        private DataGridView cursos;
     }
 }

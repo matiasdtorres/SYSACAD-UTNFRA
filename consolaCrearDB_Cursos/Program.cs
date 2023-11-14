@@ -54,6 +54,7 @@ namespace consolaCrearDB_Cursos
                 aula VARCHAR(50),
                 division VARCHAR(50),
                 dia VARCHAR(50),
+                turno VARCHAR(50),
                 cuatrimestre VARCHAR(50)
             )";
 
