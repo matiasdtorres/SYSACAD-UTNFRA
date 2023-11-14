@@ -429,6 +429,7 @@
             btneliminar.TabIndex = 28;
             btneliminar.Text = "Eliminar";
             btneliminar.UseVisualStyleBackColor = false;
+            btneliminar.Click += btneliminar_Click;
             // 
             // btneditar
             // 

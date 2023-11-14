@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace sysacad
             else
             {
                 string nombre = nombrecursotxt.Text;
-                int codigo = Convert.ToInt32(codigocursotxt.Text);
+                string codigo = codigocursotxt.Text;
                 string descripcion = descripcioncursotxt.Text;
                 string horario = horariocursotxt.Text;
                 int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
@@ -71,7 +72,7 @@ namespace sysacad
             else
             {
                 string nombre = nombreeditarcursotxt.Text;
-                int codigo = Convert.ToInt32(codigoeditarcursotxt.Text);
+                string codigo = codigoeditarcursotxt.Text;
                 string descripcion = descripcioneditarcursotxt.Text;
                 string horario = horarioeditarcursotxt.Text;
                 int cupoMaximo = Convert.ToInt32(cuposeditarcursotxt.Text);
@@ -84,9 +85,9 @@ namespace sysacad
 
                 try
                 {
-                    Curso nuevoCurso = new Curso(nombre, codigo, descripcion, horario, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+                    Curso EditarCurso = new Curso(nombre, codigo, descripcion, horario, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
-                    int filasAfectadas = nuevoCurso.EditarCurso();
+                    int filasAfectadas = EditarCurso.EditarCurso();
 
                     if (filasAfectadas > 0)
                     {
@@ -138,6 +139,50 @@ namespace sysacad
             diaeditarcursotxt.Text = cursos.CurrentRow.Cells[8].Value.ToString();
             turnoeditarcursotxt.Text = cursos.CurrentRow.Cells[9].Value.ToString();
             cuatrieditarcursotxt.Text = cursos.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(codigoeliminarcursotxt.Text))
+            {
+                MessageBox.Show("Debe completar el campo codigo");
+            }
+            else
+            {
+                string nombre = nombrecursotxt.Text;
+                string descripcion = descripcioncursotxt.Text;
+                string horario = horariocursotxt.Text;
+                int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
+                string profesor = profesorcursotxt.Text;
+                string aula = aulacursotxt.Text;
+                string division = divcursotxt.Text;
+                string dia = diacursotxt.Text;
+                string turno = turnocursotxt.Text;
+                string cuatrimestre = cuatricursotxt.Text;
+
+                string codigo = codigoeliminarcursotxt.Text;
+
+                try
+                {
+                    Curso EliminarCurso = new Curso(nombre, codigo, descripcion, horario, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+
+                    int filasAfectadas = EliminarCurso.EliminarCurso();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Curso eliminado correctamente");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el curso");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

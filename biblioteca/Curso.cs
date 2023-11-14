@@ -11,7 +11,7 @@ namespace biblioteca
     {
         //Atributos de la clase Curso
         public string Nombre { get; set; }
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public string Horario { get; set; }
         public int CupoMaximo { get; set; }
@@ -22,7 +22,7 @@ namespace biblioteca
         public string Turno { get; set; }
         public string Cuatrimestre { get; set; }
 
-        public Curso(string nombre, int codigo, string descripcion, string horario, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre)
+        public Curso(string nombre, string codigo, string descripcion, string horario, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre)
         {
             Nombre = nombre;
             Codigo = codigo;
@@ -84,6 +84,23 @@ namespace biblioteca
                 comando.Parameters.AddWithValue("@Dia", Dia);
                 comando.Parameters.AddWithValue("@Turno", Turno);
                 comando.Parameters.AddWithValue("@Cuatrimestre", Cuatrimestre);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
+
+        //Metodo para eliminar Curso de la base de datos por codigo
+        public int EliminarCurso()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "DELETE FROM cursos WHERE codigo = @Codigo";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Codigo", Codigo);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
 
