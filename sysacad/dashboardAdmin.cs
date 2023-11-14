@@ -12,6 +12,7 @@ namespace sysacad
 {
     public partial class dashboardAdmin : Form
     {
+        login logout;
         agregarEstudiante? agregarEstudiante;
         gestionarCurso? gestionarCurso;
         Test? formtest;
@@ -85,6 +86,20 @@ namespace sysacad
         private void Formtest_FormClosed(object sender, FormClosedEventArgs e)
         {
             formtest = null;
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+                logout = new login();
+                logout.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

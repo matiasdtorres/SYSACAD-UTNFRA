@@ -36,6 +36,7 @@
             btnagregarestudiante = new Button();
             btngestionarcursos = new Button();
             test = new Button();
+            btnlogout = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -43,6 +44,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(btnlogout);
             panel1.Controls.Add(btncerrar);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -134,6 +136,19 @@
             test.UseVisualStyleBackColor = false;
             test.Click += test_Click;
             // 
+            // btnlogout
+            // 
+            btnlogout.BackColor = Color.White;
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.Location = new Point(1116, 12);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Size = new Size(75, 23);
+            btnlogout.TabIndex = 5;
+            btnlogout.Text = "logout";
+            btnlogout.UseVisualStyleBackColor = false;
+            btnlogout.Click += btnlogout_Click;
+            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -165,5 +180,6 @@
         private Button btnagregarestudiante;
         private Button btngestionarcursos;
         private Button test;
+        private Button btnlogout;
     }
 }

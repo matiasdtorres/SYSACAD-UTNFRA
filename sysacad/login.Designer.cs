@@ -35,14 +35,14 @@
             usuarioylegajotxt = new TextBox();
             passwordtxt = new TextBox();
             button1 = new Button();
+            btncerrar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 39);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(471, 241);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -54,7 +54,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 300);
+            label1.Location = new Point(12, 329);
             label1.Name = "label1";
             label1.Size = new Size(198, 30);
             label1.TabIndex = 1;
@@ -65,7 +65,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(36, 330);
+            label2.Location = new Point(36, 359);
             label2.Name = "label2";
             label2.Size = new Size(123, 30);
             label2.TabIndex = 2;
@@ -74,7 +74,7 @@
             // usuarioylegajotxt
             // 
             usuarioylegajotxt.BackColor = Color.White;
-            usuarioylegajotxt.Location = new Point(236, 307);
+            usuarioylegajotxt.Location = new Point(236, 336);
             usuarioylegajotxt.Name = "usuarioylegajotxt";
             usuarioylegajotxt.Size = new Size(171, 23);
             usuarioylegajotxt.TabIndex = 3;
@@ -82,7 +82,7 @@
             // passwordtxt
             // 
             passwordtxt.BackColor = Color.White;
-            passwordtxt.Location = new Point(236, 337);
+            passwordtxt.Location = new Point(236, 366);
             passwordtxt.Name = "passwordtxt";
             passwordtxt.Size = new Size(171, 23);
             passwordtxt.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(174, 387);
+            button1.Location = new Point(174, 416);
             button1.Name = "button1";
             button1.Size = new Size(123, 32);
             button1.TabIndex = 5;
@@ -98,18 +98,33 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // btncerrar
+            // 
+            btncerrar.BackColor = Color.White;
+            btncerrar.FlatStyle = FlatStyle.Flat;
+            btncerrar.ForeColor = Color.Black;
+            btncerrar.Location = new Point(388, 8);
+            btncerrar.Name = "btncerrar";
+            btncerrar.Size = new Size(75, 23);
+            btncerrar.TabIndex = 6;
+            btncerrar.Text = "X";
+            btncerrar.UseVisualStyleBackColor = false;
+            btncerrar.Click += btncerrar_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(471, 431);
+            ClientSize = new Size(471, 469);
+            Controls.Add(btncerrar);
             Controls.Add(button1);
             Controls.Add(passwordtxt);
             Controls.Add(usuarioylegajotxt);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
@@ -127,5 +142,6 @@
         private TextBox usuarioylegajotxt;
         private TextBox passwordtxt;
         private Button button1;
+        private Button btncerrar;
     }
 }

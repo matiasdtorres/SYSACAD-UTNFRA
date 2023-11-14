@@ -33,12 +33,14 @@
             btncerrar = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnlogout = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(btnlogout);
             panel1.Controls.Add(btncerrar);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -80,6 +82,18 @@
             flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 3;
             // 
+            // btnlogout
+            // 
+            btnlogout.BackColor = Color.White;
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.Location = new Point(1116, 12);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Size = new Size(75, 23);
+            btnlogout.TabIndex = 5;
+            btnlogout.Text = "logout";
+            btnlogout.UseVisualStyleBackColor = false;
+            // 
             // dashboardEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -108,5 +122,6 @@
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btncerrar;
+        private Button btnlogout;
     }
 }

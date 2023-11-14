@@ -97,6 +97,10 @@ namespace sysacad
             }
         }
 
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     //leer autenticarCredenciales
