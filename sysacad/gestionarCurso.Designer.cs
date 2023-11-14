@@ -429,7 +429,7 @@
             groupBox2.Size = new Size(307, 340);
             groupBox2.TabIndex = 23;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Agregar Curso";
+            groupBox2.Text = "Editar Curso";
             // 
             // horarioeditarcursotxt
             // 
