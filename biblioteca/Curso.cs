@@ -12,7 +12,7 @@ namespace biblioteca
         public string Nombre { get; set; }
         public int Codigo { get; set; }
         public string Descripcion { get; set; }
-        public int Horario { get; set; }
+        public string Horario { get; set; }
         public int CupoMaximo { get; set; }
         public string Profesor { get; set; }
         public string Aula { get; set; }
@@ -20,7 +20,7 @@ namespace biblioteca
         public string Dia { get; set; }
         public string Cuatrimestre { get; set; }
 
-        public Curso(string nombre, int codigo, string descripcion, int horario, int cupoMaximo, string profesor, string aula, string division, string dia, string cuatrimestre)
+        public Curso(string nombre, int codigo, string descripcion, string horario, int cupoMaximo, string profesor, string aula, string division, string dia, string cuatrimestre)
         {
             Nombre = nombre;
             Codigo = codigo;

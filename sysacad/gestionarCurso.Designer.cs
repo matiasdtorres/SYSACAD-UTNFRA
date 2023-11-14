@@ -31,67 +31,59 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
-            numericUpDown3 = new NumericUpDown();
             label10 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            label12 = new Label();
+            cuposcurso = new NumericUpDown();
             label9 = new Label();
-            textBox8 = new TextBox();
-            numericUpDown2 = new NumericUpDown();
+            turnocursotxt = new TextBox();
             label8 = new Label();
             label11 = new Label();
-            textBox7 = new TextBox();
+            diacursotxt = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            divcursotxt = new TextBox();
+            aulacursotxt = new TextBox();
             label6 = new Label();
             label5 = new Label();
-            textBox4 = new TextBox();
+            cuatricursotxt = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            profesorcursotxt = new TextBox();
+            codigocursotxt = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            nombrecursotxt = new TextBox();
             label2 = new Label();
-            button1 = new Button();
+            btnregistrar = new Button();
+            groupBox3 = new GroupBox();
+            codigoeliminarcursotxt = new TextBox();
+            label24 = new Label();
+            btneliminar = new Button();
+            horariocursotxt = new TextBox();
             groupBox2 = new GroupBox();
-            numericUpDown4 = new NumericUpDown();
+            horarioeditarcursotxt = new TextBox();
+            label12 = new Label();
+            cuposeditarcursotxt = new NumericUpDown();
             label13 = new Label();
-            numericUpDown5 = new NumericUpDown();
+            turnoeditarcursotxt = new TextBox();
             label14 = new Label();
             label15 = new Label();
-            textBox9 = new TextBox();
-            numericUpDown6 = new NumericUpDown();
+            diaeditarcursotxt = new TextBox();
             label16 = new Label();
+            diveditarcursotxt = new TextBox();
+            aulaeditarcursotxt = new TextBox();
             label17 = new Label();
-            textBox10 = new TextBox();
             label18 = new Label();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
+            cuatrieditarcursotxt = new TextBox();
             label19 = new Label();
+            profesoreditarcursotxt = new TextBox();
+            codigoeditarcursotxt = new TextBox();
             label20 = new Label();
-            textBox13 = new TextBox();
+            nombreeditarcursotxt = new TextBox();
             label21 = new Label();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            label22 = new Label();
-            textBox16 = new TextBox();
-            label23 = new Label();
-            button2 = new Button();
-            groupBox3 = new GroupBox();
-            textBox17 = new TextBox();
-            label24 = new Label();
-            button3 = new Button();
+            btneditar = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cuposcurso).BeginInit();
             groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,75 +113,53 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
-            groupBox1.Controls.Add(numericUpDown3);
+            groupBox1.Controls.Add(horariocursotxt);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(numericUpDown1);
-            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(cuposcurso);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox8);
-            groupBox1.Controls.Add(numericUpDown2);
+            groupBox1.Controls.Add(turnocursotxt);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(diacursotxt);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(divcursotxt);
+            groupBox1.Controls.Add(aulacursotxt);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(cuatricursotxt);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(profesorcursotxt);
+            groupBox1.Controls.Add(codigocursotxt);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(nombrecursotxt);
             groupBox1.Controls.Add(label2);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(6, 52);
+            groupBox1.Location = new Point(12, 52);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(307, 376);
+            groupBox1.Size = new Size(307, 340);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.BackColor = Color.White;
-            numericUpDown3.ForeColor = Color.Black;
-            numericUpDown3.Location = new Point(144, 335);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(51, 23);
-            numericUpDown3.TabIndex = 24;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(9, 263);
+            label10.Location = new Point(9, 266);
             label10.Name = "label10";
             label10.Size = new Size(135, 21);
             label10.TabIndex = 20;
             label10.Text = "Cupos Disponible:";
             // 
-            // numericUpDown1
+            // cuposcurso
             // 
-            numericUpDown1.BackColor = Color.White;
-            numericUpDown1.ForeColor = Color.Black;
-            numericUpDown1.Location = new Point(173, 263);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(118, 23);
-            numericUpDown1.TabIndex = 4;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(120, 335);
-            label12.Name = "label12";
-            label12.Size = new Size(18, 21);
-            label12.TabIndex = 23;
-            label12.Text = "a";
+            cuposcurso.BackColor = Color.White;
+            cuposcurso.ForeColor = Color.Black;
+            cuposcurso.Location = new Point(173, 266);
+            cuposcurso.Name = "cuposcurso";
+            cuposcurso.Size = new Size(118, 23);
+            cuposcurso.TabIndex = 4;
             // 
             // label9
             // 
@@ -202,23 +172,14 @@
             label9.TabIndex = 19;
             label9.Text = "Turno";
             // 
-            // textBox8
+            // turnocursotxt
             // 
-            textBox8.BackColor = Color.White;
-            textBox8.ForeColor = Color.Black;
-            textBox8.Location = new Point(113, 234);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(178, 23);
-            textBox8.TabIndex = 18;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.BackColor = Color.White;
-            numericUpDown2.ForeColor = Color.Black;
-            numericUpDown2.Location = new Point(63, 335);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(51, 23);
-            numericUpDown2.TabIndex = 22;
+            turnocursotxt.BackColor = Color.White;
+            turnocursotxt.ForeColor = Color.Black;
+            turnocursotxt.Location = new Point(113, 234);
+            turnocursotxt.Name = "turnocursotxt";
+            turnocursotxt.Size = new Size(178, 23);
+            turnocursotxt.TabIndex = 18;
             // 
             // label8
             // 
@@ -236,20 +197,20 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(100, 299);
+            label11.Location = new Point(15, 299);
             label11.Name = "label11";
             label11.Size = new Size(63, 21);
             label11.TabIndex = 21;
             label11.Text = "Horario";
             // 
-            // textBox7
+            // diacursotxt
             // 
-            textBox7.BackColor = Color.White;
-            textBox7.ForeColor = Color.Black;
-            textBox7.Location = new Point(113, 205);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(178, 23);
-            textBox7.TabIndex = 16;
+            diacursotxt.BackColor = Color.White;
+            diacursotxt.ForeColor = Color.Black;
+            diacursotxt.Location = new Point(113, 205);
+            diacursotxt.Name = "diacursotxt";
+            diacursotxt.Size = new Size(178, 23);
+            diacursotxt.TabIndex = 16;
             // 
             // label7
             // 
@@ -262,23 +223,23 @@
             label7.TabIndex = 15;
             label7.Text = "Division";
             // 
-            // textBox6
+            // divcursotxt
             // 
-            textBox6.BackColor = Color.White;
-            textBox6.ForeColor = Color.Black;
-            textBox6.Location = new Point(113, 176);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(178, 23);
-            textBox6.TabIndex = 14;
+            divcursotxt.BackColor = Color.White;
+            divcursotxt.ForeColor = Color.Black;
+            divcursotxt.Location = new Point(113, 176);
+            divcursotxt.Name = "divcursotxt";
+            divcursotxt.Size = new Size(178, 23);
+            divcursotxt.TabIndex = 14;
             // 
-            // textBox5
+            // aulacursotxt
             // 
-            textBox5.BackColor = Color.White;
-            textBox5.ForeColor = Color.Black;
-            textBox5.Location = new Point(113, 147);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(178, 23);
-            textBox5.TabIndex = 13;
+            aulacursotxt.BackColor = Color.White;
+            aulacursotxt.ForeColor = Color.Black;
+            aulacursotxt.Location = new Point(113, 147);
+            aulacursotxt.Name = "aulacursotxt";
+            aulacursotxt.Size = new Size(178, 23);
+            aulacursotxt.TabIndex = 13;
             // 
             // label6
             // 
@@ -302,14 +263,14 @@
             label5.TabIndex = 11;
             label5.Text = "Cuatrimestre";
             // 
-            // textBox4
+            // cuatricursotxt
             // 
-            textBox4.BackColor = Color.White;
-            textBox4.ForeColor = Color.Black;
-            textBox4.Location = new Point(113, 118);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(178, 23);
-            textBox4.TabIndex = 10;
+            cuatricursotxt.BackColor = Color.White;
+            cuatricursotxt.ForeColor = Color.Black;
+            cuatricursotxt.Location = new Point(113, 118);
+            cuatricursotxt.Name = "cuatricursotxt";
+            cuatricursotxt.Size = new Size(178, 23);
+            cuatricursotxt.TabIndex = 10;
             // 
             // label4
             // 
@@ -322,23 +283,23 @@
             label4.TabIndex = 9;
             label4.Text = "Profesor";
             // 
-            // textBox3
+            // profesorcursotxt
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.ForeColor = Color.Black;
-            textBox3.Location = new Point(113, 89);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(178, 23);
-            textBox3.TabIndex = 8;
+            profesorcursotxt.BackColor = Color.White;
+            profesorcursotxt.ForeColor = Color.Black;
+            profesorcursotxt.Location = new Point(113, 89);
+            profesorcursotxt.Name = "profesorcursotxt";
+            profesorcursotxt.Size = new Size(178, 23);
+            profesorcursotxt.TabIndex = 8;
             // 
-            // textBox2
+            // codigocursotxt
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(113, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 23);
-            textBox2.TabIndex = 7;
+            codigocursotxt.BackColor = Color.White;
+            codigocursotxt.ForeColor = Color.Black;
+            codigocursotxt.Location = new Point(113, 60);
+            codigocursotxt.Name = "codigocursotxt";
+            codigocursotxt.Size = new Size(178, 23);
+            codigocursotxt.TabIndex = 7;
             // 
             // label3
             // 
@@ -351,14 +312,14 @@
             label3.TabIndex = 6;
             label3.Text = "Codigo";
             // 
-            // textBox1
+            // nombrecursotxt
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(113, 28);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(178, 23);
-            textBox1.TabIndex = 5;
+            nombrecursotxt.BackColor = Color.White;
+            nombrecursotxt.ForeColor = Color.Black;
+            nombrecursotxt.Location = new Point(113, 28);
+            nombrecursotxt.Name = "nombrecursotxt";
+            nombrecursotxt.Size = new Size(178, 23);
+            nombrecursotxt.TabIndex = 5;
             // 
             // label2
             // 
@@ -372,288 +333,22 @@
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             // 
-            // button1
+            // btnregistrar
             // 
-            button1.BackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(235, 433);
-            button1.Name = "button1";
-            button1.Size = new Size(78, 27);
-            button1.TabIndex = 4;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // groupBox2
-            // 
-            groupBox2.BackColor = Color.Black;
-            groupBox2.Controls.Add(numericUpDown4);
-            groupBox2.Controls.Add(label13);
-            groupBox2.Controls.Add(numericUpDown5);
-            groupBox2.Controls.Add(label14);
-            groupBox2.Controls.Add(label15);
-            groupBox2.Controls.Add(textBox9);
-            groupBox2.Controls.Add(numericUpDown6);
-            groupBox2.Controls.Add(label16);
-            groupBox2.Controls.Add(label17);
-            groupBox2.Controls.Add(textBox10);
-            groupBox2.Controls.Add(label18);
-            groupBox2.Controls.Add(textBox11);
-            groupBox2.Controls.Add(textBox12);
-            groupBox2.Controls.Add(label19);
-            groupBox2.Controls.Add(label20);
-            groupBox2.Controls.Add(textBox13);
-            groupBox2.Controls.Add(label21);
-            groupBox2.Controls.Add(textBox14);
-            groupBox2.Controls.Add(textBox15);
-            groupBox2.Controls.Add(label22);
-            groupBox2.Controls.Add(textBox16);
-            groupBox2.Controls.Add(label23);
-            groupBox2.ForeColor = Color.White;
-            groupBox2.Location = new Point(741, 52);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(307, 376);
-            groupBox2.TabIndex = 25;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Editar Curso";
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.BackColor = Color.White;
-            numericUpDown4.ForeColor = Color.Black;
-            numericUpDown4.Location = new Point(144, 335);
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(51, 23);
-            numericUpDown4.TabIndex = 24;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(9, 263);
-            label13.Name = "label13";
-            label13.Size = new Size(135, 21);
-            label13.TabIndex = 20;
-            label13.Text = "Cupos Disponible:";
-            // 
-            // numericUpDown5
-            // 
-            numericUpDown5.BackColor = Color.White;
-            numericUpDown5.ForeColor = Color.Black;
-            numericUpDown5.Location = new Point(173, 263);
-            numericUpDown5.Name = "numericUpDown5";
-            numericUpDown5.Size = new Size(118, 23);
-            numericUpDown5.TabIndex = 4;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(120, 335);
-            label14.Name = "label14";
-            label14.Size = new Size(18, 21);
-            label14.TabIndex = 23;
-            label14.Text = "a";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(9, 234);
-            label15.Name = "label15";
-            label15.Size = new Size(51, 21);
-            label15.TabIndex = 19;
-            label15.Text = "Turno";
-            // 
-            // textBox9
-            // 
-            textBox9.BackColor = Color.White;
-            textBox9.ForeColor = Color.Black;
-            textBox9.Location = new Point(113, 234);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(178, 23);
-            textBox9.TabIndex = 18;
-            // 
-            // numericUpDown6
-            // 
-            numericUpDown6.BackColor = Color.White;
-            numericUpDown6.ForeColor = Color.Black;
-            numericUpDown6.Location = new Point(63, 335);
-            numericUpDown6.Name = "numericUpDown6";
-            numericUpDown6.Size = new Size(51, 23);
-            numericUpDown6.TabIndex = 22;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(9, 207);
-            label16.Name = "label16";
-            label16.Size = new Size(33, 21);
-            label16.TabIndex = 17;
-            label16.Text = "Dia";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.ForeColor = Color.White;
-            label17.Location = new Point(100, 299);
-            label17.Name = "label17";
-            label17.Size = new Size(63, 21);
-            label17.TabIndex = 21;
-            label17.Text = "Horario";
-            // 
-            // textBox10
-            // 
-            textBox10.BackColor = Color.White;
-            textBox10.ForeColor = Color.Black;
-            textBox10.Location = new Point(113, 205);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(178, 23);
-            textBox10.TabIndex = 16;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(9, 178);
-            label18.Name = "label18";
-            label18.Size = new Size(66, 21);
-            label18.TabIndex = 15;
-            label18.Text = "Division";
-            // 
-            // textBox11
-            // 
-            textBox11.BackColor = Color.White;
-            textBox11.ForeColor = Color.Black;
-            textBox11.Location = new Point(113, 176);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(178, 23);
-            textBox11.TabIndex = 14;
-            // 
-            // textBox12
-            // 
-            textBox12.BackColor = Color.White;
-            textBox12.ForeColor = Color.Black;
-            textBox12.Location = new Point(113, 147);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(178, 23);
-            textBox12.TabIndex = 13;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(9, 147);
-            label19.Name = "label19";
-            label19.Size = new Size(41, 21);
-            label19.TabIndex = 12;
-            label19.Text = "Aula";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.ForeColor = Color.White;
-            label20.Location = new Point(9, 118);
-            label20.Name = "label20";
-            label20.Size = new Size(100, 21);
-            label20.TabIndex = 11;
-            label20.Text = "Cuatrimestre";
-            // 
-            // textBox13
-            // 
-            textBox13.BackColor = Color.White;
-            textBox13.ForeColor = Color.Black;
-            textBox13.Location = new Point(113, 118);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(178, 23);
-            textBox13.TabIndex = 10;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(9, 89);
-            label21.Name = "label21";
-            label21.Size = new Size(69, 21);
-            label21.TabIndex = 9;
-            label21.Text = "Profesor";
-            // 
-            // textBox14
-            // 
-            textBox14.BackColor = Color.White;
-            textBox14.ForeColor = Color.Black;
-            textBox14.Location = new Point(113, 89);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(178, 23);
-            textBox14.TabIndex = 8;
-            // 
-            // textBox15
-            // 
-            textBox15.BackColor = Color.White;
-            textBox15.ForeColor = Color.Black;
-            textBox15.Location = new Point(113, 60);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(178, 23);
-            textBox15.TabIndex = 7;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.ForeColor = Color.White;
-            label22.Location = new Point(9, 60);
-            label22.Name = "label22";
-            label22.Size = new Size(60, 21);
-            label22.TabIndex = 6;
-            label22.Text = "Codigo";
-            // 
-            // textBox16
-            // 
-            textBox16.BackColor = Color.White;
-            textBox16.ForeColor = Color.Black;
-            textBox16.Location = new Point(113, 28);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(178, 23);
-            textBox16.TabIndex = 5;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.BackColor = Color.Transparent;
-            label23.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.ForeColor = Color.White;
-            label23.Location = new Point(9, 28);
-            label23.Name = "label23";
-            label23.Size = new Size(68, 21);
-            label23.TabIndex = 4;
-            label23.Text = "Nombre";
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(970, 432);
-            button2.Name = "button2";
-            button2.Size = new Size(78, 27);
-            button2.TabIndex = 26;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = false;
+            btnregistrar.BackColor = Color.Black;
+            btnregistrar.FlatStyle = FlatStyle.Flat;
+            btnregistrar.ForeColor = Color.White;
+            btnregistrar.Location = new Point(241, 401);
+            btnregistrar.Name = "btnregistrar";
+            btnregistrar.Size = new Size(78, 27);
+            btnregistrar.TabIndex = 4;
+            btnregistrar.Text = "Registrar";
+            btnregistrar.UseVisualStyleBackColor = false;
             // 
             // groupBox3
             // 
             groupBox3.BackColor = Color.Black;
-            groupBox3.Controls.Add(textBox17);
+            groupBox3.Controls.Add(codigoeliminarcursotxt);
             groupBox3.Controls.Add(label24);
             groupBox3.ForeColor = Color.White;
             groupBox3.Location = new Point(347, 478);
@@ -663,14 +358,14 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Eliminar Curso";
             // 
-            // textBox17
+            // codigoeliminarcursotxt
             // 
-            textBox17.BackColor = Color.White;
-            textBox17.ForeColor = Color.Black;
-            textBox17.Location = new Point(139, 34);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(178, 23);
-            textBox17.TabIndex = 26;
+            codigoeliminarcursotxt.BackColor = Color.White;
+            codigoeliminarcursotxt.ForeColor = Color.Black;
+            codigoeliminarcursotxt.Location = new Point(139, 34);
+            codigoeliminarcursotxt.Name = "codigoeliminarcursotxt";
+            codigoeliminarcursotxt.Size = new Size(178, 23);
+            codigoeliminarcursotxt.TabIndex = 26;
             // 
             // label24
             // 
@@ -684,17 +379,270 @@
             label24.TabIndex = 25;
             label24.Text = "Codigo";
             // 
-            // button3
+            // btneliminar
             // 
-            button3.BackColor = Color.Black;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(485, 575);
-            button3.Name = "button3";
-            button3.Size = new Size(78, 27);
-            button3.TabIndex = 28;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = false;
+            btneliminar.BackColor = Color.Black;
+            btneliminar.FlatStyle = FlatStyle.Flat;
+            btneliminar.ForeColor = Color.White;
+            btneliminar.Location = new Point(485, 575);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(78, 27);
+            btneliminar.TabIndex = 28;
+            btneliminar.Text = "Eliminar";
+            btneliminar.UseVisualStyleBackColor = false;
+            // 
+            // horariocursotxt
+            // 
+            horariocursotxt.BackColor = Color.White;
+            horariocursotxt.ForeColor = Color.Black;
+            horariocursotxt.Location = new Point(113, 299);
+            horariocursotxt.Name = "horariocursotxt";
+            horariocursotxt.Size = new Size(178, 23);
+            horariocursotxt.TabIndex = 22;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(horarioeditarcursotxt);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(cuposeditarcursotxt);
+            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(turnoeditarcursotxt);
+            groupBox2.Controls.Add(label14);
+            groupBox2.Controls.Add(label15);
+            groupBox2.Controls.Add(diaeditarcursotxt);
+            groupBox2.Controls.Add(label16);
+            groupBox2.Controls.Add(diveditarcursotxt);
+            groupBox2.Controls.Add(aulaeditarcursotxt);
+            groupBox2.Controls.Add(label17);
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(cuatrieditarcursotxt);
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(profesoreditarcursotxt);
+            groupBox2.Controls.Add(codigoeditarcursotxt);
+            groupBox2.Controls.Add(label20);
+            groupBox2.Controls.Add(nombreeditarcursotxt);
+            groupBox2.Controls.Add(label21);
+            groupBox2.ForeColor = Color.White;
+            groupBox2.Location = new Point(741, 52);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(307, 340);
+            groupBox2.TabIndex = 23;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Agregar Curso";
+            // 
+            // horarioeditarcursotxt
+            // 
+            horarioeditarcursotxt.BackColor = Color.White;
+            horarioeditarcursotxt.ForeColor = Color.Black;
+            horarioeditarcursotxt.Location = new Point(113, 299);
+            horarioeditarcursotxt.Name = "horarioeditarcursotxt";
+            horarioeditarcursotxt.Size = new Size(178, 23);
+            horarioeditarcursotxt.TabIndex = 22;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(9, 266);
+            label12.Name = "label12";
+            label12.Size = new Size(135, 21);
+            label12.TabIndex = 20;
+            label12.Text = "Cupos Disponible:";
+            // 
+            // cuposeditarcursotxt
+            // 
+            cuposeditarcursotxt.BackColor = Color.White;
+            cuposeditarcursotxt.ForeColor = Color.Black;
+            cuposeditarcursotxt.Location = new Point(173, 266);
+            cuposeditarcursotxt.Name = "cuposeditarcursotxt";
+            cuposeditarcursotxt.Size = new Size(118, 23);
+            cuposeditarcursotxt.TabIndex = 4;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(9, 234);
+            label13.Name = "label13";
+            label13.Size = new Size(51, 21);
+            label13.TabIndex = 19;
+            label13.Text = "Turno";
+            // 
+            // turnoeditarcursotxt
+            // 
+            turnoeditarcursotxt.BackColor = Color.White;
+            turnoeditarcursotxt.ForeColor = Color.Black;
+            turnoeditarcursotxt.Location = new Point(113, 234);
+            turnoeditarcursotxt.Name = "turnoeditarcursotxt";
+            turnoeditarcursotxt.Size = new Size(178, 23);
+            turnoeditarcursotxt.TabIndex = 18;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(9, 207);
+            label14.Name = "label14";
+            label14.Size = new Size(33, 21);
+            label14.TabIndex = 17;
+            label14.Text = "Dia";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(15, 299);
+            label15.Name = "label15";
+            label15.Size = new Size(63, 21);
+            label15.TabIndex = 21;
+            label15.Text = "Horario";
+            // 
+            // diaeditarcursotxt
+            // 
+            diaeditarcursotxt.BackColor = Color.White;
+            diaeditarcursotxt.ForeColor = Color.Black;
+            diaeditarcursotxt.Location = new Point(113, 205);
+            diaeditarcursotxt.Name = "diaeditarcursotxt";
+            diaeditarcursotxt.Size = new Size(178, 23);
+            diaeditarcursotxt.TabIndex = 16;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(9, 178);
+            label16.Name = "label16";
+            label16.Size = new Size(66, 21);
+            label16.TabIndex = 15;
+            label16.Text = "Division";
+            // 
+            // diveditarcursotxt
+            // 
+            diveditarcursotxt.BackColor = Color.White;
+            diveditarcursotxt.ForeColor = Color.Black;
+            diveditarcursotxt.Location = new Point(113, 176);
+            diveditarcursotxt.Name = "diveditarcursotxt";
+            diveditarcursotxt.Size = new Size(178, 23);
+            diveditarcursotxt.TabIndex = 14;
+            // 
+            // aulaeditarcursotxt
+            // 
+            aulaeditarcursotxt.BackColor = Color.White;
+            aulaeditarcursotxt.ForeColor = Color.Black;
+            aulaeditarcursotxt.Location = new Point(113, 147);
+            aulaeditarcursotxt.Name = "aulaeditarcursotxt";
+            aulaeditarcursotxt.Size = new Size(178, 23);
+            aulaeditarcursotxt.TabIndex = 13;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(9, 147);
+            label17.Name = "label17";
+            label17.Size = new Size(41, 21);
+            label17.TabIndex = 12;
+            label17.Text = "Aula";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(9, 118);
+            label18.Name = "label18";
+            label18.Size = new Size(100, 21);
+            label18.TabIndex = 11;
+            label18.Text = "Cuatrimestre";
+            // 
+            // cuatrieditarcursotxt
+            // 
+            cuatrieditarcursotxt.BackColor = Color.White;
+            cuatrieditarcursotxt.ForeColor = Color.Black;
+            cuatrieditarcursotxt.Location = new Point(113, 118);
+            cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
+            cuatrieditarcursotxt.Size = new Size(178, 23);
+            cuatrieditarcursotxt.TabIndex = 10;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(9, 89);
+            label19.Name = "label19";
+            label19.Size = new Size(69, 21);
+            label19.TabIndex = 9;
+            label19.Text = "Profesor";
+            // 
+            // profesoreditarcursotxt
+            // 
+            profesoreditarcursotxt.BackColor = Color.White;
+            profesoreditarcursotxt.ForeColor = Color.Black;
+            profesoreditarcursotxt.Location = new Point(113, 89);
+            profesoreditarcursotxt.Name = "profesoreditarcursotxt";
+            profesoreditarcursotxt.Size = new Size(178, 23);
+            profesoreditarcursotxt.TabIndex = 8;
+            // 
+            // codigoeditarcursotxt
+            // 
+            codigoeditarcursotxt.BackColor = Color.White;
+            codigoeditarcursotxt.ForeColor = Color.Black;
+            codigoeditarcursotxt.Location = new Point(113, 60);
+            codigoeditarcursotxt.Name = "codigoeditarcursotxt";
+            codigoeditarcursotxt.Size = new Size(178, 23);
+            codigoeditarcursotxt.TabIndex = 7;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(9, 60);
+            label20.Name = "label20";
+            label20.Size = new Size(60, 21);
+            label20.TabIndex = 6;
+            label20.Text = "Codigo";
+            // 
+            // nombreeditarcursotxt
+            // 
+            nombreeditarcursotxt.BackColor = Color.White;
+            nombreeditarcursotxt.ForeColor = Color.Black;
+            nombreeditarcursotxt.Location = new Point(113, 28);
+            nombreeditarcursotxt.Name = "nombreeditarcursotxt";
+            nombreeditarcursotxt.Size = new Size(178, 23);
+            nombreeditarcursotxt.TabIndex = 5;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.Transparent;
+            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(9, 28);
+            label21.Name = "label21";
+            label21.Size = new Size(68, 21);
+            label21.TabIndex = 4;
+            label21.Text = "Nombre";
+            // 
+            // btneditar
+            // 
+            btneditar.BackColor = Color.Black;
+            btneditar.FlatStyle = FlatStyle.Flat;
+            btneditar.ForeColor = Color.White;
+            btneditar.Location = new Point(970, 398);
+            btneditar.Name = "btneditar";
+            btneditar.Size = new Size(78, 27);
+            btneditar.TabIndex = 29;
+            btneditar.Text = "Editar";
+            btneditar.UseVisualStyleBackColor = false;
             // 
             // gestionarCurso
             // 
@@ -702,11 +650,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
-            Controls.Add(button3);
-            Controls.Add(groupBox3);
-            Controls.Add(button2);
+            Controls.Add(btneditar);
             Controls.Add(groupBox2);
-            Controls.Add(button1);
+            Controls.Add(btneliminar);
+            Controls.Add(groupBox3);
+            Controls.Add(btnregistrar);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -717,16 +665,12 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cuposcurso).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).EndInit();
             ResumeLayout(false);
         }
 
@@ -735,56 +679,52 @@
         private Label label1;
         private Panel panel1;
         private GroupBox groupBox1;
-        private TextBox textBox2;
+        private TextBox codigocursotxt;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox nombrecursotxt;
         private Label label2;
         private Label label9;
-        private TextBox textBox8;
+        private TextBox turnocursotxt;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox diacursotxt;
         private Label label7;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox divcursotxt;
+        private TextBox aulacursotxt;
         private Label label6;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox cuatricursotxt;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox profesorcursotxt;
         private Label label10;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown cuposcurso;
         private Label label11;
-        private NumericUpDown numericUpDown2;
-        private Label label12;
-        private NumericUpDown numericUpDown3;
-        private Button button1;
+        private Button btnregistrar;
+        private GroupBox groupBox3;
+        private TextBox codigoeliminarcursotxt;
+        private Label label24;
+        private Button btneliminar;
+        private TextBox horariocursotxt;
         private GroupBox groupBox2;
-        private NumericUpDown numericUpDown4;
+        private TextBox horarioeditarcursotxt;
+        private Label label12;
+        private NumericUpDown cuposeditarcursotxt;
         private Label label13;
-        private NumericUpDown numericUpDown5;
+        private TextBox turnoeditarcursotxt;
         private Label label14;
         private Label label15;
-        private TextBox textBox9;
-        private NumericUpDown numericUpDown6;
+        private TextBox diaeditarcursotxt;
         private Label label16;
+        private TextBox diveditarcursotxt;
+        private TextBox aulaeditarcursotxt;
         private Label label17;
-        private TextBox textBox10;
         private Label label18;
-        private TextBox textBox11;
-        private TextBox textBox12;
+        private TextBox cuatrieditarcursotxt;
         private Label label19;
+        private TextBox profesoreditarcursotxt;
+        private TextBox codigoeditarcursotxt;
         private Label label20;
-        private TextBox textBox13;
+        private TextBox nombreeditarcursotxt;
         private Label label21;
-        private TextBox textBox14;
-        private TextBox textBox15;
-        private Label label22;
-        private TextBox textBox16;
-        private Label label23;
-        private Button button2;
-        private GroupBox groupBox3;
-        private TextBox textBox17;
-        private Label label24;
-        private Button button3;
+        private Button btneditar;
     }
 }
