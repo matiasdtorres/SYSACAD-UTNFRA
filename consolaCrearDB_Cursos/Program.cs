@@ -12,14 +12,14 @@ namespace consolaCrearDB_Cursos
             {
                 connection.Open();
 
-                if (TableExists(connection, "estudiantes"))
+                if (TableExists(connection, "cursos"))
                 {
-                    Console.WriteLine("La tabla 'estudiantes' ya existe.");
+                    Console.WriteLine("La tabla 'cursos' ya existe.");
                 }
                 else
                 {
-                    CreateTable(connection, "estudiantes");
-                    Console.WriteLine("Tabla 'estudiantes' creada con éxito.");
+                    CreateTable(connection, "cursos");
+                    Console.WriteLine("Tabla 'cursos' creada con éxito.");
                 }
 
                 connection.Close();
@@ -45,13 +45,16 @@ namespace consolaCrearDB_Cursos
             string createTableQuery = $@"
             CREATE TABLE {tableName}
             (
-                legajo int primary key,
+                codigo int primary key,
                 nombre VARCHAR(50),
-                apellido VARCHAR(50),
-                direccion VARCHAR(50),
-                telefono VARCHAR(50),
-                email VARCHAR(50),
-                contraseña NVARCHAR(128)
+                descripcion VARCHAR(50),
+                horario VARCHAR(50),
+                cupoMaximo int,
+                profesor VARCHAR(50),
+                aula VARCHAR(50),
+                division VARCHAR(50),
+                dia VARCHAR(50),
+                cuatrimestre VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
