@@ -23,9 +23,10 @@ namespace sysacad
         private void MostrarLegajoEstudiante(string legajoLogeado)
         {
             //muestro el email del legajoLogeado consultando en la base de datos
-            string query = "SELECT legajo FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
-            MySqlCommand comando = new MySqlCommand(query, conexion);
             conexion.Open();
+            string query = "SELECT legajo FROM estudiantes WHERE legajo = @Legajo";
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+            comando.Parameters.AddWithValue("@Legajo", legajoLogeado);
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {

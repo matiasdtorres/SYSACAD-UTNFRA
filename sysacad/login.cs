@@ -63,6 +63,4 @@ namespace sysacad
             Application.Exit();
         }
     }
-
-    //leer autenticarCredenciales
 }

@@ -66,6 +66,7 @@
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
             Name = "incripcionCurso";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "incripcionCurso";
             ResumeLayout(false);
             PerformLayout();

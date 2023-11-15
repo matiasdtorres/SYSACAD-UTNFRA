@@ -19,6 +19,8 @@ namespace sysacad
 
         login logout;
         incripcionCurso inscribirme;
+        datosEstudiante datosAlumno;
+
         public dashboardEstudiante(string legajoLogeado)
         {
             InitializeComponent();
@@ -46,13 +48,13 @@ namespace sysacad
 
         private void MostrarNombreEstudiante(string legajoLogeado)
         {
-            string query = "SELECT nombre FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
+            string query = "SELECT legajo FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
             MySqlCommand comando = new MySqlCommand(query, conexion);
             conexion.Open();
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                bienvenido.Text = reader["nombre"].ToString();
+                bienvenido.Text = reader["legajo"].ToString();
             }
             conexion.Close();
         }
@@ -75,6 +77,26 @@ namespace sysacad
         private void Incribirme_FormClosed(object sender, FormClosedEventArgs e)
         {
             inscribirme = null;
+        }
+
+        private void btnmisdatos_Click(object sender, EventArgs e)
+        {
+            if (datosAlumno == null)
+            {
+                datosAlumno = new datosEstudiante(bienvenido.Text);
+                datosAlumno.FormClosed += DatosAlumno_FormClosed;
+                datosAlumno.MdiParent = this;
+                datosAlumno.Show();
+            }
+            else
+            {
+                datosAlumno.Activate();
+            }
+        }
+
+        private void DatosAlumno_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            datosAlumno = null;
         }
     }
 }

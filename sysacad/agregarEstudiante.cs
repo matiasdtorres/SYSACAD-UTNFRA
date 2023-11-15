@@ -35,7 +35,7 @@ namespace sysacad
                 string telefono = telefonotxt.Text;
                 string email = emailtxt.Text;
                 string contraseñaTemporal = contraseñaTemporaltxt.Text;
-                string legajo = legajotxt.Text;
+                int legajo = Convert.ToInt32(legajotxt.Text);
 
                 try
                 {

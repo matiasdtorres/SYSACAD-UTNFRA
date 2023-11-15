@@ -37,6 +37,7 @@
             btnlogout = new Button();
             btncerrar = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnmisdatos = new Button();
             btnincribircurso = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -132,6 +133,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.Black;
+            flowLayoutPanel1.Controls.Add(btnmisdatos);
             flowLayoutPanel1.Controls.Add(btnincribircurso);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
@@ -139,13 +141,27 @@
             flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 3;
             // 
+            // btnmisdatos
+            // 
+            btnmisdatos.BackColor = Color.White;
+            btnmisdatos.FlatAppearance.BorderSize = 0;
+            btnmisdatos.FlatStyle = FlatStyle.Flat;
+            btnmisdatos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnmisdatos.Location = new Point(3, 3);
+            btnmisdatos.Name = "btnmisdatos";
+            btnmisdatos.Size = new Size(215, 33);
+            btnmisdatos.TabIndex = 6;
+            btnmisdatos.Text = "Mis datos";
+            btnmisdatos.UseVisualStyleBackColor = false;
+            btnmisdatos.Click += btnmisdatos_Click;
+            // 
             // btnincribircurso
             // 
             btnincribircurso.BackColor = Color.White;
             btnincribircurso.FlatAppearance.BorderSize = 0;
             btnincribircurso.FlatStyle = FlatStyle.Flat;
             btnincribircurso.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnincribircurso.Location = new Point(3, 3);
+            btnincribircurso.Location = new Point(3, 42);
             btnincribircurso.Name = "btnincribircurso";
             btnincribircurso.Size = new Size(215, 33);
             btnincribircurso.TabIndex = 5;
@@ -186,5 +202,6 @@
         private Label label2;
         private Label bienvenido;
         private Label label3;
+        private Button btnmisdatos;
     }
 }

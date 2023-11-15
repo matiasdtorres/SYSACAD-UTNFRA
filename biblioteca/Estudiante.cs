@@ -13,7 +13,7 @@ namespace biblioteca
         //Atributos propios de la clase Estudiante
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Legajo { get; set; }
+        public int Legajo { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
@@ -21,7 +21,7 @@ namespace biblioteca
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         //Constructor de la clase Estudiante
-        public Estudiante(string legajo, string nombre, string apellido, string direccion, string telefono, string email, string contraseña) : base(nombre, contraseña)
+        public Estudiante(int legajo, string nombre, string apellido, string direccion, string telefono, string email, string contraseña) : base(nombre, contraseña)
         {
             Nombre = nombre;
             Apellido = apellido;
@@ -60,24 +60,5 @@ namespace biblioteca
                 return filasAfectadas;
             }
         }
-
-        //Metodo de inscripcion a un curso usando el legajoLogeado
-        //public int InscribirseACurso(string id_curso, string legajoLogeado)
-        //{
-        //    using (conexion)
-        //    {
-        //        conexion.Open();
-        //        string query = "INSERT INTO cursos (id_curso, id_estudiante) VALUES (@id_curso, @id_estudiante)";
-        //        MySqlCommand comando = new MySqlCommand(query, conexion);
-
-        //        comando.Parameters.AddWithValue("@id_curso", id_curso);
-        //        comando.Parameters.AddWithValue("@id_estudiante", legajoLogeado);
-
-        //        int filasAfectadas = comando.ExecuteNonQuery();
-
-        //        return filasAfectadas;
-        //    }
-        //}
-
     }
 }

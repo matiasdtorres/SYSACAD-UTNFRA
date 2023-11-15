@@ -12,7 +12,7 @@ namespace biblioteca
 
         public bool ObtenerUltimoLegajo(out int ultimoLegajo)
         {
-            ultimoLegajo = 10000;
+            ultimoLegajo = 0;
 
             try
             {
