@@ -12,15 +12,15 @@ namespace sysacad
 {
     public partial class incripcionCurso : Form
     {
-        public incripcionCurso(string legajo)
+        public incripcionCurso(string legajoLogeado)
         {
             InitializeComponent();
-            MostrarNumeroEstudiante(legajo);
+            MostrarNumeroEstudiante(legajoLogeado);
         }
 
-        private void MostrarNumeroEstudiante(string legajo)
+        private void MostrarNumeroEstudiante(string legajoLogeado)
         {
-            nombrebienvenida.Text = legajo.ToString();
+            nombrebienvenida.Text = legajoLogeado.ToString();
         }
     }
 }
