@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +15,14 @@ namespace sysacad
 {
     public partial class dashboardEstudiante : Form
     {
+        MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
+
         login logout;
         incripcionCurso inscribirme;
         public dashboardEstudiante(string legajoLogeado)
         {
             InitializeComponent();
-            MostrarNumeroEstudiante(legajoLogeado);
+            MostrarNombreEstudiante(legajoLogeado);
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -41,40 +44,31 @@ namespace sysacad
             }
         }
 
-        private void MostrarNumeroEstudiante(string legajoLogeado)
+        private void MostrarNombreEstudiante(string legajoLogeado)
         {
-            mostrarlegajo.Text = legajoLogeado.ToString();
-        }
-
-        private void IncribirseACurso(string legajoLogeado)
-        {
-            try
+            string query = "SELECT nombre FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+            conexion.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
             {
-                //string query = "INSERT INTO `inscripciones`(`id`, `id_curso`, `id_estudiante`) VALUES (NULL, '" + id_curso + "', '" + legajo + "')";
-                //MySqlCommand comando = new MySqlCommand(query, conexion);
-                //conexion.Open();
-                //comando.ExecuteNonQuery();
-                //conexion.Close();
-                //MessageBox.Show("Inscripcion realizada con exito");
+                bienvenido.Text = reader["nombre"].ToString();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            conexion.Close();
         }
 
         private void btnincribircurso_Click(object sender, EventArgs e)
         {
-            try
+            if (inscribirme == null)
             {
-                inscribirme = new incripcionCurso(mostrarlegajo.Text);
+                inscribirme = new incripcionCurso(bienvenido.Text);
                 inscribirme.FormClosed += Incribirme_FormClosed;
                 inscribirme.MdiParent = this;
                 inscribirme.Show();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                inscribirme.Activate();
             }
         }
 

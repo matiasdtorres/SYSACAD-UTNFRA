@@ -10,6 +10,9 @@
     <Compile Update="dashboardEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="datosEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="gestionarCurso.cs">
       <SubType>Form</SubType>
     </Compile>

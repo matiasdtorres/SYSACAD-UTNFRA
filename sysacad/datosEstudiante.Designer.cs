@@ -1,6 +1,6 @@
 ﻿namespace sysacad
 {
-    partial class incripcionCurso
+    partial class datosEstudiante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            legajotxt = new Label();
             label1 = new Label();
             SuspendLayout();
-            // 
-            // legajotxt
-            // 
-            legajotxt.AutoSize = true;
-            legajotxt.Location = new Point(480, 55);
-            legajotxt.Name = "legajotxt";
-            legajotxt.Size = new Size(38, 15);
-            legajotxt.TabIndex = 0;
-            legajotxt.Text = "label1";
             // 
             // label1
             // 
@@ -49,31 +39,31 @@
             label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.ImageAlign = ContentAlignment.MiddleRight;
-            label1.Location = new Point(364, 0);
+            label1.Location = new Point(428, 0);
             label1.Name = "label1";
-            label1.Size = new Size(269, 37);
-            label1.TabIndex = 2;
-            label1.Text = "Inscribirme a curso";
+            label1.Size = new Size(150, 37);
+            label1.TabIndex = 3;
+            label1.Text = "Mis Datos";
             // 
-            // incripcionCurso
+            // datosEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
             Controls.Add(label1);
-            Controls.Add(legajotxt);
+            Cursor = Cursors.Default;
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "incripcionCurso";
-            Text = "incripcionCurso";
+            Name = "datosEstudiante";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "datosEstudiante";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label legajotxt;
         private Label label1;
     }
 }

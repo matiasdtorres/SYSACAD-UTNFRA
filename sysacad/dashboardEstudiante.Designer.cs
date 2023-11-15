@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
-            mostrarlegajo = new Label();
+            label3 = new Label();
+            bienvenido = new Label();
+            label1 = new Label();
+            label2 = new Label();
             btnlogout = new Button();
             btncerrar = new Button();
-            label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnincribircurso = new Button();
             panel1.SuspendLayout();
@@ -43,7 +45,10 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
-            panel1.Controls.Add(mostrarlegajo);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(bienvenido);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(btnlogout);
             panel1.Controls.Add(btncerrar);
             panel1.Dock = DockStyle.Top;
@@ -52,15 +57,51 @@
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
             // 
-            // mostrarlegajo
+            // label3
             // 
-            mostrarlegajo.AutoSize = true;
-            mostrarlegajo.ForeColor = Color.White;
-            mostrarlegajo.Location = new Point(637, 16);
-            mostrarlegajo.Name = "mostrarlegajo";
-            mostrarlegajo.Size = new Size(38, 15);
-            mostrarlegajo.TabIndex = 6;
-            mostrarlegajo.Text = "label2";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(209, 2);
+            label3.Name = "label3";
+            label3.Size = new Size(26, 37);
+            label3.TabIndex = 9;
+            label3.Text = "|";
+            // 
+            // bienvenido
+            // 
+            bienvenido.AutoSize = true;
+            bienvenido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bienvenido.ForeColor = Color.White;
+            bienvenido.Location = new Point(341, 14);
+            bienvenido.Name = "bienvenido";
+            bienvenido.Size = new Size(81, 21);
+            bienvenido.TabIndex = 8;
+            bienvenido.Text = "USUARIO";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Black;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(43, 5);
+            label1.Name = "label1";
+            label1.Size = new Size(138, 37);
+            label1.TabIndex = 2;
+            label1.Text = "SYSACAD";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(231, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 21);
+            label2.TabIndex = 7;
+            label2.Text = "BIENVENIDO";
             // 
             // btnlogout
             // 
@@ -87,18 +128,6 @@
             btncerrar.Text = "X";
             btncerrar.UseVisualStyleBackColor = false;
             btncerrar.Click += btncerrar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Black;
-            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(221, 30);
-            label1.TabIndex = 2;
-            label1.Text = "SYSACAD | UTN FRA";
             // 
             // flowLayoutPanel1
             // 
@@ -132,7 +161,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1284, 665);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(label1);
             Controls.Add(panel1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
@@ -145,7 +173,6 @@
             panel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -155,7 +182,9 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btncerrar;
         private Button btnlogout;
-        private Label mostrarlegajo;
         private Button btnincribircurso;
+        private Label label2;
+        private Label bienvenido;
+        private Label label3;
     }
 }

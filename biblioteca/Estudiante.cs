@@ -60,5 +60,24 @@ namespace biblioteca
                 return filasAfectadas;
             }
         }
+
+        //Metodo de inscripcion a un curso usando el legajoLogeado
+        //public int InscribirseACurso(string id_curso, string legajoLogeado)
+        //{
+        //    using (conexion)
+        //    {
+        //        conexion.Open();
+        //        string query = "INSERT INTO cursos (id_curso, id_estudiante) VALUES (@id_curso, @id_estudiante)";
+        //        MySqlCommand comando = new MySqlCommand(query, conexion);
+
+        //        comando.Parameters.AddWithValue("@id_curso", id_curso);
+        //        comando.Parameters.AddWithValue("@id_estudiante", legajoLogeado);
+
+        //        int filasAfectadas = comando.ExecuteNonQuery();
+
+        //        return filasAfectadas;
+        //    }
+        //}
+
     }
 }
