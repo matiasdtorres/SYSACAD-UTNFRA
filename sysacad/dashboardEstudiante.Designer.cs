@@ -30,16 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
+            mostrarlegajo = new Label();
             btnlogout = new Button();
             btncerrar = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnincribircurso = new Button();
             panel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(mostrarlegajo);
             panel1.Controls.Add(btnlogout);
             panel1.Controls.Add(btncerrar);
             panel1.Dock = DockStyle.Top;
@@ -47,6 +51,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
+            // 
+            // mostrarlegajo
+            // 
+            mostrarlegajo.AutoSize = true;
+            mostrarlegajo.ForeColor = Color.White;
+            mostrarlegajo.Location = new Point(637, 16);
+            mostrarlegajo.Name = "mostrarlegajo";
+            mostrarlegajo.Size = new Size(38, 15);
+            mostrarlegajo.TabIndex = 6;
+            mostrarlegajo.Text = "label2";
             // 
             // btnlogout
             // 
@@ -89,11 +103,26 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.Black;
+            flowLayoutPanel1.Controls.Add(btnincribircurso);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(220, 619);
             flowLayoutPanel1.TabIndex = 3;
+            // 
+            // btnincribircurso
+            // 
+            btnincribircurso.BackColor = Color.White;
+            btnincribircurso.FlatAppearance.BorderSize = 0;
+            btnincribircurso.FlatStyle = FlatStyle.Flat;
+            btnincribircurso.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnincribircurso.Location = new Point(3, 3);
+            btnincribircurso.Name = "btnincribircurso";
+            btnincribircurso.Size = new Size(215, 33);
+            btnincribircurso.TabIndex = 5;
+            btnincribircurso.Text = "Incripcion a curso";
+            btnincribircurso.UseVisualStyleBackColor = false;
+            btnincribircurso.Click += btnincribircurso_Click;
             // 
             // dashboardEstudiante
             // 
@@ -113,6 +142,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "dashboardEstudiante";
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,5 +155,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button btncerrar;
         private Button btnlogout;
+        private Label mostrarlegajo;
+        private Button btnincribircurso;
     }
 }

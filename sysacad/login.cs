@@ -23,50 +23,10 @@ namespace sysacad
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string password = passwordtxt.Text;
-
-            //try
-            //{
-            //    conexion.Open();
-            //    string query = "SELECT * FROM admin WHERE usuario = @Usuario";
-            //    SqlCommand comando = new SqlCommand(query, conexion);
-
-            //    comando.Parameters.AddWithValue("@Usuario", usuarioylegajotxt.Text);
-            //    SqlDataReader leer = comando.ExecuteReader();
-
-            //    if (leer.Read())
-            //    {
-            //        string hash = leer["hash"].ToString();
-
-            //        if (Hash.ValidatePassword(password, hash))
-            //        {
-            //            dashboard = new dashboardAdmin();
-            //            dashboard.Show();
-            //            this.Hide();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Contraseña incorrecta");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Usuario o legajo incorrecto");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            //finally
-            //{
-            //    conexion.Close();
-            //}
-
             try
             {
                 //Verificar si es admin
-                if (VerificarDatos.VerificoAdmin(usuarioylegajotxt.Text, password))
+                if (VerificarDatos.VerificoAdmin(usuarioylegajotxt.Text, passwordtxt.Text))
                 {
                     dashboardAdministrador = new dashboardAdmin();
                     dashboardAdministrador.Show();
@@ -75,9 +35,10 @@ namespace sysacad
                 else
                 {
                     //Verificar si es estudiante
-                    if (VerificarDatos.VerificoEstudiante(usuarioylegajotxt.Text, password))
+                    if (VerificarDatos.VerificoEstudiante(usuarioylegajotxt.Text, passwordtxt.Text))
                     {
-                        dashboardAlumno = new dashboardEstudiante();
+                        string legajoLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el legajoLogeado
+                        dashboardAlumno = new dashboardEstudiante(legajoLogeado);
                         dashboardAlumno.Show();
                         this.Hide();
                     }

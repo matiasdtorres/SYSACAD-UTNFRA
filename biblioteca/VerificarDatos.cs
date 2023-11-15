@@ -55,16 +55,6 @@ namespace biblioteca
                         string hash = result.ToString();
                         return Hash.ValidatePassword(contraseña, hash);
                     }
-
-                    //chequea si la contraseña de contraseñaTemporaltxt es igual a la contraseña de la base de datos (todo es sin hash)
-                    //MySqlDataReader reader = comando.ExecuteReader();
-                    //while (reader.Read())
-                    //{
-                    //    if (reader["contraseña"].ToString() == contraseña)
-                    //    {
-                    //        return true;
-                    //    }
-                    //}
                 }
             }
 
