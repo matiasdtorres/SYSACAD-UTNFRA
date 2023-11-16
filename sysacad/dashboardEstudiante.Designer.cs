@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
+            label5 = new Label();
+            bienvenidolegajo = new Label();
             label3 = new Label();
             bienvenidonombre = new Label();
             label1 = new Label();
@@ -39,8 +41,6 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnmisdatos = new Button();
             btnincribircurso = new Button();
-            bienvenidolegajo = new Label();
-            label5 = new Label();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -61,6 +61,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(515, 13);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 21);
+            label5.TabIndex = 11;
+            label5.Text = "N° Legajo:";
+            // 
+            // bienvenidolegajo
+            // 
+            bienvenidolegajo.AutoSize = true;
+            bienvenidolegajo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bienvenidolegajo.ForeColor = Color.White;
+            bienvenidolegajo.Location = new Point(601, 14);
+            bienvenidolegajo.Name = "bienvenidolegajo";
+            bienvenidolegajo.Size = new Size(69, 21);
+            bienvenidolegajo.TabIndex = 10;
+            bienvenidolegajo.Text = "LEGAJO";
             // 
             // label3
             // 
@@ -104,9 +126,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(231, 14);
             label2.Name = "label2";
-            label2.Size = new Size(109, 21);
+            label2.Size = new Size(113, 21);
             label2.TabIndex = 7;
-            label2.Text = "BIENVENIDO";
+            label2.Text = "BIENVENIDO:";
             // 
             // btnlogout
             // 
@@ -172,28 +194,6 @@
             btnincribircurso.Text = "Incripcion a curso";
             btnincribircurso.UseVisualStyleBackColor = false;
             btnincribircurso.Click += btnincribircurso_Click;
-            // 
-            // bienvenidolegajo
-            // 
-            bienvenidolegajo.AutoSize = true;
-            bienvenidolegajo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bienvenidolegajo.ForeColor = Color.White;
-            bienvenidolegajo.Location = new Point(601, 14);
-            bienvenidolegajo.Name = "bienvenidolegajo";
-            bienvenidolegajo.Size = new Size(69, 21);
-            bienvenidolegajo.TabIndex = 10;
-            bienvenidolegajo.Text = "LEGAJO";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(515, 13);
-            label5.Name = "label5";
-            label5.Size = new Size(88, 21);
-            label5.TabIndex = 11;
-            label5.Text = "N° Legajo:";
             // 
             // dashboardEstudiante
             // 

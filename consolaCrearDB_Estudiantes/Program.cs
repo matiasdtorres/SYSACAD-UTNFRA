@@ -51,7 +51,11 @@ namespace consolaCrearDB_Estudiantes
                 direccion VARCHAR(50),
                 telefono VARCHAR(50),
                 email VARCHAR(50),
-                contraseña NVARCHAR(128)
+                contraseña NVARCHAR(128),
+                materia1 VARCHAR(50),
+                materia2 VARCHAR(50),
+                materia3 VARCHAR(50),
+                materia4 VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
