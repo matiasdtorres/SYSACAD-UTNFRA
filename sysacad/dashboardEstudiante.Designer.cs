@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
             label3 = new Label();
-            bienvenido = new Label();
+            bienvenidonombre = new Label();
             label1 = new Label();
             label2 = new Label();
             btnlogout = new Button();
@@ -39,6 +39,8 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnmisdatos = new Button();
             btnincribircurso = new Button();
+            bienvenidolegajo = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -46,8 +48,10 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(bienvenidolegajo);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(bienvenido);
+            panel1.Controls.Add(bienvenidonombre);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnlogout);
@@ -70,16 +74,16 @@
             label3.TabIndex = 9;
             label3.Text = "|";
             // 
-            // bienvenido
+            // bienvenidonombre
             // 
-            bienvenido.AutoSize = true;
-            bienvenido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bienvenido.ForeColor = Color.White;
-            bienvenido.Location = new Point(341, 14);
-            bienvenido.Name = "bienvenido";
-            bienvenido.Size = new Size(81, 21);
-            bienvenido.TabIndex = 8;
-            bienvenido.Text = "USUARIO";
+            bienvenidonombre.AutoSize = true;
+            bienvenidonombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bienvenidonombre.ForeColor = Color.White;
+            bienvenidonombre.Location = new Point(341, 14);
+            bienvenidonombre.Name = "bienvenidonombre";
+            bienvenidonombre.Size = new Size(81, 21);
+            bienvenidonombre.TabIndex = 8;
+            bienvenidonombre.Text = "USUARIO";
             // 
             // label1
             // 
@@ -169,6 +173,28 @@
             btnincribircurso.UseVisualStyleBackColor = false;
             btnincribircurso.Click += btnincribircurso_Click;
             // 
+            // bienvenidolegajo
+            // 
+            bienvenidolegajo.AutoSize = true;
+            bienvenidolegajo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bienvenidolegajo.ForeColor = Color.White;
+            bienvenidolegajo.Location = new Point(601, 14);
+            bienvenidolegajo.Name = "bienvenidolegajo";
+            bienvenidolegajo.Size = new Size(69, 21);
+            bienvenidolegajo.TabIndex = 10;
+            bienvenidolegajo.Text = "LEGAJO";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(515, 13);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 21);
+            label5.TabIndex = 11;
+            label5.Text = "N° Legajo:";
+            // 
             // dashboardEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -200,8 +226,10 @@
         private Button btnlogout;
         private Button btnincribircurso;
         private Label label2;
-        private Label bienvenido;
+        private Label bienvenidonombre;
         private Label label3;
         private Button btnmisdatos;
+        private Label label5;
+        private Label bienvenidolegajo;
     }
 }

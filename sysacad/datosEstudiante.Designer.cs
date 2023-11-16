@@ -41,6 +41,7 @@
             emailtxt = new TextBox();
             label7 = new Label();
             legajotxt = new TextBox();
+            btneditar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -63,6 +64,7 @@
             nombretxt.ForeColor = Color.White;
             nombretxt.Location = new Point(428, 96);
             nombretxt.Name = "nombretxt";
+            nombretxt.ReadOnly = true;
             nombretxt.Size = new Size(150, 23);
             nombretxt.TabIndex = 4;
             nombretxt.TextAlign = HorizontalAlignment.Center;
@@ -91,6 +93,7 @@
             apellidotxt.ForeColor = Color.White;
             apellidotxt.Location = new Point(428, 142);
             apellidotxt.Name = "apellidotxt";
+            apellidotxt.ReadOnly = true;
             apellidotxt.Size = new Size(150, 23);
             apellidotxt.TabIndex = 7;
             apellidotxt.TextAlign = HorizontalAlignment.Center;
@@ -167,9 +170,23 @@
             legajotxt.ForeColor = Color.White;
             legajotxt.Location = new Point(428, 327);
             legajotxt.Name = "legajotxt";
+            legajotxt.ReadOnly = true;
             legajotxt.Size = new Size(150, 23);
             legajotxt.TabIndex = 15;
             legajotxt.TextAlign = HorizontalAlignment.Center;
+            // 
+            // btneditar
+            // 
+            btneditar.BackColor = Color.White;
+            btneditar.FlatStyle = FlatStyle.Flat;
+            btneditar.ForeColor = Color.Black;
+            btneditar.Location = new Point(463, 368);
+            btneditar.Name = "btneditar";
+            btneditar.Size = new Size(75, 23);
+            btneditar.TabIndex = 16;
+            btneditar.Text = "EDITAR";
+            btneditar.UseVisualStyleBackColor = false;
+            btneditar.Click += btneditar_Click;
             // 
             // datosEstudiante
             // 
@@ -177,6 +194,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
+            Controls.Add(btneditar);
             Controls.Add(legajotxt);
             Controls.Add(label7);
             Controls.Add(emailtxt);
@@ -214,5 +232,6 @@
         private TextBox emailtxt;
         private Label label7;
         private TextBox legajotxt;
+        private Button btneditar;
     }
 }

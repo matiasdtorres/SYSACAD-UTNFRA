@@ -25,6 +25,7 @@ namespace sysacad
         {
             InitializeComponent();
             MostrarNombreEstudiante(legajoLogeado);
+            MostrarLegajoEstudiante(legajoLogeado);
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace sysacad
             }
         }
 
-        private void MostrarNombreEstudiante(string legajoLogeado)
+        private void MostrarLegajoEstudiante(string legajoLogeado)
         {
             string query = "SELECT legajo FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
             MySqlCommand comando = new MySqlCommand(query, conexion);
@@ -54,7 +55,20 @@ namespace sysacad
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
-                bienvenido.Text = reader["legajo"].ToString();
+                bienvenidolegajo.Text = reader["legajo"].ToString();
+            }
+            conexion.Close();
+        }
+
+        private void MostrarNombreEstudiante(string legajoLogeado)
+        {
+            string query = "SELECT nombre FROM estudiantes WHERE legajo = '" + legajoLogeado + "'";
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+            conexion.Open();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                bienvenidonombre.Text = reader["nombre"].ToString();
             }
             conexion.Close();
         }
@@ -63,7 +77,7 @@ namespace sysacad
         {
             if (inscribirme == null)
             {
-                inscribirme = new incripcionCurso(bienvenido.Text);
+                inscribirme = new incripcionCurso(bienvenidolegajo.Text);
                 inscribirme.FormClosed += Incribirme_FormClosed;
                 inscribirme.MdiParent = this;
                 inscribirme.Show();
@@ -83,7 +97,7 @@ namespace sysacad
         {
             if (datosAlumno == null)
             {
-                datosAlumno = new datosEstudiante(bienvenido.Text);
+                datosAlumno = new datosEstudiante(bienvenidolegajo.Text);
                 datosAlumno.FormClosed += DatosAlumno_FormClosed;
                 datosAlumno.MdiParent = this;
                 datosAlumno.Show();
