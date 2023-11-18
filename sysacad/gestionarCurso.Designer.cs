@@ -46,7 +46,6 @@
             aulacursotxt = new TextBox();
             label6 = new Label();
             label5 = new Label();
-            cuatricursotxt = new TextBox();
             label4 = new Label();
             profesorcursotxt = new TextBox();
             codigocursotxt = new TextBox();
@@ -75,7 +74,6 @@
             aulaeditarcursotxt = new TextBox();
             label18 = new Label();
             label19 = new Label();
-            cuatrieditarcursotxt = new TextBox();
             label20 = new Label();
             profesoreditarcursotxt = new TextBox();
             codigoeditarcursotxt = new TextBox();
@@ -83,6 +81,8 @@
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
             cursos = new DataGridView();
+            cuatricursotxt = new NumericUpDown();
+            cuatrieditarcursotxt = new NumericUpDown();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
@@ -90,6 +90,8 @@
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -119,6 +121,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(cuatricursotxt);
             groupBox1.Controls.Add(descripcioncursotxt);
             groupBox1.Controls.Add(label22);
             groupBox1.Controls.Add(horariocursotxt);
@@ -134,7 +137,6 @@
             groupBox1.Controls.Add(aulacursotxt);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(cuatricursotxt);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(profesorcursotxt);
             groupBox1.Controls.Add(codigocursotxt);
@@ -301,15 +303,6 @@
             label5.TabIndex = 11;
             label5.Text = "Cuatrimestre";
             // 
-            // cuatricursotxt
-            // 
-            cuatricursotxt.BackColor = Color.White;
-            cuatricursotxt.ForeColor = Color.Black;
-            cuatricursotxt.Location = new Point(113, 118);
-            cuatricursotxt.Name = "cuatricursotxt";
-            cuatricursotxt.Size = new Size(178, 23);
-            cuatricursotxt.TabIndex = 10;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -447,6 +440,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(cuatrieditarcursotxt);
             groupBox2.Controls.Add(descripcioneditarcursotxt);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(horarioeditarcursotxt);
@@ -462,7 +456,6 @@
             groupBox2.Controls.Add(aulaeditarcursotxt);
             groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(label19);
-            groupBox2.Controls.Add(cuatrieditarcursotxt);
             groupBox2.Controls.Add(label20);
             groupBox2.Controls.Add(profesoreditarcursotxt);
             groupBox2.Controls.Add(codigoeditarcursotxt);
@@ -629,15 +622,6 @@
             label19.TabIndex = 11;
             label19.Text = "Cuatrimestre";
             // 
-            // cuatrieditarcursotxt
-            // 
-            cuatrieditarcursotxt.BackColor = Color.White;
-            cuatrieditarcursotxt.ForeColor = Color.Black;
-            cuatrieditarcursotxt.Location = new Point(113, 118);
-            cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
-            cuatrieditarcursotxt.Size = new Size(178, 23);
-            cuatrieditarcursotxt.TabIndex = 10;
-            // 
             // label20
             // 
             label20.AutoSize = true;
@@ -711,6 +695,24 @@
             cursos.TabIndex = 30;
             cursos.CellClick += cursos_CellClick;
             // 
+            // cuatricursotxt
+            // 
+            cuatricursotxt.BackColor = Color.White;
+            cuatricursotxt.ForeColor = Color.Black;
+            cuatricursotxt.Location = new Point(113, 118);
+            cuatricursotxt.Name = "cuatricursotxt";
+            cuatricursotxt.Size = new Size(178, 23);
+            cuatricursotxt.TabIndex = 25;
+            // 
+            // cuatrieditarcursotxt
+            // 
+            cuatrieditarcursotxt.BackColor = Color.White;
+            cuatrieditarcursotxt.ForeColor = Color.Black;
+            cuatrieditarcursotxt.Location = new Point(115, 118);
+            cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
+            cuatrieditarcursotxt.Size = new Size(176, 23);
+            cuatrieditarcursotxt.TabIndex = 26;
+            // 
             // gestionarCurso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -741,6 +743,8 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cursos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).EndInit();
             ResumeLayout(false);
         }
 
@@ -762,7 +766,6 @@
         private TextBox aulacursotxt;
         private Label label6;
         private Label label5;
-        private TextBox cuatricursotxt;
         private Label label4;
         private TextBox profesorcursotxt;
         private Label label10;
@@ -793,7 +796,6 @@
         private TextBox aulaeditarcursotxt;
         private Label label18;
         private Label label19;
-        private TextBox cuatrieditarcursotxt;
         private Label label20;
         private TextBox profesoreditarcursotxt;
         private TextBox codigoeditarcursotxt;
@@ -801,5 +803,7 @@
         private TextBox nombreeditarcursotxt;
         private Label label23;
         private DataGridView cursos;
+        private NumericUpDown cuatricursotxt;
+        private NumericUpDown cuatrieditarcursotxt;
     }
 }
