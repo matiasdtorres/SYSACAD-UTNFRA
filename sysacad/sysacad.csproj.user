@@ -16,6 +16,9 @@
     <Compile Update="gestionarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="incripcionCurso.cs">
       <SubType>Form</SubType>
     </Compile>

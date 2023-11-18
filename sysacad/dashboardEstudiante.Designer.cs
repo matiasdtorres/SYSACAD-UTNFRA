@@ -41,6 +41,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnmisdatos = new Button();
             btnincribircurso = new Button();
+            btnconsultarhorarios = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -161,6 +162,7 @@
             flowLayoutPanel1.BackColor = Color.Black;
             flowLayoutPanel1.Controls.Add(btnmisdatos);
             flowLayoutPanel1.Controls.Add(btnincribircurso);
+            flowLayoutPanel1.Controls.Add(btnconsultarhorarios);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -194,6 +196,20 @@
             btnincribircurso.Text = "Incripcion a curso";
             btnincribircurso.UseVisualStyleBackColor = false;
             btnincribircurso.Click += btnincribircurso_Click;
+            // 
+            // btnconsultarhorarios
+            // 
+            btnconsultarhorarios.BackColor = Color.White;
+            btnconsultarhorarios.FlatAppearance.BorderSize = 0;
+            btnconsultarhorarios.FlatStyle = FlatStyle.Flat;
+            btnconsultarhorarios.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnconsultarhorarios.Location = new Point(3, 81);
+            btnconsultarhorarios.Name = "btnconsultarhorarios";
+            btnconsultarhorarios.Size = new Size(215, 33);
+            btnconsultarhorarios.TabIndex = 7;
+            btnconsultarhorarios.Text = "Consultar Horarios";
+            btnconsultarhorarios.UseVisualStyleBackColor = false;
+            btnconsultarhorarios.Click += btnconsultarhorarios_Click;
             // 
             // dashboardEstudiante
             // 
@@ -231,5 +247,6 @@
         private Button btnmisdatos;
         private Label label5;
         private Label bienvenidolegajo;
+        private Button btnconsultarhorarios;
     }
 }

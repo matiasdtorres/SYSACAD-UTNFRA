@@ -20,6 +20,7 @@ namespace sysacad
         login logout;
         incripcionCurso inscribirme;
         datosEstudiante datosAlumno;
+        horarios consultarHorarios;
 
         public dashboardEstudiante(string legajoLogeado)
         {
@@ -111,6 +112,26 @@ namespace sysacad
         private void DatosAlumno_FormClosed(object sender, FormClosedEventArgs e)
         {
             datosAlumno = null;
+        }
+
+        private void btnconsultarhorarios_Click(object sender, EventArgs e)
+        {
+            if (consultarHorarios == null)
+            {
+                consultarHorarios = new horarios(bienvenidolegajo.Text);
+                consultarHorarios.FormClosed += ConsultarHorarios_FormClosed;
+                consultarHorarios.MdiParent = this;
+                consultarHorarios.Show();
+            }
+            else
+            {
+                consultarHorarios.Activate();
+            }
+        }
+
+        private void ConsultarHorarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            consultarHorarios = null;
         }
     }
 }

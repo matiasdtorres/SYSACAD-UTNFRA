@@ -128,3 +128,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\bin\Debug\net6.0-wi
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.incripcionCurso.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.datosEstudiante.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.horarios.resources
