@@ -13,7 +13,8 @@ namespace biblioteca
         public string Nombre { get; set; }
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
-        public string Horario { get; set; }
+        public int HorarioMin { get; set; }
+        public int HorarioMax { get; set; }
         public int CupoMaximo { get; set; }
         public string Profesor { get; set; }
         public string Aula { get; set; }
@@ -22,12 +23,13 @@ namespace biblioteca
         public string Turno { get; set; }
         public string Cuatrimestre { get; set; }
 
-        public Curso(string nombre, string codigo, string descripcion, string horario, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre)
+        public Curso(string nombre, string codigo, string descripcion, int horarioMax, int horarioMin, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre)
         {
             Nombre = nombre;
             Codigo = codigo;
             Descripcion = descripcion;
-            Horario = horario;
+            HorarioMax = horarioMax;
+            HorarioMin = horarioMin;
             CupoMaximo = cupoMaximo;
             Profesor = profesor;
             Aula = aula;
@@ -43,13 +45,14 @@ namespace biblioteca
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "INSERT INTO cursos (nombre, codigo, descripcion, horario, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre) VALUES (@Nombre, @Codigo, @Descripcion, @Horario, @CupoMaximo, @Profesor, @Aula, @Division, @Dia, @Turno, @Cuatrimestre)";
+                string query = "INSERT INTO cursos (nombre, codigo, descripcion, horariomax, horariomin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre) VALUES (@Nombre, @Codigo, @Descripcion, @HorarioMax, @HorarioMin, @CupoMaximo, @Profesor, @Aula, @Division, @Dia, @Turno, @Cuatrimestre)";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Nombre", Nombre);
                 comando.Parameters.AddWithValue("@Codigo", Codigo);
                 comando.Parameters.AddWithValue("@Descripcion", Descripcion);
-                comando.Parameters.AddWithValue("@Horario", Horario);
+                comando.Parameters.AddWithValue("@HorarioMax", HorarioMax);
+                comando.Parameters.AddWithValue("@HorarioMin", HorarioMin);
                 comando.Parameters.AddWithValue("@CupoMaximo", CupoMaximo);
                 comando.Parameters.AddWithValue("@Profesor", Profesor);
                 comando.Parameters.AddWithValue("@Aula", Aula);
@@ -70,13 +73,14 @@ namespace biblioteca
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "UPDATE cursos SET nombre = @Nombre, codigo = @Codigo, descripcion = @Descripcion, horario = @Horario, cupoMaximo = @CupoMaximo, profesor = @Profesor, aula = @Aula, division = @Division, dia = @Dia, turno = @Turno, cuatrimestre = @Cuatrimestre WHERE codigo = @Codigo";
+                string query = "UPDATE cursos SET nombre = @Nombre, codigo = @Codigo, descripcion = @Descripcion, horariomax = @HorarioMax, horariomin = @HorarioMin, cupoMaximo = @CupoMaximo, profesor = @Profesor, aula = @Aula, division = @Division, dia = @Dia, turno = @Turno, cuatrimestre = @Cuatrimestre WHERE codigo = @Codigo";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Nombre", Nombre);
                 comando.Parameters.AddWithValue("@Codigo", Codigo);
                 comando.Parameters.AddWithValue("@Descripcion", Descripcion);
-                comando.Parameters.AddWithValue("@Horario", Horario);
+                comando.Parameters.AddWithValue("@HorarioMax", HorarioMax);
+                comando.Parameters.AddWithValue("@HorarioMin", HorarioMin);
                 comando.Parameters.AddWithValue("@CupoMaximo", CupoMaximo);
                 comando.Parameters.AddWithValue("@Profesor", Profesor);
                 comando.Parameters.AddWithValue("@Aula", Aula);

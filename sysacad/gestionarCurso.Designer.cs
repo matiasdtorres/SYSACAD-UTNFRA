@@ -31,9 +31,12 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
+            horariomaxcursotxt = new NumericUpDown();
+            label25 = new Label();
+            horariomincursotxt = new NumericUpDown();
+            cuatricursotxt = new NumericUpDown();
             descripcioncursotxt = new TextBox();
             label22 = new Label();
-            horariocursotxt = new TextBox();
             label10 = new Label();
             cuposcursotxt = new NumericUpDown();
             label9 = new Label();
@@ -59,9 +62,12 @@
             btneliminar = new Button();
             btneditar = new Button();
             groupBox2 = new GroupBox();
+            horariomaxeditartxt = new NumericUpDown();
+            label26 = new Label();
+            cuatrieditarcursotxt = new NumericUpDown();
+            horariomineditartxt = new NumericUpDown();
             descripcioneditarcursotxt = new TextBox();
             label12 = new Label();
-            horarioeditarcursotxt = new TextBox();
             label13 = new Label();
             cuposeditarcursotxt = new NumericUpDown();
             label14 = new Label();
@@ -81,17 +87,19 @@
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
             cursos = new DataGridView();
-            cuatricursotxt = new NumericUpDown();
-            cuatrieditarcursotxt = new NumericUpDown();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)horariomaxcursotxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)horariomincursotxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)horariomaxeditartxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)horariomineditartxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,10 +129,12 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(horariomaxcursotxt);
+            groupBox1.Controls.Add(label25);
+            groupBox1.Controls.Add(horariomincursotxt);
             groupBox1.Controls.Add(cuatricursotxt);
             groupBox1.Controls.Add(descripcioncursotxt);
             groupBox1.Controls.Add(label22);
-            groupBox1.Controls.Add(horariocursotxt);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(cuposcursotxt);
             groupBox1.Controls.Add(label9);
@@ -151,6 +161,44 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
             // 
+            // horariomaxcursotxt
+            // 
+            horariomaxcursotxt.BackColor = Color.White;
+            horariomaxcursotxt.ForeColor = Color.Black;
+            horariomaxcursotxt.Location = new Point(237, 262);
+            horariomaxcursotxt.Name = "horariomaxcursotxt";
+            horariomaxcursotxt.Size = new Size(54, 23);
+            horariomaxcursotxt.TabIndex = 28;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label25.ForeColor = Color.White;
+            label25.Location = new Point(187, 261);
+            label25.Name = "label25";
+            label25.Size = new Size(18, 21);
+            label25.TabIndex = 27;
+            label25.Text = "a";
+            // 
+            // horariomincursotxt
+            // 
+            horariomincursotxt.BackColor = Color.White;
+            horariomincursotxt.ForeColor = Color.Black;
+            horariomincursotxt.Location = new Point(114, 262);
+            horariomincursotxt.Name = "horariomincursotxt";
+            horariomincursotxt.Size = new Size(54, 23);
+            horariomincursotxt.TabIndex = 26;
+            // 
+            // cuatricursotxt
+            // 
+            cuatricursotxt.BackColor = Color.White;
+            cuatricursotxt.ForeColor = Color.Black;
+            cuatricursotxt.Location = new Point(113, 118);
+            cuatricursotxt.Name = "cuatricursotxt";
+            cuatricursotxt.Size = new Size(178, 23);
+            cuatricursotxt.TabIndex = 25;
+            // 
             // descripcioncursotxt
             // 
             descripcioncursotxt.BackColor = Color.White;
@@ -171,15 +219,6 @@
             label22.Size = new Size(91, 21);
             label22.TabIndex = 23;
             label22.Text = "Descripcion";
-            // 
-            // horariocursotxt
-            // 
-            horariocursotxt.BackColor = Color.White;
-            horariocursotxt.ForeColor = Color.Black;
-            horariocursotxt.Location = new Point(113, 264);
-            horariocursotxt.Name = "horariocursotxt";
-            horariocursotxt.Size = new Size(178, 23);
-            horariocursotxt.TabIndex = 22;
             // 
             // label10
             // 
@@ -440,10 +479,12 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(horariomaxeditartxt);
+            groupBox2.Controls.Add(label26);
             groupBox2.Controls.Add(cuatrieditarcursotxt);
+            groupBox2.Controls.Add(horariomineditartxt);
             groupBox2.Controls.Add(descripcioneditarcursotxt);
             groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(horarioeditarcursotxt);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(cuposeditarcursotxt);
             groupBox2.Controls.Add(label14);
@@ -470,6 +511,44 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Editar Curso";
             // 
+            // horariomaxeditartxt
+            // 
+            horariomaxeditartxt.BackColor = Color.White;
+            horariomaxeditartxt.ForeColor = Color.Black;
+            horariomaxeditartxt.Location = new Point(237, 264);
+            horariomaxeditartxt.Name = "horariomaxeditartxt";
+            horariomaxeditartxt.Size = new Size(54, 23);
+            horariomaxeditartxt.TabIndex = 31;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.ForeColor = Color.White;
+            label26.Location = new Point(187, 263);
+            label26.Name = "label26";
+            label26.Size = new Size(18, 21);
+            label26.TabIndex = 30;
+            label26.Text = "a";
+            // 
+            // cuatrieditarcursotxt
+            // 
+            cuatrieditarcursotxt.BackColor = Color.White;
+            cuatrieditarcursotxt.ForeColor = Color.Black;
+            cuatrieditarcursotxt.Location = new Point(115, 118);
+            cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
+            cuatrieditarcursotxt.Size = new Size(176, 23);
+            cuatrieditarcursotxt.TabIndex = 26;
+            // 
+            // horariomineditartxt
+            // 
+            horariomineditartxt.BackColor = Color.White;
+            horariomineditartxt.ForeColor = Color.Black;
+            horariomineditartxt.Location = new Point(114, 264);
+            horariomineditartxt.Name = "horariomineditartxt";
+            horariomineditartxt.Size = new Size(54, 23);
+            horariomineditartxt.TabIndex = 29;
+            // 
             // descripcioneditarcursotxt
             // 
             descripcioneditarcursotxt.BackColor = Color.White;
@@ -490,15 +569,6 @@
             label12.Size = new Size(91, 21);
             label12.TabIndex = 23;
             label12.Text = "Descripcion";
-            // 
-            // horarioeditarcursotxt
-            // 
-            horarioeditarcursotxt.BackColor = Color.White;
-            horarioeditarcursotxt.ForeColor = Color.Black;
-            horarioeditarcursotxt.Location = new Point(113, 264);
-            horarioeditarcursotxt.Name = "horarioeditarcursotxt";
-            horarioeditarcursotxt.Size = new Size(178, 23);
-            horarioeditarcursotxt.TabIndex = 22;
             // 
             // label13
             // 
@@ -695,24 +765,6 @@
             cursos.TabIndex = 30;
             cursos.CellClick += cursos_CellClick;
             // 
-            // cuatricursotxt
-            // 
-            cuatricursotxt.BackColor = Color.White;
-            cuatricursotxt.ForeColor = Color.Black;
-            cuatricursotxt.Location = new Point(113, 118);
-            cuatricursotxt.Name = "cuatricursotxt";
-            cuatricursotxt.Size = new Size(178, 23);
-            cuatricursotxt.TabIndex = 25;
-            // 
-            // cuatrieditarcursotxt
-            // 
-            cuatrieditarcursotxt.BackColor = Color.White;
-            cuatrieditarcursotxt.ForeColor = Color.Black;
-            cuatrieditarcursotxt.Location = new Point(115, 118);
-            cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
-            cuatrieditarcursotxt.Size = new Size(176, 23);
-            cuatrieditarcursotxt.TabIndex = 26;
-            // 
             // gestionarCurso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -736,15 +788,19 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)horariomaxcursotxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)horariomincursotxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)horariomaxeditartxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).EndInit();
+            ((System.ComponentModel.ISupportInitialize)horariomineditartxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cursos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).EndInit();
             ResumeLayout(false);
         }
 
@@ -776,14 +832,12 @@
         private TextBox codigoeliminarcursotxt;
         private Label label24;
         private Button btneliminar;
-        private TextBox horariocursotxt;
         private Button btneditar;
         private TextBox descripcioncursotxt;
         private Label label22;
         private GroupBox groupBox2;
         private TextBox descripcioneditarcursotxt;
         private Label label12;
-        private TextBox horarioeditarcursotxt;
         private Label label13;
         private NumericUpDown cuposeditarcursotxt;
         private Label label14;
@@ -805,5 +859,11 @@
         private DataGridView cursos;
         private NumericUpDown cuatricursotxt;
         private NumericUpDown cuatrieditarcursotxt;
+        private NumericUpDown horariomaxcursotxt;
+        private Label label25;
+        private NumericUpDown horariomincursotxt;
+        private NumericUpDown horariomaxeditartxt;
+        private Label label26;
+        private NumericUpDown horariomineditartxt;
     }
 }
