@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using biblioteca;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,6 +97,33 @@ namespace sysacad
                         if (filasAfectadas > 0)
                         {
                             MessageBox.Show("Datos actualizados correctamente");
+
+                            // Cambiar la contraseña si se proporciona una nueva contraseña
+                            if (!string.IsNullOrEmpty(cambiarpasstxt.Text))
+                            {
+                                string nuevaContraseña = cambiarpasstxt.Text;
+
+                                // Hash de la nueva contraseña
+                                string hash = Hash.GetHash(nuevaContraseña);
+
+                                // Consulta SQL para actualizar la contraseña del estudiante
+                                string query2 = "UPDATE estudiantes SET contraseña = @Contraseña WHERE legajo = @Legajo";
+                                MySqlCommand cmd2 = new MySqlCommand(query2, conexion);
+                                cmd2.Parameters.AddWithValue("@Contraseña", hash);
+                                cmd2.Parameters.AddWithValue("@Legajo", legajotxt.Text);
+
+                                int filasAfectadas2 = cmd2.ExecuteNonQuery();
+
+                                if (filasAfectadas2 > 0)
+                                {
+                                    MessageBox.Show("Contraseña actualizada correctamente");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudo actualizar la contraseña");
+                                }
+                            }
+
                             conexion.Close();
                         }
                         else

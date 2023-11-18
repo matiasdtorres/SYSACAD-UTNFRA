@@ -42,6 +42,8 @@
             label7 = new Label();
             legajotxt = new TextBox();
             btneditar = new Button();
+            label8 = new Label();
+            cambiarpasstxt = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -180,7 +182,7 @@
             btneditar.BackColor = Color.White;
             btneditar.FlatStyle = FlatStyle.Flat;
             btneditar.ForeColor = Color.Black;
-            btneditar.Location = new Point(463, 368);
+            btneditar.Location = new Point(463, 410);
             btneditar.Name = "btneditar";
             btneditar.Size = new Size(75, 23);
             btneditar.TabIndex = 16;
@@ -188,12 +190,33 @@
             btneditar.UseVisualStyleBackColor = false;
             btneditar.Click += btneditar_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(446, 355);
+            label8.Name = "label8";
+            label8.Size = new Size(118, 15);
+            label8.TabIndex = 17;
+            label8.Text = "Cambiar Contraseña:";
+            // 
+            // cambiarpasstxt
+            // 
+            cambiarpasstxt.BackColor = Color.Black;
+            cambiarpasstxt.ForeColor = Color.White;
+            cambiarpasstxt.Location = new Point(428, 373);
+            cambiarpasstxt.Name = "cambiarpasstxt";
+            cambiarpasstxt.Size = new Size(150, 23);
+            cambiarpasstxt.TabIndex = 18;
+            cambiarpasstxt.TextAlign = HorizontalAlignment.Center;
+            // 
             // datosEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
+            Controls.Add(cambiarpasstxt);
+            Controls.Add(label8);
             Controls.Add(btneditar);
             Controls.Add(legajotxt);
             Controls.Add(label7);
@@ -233,5 +256,7 @@
         private Label label7;
         private TextBox legajotxt;
         private Button btneditar;
+        private Label label8;
+        private TextBox cambiarpasstxt;
     }
 }

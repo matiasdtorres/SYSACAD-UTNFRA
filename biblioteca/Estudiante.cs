@@ -31,13 +31,6 @@ namespace biblioteca
             Legajo = legajo;
         }
 
-        //Metodo para que el estudiante cambie su contraseña
-        public void CambiarContraseña(string nuevaContraseña)
-        {
-            // Hash de la nueva contraseña
-            Contraseña = Hash.GetHash(nuevaContraseña);
-        }
-
         //Metodo para agregar un estudiante a la base de datos
         public int AgregarEstudiante()
         {
