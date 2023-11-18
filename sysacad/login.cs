@@ -62,5 +62,17 @@ namespace sysacad
         {
             Application.Exit();
         }
+
+        private void btnadmin_Click(object sender, EventArgs e)
+        {
+            usuarioylegajotxt.Text = "matias";
+            passwordtxt.Text = "123";
+        }
+
+        private void btnestudiante_Click(object sender, EventArgs e)
+        {
+            usuarioylegajotxt.Text = "1";
+            passwordtxt.Text = "123";
+        }
     }
 }

@@ -15,6 +15,12 @@ namespace sysacad
         public horarios(string legajoLogeado)
         {
             InitializeComponent();
+            legajoescondio(legajoLogeado);
+        }
+
+        private void legajoescondio(string legajoLogeado)
+        {
+            legajoescondido.Text = legajoLogeado;
         }
     }
 }

@@ -301,5 +301,34 @@ namespace sysacad
                 }
             }
         }
+
+        //valido que el estudiante no se inscriba a dos cursos en el mismo horario
+        //private void validarHorario()
+        //{
+        //    //chequeo el horarioMin y HorarioMax de todas las materias
+        //    string query = "SELECT horarioMin, horarioMax FROM cursos";
+        //    using (MySqlCommand comando = new MySqlCommand(query, conexion))
+        //    {
+        //        conexion.Open();
+        //        MySqlDataReader reader = comando.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            //si el horarioMin de la materia es mayor al horarioMax de la materia anterior
+        //            //o si el horarioMax de la materia es menor al horarioMin de la materia anterior
+        //            //entonces no hay conflicto de horarios
+        //            if (horarioMin.Text > horarioMax.Text || horarioMax.Text < horarioMin.Text)
+        //            {
+        //                MessageBox.Show("No hay conflicto de horarios");
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Hay conflicto de horarios");
+        //            }
+        //        }
+        //        conexion.Close();
+        //    }
+
+
+        //}
     }
 }

@@ -36,6 +36,8 @@
             passwordtxt = new TextBox();
             button1 = new Button();
             btncerrar = new Button();
+            btnadmin = new Button();
+            btnestudiante = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -111,12 +113,34 @@
             btncerrar.UseVisualStyleBackColor = false;
             btncerrar.Click += btncerrar_Click;
             // 
+            // btnadmin
+            // 
+            btnadmin.Location = new Point(348, 416);
+            btnadmin.Name = "btnadmin";
+            btnadmin.Size = new Size(123, 32);
+            btnadmin.TabIndex = 7;
+            btnadmin.Text = "Admin";
+            btnadmin.UseVisualStyleBackColor = true;
+            btnadmin.Click += btnadmin_Click;
+            // 
+            // btnestudiante
+            // 
+            btnestudiante.Location = new Point(0, 416);
+            btnestudiante.Name = "btnestudiante";
+            btnestudiante.Size = new Size(123, 32);
+            btnestudiante.TabIndex = 8;
+            btnestudiante.Text = "estudiante";
+            btnestudiante.UseVisualStyleBackColor = true;
+            btnestudiante.Click += btnestudiante_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(471, 469);
+            Controls.Add(btnestudiante);
+            Controls.Add(btnadmin);
             Controls.Add(btncerrar);
             Controls.Add(button1);
             Controls.Add(passwordtxt);
@@ -143,5 +167,7 @@
         private TextBox passwordtxt;
         private Button button1;
         private Button btncerrar;
+        private Button btnadmin;
+        private Button btnestudiante;
     }
 }

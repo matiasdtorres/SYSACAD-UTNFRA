@@ -20,6 +20,59 @@ namespace sysacad
             InitializeComponent();
         }
 
+        private bool ValidarHorario(string dia, int horarioMin, int horarioMax)
+        {
+            List<Curso> cursosDia = ObtenerCursosPorDia(dia);
+
+            foreach (Curso curso in cursosDia)
+            {
+                if ((horarioMin >= curso.HorarioMin && horarioMin <= curso.HorarioMax) ||
+                    (horarioMax >= curso.HorarioMin && horarioMax <= curso.HorarioMax))
+                {
+                    MessageBox.Show("Ya hay un curso registrado en ese horario para el día seleccionado.");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private List<Curso> ObtenerCursosPorDia(string dia)
+        {
+            List<Curso> cursosDia = new List<Curso>();
+
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "SELECT * FROM cursos WHERE dia = @dia";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@dia", dia);
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Curso curso = new Curso(
+                        reader["nombre"].ToString(),
+                        reader["codigo"].ToString(),
+                        reader["descripcion"].ToString(),
+                        Convert.ToInt32(reader["horarioMax"]),
+                        Convert.ToInt32(reader["horarioMin"]),
+                        Convert.ToInt32(reader["cupoMaximo"]),
+                        reader["profesor"].ToString(),
+                        reader["aula"].ToString(),
+                        reader["division"].ToString(),
+                        reader["dia"].ToString(),
+                        reader["turno"].ToString(),
+                        reader["cuatrimestre"].ToString()
+                    );
+
+                    cursosDia.Add(curso);
+                }
+            }
+
+            return cursosDia;
+        }
+
         private void btnregistrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(nombrecursotxt.Text) || string.IsNullOrEmpty(codigocursotxt.Text) || string.IsNullOrEmpty(descripcioncursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomaxcursotxt.Text) || string.IsNullOrEmpty(cuposcursotxt.Text) || string.IsNullOrEmpty(profesorcursotxt.Text) || string.IsNullOrEmpty(aulacursotxt.Text) || string.IsNullOrEmpty(divcursotxt.Text) || string.IsNullOrEmpty(diacursotxt.Text) || string.IsNullOrEmpty(cuatricursotxt.Text) || string.IsNullOrEmpty(turnocursotxt.Text))
@@ -43,18 +96,21 @@ namespace sysacad
 
                 try
                 {
-                    Curso nuevoCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
-
-                    int filasAfectadas = nuevoCurso.AgregarCurso();
-
-                    if (filasAfectadas > 0)
+                    if (ValidarHorario(dia, horarioMin, horarioMax))
                     {
-                        MessageBox.Show("Curso agregado correctamente");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo agregar el curso");
+                        Curso nuevoCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+
+                        int filasAfectadas = nuevoCurso.AgregarCurso();
+
+                        if (filasAfectadas > 0)
+                        {
+                            MessageBox.Show("Curso agregado correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo agregar el curso");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -66,7 +122,7 @@ namespace sysacad
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(codigoeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) ||string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text) || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text) || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
+            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(codigoeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text) || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text) || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
@@ -87,18 +143,21 @@ namespace sysacad
 
                 try
                 {
-                    Curso EditarCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
-
-                    int filasAfectadas = EditarCurso.EditarCurso();
-
-                    if (filasAfectadas > 0)
+                    if (ValidarHorario(dia, horarioMin, horarioMax))
                     {
-                        MessageBox.Show("Curso editado correctamente");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo editar el curso");
+                        Curso EditarCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+
+                        int filasAfectadas = EditarCurso.EditarCurso();
+
+                        if (filasAfectadas > 0)
+                        {
+                            MessageBox.Show("Curso editado correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo editar el curso");
+                        }
                     }
                 }
                 catch (Exception ex)
