@@ -21,6 +21,7 @@ namespace sysacad
         incripcionCurso inscribirme;
         datosEstudiante datosAlumno;
         horarios consultarHorarios;
+        pagos realizarPagos;
 
         public dashboardEstudiante(string legajoLogeado)
         {
@@ -132,6 +133,26 @@ namespace sysacad
         private void ConsultarHorarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             consultarHorarios = null;
+        }
+
+        private void btnrealizarpagos_Click(object sender, EventArgs e)
+        {
+            if (realizarPagos == null)
+            {
+                realizarPagos = new pagos(bienvenidolegajo.Text);
+                realizarPagos.FormClosed += RealizarPagos_FormClosed;
+                realizarPagos.MdiParent = this;
+                realizarPagos.Show();
+            }
+            else
+            {
+                realizarPagos.Activate();
+            }
+        }
+
+        private void RealizarPagos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            realizarPagos = null;
         }
     }
 }

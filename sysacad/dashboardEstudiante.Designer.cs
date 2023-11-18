@@ -42,6 +42,7 @@
             btnmisdatos = new Button();
             btnincribircurso = new Button();
             btnconsultarhorarios = new Button();
+            btnrealizarpagos = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -163,6 +164,7 @@
             flowLayoutPanel1.Controls.Add(btnmisdatos);
             flowLayoutPanel1.Controls.Add(btnincribircurso);
             flowLayoutPanel1.Controls.Add(btnconsultarhorarios);
+            flowLayoutPanel1.Controls.Add(btnrealizarpagos);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -211,6 +213,20 @@
             btnconsultarhorarios.UseVisualStyleBackColor = false;
             btnconsultarhorarios.Click += btnconsultarhorarios_Click;
             // 
+            // btnrealizarpagos
+            // 
+            btnrealizarpagos.BackColor = Color.White;
+            btnrealizarpagos.FlatAppearance.BorderSize = 0;
+            btnrealizarpagos.FlatStyle = FlatStyle.Flat;
+            btnrealizarpagos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnrealizarpagos.Location = new Point(3, 120);
+            btnrealizarpagos.Name = "btnrealizarpagos";
+            btnrealizarpagos.Size = new Size(215, 33);
+            btnrealizarpagos.TabIndex = 8;
+            btnrealizarpagos.Text = "Realizar Pagos";
+            btnrealizarpagos.UseVisualStyleBackColor = false;
+            btnrealizarpagos.Click += btnrealizarpagos_Click;
+            // 
             // dashboardEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -248,5 +264,6 @@
         private Label label5;
         private Label bienvenidolegajo;
         private Button btnconsultarhorarios;
+        private Button btnrealizarpagos;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace sysacad
 {
-    partial class Test
+    partial class reportes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             SuspendLayout();
             // 
-            // Test
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.ImageAlign = ContentAlignment.MiddleRight;
+            label1.Location = new Point(441, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(134, 37);
+            label1.TabIndex = 3;
+            label1.Text = "Reportes";
+            // 
+            // reportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.HotTrack;
+            BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
+            Controls.Add(label1);
+            ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Test";
+            Name = "reportes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Test";
+            Text = "reportes";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

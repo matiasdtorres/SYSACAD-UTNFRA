@@ -15,7 +15,7 @@ namespace sysacad
         login logout;
         agregarEstudiante? agregarEstudiante;
         gestionarCurso? gestionarCurso;
-        Test? formtest;
+        reportes generarReportes;
 
         public dashboardAdmin()
         {
@@ -68,26 +68,6 @@ namespace sysacad
             gestionarCurso = null;
         }
 
-        private void test_Click(object sender, EventArgs e)
-        {
-            if (formtest == null)
-            {
-                formtest = new Test();
-                formtest.FormClosed += Formtest_FormClosed;
-                formtest.MdiParent = this;
-                formtest.Show();
-            }
-            else
-            {
-                formtest.Activate();
-            }
-        }
-
-        private void Formtest_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formtest = null;
-        }
-
         private void btnlogout_Click(object sender, EventArgs e)
         {
             try
@@ -100,6 +80,26 @@ namespace sysacad
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btngenerarreportes_Click(object sender, EventArgs e)
+        {
+            if (generarReportes == null)
+            {
+                generarReportes = new reportes();
+                generarReportes.FormClosed += GenerarReportes_FormClosed;
+                generarReportes.MdiParent = this;
+                generarReportes.Show();
+            }
+            else
+            {
+                generarReportes.Activate();
+            }
+        }
+
+        private void GenerarReportes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            generarReportes = null;
         }
     }
 }

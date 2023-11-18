@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardAdmin));
             panel1 = new Panel();
+            btnlogout = new Button();
             btncerrar = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnagregarestudiante = new Button();
             btngestionarcursos = new Button();
-            test = new Button();
-            btnlogout = new Button();
+            btngenerarreportes = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -52,6 +52,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 0;
+            // 
+            // btnlogout
+            // 
+            btnlogout.BackColor = Color.White;
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.Location = new Point(1116, 12);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Size = new Size(75, 23);
+            btnlogout.TabIndex = 5;
+            btnlogout.Text = "logout";
+            btnlogout.UseVisualStyleBackColor = false;
+            btnlogout.Click += btnlogout_Click;
             // 
             // btncerrar
             // 
@@ -84,7 +97,7 @@
             flowLayoutPanel1.BackColor = Color.Black;
             flowLayoutPanel1.Controls.Add(btnagregarestudiante);
             flowLayoutPanel1.Controls.Add(btngestionarcursos);
-            flowLayoutPanel1.Controls.Add(test);
+            flowLayoutPanel1.Controls.Add(btngenerarreportes);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -121,33 +134,20 @@
             btngestionarcursos.UseVisualStyleBackColor = false;
             btngestionarcursos.Click += btngestionarcursos_Click;
             // 
-            // test
+            // btngenerarreportes
             // 
-            test.BackColor = Color.White;
-            test.FlatAppearance.BorderSize = 0;
-            test.FlatStyle = FlatStyle.Flat;
-            test.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            test.ForeColor = Color.Black;
-            test.Location = new Point(3, 81);
-            test.Name = "test";
-            test.Size = new Size(215, 33);
-            test.TabIndex = 2;
-            test.Text = "TEST";
-            test.UseVisualStyleBackColor = false;
-            test.Click += test_Click;
-            // 
-            // btnlogout
-            // 
-            btnlogout.BackColor = Color.White;
-            btnlogout.FlatAppearance.BorderSize = 0;
-            btnlogout.FlatStyle = FlatStyle.Flat;
-            btnlogout.Location = new Point(1116, 12);
-            btnlogout.Name = "btnlogout";
-            btnlogout.Size = new Size(75, 23);
-            btnlogout.TabIndex = 5;
-            btnlogout.Text = "logout";
-            btnlogout.UseVisualStyleBackColor = false;
-            btnlogout.Click += btnlogout_Click;
+            btngenerarreportes.BackColor = Color.White;
+            btngenerarreportes.FlatAppearance.BorderSize = 0;
+            btngenerarreportes.FlatStyle = FlatStyle.Flat;
+            btngenerarreportes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btngenerarreportes.ForeColor = Color.Black;
+            btngenerarreportes.Location = new Point(3, 81);
+            btngenerarreportes.Name = "btngenerarreportes";
+            btngenerarreportes.Size = new Size(215, 33);
+            btngenerarreportes.TabIndex = 2;
+            btngenerarreportes.Text = "Generar Reportes";
+            btngenerarreportes.UseVisualStyleBackColor = false;
+            btngenerarreportes.Click += btngenerarreportes_Click;
             // 
             // dashboardAdmin
             // 
@@ -179,7 +179,7 @@
         private Button btncerrar;
         private Button btnagregarestudiante;
         private Button btngestionarcursos;
-        private Button test;
+        private Button btngenerarreportes;
         private Button btnlogout;
     }
 }

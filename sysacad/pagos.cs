@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sysacad
 {
-    public partial class Test : Form
+    public partial class pagos : Form
     {
-        public Test()
+        public pagos(string legajoLogeado)
         {
             InitializeComponent();
         }
