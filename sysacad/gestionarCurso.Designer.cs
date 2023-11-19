@@ -31,15 +31,15 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
-            cuatricursotxt = new NumericUpDown();
+            turnocursotxt = new ComboBox();
+            diacursotxt = new ComboBox();
+            cuatricursotxt = new ComboBox();
             descripcioncursotxt = new TextBox();
             label22 = new Label();
             label10 = new Label();
             cuposcursotxt = new NumericUpDown();
             label9 = new Label();
-            turnocursotxt = new TextBox();
             label8 = new Label();
-            diacursotxt = new TextBox();
             label7 = new Label();
             divcursotxt = new TextBox();
             aulacursotxt = new TextBox();
@@ -58,15 +58,13 @@
             btneliminar = new Button();
             btneditar = new Button();
             groupBox2 = new GroupBox();
-            cuatrieditarcursotxt = new NumericUpDown();
+            cuatrieditarcursotxt = new ComboBox();
             descripcioneditarcursotxt = new TextBox();
             label12 = new Label();
             label13 = new Label();
             cuposeditarcursotxt = new NumericUpDown();
             label14 = new Label();
-            turnoeditarcursotxt = new TextBox();
             label15 = new Label();
-            diaeditarcursotxt = new TextBox();
             label17 = new Label();
             diveditarcursotxt = new TextBox();
             aulaeditarcursotxt = new TextBox();
@@ -79,13 +77,13 @@
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
             cursos = new DataGridView();
+            diaeditarcursotxt = new ComboBox();
+            turnoeditarcursotxt = new ComboBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cursos).BeginInit();
             SuspendLayout();
@@ -117,15 +115,15 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(turnocursotxt);
+            groupBox1.Controls.Add(diacursotxt);
             groupBox1.Controls.Add(cuatricursotxt);
             groupBox1.Controls.Add(descripcioncursotxt);
             groupBox1.Controls.Add(label22);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(cuposcursotxt);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(turnocursotxt);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(diacursotxt);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(divcursotxt);
             groupBox1.Controls.Add(aulacursotxt);
@@ -145,14 +143,35 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
             // 
+            // turnocursotxt
+            // 
+            turnocursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            turnocursotxt.FormattingEnabled = true;
+            turnocursotxt.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
+            turnocursotxt.Location = new Point(113, 234);
+            turnocursotxt.Name = "turnocursotxt";
+            turnocursotxt.Size = new Size(178, 23);
+            turnocursotxt.TabIndex = 33;
+            // 
+            // diacursotxt
+            // 
+            diacursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            diacursotxt.FormattingEnabled = true;
+            diacursotxt.Items.AddRange(new object[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" });
+            diacursotxt.Location = new Point(113, 205);
+            diacursotxt.Name = "diacursotxt";
+            diacursotxt.Size = new Size(178, 23);
+            diacursotxt.TabIndex = 32;
+            // 
             // cuatricursotxt
             // 
-            cuatricursotxt.BackColor = Color.White;
-            cuatricursotxt.ForeColor = Color.Black;
-            cuatricursotxt.Location = new Point(113, 118);
+            cuatricursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cuatricursotxt.FormattingEnabled = true;
+            cuatricursotxt.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            cuatricursotxt.Location = new Point(113, 117);
             cuatricursotxt.Name = "cuatricursotxt";
             cuatricursotxt.Size = new Size(178, 23);
-            cuatricursotxt.TabIndex = 25;
+            cuatricursotxt.TabIndex = 31;
             // 
             // descripcioncursotxt
             // 
@@ -206,15 +225,6 @@
             label9.TabIndex = 19;
             label9.Text = "Turno";
             // 
-            // turnocursotxt
-            // 
-            turnocursotxt.BackColor = Color.White;
-            turnocursotxt.ForeColor = Color.Black;
-            turnocursotxt.Location = new Point(113, 234);
-            turnocursotxt.Name = "turnocursotxt";
-            turnocursotxt.Size = new Size(178, 23);
-            turnocursotxt.TabIndex = 18;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -225,15 +235,6 @@
             label8.Size = new Size(33, 21);
             label8.TabIndex = 17;
             label8.Text = "Dia";
-            // 
-            // diacursotxt
-            // 
-            diacursotxt.BackColor = Color.White;
-            diacursotxt.ForeColor = Color.Black;
-            diacursotxt.Location = new Point(113, 205);
-            diacursotxt.Name = "diacursotxt";
-            diacursotxt.Size = new Size(178, 23);
-            diacursotxt.TabIndex = 16;
             // 
             // label7
             // 
@@ -423,15 +424,15 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(turnoeditarcursotxt);
+            groupBox2.Controls.Add(diaeditarcursotxt);
             groupBox2.Controls.Add(cuatrieditarcursotxt);
             groupBox2.Controls.Add(descripcioneditarcursotxt);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(cuposeditarcursotxt);
             groupBox2.Controls.Add(label14);
-            groupBox2.Controls.Add(turnoeditarcursotxt);
             groupBox2.Controls.Add(label15);
-            groupBox2.Controls.Add(diaeditarcursotxt);
             groupBox2.Controls.Add(label17);
             groupBox2.Controls.Add(diveditarcursotxt);
             groupBox2.Controls.Add(aulaeditarcursotxt);
@@ -453,12 +454,13 @@
             // 
             // cuatrieditarcursotxt
             // 
-            cuatrieditarcursotxt.BackColor = Color.White;
-            cuatrieditarcursotxt.ForeColor = Color.Black;
-            cuatrieditarcursotxt.Location = new Point(115, 118);
+            cuatrieditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cuatrieditarcursotxt.FormattingEnabled = true;
+            cuatrieditarcursotxt.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            cuatrieditarcursotxt.Location = new Point(113, 118);
             cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
-            cuatrieditarcursotxt.Size = new Size(176, 23);
-            cuatrieditarcursotxt.TabIndex = 26;
+            cuatrieditarcursotxt.Size = new Size(178, 23);
+            cuatrieditarcursotxt.TabIndex = 34;
             // 
             // descripcioneditarcursotxt
             // 
@@ -512,15 +514,6 @@
             label14.TabIndex = 19;
             label14.Text = "Turno";
             // 
-            // turnoeditarcursotxt
-            // 
-            turnoeditarcursotxt.BackColor = Color.White;
-            turnoeditarcursotxt.ForeColor = Color.Black;
-            turnoeditarcursotxt.Location = new Point(113, 234);
-            turnoeditarcursotxt.Name = "turnoeditarcursotxt";
-            turnoeditarcursotxt.Size = new Size(178, 23);
-            turnoeditarcursotxt.TabIndex = 18;
-            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -531,15 +524,6 @@
             label15.Size = new Size(33, 21);
             label15.TabIndex = 17;
             label15.Text = "Dia";
-            // 
-            // diaeditarcursotxt
-            // 
-            diaeditarcursotxt.BackColor = Color.White;
-            diaeditarcursotxt.ForeColor = Color.Black;
-            diaeditarcursotxt.Location = new Point(113, 205);
-            diaeditarcursotxt.Name = "diaeditarcursotxt";
-            diaeditarcursotxt.Size = new Size(178, 23);
-            diaeditarcursotxt.TabIndex = 16;
             // 
             // label17
             // 
@@ -665,6 +649,26 @@
             cursos.TabIndex = 30;
             cursos.CellClick += cursos_CellClick;
             // 
+            // diaeditarcursotxt
+            // 
+            diaeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            diaeditarcursotxt.FormattingEnabled = true;
+            diaeditarcursotxt.Items.AddRange(new object[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" });
+            diaeditarcursotxt.Location = new Point(113, 205);
+            diaeditarcursotxt.Name = "diaeditarcursotxt";
+            diaeditarcursotxt.Size = new Size(178, 23);
+            diaeditarcursotxt.TabIndex = 34;
+            // 
+            // turnoeditarcursotxt
+            // 
+            turnoeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            turnoeditarcursotxt.FormattingEnabled = true;
+            turnoeditarcursotxt.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
+            turnoeditarcursotxt.Location = new Point(113, 234);
+            turnoeditarcursotxt.Name = "turnoeditarcursotxt";
+            turnoeditarcursotxt.Size = new Size(178, 23);
+            turnoeditarcursotxt.TabIndex = 34;
+            // 
             // gestionarCurso
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -688,13 +692,11 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)cuatricursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)cuatrieditarcursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cuposeditarcursotxt).EndInit();
             ((System.ComponentModel.ISupportInitialize)cursos).EndInit();
             ResumeLayout(false);
@@ -710,9 +712,7 @@
         private TextBox nombrecursotxt;
         private Label label2;
         private Label label9;
-        private TextBox turnocursotxt;
         private Label label8;
-        private TextBox diacursotxt;
         private Label label7;
         private TextBox divcursotxt;
         private TextBox aulacursotxt;
@@ -736,9 +736,7 @@
         private Label label13;
         private NumericUpDown cuposeditarcursotxt;
         private Label label14;
-        private TextBox turnoeditarcursotxt;
         private Label label15;
-        private TextBox diaeditarcursotxt;
         private Label label17;
         private TextBox diveditarcursotxt;
         private TextBox aulaeditarcursotxt;
@@ -751,7 +749,11 @@
         private TextBox nombreeditarcursotxt;
         private Label label23;
         private DataGridView cursos;
-        private NumericUpDown cuatricursotxt;
-        private NumericUpDown cuatrieditarcursotxt;
+        private ComboBox cuatricursotxt;
+        private ComboBox diacursotxt;
+        private ComboBox turnocursotxt;
+        private ComboBox cuatrieditarcursotxt;
+        private ComboBox turnoeditarcursotxt;
+        private ComboBox diaeditarcursotxt;
     }
 }
