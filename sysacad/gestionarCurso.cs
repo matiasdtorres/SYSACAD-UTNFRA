@@ -20,14 +20,16 @@ namespace sysacad
             InitializeComponent();
         }
 
-        private bool ValidarHorario(string dia, int horarioMin, int horarioMax)
+        private bool ValidarHorario(string dia, int horarioMin, int horarioMax, string codigoCursoEditado)
         {
             List<Curso> cursosDia = ObtenerCursosPorDia(dia);
 
             foreach (Curso curso in cursosDia)
             {
-                if ((horarioMin >= curso.HorarioMin && horarioMin <= curso.HorarioMax) ||
-                    (horarioMax >= curso.HorarioMin && horarioMax <= curso.HorarioMax))
+                // Excluir el curso editado de la comparación
+                if (curso.Codigo != codigoCursoEditado &&
+                    ((horarioMin >= curso.HorarioMin && horarioMin <= curso.HorarioMax) ||
+                     (horarioMax >= curso.HorarioMin && horarioMax <= curso.HorarioMax)))
                 {
                     MessageBox.Show("Ya hay un curso registrado en ese horario para el día seleccionado.");
                     return false;
@@ -96,7 +98,7 @@ namespace sysacad
 
                 try
                 {
-                    if (ValidarHorario(dia, horarioMin, horarioMax))
+                    if (ValidarHorario(dia, horarioMin, horarioMax, codigoeditarcursotxt.Text))
                     {
                         Curso nuevoCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
@@ -122,7 +124,11 @@ namespace sysacad
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(codigoeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text) || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text) || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
+            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(codigoeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text)
+                || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text) || string.IsNullOrEmpty(horariomincursotxt.Text)
+                || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text)
+                || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text)
+                || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
@@ -143,7 +149,7 @@ namespace sysacad
 
                 try
                 {
-                    if (ValidarHorario(dia, horarioMin, horarioMax))
+                    if (ValidarHorario(dia, horarioMin, horarioMax, codigoeditarcursotxt.Text))
                     {
                         Curso EditarCurso = new Curso(nombre, codigo, descripcion, horarioMax, horarioMin, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
