@@ -48,8 +48,6 @@ namespace consolaCrearDB_Cursos
                 codigo VARCHAR(50) primary key,
                 nombre VARCHAR(50),
                 descripcion VARCHAR(50),
-                horariomin VARCHAR(50),
-                horariomax VARCHAR(50),
                 cupoMaximo int,
                 profesor VARCHAR(50),
                 aula VARCHAR(50),
