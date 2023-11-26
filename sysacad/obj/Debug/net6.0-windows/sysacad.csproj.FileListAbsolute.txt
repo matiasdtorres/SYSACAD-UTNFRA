@@ -130,3 +130,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-wi
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.horarios.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.pagos.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.reportes.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.payments.resources

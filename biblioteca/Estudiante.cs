@@ -53,5 +53,39 @@ namespace biblioteca
                 return filasAfectadas;
             }
         }
+
+        //metodo para agregar el legajo del estudiante a la tabla pagos
+        public int EstudiantePagos()
+        {
+            using (conexion)
+            {
+                conexion.Open();
+                string query = "INSERT INTO pagos (legajo) VALUES (@Legajo)";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Legajo", Legajo);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
+
+        //metodo para agregar el legajo del estudiante a la tabla datos_pagos
+        public int EstudianteDatosPagos()
+        {
+            using (conexion)
+            {
+                conexion.Open();
+                string query = "INSERT INTO datos_pagos (legajo) VALUES (@Legajo)";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Legajo", Legajo);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
     }
 }

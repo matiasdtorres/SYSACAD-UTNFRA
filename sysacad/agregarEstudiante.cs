@@ -48,6 +48,8 @@ namespace sysacad
 
                     if (filasAfectadas > 0)
                     {
+                        int filasAfectadasPagos = nuevoEstudiante.EstudiantePagos();
+                        int filasAfectadasDatosPagos = nuevoEstudiante.EstudianteDatosPagos();
                         MessageBox.Show("Estudiante agregado correctamente");
                         this.Close();
                     }
