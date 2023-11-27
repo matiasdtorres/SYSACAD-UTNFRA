@@ -16,6 +16,7 @@ namespace sysacad
         agregarEstudiante? agregarEstudiante;
         gestionarCurso? gestionarCurso;
         reportes generarReportes;
+        requisitosAcademicos gestionarRequisitosAcademicos;
 
         public dashboardAdmin()
         {
@@ -100,6 +101,26 @@ namespace sysacad
         private void GenerarReportes_FormClosed(object sender, FormClosedEventArgs e)
         {
             generarReportes = null;
+        }
+
+        private void btngestionarrequisitosacademicos_Click(object sender, EventArgs e)
+        {
+            if (gestionarRequisitosAcademicos == null)
+            {
+                gestionarRequisitosAcademicos = new requisitosAcademicos();
+                gestionarRequisitosAcademicos.FormClosed += GestionarRequisitosAcademicos_FormClosed;
+                gestionarRequisitosAcademicos.MdiParent = this;
+                gestionarRequisitosAcademicos.Show();
+            }
+            else
+            {
+                gestionarRequisitosAcademicos.Activate();
+            }
+        }
+
+        private void GestionarRequisitosAcademicos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gestionarRequisitosAcademicos = null;
         }
     }
 }

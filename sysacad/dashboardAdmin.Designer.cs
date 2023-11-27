@@ -37,6 +37,7 @@
             btnagregarestudiante = new Button();
             btngestionarcursos = new Button();
             btngenerarreportes = new Button();
+            btngestionarrequisitosacademicos = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -98,6 +99,7 @@
             flowLayoutPanel1.Controls.Add(btnagregarestudiante);
             flowLayoutPanel1.Controls.Add(btngestionarcursos);
             flowLayoutPanel1.Controls.Add(btngenerarreportes);
+            flowLayoutPanel1.Controls.Add(btngestionarrequisitosacademicos);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -149,6 +151,21 @@
             btngenerarreportes.UseVisualStyleBackColor = false;
             btngenerarreportes.Click += btngenerarreportes_Click;
             // 
+            // btngestionarrequisitosacademicos
+            // 
+            btngestionarrequisitosacademicos.BackColor = Color.White;
+            btngestionarrequisitosacademicos.FlatAppearance.BorderSize = 0;
+            btngestionarrequisitosacademicos.FlatStyle = FlatStyle.Flat;
+            btngestionarrequisitosacademicos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btngestionarrequisitosacademicos.ForeColor = Color.Black;
+            btngestionarrequisitosacademicos.Location = new Point(3, 120);
+            btngestionarrequisitosacademicos.Name = "btngestionarrequisitosacademicos";
+            btngestionarrequisitosacademicos.Size = new Size(215, 33);
+            btngestionarrequisitosacademicos.TabIndex = 3;
+            btngestionarrequisitosacademicos.Text = "Requisitos Academicos";
+            btngestionarrequisitosacademicos.UseVisualStyleBackColor = false;
+            btngestionarrequisitosacademicos.Click += btngestionarrequisitosacademicos_Click;
+            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,5 +198,6 @@
         private Button btngestionarcursos;
         private Button btngenerarreportes;
         private Button btnlogout;
+        private Button btngestionarrequisitosacademicos;
     }
 }
