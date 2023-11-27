@@ -38,6 +38,8 @@
             btngestionarcursos = new Button();
             btngenerarreportes = new Button();
             btngestionarrequisitosacademicos = new Button();
+            btnlistasdeespera = new Button();
+            btnperfilesdeprofes = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -100,6 +102,8 @@
             flowLayoutPanel1.Controls.Add(btngestionarcursos);
             flowLayoutPanel1.Controls.Add(btngenerarreportes);
             flowLayoutPanel1.Controls.Add(btngestionarrequisitosacademicos);
+            flowLayoutPanel1.Controls.Add(btnlistasdeespera);
+            flowLayoutPanel1.Controls.Add(btnperfilesdeprofes);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -166,6 +170,36 @@
             btngestionarrequisitosacademicos.UseVisualStyleBackColor = false;
             btngestionarrequisitosacademicos.Click += btngestionarrequisitosacademicos_Click;
             // 
+            // btnlistasdeespera
+            // 
+            btnlistasdeespera.BackColor = Color.White;
+            btnlistasdeespera.FlatAppearance.BorderSize = 0;
+            btnlistasdeespera.FlatStyle = FlatStyle.Flat;
+            btnlistasdeespera.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnlistasdeespera.ForeColor = Color.Black;
+            btnlistasdeespera.Location = new Point(3, 159);
+            btnlistasdeespera.Name = "btnlistasdeespera";
+            btnlistasdeespera.Size = new Size(215, 33);
+            btnlistasdeespera.TabIndex = 4;
+            btnlistasdeespera.Text = "Listas de Espera";
+            btnlistasdeespera.UseVisualStyleBackColor = false;
+            btnlistasdeespera.Click += btnlistasdeespera_Click;
+            // 
+            // btnperfilesdeprofes
+            // 
+            btnperfilesdeprofes.BackColor = Color.White;
+            btnperfilesdeprofes.FlatAppearance.BorderSize = 0;
+            btnperfilesdeprofes.FlatStyle = FlatStyle.Flat;
+            btnperfilesdeprofes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnperfilesdeprofes.ForeColor = Color.Black;
+            btnperfilesdeprofes.Location = new Point(3, 198);
+            btnperfilesdeprofes.Name = "btnperfilesdeprofes";
+            btnperfilesdeprofes.Size = new Size(215, 33);
+            btnperfilesdeprofes.TabIndex = 5;
+            btnperfilesdeprofes.Text = "Perfiles de Profes";
+            btnperfilesdeprofes.UseVisualStyleBackColor = false;
+            btnperfilesdeprofes.Click += btnperfilesdeprofes_Click;
+            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -199,5 +233,7 @@
         private Button btngenerarreportes;
         private Button btnlogout;
         private Button btngestionarrequisitosacademicos;
+        private Button btnlistasdeespera;
+        private Button btnperfilesdeprofes;
     }
 }

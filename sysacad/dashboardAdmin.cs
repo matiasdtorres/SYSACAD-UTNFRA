@@ -17,6 +17,8 @@ namespace sysacad
         gestionarCurso? gestionarCurso;
         reportes generarReportes;
         requisitosAcademicos gestionarRequisitosAcademicos;
+        listasDeEspera gestionarListasDeEspera;
+        perfilesDeProfes gestionarPerfilesDeProfes;
 
         public dashboardAdmin()
         {
@@ -121,6 +123,46 @@ namespace sysacad
         private void GestionarRequisitosAcademicos_FormClosed(object sender, FormClosedEventArgs e)
         {
             gestionarRequisitosAcademicos = null;
+        }
+
+        private void btnlistasdeespera_Click(object sender, EventArgs e)
+        {
+            if (gestionarListasDeEspera == null)
+            {
+                gestionarListasDeEspera = new listasDeEspera();
+                gestionarListasDeEspera.FormClosed += GestionarListasDeEspera_FormClosed;
+                gestionarListasDeEspera.MdiParent = this;
+                gestionarListasDeEspera.Show();
+            }
+            else
+            {
+                gestionarListasDeEspera.Activate();
+            }
+        }
+
+        private void GestionarListasDeEspera_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gestionarListasDeEspera = null;
+        }
+
+        private void btnperfilesdeprofes_Click(object sender, EventArgs e)
+        {
+            if (gestionarPerfilesDeProfes == null)
+            {
+                gestionarPerfilesDeProfes = new perfilesDeProfes();
+                gestionarPerfilesDeProfes.FormClosed += GestionarPerfilesDeProfes_FormClosed;
+                gestionarPerfilesDeProfes.MdiParent = this;
+                gestionarPerfilesDeProfes.Show();
+            }
+            else
+            {
+                gestionarPerfilesDeProfes.Activate();
+            }
+        }
+
+        private void GestionarPerfilesDeProfes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gestionarPerfilesDeProfes = null;
         }
     }
 }
