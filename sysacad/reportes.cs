@@ -170,7 +170,7 @@ namespace sysacad
                     doc.Add(Chunk.NEWLINE);
                     doc.Add(Chunk.NEWLINE);
 
-                    PdfPTable tblPrueba = new PdfPTable(9);
+                    PdfPTable tblPrueba = new PdfPTable(13);
                     tblPrueba.WidthPercentage = 100;
 
                     PdfPCell clLegajo = new PdfPCell(new Phrase("Legajo", font));
@@ -209,6 +209,23 @@ namespace sysacad
                     clmateria4.BorderWidth = 0;
                     clmateria4.BorderWidthBottom = 0.75f;
 
+                    PdfPCell clmateria5 = new PdfPCell(new Phrase("Materia 5", font));
+                    clmateria5.BorderWidth = 0;
+                    clmateria5.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmateria6 = new PdfPCell(new Phrase("Materia 6", font));
+                    clmateria6.BorderWidth = 0;
+                    clmateria6.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmateria7 = new PdfPCell(new Phrase("Materia 7", font));
+                    clmateria7.BorderWidth = 0;
+                    clmateria7.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmateria8 = new PdfPCell(new Phrase("Materia 8", font));
+                    clmateria8.BorderWidth = 0;
+                    clmateria8.BorderWidthBottom = 0.75f;
+
+
                     tblPrueba.AddCell(clLegajo);
                     tblPrueba.AddCell(clNombre);
                     tblPrueba.AddCell(clApellido);
@@ -218,6 +235,10 @@ namespace sysacad
                     tblPrueba.AddCell(clmateria2);
                     tblPrueba.AddCell(clmateria3);
                     tblPrueba.AddCell(clmateria4);
+                    tblPrueba.AddCell(clmateria5);
+                    tblPrueba.AddCell(clmateria6);
+                    tblPrueba.AddCell(clmateria7);
+                    tblPrueba.AddCell(clmateria8);
 
                     conexion.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM estudiantes WHERE legajo = @legajo", conexion);
@@ -234,6 +255,10 @@ namespace sysacad
                         tblPrueba.AddCell(new Phrase(leer["materia2"].ToString(), font));
                         tblPrueba.AddCell(new Phrase(leer["materia3"].ToString(), font));
                         tblPrueba.AddCell(new Phrase(leer["materia4"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["materia5"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["materia6"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["materia7"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["materia8"].ToString(), font));
                     }
                     conexion.Close();
 
@@ -276,7 +301,7 @@ namespace sysacad
                     doc.Add(Chunk.NEWLINE);
                     doc.Add(Chunk.NEWLINE);
 
-                    PdfPTable tblPrueba = new PdfPTable(6);
+                    PdfPTable tblPrueba = new PdfPTable(10);
                     tblPrueba.WidthPercentage = 100;
 
                     PdfPCell clLegajo = new PdfPCell(new Phrase("Legajo", font));
@@ -303,12 +328,32 @@ namespace sysacad
                     clmes4.BorderWidth = 0;
                     clmes4.BorderWidthBottom = 0.75f;
 
+                    PdfPCell clmes5 = new PdfPCell(new Phrase("mes5", font));
+                    clmes5.BorderWidth = 0;
+                    clmes5.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmes6 = new PdfPCell(new Phrase("mes6", font));
+                    clmes6.BorderWidth = 0;
+                    clmes6.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmes7 = new PdfPCell(new Phrase("mes7", font));
+                    clmes7.BorderWidth = 0;
+                    clmes7.BorderWidthBottom = 0.75f;
+
+                    PdfPCell clmes8 = new PdfPCell(new Phrase("mes8", font));
+                    clmes8.BorderWidth = 0;
+                    clmes8.BorderWidthBottom = 0.75f;
+
                     tblPrueba.AddCell(clLegajo);
                     tblPrueba.AddCell(clMatricula);
                     tblPrueba.AddCell(clmes1);
                     tblPrueba.AddCell(clmes2);
                     tblPrueba.AddCell(clmes3);
                     tblPrueba.AddCell(clmes4);
+                    tblPrueba.AddCell(clmes5);
+                    tblPrueba.AddCell(clmes6);
+                    tblPrueba.AddCell(clmes7);
+                    tblPrueba.AddCell(clmes8);
 
                     conexion.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM pagos WHERE legajo = @legajo", conexion);
@@ -322,6 +367,10 @@ namespace sysacad
                         tblPrueba.AddCell(new Phrase(leer["mes2"].ToString(), font));
                         tblPrueba.AddCell(new Phrase(leer["mes3"].ToString(), font));
                         tblPrueba.AddCell(new Phrase(leer["mes4"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["mes5"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["mes6"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["mes7"].ToString(), font));
+                        tblPrueba.AddCell(new Phrase(leer["mes8"].ToString(), font));
                     }
                     conexion.Close();
 

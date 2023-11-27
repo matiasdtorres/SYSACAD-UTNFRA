@@ -55,7 +55,11 @@ namespace consolaCrearDB_Estudiantes
                 materia1 VARCHAR(50),
                 materia2 VARCHAR(50),
                 materia3 VARCHAR(50),
-                materia4 VARCHAR(50)
+                materia4 VARCHAR(50),
+                materia5 VARCHAR(50),
+                materia6 VARCHAR(50),
+                materia7 VARCHAR(50),
+                materia8 VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))

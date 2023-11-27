@@ -19,9 +19,11 @@ namespace sysacad
 
         login logout;
         incripcionCurso inscribirme;
+        incripcionCurso2 inscribirme2;
         datosEstudiante datosAlumno;
         horarios consultarHorarios;
         pagos realizarPagos;
+
 
         public dashboardEstudiante(string legajoLogeado)
         {
@@ -153,6 +155,26 @@ namespace sysacad
         private void RealizarPagos_FormClosed(object sender, FormClosedEventArgs e)
         {
             realizarPagos = null;
+        }
+
+        private void btnincribircurso2_Click(object sender, EventArgs e)
+        {
+            if (inscribirme2 == null)
+            {
+                inscribirme2 = new incripcionCurso2(bienvenidolegajo.Text);
+                inscribirme2.FormClosed += Incribirme2_FormClosed;
+                inscribirme2.MdiParent = this;
+                inscribirme2.Show();
+            }
+            else
+            {
+                inscribirme2.Activate();
+            }
+        }
+
+        private void Incribirme2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            inscribirme2 = null;
         }
     }
 }

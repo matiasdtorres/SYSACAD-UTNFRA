@@ -74,3 +74,5 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Estudiantes\bin\Debug\net6.0\itextsharp.dll

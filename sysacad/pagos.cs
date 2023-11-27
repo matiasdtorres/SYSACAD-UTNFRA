@@ -40,6 +40,10 @@ namespace sysacad
 
             if (reader.Read())
             {
+                if (reader["matricula"].ToString() == "PAGADO")
+                {
+                    matriculatxt.Text = "PAGADO";
+                }
                 if (reader["mes1"].ToString() == "PAGADO")
                 {
                     mes1txt.Text = "PAGADO";
@@ -56,9 +60,21 @@ namespace sysacad
                 {
                     mes4txt.Text = "PAGADO";
                 }
-                if (reader["matricula"].ToString() == "PAGADO")
+                if (reader["mes5"].ToString() == "PAGADO")
                 {
-                    matriculatxt.Text = "PAGADO";
+                    mes5txt.Text = "PAGADO";
+                }
+                if (reader["mes6"].ToString() == "PAGADO")
+                {
+                    mes6txt.Text = "PAGADO";
+                }
+                if (reader["mes7"].ToString() == "PAGADO")
+                {
+                    mes7txt.Text = "PAGADO";
+                }
+                if (reader["mes8"].ToString() == "PAGADO")
+                {
+                    mes8txt.Text = "PAGADO";
                 }
             }
             conexion.Close();
@@ -66,145 +82,113 @@ namespace sysacad
 
         private void btnmes1_Click(object sender, EventArgs e)
         {
-            //chequeo que los labels no esten vacios
-            if (string.IsNullOrEmpty(tipotxt.Text) || string.IsNullOrEmpty(numerotxt.Text) || string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(codigotxt.Text) || string.IsNullOrEmpty(vencimientotxt.Text))
+            //chequeo que no haya pagado ya el mes
+            if (mes1txt.Text == "PAGADO")
             {
-                MessageBox.Show("Primero debes Agregar un metodo de pago");
+                MessageBox.Show("Ya pagaste el mes 1");
             }
             else
             {
-                //chequeo que no haya pagado ya el mes
-                if (mes1txt.Text == "PAGADO")
+                //chequeo que haya pagado la matricula
+                if (matriculatxt.Text == "PAGADO")
                 {
-                    MessageBox.Show("Ya pagaste el mes 1");
+                    conexion.Open();
+                    //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                    string query = "UPDATE pagos SET mes1 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                    MySqlCommand comando = new MySqlCommand(query, conexion);
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Pago realizado con exito");
+                    chequeopagos(legajoescondido.Text);
                 }
                 else
                 {
-                    //chequeo que haya pagado la matricula
-                    if (matriculatxt.Text == "PAGADO")
-                    {
-                        conexion.Open();
-                        //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
-                        string query = "UPDATE pagos SET mes1 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
-                        MySqlCommand comando = new MySqlCommand(query, conexion);
-                        comando.ExecuteNonQuery();
-                        conexion.Close();
-                        MessageBox.Show("Pago realizado con exito");
-                        chequeopagos(legajoescondido.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Primero debes pagar la matricula");
-                    }
-
+                    MessageBox.Show("Primero debes pagar la matricula");
                 }
+
             }
         }
 
         private void btnmes2_Click(object sender, EventArgs e)
         {
-            //chequeo que los labels no esten vacios
-            if (string.IsNullOrEmpty(tipotxt.Text) || string.IsNullOrEmpty(numerotxt.Text) || string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(codigotxt.Text) || string.IsNullOrEmpty(vencimientotxt.Text))
+            //chequeo que no haya pagado ya el mes
+            if (mes2txt.Text == "PAGADO")
             {
-                MessageBox.Show("Primero debes Agregar un metodo de pago");
+                MessageBox.Show("Ya pagaste el mes 2");
             }
             else
             {
-                //chequeo que no haya pagado ya el mes
-                if (mes2txt.Text == "PAGADO")
+                //chequeo que haya pagado el mes anterior
+                if (mes1txt.Text == "PAGADO")
                 {
-                    MessageBox.Show("Ya pagaste el mes 2");
+                    conexion.Open();
+                    //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                    string query = "UPDATE pagos SET mes2 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                    MySqlCommand comando = new MySqlCommand(query, conexion);
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Pago realizado con exito");
+                    chequeopagos(legajoescondido.Text);
                 }
                 else
                 {
-                    //chequeo que haya pagado la matricula
-                    if (matriculatxt.Text == "PAGADO")
-                    {
-                        conexion.Open();
-                        //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
-                        string query = "UPDATE pagos SET mes2 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
-                        MySqlCommand comando = new MySqlCommand(query, conexion);
-                        comando.ExecuteNonQuery();
-                        conexion.Close();
-                        MessageBox.Show("Pago realizado con exito");
-                        chequeopagos(legajoescondido.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Primero debes pagar la matricula");
-                    }
+                    MessageBox.Show("Primero debes pagar el mes anterior");
                 }
             }
         }
 
         private void btnmes3_Click(object sender, EventArgs e)
         {
-            //chequeo que los labels no esten vacios
-            if (string.IsNullOrEmpty(tipotxt.Text) || string.IsNullOrEmpty(numerotxt.Text) || string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(codigotxt.Text) || string.IsNullOrEmpty(vencimientotxt.Text))
+            //chequeo que no haya pagado ya el mes
+            if (mes3txt.Text == "PAGADO")
             {
-                MessageBox.Show("Primero debes Agregar un metodo de pago");
+                MessageBox.Show("Ya pagaste el mes 3");
             }
             else
             {
-                //chequeo que no haya pagado ya el mes
-                if (mes3txt.Text == "PAGADO")
+                //chequeo que haya pagado el mes anterior
+                if (mes2txt.Text == "PAGADO")
                 {
-                    MessageBox.Show("Ya pagaste el mes 3");
+                    conexion.Open();
+                    //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                    string query = "UPDATE pagos SET mes3 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                    MySqlCommand comando = new MySqlCommand(query, conexion);
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Pago realizado con exito");
+                    chequeopagos(legajoescondido.Text);
                 }
                 else
                 {
-                    //chequeo que haya pagado la matricula
-                    if (matriculatxt.Text == "PAGADO")
-                    {
-                        conexion.Open();
-                        //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
-                        string query = "UPDATE pagos SET mes3 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
-                        MySqlCommand comando = new MySqlCommand(query, conexion);
-                        comando.ExecuteNonQuery();
-                        conexion.Close();
-                        MessageBox.Show("Pago realizado con exito");
-                        chequeopagos(legajoescondido.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Primero debes pagar la matricula");
-                    }
+                    MessageBox.Show("Primero debes pagar el mes anterior");
                 }
             }
         }
 
         private void btnmes4_Click(object sender, EventArgs e)
         {
-            //chequeo que los labels no esten vacios
-            if (string.IsNullOrEmpty(tipotxt.Text) || string.IsNullOrEmpty(numerotxt.Text) || string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(codigotxt.Text) || string.IsNullOrEmpty(vencimientotxt.Text))
+            //chequeo que no haya pagado ya el mes
+            if (mes4txt.Text == "PAGADO")
             {
-                MessageBox.Show("Primero debes Agregar un metodo de pago");
+                MessageBox.Show("Ya pagaste el mes 4");
             }
             else
             {
-                //chequeo que no haya pagado ya el mes
-                if (mes4txt.Text == "PAGADO")
+                //chequeo que haya pagado el mes anterior
+                if (mes3txt.Text == "PAGADO")
                 {
-                    MessageBox.Show("Ya pagaste el mes 4");
+                    conexion.Open();
+                    //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                    string query = "UPDATE pagos SET mes4 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                    MySqlCommand comando = new MySqlCommand(query, conexion);
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                    MessageBox.Show("Pago realizado con exito");
+                    chequeopagos(legajoescondido.Text);
                 }
                 else
                 {
-                    //chequeo que haya pagado la matricula
-                    if (matriculatxt.Text == "PAGADO")
-                    {
-                        conexion.Open();
-                        //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
-                        string query = "UPDATE pagos SET mes4 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
-                        MySqlCommand comando = new MySqlCommand(query, conexion);
-                        comando.ExecuteNonQuery();
-                        conexion.Close();
-                        MessageBox.Show("Pago realizado con exito");
-                        chequeopagos(legajoescondido.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Primero debes pagar la matricula");
-                    }
+                    MessageBox.Show("Primero debes pagar el mes anterior");
                 }
             }
         }
@@ -261,6 +245,86 @@ namespace sysacad
 
             }
             conexion.Close();
+        }
+
+        private void btnmes5_Click(object sender, EventArgs e)
+        {
+            //chequeo que haya pagado el cuatrimestre anterior
+            if (mes4txt.Text == "PAGADO")
+            {
+                conexion.Open();
+                //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                string query = "UPDATE pagos SET mes5 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Pago realizado con exito");
+                chequeopagos(legajoescondido.Text);
+            }
+            else
+            {
+                MessageBox.Show("Primero debes tener pago todo el 1er cuatrimestre");
+            }
+        }
+
+        private void btnmes6_Click(object sender, EventArgs e)
+        {
+            //chequeo que haya pagado el cuatrimestre anterior
+            if (mes5txt.Text == "PAGADO")
+            {
+                conexion.Open();
+                //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                string query = "UPDATE pagos SET mes6 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Pago realizado con exito");
+                chequeopagos(legajoescondido.Text);
+            }
+            else
+            {
+                MessageBox.Show("Primero debes pagar el mes anterior");
+            }
+        }
+
+        private void btnmes7_Click(object sender, EventArgs e)
+        {
+            //chequeo que haya pagado el cuatrimestre anterior
+            if (mes6txt.Text == "PAGADO")
+            {
+                conexion.Open();
+                //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                string query = "UPDATE pagos SET mes7 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Pago realizado con exito");
+                chequeopagos(legajoescondido.Text);
+            }
+            else
+            {
+                MessageBox.Show("Primero debes pagar el mes anterior");
+            }
+        }
+
+        private void btnmes8_Click(object sender, EventArgs e)
+        {
+            //chequeo que haya pagado el cuatrimestre anterior
+            if (mes7txt.Text == "PAGADO")
+            {
+                conexion.Open();
+                //actualizo la tabla pagos donde el legajo sea el legajo del estudiante logeado
+                string query = "UPDATE pagos SET mes8 = 'PAGADO' WHERE legajo = '" + legajoescondido.Text + "'";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Pago realizado con exito");
+                chequeopagos(legajoescondido.Text);
+            }
+            else
+            {
+                MessageBox.Show("Primero debes pagar el mes anterior");
+            }
         }
     }
 }

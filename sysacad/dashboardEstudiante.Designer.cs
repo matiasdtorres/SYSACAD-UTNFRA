@@ -43,6 +43,7 @@
             btnincribircurso = new Button();
             btnconsultarhorarios = new Button();
             btnrealizarpagos = new Button();
+            btnincribircurso2 = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -163,6 +164,7 @@
             flowLayoutPanel1.BackColor = Color.Black;
             flowLayoutPanel1.Controls.Add(btnmisdatos);
             flowLayoutPanel1.Controls.Add(btnincribircurso);
+            flowLayoutPanel1.Controls.Add(btnincribircurso2);
             flowLayoutPanel1.Controls.Add(btnconsultarhorarios);
             flowLayoutPanel1.Controls.Add(btnrealizarpagos);
             flowLayoutPanel1.Dock = DockStyle.Left;
@@ -195,7 +197,7 @@
             btnincribircurso.Name = "btnincribircurso";
             btnincribircurso.Size = new Size(215, 33);
             btnincribircurso.TabIndex = 5;
-            btnincribircurso.Text = "Incripcion a curso";
+            btnincribircurso.Text = "Inscripcion 1er Cuatri";
             btnincribircurso.UseVisualStyleBackColor = false;
             btnincribircurso.Click += btnincribircurso_Click;
             // 
@@ -205,7 +207,7 @@
             btnconsultarhorarios.FlatAppearance.BorderSize = 0;
             btnconsultarhorarios.FlatStyle = FlatStyle.Flat;
             btnconsultarhorarios.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnconsultarhorarios.Location = new Point(3, 81);
+            btnconsultarhorarios.Location = new Point(3, 120);
             btnconsultarhorarios.Name = "btnconsultarhorarios";
             btnconsultarhorarios.Size = new Size(215, 33);
             btnconsultarhorarios.TabIndex = 7;
@@ -219,13 +221,27 @@
             btnrealizarpagos.FlatAppearance.BorderSize = 0;
             btnrealizarpagos.FlatStyle = FlatStyle.Flat;
             btnrealizarpagos.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnrealizarpagos.Location = new Point(3, 120);
+            btnrealizarpagos.Location = new Point(3, 159);
             btnrealizarpagos.Name = "btnrealizarpagos";
             btnrealizarpagos.Size = new Size(215, 33);
             btnrealizarpagos.TabIndex = 8;
             btnrealizarpagos.Text = "Realizar Pagos";
             btnrealizarpagos.UseVisualStyleBackColor = false;
             btnrealizarpagos.Click += btnrealizarpagos_Click;
+            // 
+            // btnincribircurso2
+            // 
+            btnincribircurso2.BackColor = Color.White;
+            btnincribircurso2.FlatAppearance.BorderSize = 0;
+            btnincribircurso2.FlatStyle = FlatStyle.Flat;
+            btnincribircurso2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnincribircurso2.Location = new Point(3, 81);
+            btnincribircurso2.Name = "btnincribircurso2";
+            btnincribircurso2.Size = new Size(215, 33);
+            btnincribircurso2.TabIndex = 7;
+            btnincribircurso2.Text = "Inscripcion 2do Cuatri";
+            btnincribircurso2.UseVisualStyleBackColor = false;
+            btnincribircurso2.Click += btnincribircurso2_Click;
             // 
             // dashboardEstudiante
             // 
@@ -265,5 +281,6 @@
         private Label bienvenidolegajo;
         private Button btnconsultarhorarios;
         private Button btnrealizarpagos;
+        private Button btnincribircurso2;
     }
 }

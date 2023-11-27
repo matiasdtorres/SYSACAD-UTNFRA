@@ -50,7 +50,11 @@ namespace consolaCrearDB_Pagos
                 mes1 VARCHAR(50),
                 mes2 VARCHAR(50),
                 mes3 VARCHAR(50),
-                mes4 VARCHAR(50)
+                mes4 VARCHAR(50),
+                mes5 VARCHAR(50),
+                mes6 VARCHAR(50),
+                mes7 VARCHAR(50),
+                mes8 VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
