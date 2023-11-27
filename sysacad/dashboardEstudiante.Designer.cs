@@ -69,7 +69,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(515, 13);
+            label5.Location = new Point(528, 13);
             label5.Name = "label5";
             label5.Size = new Size(88, 21);
             label5.TabIndex = 11;
@@ -80,7 +80,7 @@
             bienvenidolegajo.AutoSize = true;
             bienvenidolegajo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bienvenidolegajo.ForeColor = Color.White;
-            bienvenidolegajo.Location = new Point(601, 14);
+            bienvenidolegajo.Location = new Point(614, 14);
             bienvenidolegajo.Name = "bienvenidolegajo";
             bienvenidolegajo.Size = new Size(69, 21);
             bienvenidolegajo.TabIndex = 10;
