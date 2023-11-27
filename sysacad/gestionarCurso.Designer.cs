@@ -46,7 +46,6 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            profesorcursotxt = new TextBox();
             codigocursotxt = new TextBox();
             label3 = new Label();
             nombrecursotxt = new TextBox();
@@ -58,6 +57,8 @@
             btneliminar = new Button();
             btneditar = new Button();
             groupBox2 = new GroupBox();
+            turnoeditarcursotxt = new ComboBox();
+            diaeditarcursotxt = new ComboBox();
             cuatrieditarcursotxt = new ComboBox();
             descripcioneditarcursotxt = new TextBox();
             label12 = new Label();
@@ -71,14 +72,13 @@
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
-            profesoreditarcursotxt = new TextBox();
             codigoeditarcursotxt = new TextBox();
             label21 = new Label();
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
             cursos = new DataGridView();
-            diaeditarcursotxt = new ComboBox();
-            turnoeditarcursotxt = new ComboBox();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
@@ -115,6 +115,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(turnocursotxt);
             groupBox1.Controls.Add(diacursotxt);
             groupBox1.Controls.Add(cuatricursotxt);
@@ -130,7 +131,6 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(profesorcursotxt);
             groupBox1.Controls.Add(codigocursotxt);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(nombrecursotxt);
@@ -298,15 +298,6 @@
             label4.TabIndex = 9;
             label4.Text = "Profesor";
             // 
-            // profesorcursotxt
-            // 
-            profesorcursotxt.BackColor = Color.White;
-            profesorcursotxt.ForeColor = Color.Black;
-            profesorcursotxt.Location = new Point(113, 89);
-            profesorcursotxt.Name = "profesorcursotxt";
-            profesorcursotxt.Size = new Size(178, 23);
-            profesorcursotxt.TabIndex = 8;
-            // 
             // codigocursotxt
             // 
             codigocursotxt.BackColor = Color.White;
@@ -424,6 +415,7 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(comboBox2);
             groupBox2.Controls.Add(turnoeditarcursotxt);
             groupBox2.Controls.Add(diaeditarcursotxt);
             groupBox2.Controls.Add(cuatrieditarcursotxt);
@@ -439,7 +431,6 @@
             groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label20);
-            groupBox2.Controls.Add(profesoreditarcursotxt);
             groupBox2.Controls.Add(codigoeditarcursotxt);
             groupBox2.Controls.Add(label21);
             groupBox2.Controls.Add(nombreeditarcursotxt);
@@ -451,6 +442,26 @@
             groupBox2.TabIndex = 25;
             groupBox2.TabStop = false;
             groupBox2.Text = "Editar Curso";
+            // 
+            // turnoeditarcursotxt
+            // 
+            turnoeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            turnoeditarcursotxt.FormattingEnabled = true;
+            turnoeditarcursotxt.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
+            turnoeditarcursotxt.Location = new Point(113, 234);
+            turnoeditarcursotxt.Name = "turnoeditarcursotxt";
+            turnoeditarcursotxt.Size = new Size(178, 23);
+            turnoeditarcursotxt.TabIndex = 34;
+            // 
+            // diaeditarcursotxt
+            // 
+            diaeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            diaeditarcursotxt.FormattingEnabled = true;
+            diaeditarcursotxt.Items.AddRange(new object[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" });
+            diaeditarcursotxt.Location = new Point(113, 205);
+            diaeditarcursotxt.Name = "diaeditarcursotxt";
+            diaeditarcursotxt.Size = new Size(178, 23);
+            diaeditarcursotxt.TabIndex = 34;
             // 
             // cuatrieditarcursotxt
             // 
@@ -587,15 +598,6 @@
             label20.TabIndex = 9;
             label20.Text = "Profesor";
             // 
-            // profesoreditarcursotxt
-            // 
-            profesoreditarcursotxt.BackColor = Color.White;
-            profesoreditarcursotxt.ForeColor = Color.Black;
-            profesoreditarcursotxt.Location = new Point(113, 89);
-            profesoreditarcursotxt.Name = "profesoreditarcursotxt";
-            profesoreditarcursotxt.Size = new Size(178, 23);
-            profesoreditarcursotxt.TabIndex = 8;
-            // 
             // codigoeditarcursotxt
             // 
             codigoeditarcursotxt.BackColor = Color.White;
@@ -649,25 +651,25 @@
             cursos.TabIndex = 30;
             cursos.CellClick += cursos_CellClick;
             // 
-            // diaeditarcursotxt
+            // comboBox1
             // 
-            diaeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
-            diaeditarcursotxt.FormattingEnabled = true;
-            diaeditarcursotxt.Items.AddRange(new object[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes" });
-            diaeditarcursotxt.Location = new Point(113, 205);
-            diaeditarcursotxt.Name = "diaeditarcursotxt";
-            diaeditarcursotxt.Size = new Size(178, 23);
-            diaeditarcursotxt.TabIndex = 34;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            comboBox1.Location = new Point(113, 88);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(178, 23);
+            comboBox1.TabIndex = 34;
             // 
-            // turnoeditarcursotxt
+            // comboBox2
             // 
-            turnoeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
-            turnoeditarcursotxt.FormattingEnabled = true;
-            turnoeditarcursotxt.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
-            turnoeditarcursotxt.Location = new Point(113, 234);
-            turnoeditarcursotxt.Name = "turnoeditarcursotxt";
-            turnoeditarcursotxt.Size = new Size(178, 23);
-            turnoeditarcursotxt.TabIndex = 34;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            comboBox2.Location = new Point(113, 89);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(178, 23);
+            comboBox2.TabIndex = 35;
             // 
             // gestionarCurso
             // 
@@ -719,7 +721,6 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox profesorcursotxt;
         private Label label10;
         private NumericUpDown cuposcursotxt;
         private Button btnregistrar;
@@ -743,7 +744,6 @@
         private Label label18;
         private Label label19;
         private Label label20;
-        private TextBox profesoreditarcursotxt;
         private TextBox codigoeditarcursotxt;
         private Label label21;
         private TextBox nombreeditarcursotxt;
@@ -755,5 +755,7 @@
         private ComboBox cuatrieditarcursotxt;
         private ComboBox turnoeditarcursotxt;
         private ComboBox diaeditarcursotxt;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }
