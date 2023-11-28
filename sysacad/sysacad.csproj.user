@@ -4,10 +4,16 @@
     <Compile Update="agregarEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="asistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="dashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="dashboardEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="dashboardProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="datosEstudiante.cs">
@@ -26,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="notas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="pagos.cs">

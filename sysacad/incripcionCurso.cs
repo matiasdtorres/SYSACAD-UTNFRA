@@ -128,6 +128,90 @@ namespace sysacad
                 conexion.Close();
             }
 
+            // Obtener el cupoMaximo actual del curso
+            string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
+            int cupoMaximo = 0;
+
+            using (MySqlCommand comandoCupoMaximo = new MySqlCommand(queryCupoMaximo, conexion))
+            {
+                comandoCupoMaximo.Parameters.AddWithValue("@Nombre", nombremateria1.Text);
+                conexion.Open();
+                object cupoMaximoResult = comandoCupoMaximo.ExecuteScalar();
+                if (cupoMaximoResult != null && cupoMaximoResult != DBNull.Value)
+                {
+                    cupoMaximo = Convert.ToInt32(cupoMaximoResult);
+                }
+                conexion.Close();
+            }
+
+            // Verificar si hay cupo disponible o preguntar si quiere entrar en la lista de espera
+            if (cupoMaximo <= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("El curso está completo. ¿Quieres entrar en la lista de espera?", "Cupo completo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return; // Salir del método si no quiere entrar en la lista de espera
+                }
+                else
+                {
+                    // Verificar si el estudiante ya está en la lista de espera
+                    string queryVerificarListaEspera = "SELECT COUNT(*) FROM listadeespera WHERE legajo = @Legajo AND nombremateria = @NombreMateria";
+                    int countExistencia = 0;
+
+                    using (MySqlCommand comandoVerificarListaEspera = new MySqlCommand(queryVerificarListaEspera, conexion))
+                    {
+                        comandoVerificarListaEspera.Parameters.AddWithValue("@Legajo", legajo.Text);
+                        comandoVerificarListaEspera.Parameters.AddWithValue("@NombreMateria", nombremateria1.Text);
+
+                        try
+                        {
+                            conexion.Open();
+                            countExistencia = Convert.ToInt32(comandoVerificarListaEspera.ExecuteScalar());
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al verificar la lista de espera: " + ex.Message);
+                        }
+                        finally
+                        {
+                            conexion.Close();
+                        }
+                    }
+
+                    if (countExistencia > 0)
+                    {
+                        MessageBox.Show($"Ya estás en la lista de espera para el curso de {nombremateria1.Text}");
+                        return; // Salir del método si el estudiante ya está en la lista de espera
+                    }
+                    else
+                    {
+                        // Agregar al estudiante a la lista de espera
+                        string queryListaEspera = "INSERT INTO listadeespera (legajo, nombremateria) VALUES (@Legajo, @NombreMateria)";
+                        using (MySqlCommand comandoListaEspera = new MySqlCommand(queryListaEspera, conexion))
+                        {
+                            comandoListaEspera.Parameters.AddWithValue("@Legajo", legajo.Text);
+                            comandoListaEspera.Parameters.AddWithValue("@NombreMateria", nombremateria1.Text);
+
+                            try
+                            {
+                                conexion.Open();
+                                comandoListaEspera.ExecuteNonQuery();
+                                MessageBox.Show($"Te has añadido a la lista de espera para el curso de {nombremateria1.Text}");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error al agregar a la lista de espera: " + ex.Message);
+                            }
+                            finally
+                            {
+                                conexion.Close();
+                            }
+                            return; // Salir del método después de agregar a la lista de espera
+                        }
+                    }
+                }
+            }
+
             // Actualizar la tabla estudiantes y cursos
             string queryUpdateEstudiantes = "UPDATE estudiantes SET materia1 = @Materia1 WHERE legajo = @Legajo";
             string queryUpdateCursos = "UPDATE cursos SET cupoMaximo = cupoMaximo - 1 WHERE nombre = @Nombre";
@@ -157,6 +241,7 @@ namespace sysacad
                 }
             }
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

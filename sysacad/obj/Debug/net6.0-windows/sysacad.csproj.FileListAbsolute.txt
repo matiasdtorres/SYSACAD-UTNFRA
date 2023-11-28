@@ -137,3 +137,6 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-wi
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.requisitosAcademicos.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.listasDeEspera.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.perfilesDeProfes.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.dashboardProfesor.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.asistencias.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.notas.resources

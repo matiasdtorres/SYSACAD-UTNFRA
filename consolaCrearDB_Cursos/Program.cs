@@ -45,7 +45,7 @@ namespace consolaCrearDB_Cursos
             string createTableQuery = $@"
             CREATE TABLE {tableName}
             (
-                codigo VARCHAR(50) primary key,
+                codigo int AUTO_INCREMENT primary key,
                 nombre VARCHAR(50),
                 descripcion VARCHAR(50),
                 cupoMaximo int,

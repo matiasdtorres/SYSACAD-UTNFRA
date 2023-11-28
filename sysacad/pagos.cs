@@ -227,7 +227,7 @@ namespace sysacad
             metodopagos.Show();
         }
 
-        private void mostrardatosdepago(String legajoLogeado)
+        internal void mostrardatosdepago(string legajoLogeado)
         {
             //busco en la tabla datos_pagos donde el legajo sea el legajo del estudiante logeado
             conexion.Open();
@@ -325,6 +325,12 @@ namespace sysacad
             {
                 MessageBox.Show("Primero debes pagar el mes anterior");
             }
+        }
+
+        private void pagos_Load(object sender, EventArgs e)
+        {
+            string legajoLogeado = legajoescondido.Text;
+            mostrardatosdepago(legajoLogeado);
         }
     }
 }

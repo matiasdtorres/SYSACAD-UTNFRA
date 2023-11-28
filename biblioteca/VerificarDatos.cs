@@ -60,5 +60,30 @@ namespace biblioteca
 
             return false;
         }
+
+        //ahora para Profesor
+        public static bool VerificoProfesor(string usuario, string contraseña)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(ConnectionString))
+            {
+                conexion.Open();
+                string query = "SELECT contraseña FROM profesores WHERE usuario = @Usuario";
+
+                using (MySqlCommand comando = new MySqlCommand(query, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Usuario", usuario);
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        string hash = result.ToString();
+                        return Hash.ValidatePassword(contraseña, hash);
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

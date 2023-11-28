@@ -12,14 +12,14 @@ namespace consolaCrearDB_ListaEspera
             {
                 connection.Open();
 
-                if (TableExists(connection, "listaEspera"))
+                if (TableExists(connection, "listadeespera"))
                 {
-                    Console.WriteLine("La tabla 'listaEspera' ya existe.");
+                    Console.WriteLine("La tabla 'listadeespera' ya existe.");
                 }
                 else
                 {
-                    CreateTable(connection, "listaEspera");
-                    Console.WriteLine("Tabla 'listaEspera' creada con éxito.");
+                    CreateTable(connection, "listadeespera");
+                    Console.WriteLine("Tabla 'listadeespera' creada con éxito.");
                 }
 
                 connection.Close();
@@ -45,10 +45,9 @@ namespace consolaCrearDB_ListaEspera
             string createTableQuery = $@"
             CREATE TABLE {tableName}
             (
-                legajo int primary key,
-                materia VARCHAR(50),
-                fecha VARCHAR(50),
-                hora VARCHAR(50)
+                id int primary key auto_increment,
+                legajo int,
+                nombremateria VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))

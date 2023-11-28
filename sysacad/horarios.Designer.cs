@@ -30,36 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(horarios));
             lunesmañananombre = new Label();
-            lunesmañanaaula = new Label();
+            lunesmañanaprofe = new Label();
             martesmañananombre = new Label();
-            martesmañanaaula = new Label();
+            martesmañanaprofe = new Label();
             miercolesmañananombre = new Label();
-            miercolesmañanaaula = new Label();
+            miercolesmañanaprofe = new Label();
             juevesmañananombre = new Label();
-            juevesmañanaaula = new Label();
+            juevesmañanaprofe = new Label();
             viernesmañananombre = new Label();
-            viernesmañanaaula = new Label();
+            viernesmañanaprofe = new Label();
             lunestardenombre = new Label();
-            lunestardeaula = new Label();
+            lunestardeprofe = new Label();
             martestardenombre = new Label();
-            martestardeaula = new Label();
+            martestardeprofe = new Label();
             miercolestardenombre = new Label();
-            miercolestardeaula = new Label();
+            miercolestardeprofe = new Label();
             juevestardenombre = new Label();
-            juevestardeaula = new Label();
+            juevestardeprofe = new Label();
             viernestardenombre = new Label();
-            viernestardeaula = new Label();
+            viernestardeprofe = new Label();
             lunesnochenombre = new Label();
-            lunesnocheaula = new Label();
+            lunesnocheprofe = new Label();
             martesnochenombre = new Label();
-            martesnocheaula = new Label();
+            martesnocheprofe = new Label();
             miercolesnochenombre = new Label();
-            miercolesnocheaula = new Label();
+            miercolesnocheprofe = new Label();
             juevesnochenombre = new Label();
-            juevesnocheaula = new Label();
+            juevesnocheprofe = new Label();
             viernesnochenombre = new Label();
-            viernesnocheaula = new Label();
+            viernesnocheprofe = new Label();
             legajoescondido = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // lunesmañananombre
@@ -74,17 +77,17 @@
             lunesmañananombre.TabIndex = 0;
             lunesmañananombre.Text = "label1";
             // 
-            // lunesmañanaaula
+            // lunesmañanaprofe
             // 
-            lunesmañanaaula.AutoSize = true;
-            lunesmañanaaula.BackColor = Color.Transparent;
-            lunesmañanaaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lunesmañanaaula.ForeColor = Color.White;
-            lunesmañanaaula.Location = new Point(231, 240);
-            lunesmañanaaula.Name = "lunesmañanaaula";
-            lunesmañanaaula.Size = new Size(68, 30);
-            lunesmañanaaula.TabIndex = 3;
-            lunesmañanaaula.Text = "label2";
+            lunesmañanaprofe.AutoSize = true;
+            lunesmañanaprofe.BackColor = Color.Transparent;
+            lunesmañanaprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lunesmañanaprofe.ForeColor = Color.White;
+            lunesmañanaprofe.Location = new Point(231, 240);
+            lunesmañanaprofe.Name = "lunesmañanaprofe";
+            lunesmañanaprofe.Size = new Size(68, 30);
+            lunesmañanaprofe.TabIndex = 3;
+            lunesmañanaprofe.Text = "label2";
             // 
             // martesmañananombre
             // 
@@ -98,17 +101,17 @@
             martesmañananombre.TabIndex = 4;
             martesmañananombre.Text = "label3";
             // 
-            // martesmañanaaula
+            // martesmañanaprofe
             // 
-            martesmañanaaula.AutoSize = true;
-            martesmañanaaula.BackColor = Color.Transparent;
-            martesmañanaaula.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            martesmañanaaula.ForeColor = Color.White;
-            martesmañanaaula.Location = new Point(401, 240);
-            martesmañanaaula.Name = "martesmañanaaula";
-            martesmañanaaula.Size = new Size(78, 32);
-            martesmañanaaula.TabIndex = 5;
-            martesmañanaaula.Text = "label4";
+            martesmañanaprofe.AutoSize = true;
+            martesmañanaprofe.BackColor = Color.Transparent;
+            martesmañanaprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            martesmañanaprofe.ForeColor = Color.White;
+            martesmañanaprofe.Location = new Point(401, 240);
+            martesmañanaprofe.Name = "martesmañanaprofe";
+            martesmañanaprofe.Size = new Size(68, 30);
+            martesmañanaprofe.TabIndex = 5;
+            martesmañanaprofe.Text = "label4";
             // 
             // miercolesmañananombre
             // 
@@ -122,17 +125,17 @@
             miercolesmañananombre.TabIndex = 6;
             miercolesmañananombre.Text = "label5";
             // 
-            // miercolesmañanaaula
+            // miercolesmañanaprofe
             // 
-            miercolesmañanaaula.AutoSize = true;
-            miercolesmañanaaula.BackColor = Color.Transparent;
-            miercolesmañanaaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            miercolesmañanaaula.ForeColor = Color.White;
-            miercolesmañanaaula.Location = new Point(569, 240);
-            miercolesmañanaaula.Name = "miercolesmañanaaula";
-            miercolesmañanaaula.Size = new Size(68, 30);
-            miercolesmañanaaula.TabIndex = 7;
-            miercolesmañanaaula.Text = "label6";
+            miercolesmañanaprofe.AutoSize = true;
+            miercolesmañanaprofe.BackColor = Color.Transparent;
+            miercolesmañanaprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            miercolesmañanaprofe.ForeColor = Color.White;
+            miercolesmañanaprofe.Location = new Point(569, 240);
+            miercolesmañanaprofe.Name = "miercolesmañanaprofe";
+            miercolesmañanaprofe.Size = new Size(68, 30);
+            miercolesmañanaprofe.TabIndex = 7;
+            miercolesmañanaprofe.Text = "label6";
             // 
             // juevesmañananombre
             // 
@@ -146,17 +149,17 @@
             juevesmañananombre.TabIndex = 8;
             juevesmañananombre.Text = "label7";
             // 
-            // juevesmañanaaula
+            // juevesmañanaprofe
             // 
-            juevesmañanaaula.AutoSize = true;
-            juevesmañanaaula.BackColor = Color.Transparent;
-            juevesmañanaaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            juevesmañanaaula.ForeColor = Color.White;
-            juevesmañanaaula.Location = new Point(739, 240);
-            juevesmañanaaula.Name = "juevesmañanaaula";
-            juevesmañanaaula.Size = new Size(68, 30);
-            juevesmañanaaula.TabIndex = 9;
-            juevesmañanaaula.Text = "label8";
+            juevesmañanaprofe.AutoSize = true;
+            juevesmañanaprofe.BackColor = Color.Transparent;
+            juevesmañanaprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            juevesmañanaprofe.ForeColor = Color.White;
+            juevesmañanaprofe.Location = new Point(739, 240);
+            juevesmañanaprofe.Name = "juevesmañanaprofe";
+            juevesmañanaprofe.Size = new Size(68, 30);
+            juevesmañanaprofe.TabIndex = 9;
+            juevesmañanaprofe.Text = "label8";
             // 
             // viernesmañananombre
             // 
@@ -170,17 +173,17 @@
             viernesmañananombre.TabIndex = 10;
             viernesmañananombre.Text = "label9";
             // 
-            // viernesmañanaaula
+            // viernesmañanaprofe
             // 
-            viernesmañanaaula.AutoSize = true;
-            viernesmañanaaula.BackColor = Color.Transparent;
-            viernesmañanaaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            viernesmañanaaula.ForeColor = Color.White;
-            viernesmañanaaula.Location = new Point(905, 240);
-            viernesmañanaaula.Name = "viernesmañanaaula";
-            viernesmañanaaula.Size = new Size(79, 30);
-            viernesmañanaaula.TabIndex = 11;
-            viernesmañanaaula.Text = "label10";
+            viernesmañanaprofe.AutoSize = true;
+            viernesmañanaprofe.BackColor = Color.Transparent;
+            viernesmañanaprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            viernesmañanaprofe.ForeColor = Color.White;
+            viernesmañanaprofe.Location = new Point(905, 240);
+            viernesmañanaprofe.Name = "viernesmañanaprofe";
+            viernesmañanaprofe.Size = new Size(79, 30);
+            viernesmañanaprofe.TabIndex = 11;
+            viernesmañanaprofe.Text = "label10";
             // 
             // lunestardenombre
             // 
@@ -194,17 +197,17 @@
             lunestardenombre.TabIndex = 12;
             lunestardenombre.Text = "label11";
             // 
-            // lunestardeaula
+            // lunestardeprofe
             // 
-            lunestardeaula.AutoSize = true;
-            lunestardeaula.BackColor = Color.Transparent;
-            lunestardeaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lunestardeaula.ForeColor = Color.White;
-            lunestardeaula.Location = new Point(231, 373);
-            lunestardeaula.Name = "lunestardeaula";
-            lunestardeaula.Size = new Size(79, 30);
-            lunestardeaula.TabIndex = 13;
-            lunestardeaula.Text = "label12";
+            lunestardeprofe.AutoSize = true;
+            lunestardeprofe.BackColor = Color.Transparent;
+            lunestardeprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lunestardeprofe.ForeColor = Color.White;
+            lunestardeprofe.Location = new Point(231, 373);
+            lunestardeprofe.Name = "lunestardeprofe";
+            lunestardeprofe.Size = new Size(79, 30);
+            lunestardeprofe.TabIndex = 13;
+            lunestardeprofe.Text = "label12";
             // 
             // martestardenombre
             // 
@@ -218,17 +221,17 @@
             martestardenombre.TabIndex = 14;
             martestardenombre.Text = "label13";
             // 
-            // martestardeaula
+            // martestardeprofe
             // 
-            martestardeaula.AutoSize = true;
-            martestardeaula.BackColor = Color.Transparent;
-            martestardeaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            martestardeaula.ForeColor = Color.White;
-            martestardeaula.Location = new Point(401, 373);
-            martestardeaula.Name = "martestardeaula";
-            martestardeaula.Size = new Size(79, 30);
-            martestardeaula.TabIndex = 15;
-            martestardeaula.Text = "label14";
+            martestardeprofe.AutoSize = true;
+            martestardeprofe.BackColor = Color.Transparent;
+            martestardeprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            martestardeprofe.ForeColor = Color.White;
+            martestardeprofe.Location = new Point(401, 373);
+            martestardeprofe.Name = "martestardeprofe";
+            martestardeprofe.Size = new Size(79, 30);
+            martestardeprofe.TabIndex = 15;
+            martestardeprofe.Text = "label14";
             // 
             // miercolestardenombre
             // 
@@ -242,17 +245,17 @@
             miercolestardenombre.TabIndex = 16;
             miercolestardenombre.Text = "label15";
             // 
-            // miercolestardeaula
+            // miercolestardeprofe
             // 
-            miercolestardeaula.AutoSize = true;
-            miercolestardeaula.BackColor = Color.Transparent;
-            miercolestardeaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            miercolestardeaula.ForeColor = Color.White;
-            miercolestardeaula.Location = new Point(569, 373);
-            miercolestardeaula.Name = "miercolestardeaula";
-            miercolestardeaula.Size = new Size(79, 30);
-            miercolestardeaula.TabIndex = 17;
-            miercolestardeaula.Text = "label16";
+            miercolestardeprofe.AutoSize = true;
+            miercolestardeprofe.BackColor = Color.Transparent;
+            miercolestardeprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            miercolestardeprofe.ForeColor = Color.White;
+            miercolestardeprofe.Location = new Point(569, 373);
+            miercolestardeprofe.Name = "miercolestardeprofe";
+            miercolestardeprofe.Size = new Size(79, 30);
+            miercolestardeprofe.TabIndex = 17;
+            miercolestardeprofe.Text = "label16";
             // 
             // juevestardenombre
             // 
@@ -266,17 +269,17 @@
             juevestardenombre.TabIndex = 18;
             juevestardenombre.Text = "label17";
             // 
-            // juevestardeaula
+            // juevestardeprofe
             // 
-            juevestardeaula.AutoSize = true;
-            juevestardeaula.BackColor = Color.Transparent;
-            juevestardeaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            juevestardeaula.ForeColor = Color.White;
-            juevestardeaula.Location = new Point(739, 373);
-            juevestardeaula.Name = "juevestardeaula";
-            juevestardeaula.Size = new Size(79, 30);
-            juevestardeaula.TabIndex = 19;
-            juevestardeaula.Text = "label18";
+            juevestardeprofe.AutoSize = true;
+            juevestardeprofe.BackColor = Color.Transparent;
+            juevestardeprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            juevestardeprofe.ForeColor = Color.White;
+            juevestardeprofe.Location = new Point(739, 373);
+            juevestardeprofe.Name = "juevestardeprofe";
+            juevestardeprofe.Size = new Size(79, 30);
+            juevestardeprofe.TabIndex = 19;
+            juevestardeprofe.Text = "label18";
             // 
             // viernestardenombre
             // 
@@ -290,17 +293,17 @@
             viernestardenombre.TabIndex = 20;
             viernestardenombre.Text = "label19";
             // 
-            // viernestardeaula
+            // viernestardeprofe
             // 
-            viernestardeaula.AutoSize = true;
-            viernestardeaula.BackColor = Color.Transparent;
-            viernestardeaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            viernestardeaula.ForeColor = Color.White;
-            viernestardeaula.Location = new Point(905, 373);
-            viernestardeaula.Name = "viernestardeaula";
-            viernestardeaula.Size = new Size(79, 30);
-            viernestardeaula.TabIndex = 21;
-            viernestardeaula.Text = "label20";
+            viernestardeprofe.AutoSize = true;
+            viernestardeprofe.BackColor = Color.Transparent;
+            viernestardeprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            viernestardeprofe.ForeColor = Color.White;
+            viernestardeprofe.Location = new Point(905, 373);
+            viernestardeprofe.Name = "viernestardeprofe";
+            viernestardeprofe.Size = new Size(79, 30);
+            viernestardeprofe.TabIndex = 21;
+            viernestardeprofe.Text = "label20";
             // 
             // lunesnochenombre
             // 
@@ -314,17 +317,17 @@
             lunesnochenombre.TabIndex = 22;
             lunesnochenombre.Text = "label21";
             // 
-            // lunesnocheaula
+            // lunesnocheprofe
             // 
-            lunesnocheaula.AutoSize = true;
-            lunesnocheaula.BackColor = Color.Transparent;
-            lunesnocheaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lunesnocheaula.ForeColor = Color.White;
-            lunesnocheaula.Location = new Point(231, 511);
-            lunesnocheaula.Name = "lunesnocheaula";
-            lunesnocheaula.Size = new Size(79, 30);
-            lunesnocheaula.TabIndex = 23;
-            lunesnocheaula.Text = "label22";
+            lunesnocheprofe.AutoSize = true;
+            lunesnocheprofe.BackColor = Color.Transparent;
+            lunesnocheprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lunesnocheprofe.ForeColor = Color.White;
+            lunesnocheprofe.Location = new Point(231, 511);
+            lunesnocheprofe.Name = "lunesnocheprofe";
+            lunesnocheprofe.Size = new Size(79, 30);
+            lunesnocheprofe.TabIndex = 23;
+            lunesnocheprofe.Text = "label22";
             // 
             // martesnochenombre
             // 
@@ -338,17 +341,17 @@
             martesnochenombre.TabIndex = 24;
             martesnochenombre.Text = "label23";
             // 
-            // martesnocheaula
+            // martesnocheprofe
             // 
-            martesnocheaula.AutoSize = true;
-            martesnocheaula.BackColor = Color.Transparent;
-            martesnocheaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            martesnocheaula.ForeColor = Color.White;
-            martesnocheaula.Location = new Point(401, 511);
-            martesnocheaula.Name = "martesnocheaula";
-            martesnocheaula.Size = new Size(79, 30);
-            martesnocheaula.TabIndex = 25;
-            martesnocheaula.Text = "label24";
+            martesnocheprofe.AutoSize = true;
+            martesnocheprofe.BackColor = Color.Transparent;
+            martesnocheprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            martesnocheprofe.ForeColor = Color.White;
+            martesnocheprofe.Location = new Point(401, 511);
+            martesnocheprofe.Name = "martesnocheprofe";
+            martesnocheprofe.Size = new Size(79, 30);
+            martesnocheprofe.TabIndex = 25;
+            martesnocheprofe.Text = "label24";
             // 
             // miercolesnochenombre
             // 
@@ -362,17 +365,17 @@
             miercolesnochenombre.TabIndex = 26;
             miercolesnochenombre.Text = "label25";
             // 
-            // miercolesnocheaula
+            // miercolesnocheprofe
             // 
-            miercolesnocheaula.AutoSize = true;
-            miercolesnocheaula.BackColor = Color.Transparent;
-            miercolesnocheaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            miercolesnocheaula.ForeColor = Color.White;
-            miercolesnocheaula.Location = new Point(569, 511);
-            miercolesnocheaula.Name = "miercolesnocheaula";
-            miercolesnocheaula.Size = new Size(79, 30);
-            miercolesnocheaula.TabIndex = 27;
-            miercolesnocheaula.Text = "label26";
+            miercolesnocheprofe.AutoSize = true;
+            miercolesnocheprofe.BackColor = Color.Transparent;
+            miercolesnocheprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            miercolesnocheprofe.ForeColor = Color.White;
+            miercolesnocheprofe.Location = new Point(569, 511);
+            miercolesnocheprofe.Name = "miercolesnocheprofe";
+            miercolesnocheprofe.Size = new Size(79, 30);
+            miercolesnocheprofe.TabIndex = 27;
+            miercolesnocheprofe.Text = "label26";
             // 
             // juevesnochenombre
             // 
@@ -386,17 +389,17 @@
             juevesnochenombre.TabIndex = 28;
             juevesnochenombre.Text = "label27";
             // 
-            // juevesnocheaula
+            // juevesnocheprofe
             // 
-            juevesnocheaula.AutoSize = true;
-            juevesnocheaula.BackColor = Color.Transparent;
-            juevesnocheaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            juevesnocheaula.ForeColor = Color.White;
-            juevesnocheaula.Location = new Point(739, 511);
-            juevesnocheaula.Name = "juevesnocheaula";
-            juevesnocheaula.Size = new Size(79, 30);
-            juevesnocheaula.TabIndex = 29;
-            juevesnocheaula.Text = "label28";
+            juevesnocheprofe.AutoSize = true;
+            juevesnocheprofe.BackColor = Color.Transparent;
+            juevesnocheprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            juevesnocheprofe.ForeColor = Color.White;
+            juevesnocheprofe.Location = new Point(739, 511);
+            juevesnocheprofe.Name = "juevesnocheprofe";
+            juevesnocheprofe.Size = new Size(79, 30);
+            juevesnocheprofe.TabIndex = 29;
+            juevesnocheprofe.Text = "label28";
             // 
             // viernesnochenombre
             // 
@@ -410,17 +413,17 @@
             viernesnochenombre.TabIndex = 30;
             viernesnochenombre.Text = "label29";
             // 
-            // viernesnocheaula
+            // viernesnocheprofe
             // 
-            viernesnocheaula.AutoSize = true;
-            viernesnocheaula.BackColor = Color.Transparent;
-            viernesnocheaula.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            viernesnocheaula.ForeColor = Color.White;
-            viernesnocheaula.Location = new Point(905, 511);
-            viernesnocheaula.Name = "viernesnocheaula";
-            viernesnocheaula.Size = new Size(79, 30);
-            viernesnocheaula.TabIndex = 31;
-            viernesnocheaula.Text = "label30";
+            viernesnocheprofe.AutoSize = true;
+            viernesnocheprofe.BackColor = Color.Transparent;
+            viernesnocheprofe.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            viernesnocheprofe.ForeColor = Color.White;
+            viernesnocheprofe.Location = new Point(905, 511);
+            viernesnocheprofe.Name = "viernesnocheprofe";
+            viernesnocheprofe.Size = new Size(79, 30);
+            viernesnocheprofe.TabIndex = 31;
+            viernesnocheprofe.Text = "label30";
             // 
             // legajoescondido
             // 
@@ -432,6 +435,42 @@
             legajoescondido.TabIndex = 32;
             legajoescondido.Text = "label31";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(53, 259);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 30);
+            label1.TabIndex = 33;
+            label1.Text = "8:30 - 12:00";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(42, 387);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 30);
+            label2.TabIndex = 34;
+            label2.Text = "14:00 - 18:30";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(42, 518);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 30);
+            label3.TabIndex = 35;
+            label3.Text = "18:30 - 22:30";
+            // 
             // horarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -439,36 +478,39 @@
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1060, 614);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(legajoescondido);
-            Controls.Add(viernesnocheaula);
+            Controls.Add(viernesnocheprofe);
             Controls.Add(viernesnochenombre);
-            Controls.Add(juevesnocheaula);
+            Controls.Add(juevesnocheprofe);
             Controls.Add(juevesnochenombre);
-            Controls.Add(miercolesnocheaula);
+            Controls.Add(miercolesnocheprofe);
             Controls.Add(miercolesnochenombre);
-            Controls.Add(martesnocheaula);
+            Controls.Add(martesnocheprofe);
             Controls.Add(martesnochenombre);
-            Controls.Add(lunesnocheaula);
+            Controls.Add(lunesnocheprofe);
             Controls.Add(lunesnochenombre);
-            Controls.Add(viernestardeaula);
+            Controls.Add(viernestardeprofe);
             Controls.Add(viernestardenombre);
-            Controls.Add(juevestardeaula);
+            Controls.Add(juevestardeprofe);
             Controls.Add(juevestardenombre);
-            Controls.Add(miercolestardeaula);
+            Controls.Add(miercolestardeprofe);
             Controls.Add(miercolestardenombre);
-            Controls.Add(martestardeaula);
+            Controls.Add(martestardeprofe);
             Controls.Add(martestardenombre);
-            Controls.Add(lunestardeaula);
+            Controls.Add(lunestardeprofe);
             Controls.Add(lunestardenombre);
-            Controls.Add(viernesmañanaaula);
+            Controls.Add(viernesmañanaprofe);
             Controls.Add(viernesmañananombre);
-            Controls.Add(juevesmañanaaula);
+            Controls.Add(juevesmañanaprofe);
             Controls.Add(juevesmañananombre);
-            Controls.Add(miercolesmañanaaula);
+            Controls.Add(miercolesmañanaprofe);
             Controls.Add(miercolesmañananombre);
-            Controls.Add(martesmañanaaula);
+            Controls.Add(martesmañanaprofe);
             Controls.Add(martesmañananombre);
-            Controls.Add(lunesmañanaaula);
+            Controls.Add(lunesmañanaprofe);
             Controls.Add(lunesmañananombre);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
@@ -482,35 +524,38 @@
         #endregion
 
         private Label lunesmañananombre;
-        private Label lunesmañanaaula;
+        private Label lunesmañanaprofe;
         private Label martesmañananombre;
-        private Label martesmañanaaula;
+        private Label martesmañanaprofe;
         private Label miercolesmañananombre;
-        private Label miercolesmañanaaula;
+        private Label miercolesmañanaprofe;
         private Label juevesmañananombre;
-        private Label juevesmañanaaula;
+        private Label juevesmañanaprofe;
         private Label viernesmañananombre;
-        private Label viernesmañanaaula;
+        private Label viernesmañanaprofe;
         private Label lunestardenombre;
-        private Label lunestardeaula;
+        private Label lunestardeprofe;
         private Label martestardenombre;
-        private Label martestardeaula;
+        private Label martestardeprofe;
         private Label miercolestardenombre;
-        private Label miercolestardeaula;
+        private Label miercolestardeprofe;
         private Label juevestardenombre;
-        private Label juevestardeaula;
+        private Label juevestardeprofe;
         private Label viernestardenombre;
-        private Label viernestardeaula;
+        private Label viernestardeprofe;
         private Label lunesnochenombre;
-        private Label lunesnocheaula;
+        private Label lunesnocheprofe;
         private Label martesnochenombre;
-        private Label martesnocheaula;
+        private Label martesnocheprofe;
         private Label miercolesnochenombre;
-        private Label miercolesnocheaula;
+        private Label miercolesnocheprofe;
         private Label juevesnochenombre;
-        private Label juevesnocheaula;
+        private Label juevesnocheprofe;
         private Label viernesnochenombre;
-        private Label viernesnocheaula;
+        private Label viernesnocheprofe;
         private Label legajoescondido;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

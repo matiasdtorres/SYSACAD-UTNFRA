@@ -87,21 +87,66 @@ namespace biblioteca
             }
         }
 
-        //Metodo para eliminar Curso de la base de datos por codigo
+        //Metodo para eliminar Curso de la base de datos por nombre
         public int EliminarCurso()
         {
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "DELETE FROM cursos WHERE codigo = @Codigo";
+                string query = "DELETE FROM cursos WHERE nombre = @Nombre";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
-                comando.Parameters.AddWithValue("@Codigo", Codigo);
+                comando.Parameters.AddWithValue("@Nombre", Nombre);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
 
                 return filasAfectadas;
             }
         }
+
+        // metodo para crear una tabla por cada curso que se cree (para guardar las notas y asistencias de los alumnos)
+        public void CreateTable()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+
+                string querycreartabla = $@"
+                CREATE TABLE {Nombre.Replace(" ", "_")}  -- Reemplaza los espacios en blanco con guiones bajos
+                (
+                    ID int AUTO_INCREMENT primary key,
+                    estudiante VARCHAR(50),
+                    asistencia1 VARCHAR(50),
+                    asistencia2 VARCHAR(50),
+                    asistencia3 VARCHAR(50),
+                    asistencia4 VARCHAR(50),
+                    asistencia5 VARCHAR(50),
+                    nota VARCHAR(50) 
+                )";
+
+                using (MySqlCommand creartabla = new MySqlCommand(querycreartabla, conexion))
+                {
+                    creartabla.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //metodo para eliminar la tabla del curso seleccionado (para guardar las notas y asistencias de los alumnos)
+        public void DropTable()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+
+                string queryeliminartabla = $@"
+                DROP TABLE {Nombre.Replace(" ", "_")}";  // Reemplaza los espacios en blanco con guiones bajos
+
+                using (MySqlCommand eliminartabla = new MySqlCommand(queryeliminartabla, conexion))
+                {
+                    eliminartabla.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

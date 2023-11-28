@@ -12,6 +12,7 @@ namespace sysacad
 
         dashboardAdmin dashboardAdministrador;
         dashboardEstudiante dashboardAlumno;
+        dashboardProfesor dashboardProfesor;
 
         public login()
         {
@@ -32,20 +33,23 @@ namespace sysacad
                     dashboardAdministrador.Show();
                     this.Hide();
                 }
+                else if (VerificarDatos.VerificoEstudiante(usuarioylegajotxt.Text, passwordtxt.Text))
+                {
+                    string legajoLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el legajoLogeado
+                    dashboardAlumno = new dashboardEstudiante(legajoLogeado);
+                    dashboardAlumno.Show();
+                    this.Hide();
+                }
+                else if (VerificarDatos.VerificoProfesor(usuarioylegajotxt.Text, passwordtxt.Text))
+                {
+                    string profeLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el profeLogeado
+                    dashboardProfesor = new dashboardProfesor(profeLogeado);
+                    dashboardProfesor.Show();
+                    this.Hide();
+                }
                 else
                 {
-                    //Verificar si es estudiante
-                    if (VerificarDatos.VerificoEstudiante(usuarioylegajotxt.Text, passwordtxt.Text))
-                    {
-                        string legajoLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el legajoLogeado
-                        dashboardAlumno = new dashboardEstudiante(legajoLogeado);
-                        dashboardAlumno.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o legajo incorrecto");
-                    }
+                    MessageBox.Show("Usuario o contraseña incorrectos");
                 }
             }
             catch (Exception ex)
@@ -72,6 +76,12 @@ namespace sysacad
         private void btnestudiante_Click(object sender, EventArgs e)
         {
             usuarioylegajotxt.Text = "1";
+            passwordtxt.Text = "1";
+        }
+
+        private void btnprofesor_Click(object sender, EventArgs e)
+        {
+            usuarioylegajotxt.Text = "profe";
             passwordtxt.Text = "1";
         }
     }

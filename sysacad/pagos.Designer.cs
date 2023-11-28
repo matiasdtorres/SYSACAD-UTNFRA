@@ -663,6 +663,7 @@
             Name = "pagos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "pagos";
+            Load += pagos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox13.ResumeLayout(false);

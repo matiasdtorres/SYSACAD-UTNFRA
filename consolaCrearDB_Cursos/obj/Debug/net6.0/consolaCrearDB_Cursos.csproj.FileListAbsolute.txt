@@ -42,3 +42,5 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\obj\D
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\obj\Debug\net6.0\consolaCrearDB_Cursos.pdb
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\obj\Debug\net6.0\consolaCrearDB_Cursos.genruntimeconfig.cache
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\obj\Debug\net6.0\ref\consolaCrearDB_Cursos.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Cursos\bin\Debug\net6.0\itextsharp.dll

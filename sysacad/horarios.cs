@@ -31,37 +31,37 @@ namespace sysacad
         private void MostrarHorarios(string legajoLogeado)
         {
 
-            //limpar todos los labels
-            lunesmañananombre.Text = "";
-            lunesmañanaaula.Text = "";
-            lunestardenombre.Text = "";
-            lunestardeaula.Text = "";
-            lunesnochenombre.Text = "";
-            lunesnocheaula.Text = "";
-            martesmañananombre.Text = "";
-            martesmañanaaula.Text = "";
-            martestardenombre.Text = "";
-            martestardeaula.Text = "";
-            martesnochenombre.Text = "";
-            martesnocheaula.Text = "";
-            miercolesmañananombre.Text = "";
-            miercolesmañanaaula.Text = "";
-            miercolestardenombre.Text = "";
-            miercolestardeaula.Text = "";
-            miercolesnochenombre.Text = "";
-            miercolesnocheaula.Text = "";
-            juevesmañananombre.Text = "";
-            juevesmañanaaula.Text = "";
-            juevestardenombre.Text = "";
-            juevestardeaula.Text = "";
-            juevesnochenombre.Text = "";
-            juevesnocheaula.Text = "";
-            viernesmañananombre.Text = "";
-            viernesmañanaaula.Text = "";
-            viernestardenombre.Text = "";
-            viernestardeaula.Text = "";
-            viernesnochenombre.Text = "";
-            viernesnocheaula.Text = "";
+
+            lunesmañananombre.Text = "VACIO";
+            lunesmañanaprofe.Text = "VACIO";
+            lunestardenombre.Text = "VACIO";
+            lunestardeprofe.Text = "VACIO";
+            lunesnochenombre.Text = "VACIO";
+            lunesnocheprofe.Text = "VACIO";
+            martesmañananombre.Text = "VACIO";
+            martesmañanaprofe.Text = "VACIO";
+            martestardenombre.Text = "VACIO";
+            martestardeprofe.Text = "VACIO";
+            martesnochenombre.Text = "VACIO";
+            martesnocheprofe.Text = "VACIO";
+            miercolesmañananombre.Text = "VACIO";
+            miercolesmañanaprofe.Text = "VACIO";
+            miercolestardenombre.Text = "VACIO";
+            miercolestardeprofe.Text = "VACIO";
+            miercolesnochenombre.Text = "VACIO";
+            miercolesnocheprofe.Text = "VACIO";
+            juevesmañananombre.Text = "VACIO";
+            juevesmañanaprofe.Text = "VACIO";
+            juevestardenombre.Text = "VACIO";
+            juevestardeprofe.Text = "VACIO";
+            juevesnochenombre.Text = "VACIO";
+            juevesnocheprofe.Text = "VACIO";
+            viernesmañananombre.Text = "VACIO";
+            viernesmañanaprofe.Text = "VACIO";
+            viernestardenombre.Text = "VACIO";
+            viernestardeprofe.Text = "VACIO";
+            viernesnochenombre.Text = "VACIO";
+            viernesnocheprofe.Text = "VACIO";
 
 
 
@@ -70,7 +70,6 @@ namespace sysacad
             {
                 conexion.Open();
 
-                // Consultas para obtener la información de las materias inscritas por el alumno
                 string[] queriesEstudiante = {
                 "SELECT materia1 FROM estudiantes WHERE legajo = @legajo",
                 "SELECT materia2 FROM estudiantes WHERE legajo = @legajo",
@@ -108,12 +107,12 @@ namespace sysacad
                             while (readerCursos.Read())
                             {
                                 string nombre = readerCursos["nombre"].ToString();
-                                string aula = readerCursos["aula"].ToString();
+                                string profe = readerCursos["profesor"].ToString();
                                 string turno = readerCursos["turno"].ToString();
                                 string dia = readerCursos["dia"].ToString();
 
                                 // Llamada al método para asignar valores a los labels correspondientes
-                                AsignarValoresALabels(turno, dia, nombre, aula);
+                                AsignarValoresALabels(turno, dia, nombre, profe);
                             }
                         }
                     }
@@ -130,99 +129,99 @@ namespace sysacad
         }
 
 
-        private void AsignarValoresALabels(string turno, string dia, string nombre, string aula)
+        private void AsignarValoresALabels(string turno, string dia, string nombre, string profe)
         {
             switch (turno)
             {
                 case "Mañana":
-                    AsignarValoresALabelsMañana(dia, nombre, aula);
+                    AsignarValoresALabelsMañana(dia, nombre, profe);
                     break;
                 case "Tarde":
-                    AsignarValoresALabelsTarde(dia, nombre, aula);
+                    AsignarValoresALabelsTarde(dia, nombre, profe);
                     break;
                 case "Noche":
-                    AsignarValoresALabelsNoche(dia, nombre, aula);
+                    AsignarValoresALabelsNoche(dia, nombre, profe);
                     break;
             }
         }
 
-        private void AsignarValoresALabelsMañana(string dia, string nombre, string aula)
+        private void AsignarValoresALabelsMañana(string dia, string nombre, string profe)
         {
             switch (dia)
             {
                 case "Lunes":
                     lunesmañananombre.Text = nombre;
-                    lunesmañanaaula.Text = aula;
+                    lunesmañanaprofe.Text = profe;
                     break;
                 case "Martes":
                     martesmañananombre.Text = nombre;
-                    martesmañanaaula.Text = aula;
+                    martesmañanaprofe.Text = profe;
                     break;
                 case "Miércoles":
                     miercolesmañananombre.Text = nombre;
-                    miercolesmañanaaula.Text = aula;
+                    miercolesmañanaprofe.Text = profe;
                     break;
                 case "Jueves":
                     juevesmañananombre.Text = nombre;
-                    juevesmañanaaula.Text = aula;
+                    juevesmañanaprofe.Text = profe;
                     break;
                 case "Viernes":
                     viernesmañananombre.Text = nombre;
-                    viernesmañanaaula.Text = aula;
+                    viernesmañanaprofe.Text = profe;
                     break;
             }
         }
 
-        private void AsignarValoresALabelsTarde(string dia, string nombre, string aula)
+        private void AsignarValoresALabelsTarde(string dia, string nombre, string profe)
         {
             switch (dia)
             {
                 case "Lunes":
                     lunestardenombre.Text = nombre;
-                    lunesmañanaaula.Text = aula;
+                    lunesmañanaprofe.Text = profe;
                     break;
                 case "Martes":
                     martestardenombre.Text = nombre;
-                    martestardeaula.Text = aula;
+                    martestardeprofe.Text = profe;
                     break;
                 case "Miércoles":
                     miercolestardenombre.Text = nombre;
-                    miercolestardeaula.Text = aula;
+                    miercolestardeprofe.Text = profe;
                     break;
                 case "Jueves":
                     juevestardenombre.Text = nombre;
-                    juevestardeaula.Text = aula;
+                    juevestardeprofe.Text = profe;
                     break;
                 case "Viernes":
                     viernestardenombre.Text = nombre;
-                    viernestardeaula.Text = aula;
+                    viernestardeprofe.Text = profe;
                     break;
             }
         }
 
-        private void AsignarValoresALabelsNoche(string dia, string nombre, string aula)
+        private void AsignarValoresALabelsNoche(string dia, string nombre, string profe)
         {
             switch (dia)
             {
                 case "Lunes":
                     lunesnochenombre.Text = nombre;
-                    lunesnocheaula.Text = aula;
+                    lunesnocheprofe.Text = profe;
                     break;
                 case "Martes":
                     martesnochenombre.Text = nombre;
-                    martesnocheaula.Text = aula;
+                    martesnocheprofe.Text = profe;
                     break;
                 case "Miércoles":
                     miercolesnochenombre.Text = nombre;
-                    miercolesnocheaula.Text = aula;
+                    miercolesnocheprofe.Text = profe;
                     break;
                 case "Jueves":
                     juevesnochenombre.Text = nombre;
-                    juevesnocheaula.Text = aula;
+                    juevesnocheprofe.Text = profe;
                     break;
                 case "Viernes":
                     viernesnochenombre.Text = nombre;
-                    viernesnocheaula.Text = aula;
+                    viernesnocheprofe.Text = profe;
                     break;
             }
         }

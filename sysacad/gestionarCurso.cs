@@ -18,6 +18,8 @@ namespace sysacad
         public gestionarCurso()
         {
             InitializeComponent();
+            CargarProfesores();
+            CargarMaterias();
         }
 
         private bool ValidarTurno(string dia, string turno, string codigoCursoEditado)
@@ -73,14 +75,14 @@ namespace sysacad
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nombrecursotxt.Text) || string.IsNullOrEmpty(codigocursotxt.Text) || string.IsNullOrEmpty(descripcioncursotxt.Text) || string.IsNullOrEmpty(cuposcursotxt.Text) || string.IsNullOrEmpty(profesorcursotxt.Text) || string.IsNullOrEmpty(aulacursotxt.Text) || string.IsNullOrEmpty(divcursotxt.Text) || string.IsNullOrEmpty(diacursotxt.Text) || string.IsNullOrEmpty(cuatricursotxt.Text) || string.IsNullOrEmpty(turnocursotxt.Text))
+            if (string.IsNullOrEmpty(nombrecursotxt.Text) || string.IsNullOrEmpty(descripcioncursotxt.Text) || string.IsNullOrEmpty(cuposcursotxt.Text) || string.IsNullOrEmpty(profesorcursotxt.Text) || string.IsNullOrEmpty(aulacursotxt.Text) || string.IsNullOrEmpty(divcursotxt.Text) || string.IsNullOrEmpty(diacursotxt.Text) || string.IsNullOrEmpty(cuatricursotxt.Text) || string.IsNullOrEmpty(turnocursotxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
             else
             {
                 string nombre = nombrecursotxt.Text;
-                string codigo = codigocursotxt.Text;
+                string codigo = "";
                 string descripcion = descripcioncursotxt.Text;
                 int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
                 string profesor = profesorcursotxt.Text;
@@ -92,10 +94,14 @@ namespace sysacad
 
                 try
                 {
-                    if (ValidarTurno(dia, turno, codigoeditarcursotxt.Text))
+                    if (ValidarTurno(dia, turno, codigo))
                     {
                         Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
+                        // Crear la tabla antes de agregar el curso
+                        nuevoCurso.CreateTable();
+
+                        // Agregar el curso a la base de datos
                         int filasAfectadas = nuevoCurso.AgregarCurso();
 
                         if (filasAfectadas > 0)
@@ -116,9 +122,10 @@ namespace sysacad
             }
         }
 
+
         private void btneditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(codigoeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text)
+            if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text)
                 || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text)
                 || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text)
                 || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
@@ -128,7 +135,6 @@ namespace sysacad
             else
             {
                 string nombre = nombreeditarcursotxt.Text;
-                string codigo = codigoeditarcursotxt.Text;
                 string descripcion = descripcioneditarcursotxt.Text;
                 int cupoMaximo = Convert.ToInt32(cuposeditarcursotxt.Text);
                 string profesor = profesoreditarcursotxt.Text;
@@ -140,7 +146,8 @@ namespace sysacad
 
                 try
                 {
-                    if (ValidarTurno(dia, turno, codigoeditarcursotxt.Text))
+                    string codigo = ObtenerCodigoCursoEditadoDesdeBD(dia);
+                    if (ValidarTurno(dia, turno, codigo))
                     {
                         Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
@@ -187,7 +194,6 @@ namespace sysacad
         {
             //Mostrar datos en los textbox que terminan con editarcursotxt
             nombreeditarcursotxt.Text = cursos.CurrentRow.Cells[1].Value.ToString();
-            codigoeditarcursotxt.Text = cursos.CurrentRow.Cells[0].Value.ToString();
             descripcioneditarcursotxt.Text = cursos.CurrentRow.Cells[2].Value.ToString();
             cuposeditarcursotxt.Text = cursos.CurrentRow.Cells[3].Value.ToString();
             profesoreditarcursotxt.Text = cursos.CurrentRow.Cells[4].Value.ToString();
@@ -200,13 +206,17 @@ namespace sysacad
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(codigoeliminarcursotxt.Text))
+            try
             {
-                MessageBox.Show("Debe completar el campo codigo");
-            }
-            else
-            {
-                string nombre = nombrecursotxt.Text;
+                // Verificar si el campo de código está vacío
+                if (string.IsNullOrEmpty(nombreeliminarcursotxt.Text))
+                {
+                    MessageBox.Show("Debe completar el campo código");
+                    return;
+                }
+
+                // Obtener los valores de los campos
+                string nombre = nombreeliminarcursotxt.Text; ;
                 string descripcion = descripcioncursotxt.Text;
                 int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
                 string profesor = profesorcursotxt.Text;
@@ -215,30 +225,107 @@ namespace sysacad
                 string dia = diacursotxt.Text;
                 string turno = turnocursotxt.Text;
                 string cuatrimestre = cuatricursotxt.Text;
+                string codigo = "";
 
-                string codigo = codigoeliminarcursotxt.Text;
+                // Crear un objeto Curso
+                Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
 
+                // Validar el nombre de la tabla antes de eliminarla
+                if (string.IsNullOrWhiteSpace(EliminarCurso.Nombre))
+                {
+                    MessageBox.Show("El nombre de la tabla no es válido");
+                    return;
+                }
+
+
+                // Eliminar la tabla antes de eliminar el curso
+                EliminarCurso.DropTable();
+
+                // Eliminar el curso
+                int filasAfectadas = EliminarCurso.EliminarCurso();
+
+                // Verificar el resultado de la eliminación
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Curso eliminado correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el curso");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el curso: " + ex.Message);
+            }
+        }
+
+
+        //traer los profesores de la base de datos y mostrarlo en el combobox
+        public void CargarProfesores()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "SELECT nombre, apellido FROM profesores";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nombreCompleto = $"{reader["nombre"]} {reader["apellido"]}";
+
+                    profesorcursotxt.Items.Add(nombreCompleto);
+                    profesoreditarcursotxt.Items.Add(nombreCompleto);
+                }
+            }
+        }
+
+        //traer el nombre de la materias y mostrarlo en el combobox
+        public void CargarMaterias()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "SELECT nombre FROM cursos";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    nombreeliminarcursotxt.Items.Add(reader["nombre"].ToString());
+                }
+            }
+        }
+
+        private string ObtenerCodigoCursoEditadoDesdeBD(string dia)
+        {
+            string codigoCursoEditado = null;
+
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
                 try
                 {
-                    Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+                    conexion.Open();
+                    string query = "SELECT codigo FROM cursos WHERE dia = @dia";
+                    MySqlCommand command = new MySqlCommand(query, conexion);
+                    command.Parameters.AddWithValue("@dia", dia);
 
-                    int filasAfectadas = EliminarCurso.EliminarCurso();
-
-                    if (filasAfectadas > 0)
+                    object result = command.ExecuteScalar();
+                    if (result != null)
                     {
-                        MessageBox.Show("Curso eliminado correctamente");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo eliminar el curso");
+                        codigoCursoEditado = result.ToString();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error al obtener el código del curso editado: " + ex.Message);
                 }
             }
+
+            return codigoCursoEditado;
         }
+
     }
 }

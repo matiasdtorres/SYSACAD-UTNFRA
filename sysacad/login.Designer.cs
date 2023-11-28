@@ -38,6 +38,7 @@
             btncerrar = new Button();
             btnadmin = new Button();
             btnestudiante = new Button();
+            btnprofesor = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 329);
+            label1.Location = new Point(12, 295);
             label1.Name = "label1";
             label1.Size = new Size(198, 30);
             label1.TabIndex = 1;
@@ -67,7 +68,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(36, 359);
+            label2.Location = new Point(36, 325);
             label2.Name = "label2";
             label2.Size = new Size(123, 30);
             label2.TabIndex = 2;
@@ -76,7 +77,7 @@
             // usuarioylegajotxt
             // 
             usuarioylegajotxt.BackColor = Color.White;
-            usuarioylegajotxt.Location = new Point(236, 336);
+            usuarioylegajotxt.Location = new Point(236, 302);
             usuarioylegajotxt.Name = "usuarioylegajotxt";
             usuarioylegajotxt.Size = new Size(171, 23);
             usuarioylegajotxt.TabIndex = 3;
@@ -84,7 +85,7 @@
             // passwordtxt
             // 
             passwordtxt.BackColor = Color.White;
-            passwordtxt.Location = new Point(236, 366);
+            passwordtxt.Location = new Point(236, 332);
             passwordtxt.Name = "passwordtxt";
             passwordtxt.Size = new Size(171, 23);
             passwordtxt.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(174, 416);
+            button1.Location = new Point(174, 366);
             button1.Name = "button1";
             button1.Size = new Size(123, 32);
             button1.TabIndex = 5;
@@ -133,12 +134,23 @@
             btnestudiante.UseVisualStyleBackColor = true;
             btnestudiante.Click += btnestudiante_Click;
             // 
+            // btnprofesor
+            // 
+            btnprofesor.Location = new Point(174, 416);
+            btnprofesor.Name = "btnprofesor";
+            btnprofesor.Size = new Size(123, 32);
+            btnprofesor.TabIndex = 9;
+            btnprofesor.Text = "Profesor";
+            btnprofesor.UseVisualStyleBackColor = true;
+            btnprofesor.Click += btnprofesor_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(471, 469);
+            Controls.Add(btnprofesor);
             Controls.Add(btnestudiante);
             Controls.Add(btnadmin);
             Controls.Add(btncerrar);
@@ -169,5 +181,6 @@
         private Button btncerrar;
         private Button btnadmin;
         private Button btnestudiante;
+        private Button btnprofesor;
     }
 }

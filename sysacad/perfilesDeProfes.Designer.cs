@@ -29,47 +29,53 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            cursos = new DataGridView();
+            panelprofes = new DataGridView();
             groupBox2 = new GroupBox();
-            descripcioneditarcursotxt = new TextBox();
+            emaileditartxt = new TextBox();
+            label9 = new Label();
+            especializacioneditartxt = new ComboBox();
+            direccioneditartxt = new TextBox();
+            label6 = new Label();
             label12 = new Label();
-            label13 = new Label();
-            nombreeditarcursotxt = new TextBox();
+            telefonoeditartxt = new TextBox();
+            label19 = new Label();
+            label20 = new Label();
+            apellidoeditartxt = new TextBox();
+            nombreeditartxt = new TextBox();
+            label21 = new Label();
+            usuarioeditartxt = new TextBox();
             label23 = new Label();
             btneditar = new Button();
-            btneliminar = new Button();
+            btnasignar = new Button();
             groupBox3 = new GroupBox();
+            asignarcursotxt = new ComboBox();
+            elegirprofeparacursotxt = new ComboBox();
+            label11 = new Label();
             label24 = new Label();
             btnregistrar = new Button();
             groupBox1 = new GroupBox();
-            descripcioncursotxt = new TextBox();
-            label22 = new Label();
+            btncrearcontraseña = new Button();
+            label13 = new Label();
+            contraseñaTemporaltxt = new TextBox();
+            emailtxt = new TextBox();
+            label8 = new Label();
+            direcciontxt = new TextBox();
+            label7 = new Label();
+            especializaciontxt = new ComboBox();
+            telefonotxt = new TextBox();
             label10 = new Label();
-            nombrecursotxt = new TextBox();
-            label2 = new Label();
-            label11 = new Label();
-            button1 = new Button();
-            groupBox4 = new GroupBox();
-            label25 = new Label();
-            profesoreditarcursotxt = new TextBox();
-            label20 = new Label();
-            profesorcursotxt = new TextBox();
-            label4 = new Label();
-            label21 = new Label();
-            codigoeditarcursotxt = new TextBox();
-            label3 = new Label();
-            codigocursotxt = new TextBox();
-            label19 = new Label();
             label5 = new Label();
-            textBox2 = new TextBox();
-            textBox4 = new TextBox();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            comboBox5 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)cursos).BeginInit();
+            label4 = new Label();
+            apellidotxt = new TextBox();
+            nombretxt = new TextBox();
+            label3 = new Label();
+            usuariotxt = new TextBox();
+            label2 = new Label();
+            btneliminarprofe = new Button();
+            groupBox4 = new GroupBox();
+            elegirprofeeliminartxt = new ComboBox();
+            label25 = new Label();
+            ((System.ComponentModel.ISupportInitialize)panelprofes).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -90,81 +96,172 @@
             label1.TabIndex = 5;
             label1.Text = "Gestionar Perfiles de Profesores";
             // 
-            // cursos
+            // panelprofes
             // 
-            cursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            cursos.Location = new Point(346, 57);
-            cursos.Name = "cursos";
-            cursos.ReadOnly = true;
-            cursos.RowTemplate.Height = 25;
-            cursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            cursos.Size = new Size(354, 406);
-            cursos.TabIndex = 37;
+            panelprofes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            panelprofes.Location = new Point(346, 57);
+            panelprofes.Name = "panelprofes";
+            panelprofes.ReadOnly = true;
+            panelprofes.RowTemplate.Height = 25;
+            panelprofes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            panelprofes.Size = new Size(354, 386);
+            panelprofes.TabIndex = 37;
+            panelprofes.CellClick += panelprofes_CellClick;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
-            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(emaileditartxt);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(especializacioneditartxt);
+            groupBox2.Controls.Add(direccioneditartxt);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(textBox4);
-            groupBox2.Controls.Add(descripcioneditarcursotxt);
             groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(label13);
+            groupBox2.Controls.Add(telefonoeditartxt);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label20);
-            groupBox2.Controls.Add(profesoreditarcursotxt);
-            groupBox2.Controls.Add(codigoeditarcursotxt);
+            groupBox2.Controls.Add(apellidoeditartxt);
+            groupBox2.Controls.Add(nombreeditartxt);
             groupBox2.Controls.Add(label21);
-            groupBox2.Controls.Add(nombreeditarcursotxt);
+            groupBox2.Controls.Add(usuarioeditartxt);
             groupBox2.Controls.Add(label23);
             groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(742, 47);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(307, 416);
+            groupBox2.Size = new Size(307, 386);
             groupBox2.TabIndex = 33;
             groupBox2.TabStop = false;
             groupBox2.Text = "Editar Profesor";
             // 
-            // descripcioneditarcursotxt
+            // emaileditartxt
             // 
-            descripcioneditarcursotxt.BackColor = Color.White;
-            descripcioneditarcursotxt.ForeColor = Color.Black;
-            descripcioneditarcursotxt.Location = new Point(9, 319);
-            descripcioneditarcursotxt.Multiline = true;
-            descripcioneditarcursotxt.Name = "descripcioneditarcursotxt";
-            descripcioneditarcursotxt.Size = new Size(282, 91);
-            descripcioneditarcursotxt.TabIndex = 24;
+            emaileditartxt.BackColor = Color.White;
+            emaileditartxt.ForeColor = Color.Black;
+            emaileditartxt.Location = new Point(113, 183);
+            emaileditartxt.Name = "emaileditartxt";
+            emaileditartxt.Size = new Size(178, 23);
+            emaileditartxt.TabIndex = 45;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(9, 182);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 21);
+            label9.TabIndex = 44;
+            label9.Text = "Email";
+            // 
+            // especializacioneditartxt
+            // 
+            especializacioneditartxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            especializacioneditartxt.FormattingEnabled = true;
+            especializacioneditartxt.Items.AddRange(new object[] { "Programacion", "Ingles", "Matematica", "Arquitectura y S.O" });
+            especializacioneditartxt.Location = new Point(9, 269);
+            especializacioneditartxt.Name = "especializacioneditartxt";
+            especializacioneditartxt.Size = new Size(282, 23);
+            especializacioneditartxt.TabIndex = 36;
+            // 
+            // direccioneditartxt
+            // 
+            direccioneditartxt.BackColor = Color.White;
+            direccioneditartxt.ForeColor = Color.Black;
+            direccioneditartxt.Location = new Point(113, 151);
+            direccioneditartxt.Name = "direccioneditartxt";
+            direccioneditartxt.Size = new Size(178, 23);
+            direccioneditartxt.TabIndex = 43;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(97, 234);
+            label6.Name = "label6";
+            label6.Size = new Size(113, 21);
+            label6.TabIndex = 35;
+            label6.Text = "Especializacion";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(9, 295);
+            label12.Location = new Point(9, 150);
             label12.Name = "label12";
-            label12.Size = new Size(91, 21);
-            label12.TabIndex = 23;
-            label12.Text = "Descripcion";
+            label12.Size = new Size(75, 21);
+            label12.TabIndex = 42;
+            label12.Text = "Direccion";
             // 
-            // label13
+            // telefonoeditartxt
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(9, 265);
-            label13.Name = "label13";
-            label13.Size = new Size(113, 21);
-            label13.TabIndex = 20;
-            label13.Text = "Especializacion";
+            telefonoeditartxt.BackColor = Color.White;
+            telefonoeditartxt.ForeColor = Color.Black;
+            telefonoeditartxt.Location = new Point(113, 119);
+            telefonoeditartxt.Name = "telefonoeditartxt";
+            telefonoeditartxt.Size = new Size(178, 23);
+            telefonoeditartxt.TabIndex = 35;
             // 
-            // nombreeditarcursotxt
+            // label19
             // 
-            nombreeditarcursotxt.BackColor = Color.White;
-            nombreeditarcursotxt.ForeColor = Color.Black;
-            nombreeditarcursotxt.Location = new Point(113, 28);
-            nombreeditarcursotxt.Name = "nombreeditarcursotxt";
-            nombreeditarcursotxt.Size = new Size(178, 23);
-            nombreeditarcursotxt.TabIndex = 5;
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(9, 118);
+            label19.Name = "label19";
+            label19.Size = new Size(68, 21);
+            label19.TabIndex = 11;
+            label19.Text = "Telefono";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(9, 89);
+            label20.Name = "label20";
+            label20.Size = new Size(67, 21);
+            label20.TabIndex = 9;
+            label20.Text = "Apellido";
+            // 
+            // apellidoeditartxt
+            // 
+            apellidoeditartxt.BackColor = Color.White;
+            apellidoeditartxt.ForeColor = Color.Black;
+            apellidoeditartxt.Location = new Point(113, 89);
+            apellidoeditartxt.Name = "apellidoeditartxt";
+            apellidoeditartxt.Size = new Size(178, 23);
+            apellidoeditartxt.TabIndex = 8;
+            // 
+            // nombreeditartxt
+            // 
+            nombreeditartxt.BackColor = Color.White;
+            nombreeditartxt.ForeColor = Color.Black;
+            nombreeditartxt.Location = new Point(113, 59);
+            nombreeditartxt.Name = "nombreeditartxt";
+            nombreeditartxt.Size = new Size(178, 23);
+            nombreeditartxt.TabIndex = 7;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(9, 59);
+            label21.Name = "label21";
+            label21.Size = new Size(68, 21);
+            label21.TabIndex = 6;
+            label21.Text = "Nombre";
+            // 
+            // usuarioeditartxt
+            // 
+            usuarioeditartxt.BackColor = Color.White;
+            usuarioeditartxt.ForeColor = Color.Black;
+            usuarioeditartxt.Location = new Point(113, 28);
+            usuarioeditartxt.Name = "usuarioeditartxt";
+            usuarioeditartxt.Size = new Size(178, 23);
+            usuarioeditartxt.TabIndex = 5;
             // 
             // label23
             // 
@@ -174,48 +271,80 @@
             label23.ForeColor = Color.White;
             label23.Location = new Point(9, 28);
             label23.Name = "label23";
-            label23.Size = new Size(68, 21);
+            label23.Size = new Size(64, 21);
             label23.TabIndex = 4;
-            label23.Text = "Nombre";
+            label23.Text = "Usuario";
             // 
             // btneditar
             // 
             btneditar.BackColor = Color.Black;
             btneditar.FlatStyle = FlatStyle.Flat;
             btneditar.ForeColor = Color.White;
-            btneditar.Location = new Point(856, 469);
+            btneditar.Location = new Point(855, 439);
             btneditar.Name = "btneditar";
             btneditar.Size = new Size(78, 27);
             btneditar.TabIndex = 36;
             btneditar.Text = "Editar";
             btneditar.UseVisualStyleBackColor = false;
+            btneditar.Click += btneditar_Click;
             // 
-            // btneliminar
+            // btnasignar
             // 
-            btneliminar.BackColor = Color.Black;
-            btneliminar.FlatStyle = FlatStyle.Flat;
-            btneliminar.ForeColor = Color.White;
-            btneliminar.Location = new Point(320, 580);
-            btneliminar.Name = "btneliminar";
-            btneliminar.Size = new Size(78, 27);
-            btneliminar.TabIndex = 35;
-            btneliminar.Text = "Asignar";
-            btneliminar.UseVisualStyleBackColor = false;
+            btnasignar.BackColor = Color.Black;
+            btnasignar.FlatStyle = FlatStyle.Flat;
+            btnasignar.ForeColor = Color.White;
+            btnasignar.Location = new Point(240, 567);
+            btnasignar.Name = "btnasignar";
+            btnasignar.Size = new Size(78, 27);
+            btnasignar.TabIndex = 35;
+            btnasignar.Text = "Asignar";
+            btnasignar.UseVisualStyleBackColor = false;
+            btnasignar.Click += btnasignar_Click;
             // 
             // groupBox3
             // 
             groupBox3.BackColor = Color.Black;
-            groupBox3.Controls.Add(comboBox5);
-            groupBox3.Controls.Add(comboBox3);
+            groupBox3.Controls.Add(asignarcursotxt);
+            groupBox3.Controls.Add(elegirprofeparacursotxt);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label24);
             groupBox3.ForeColor = Color.White;
-            groupBox3.Location = new Point(182, 502);
+            groupBox3.Location = new Point(102, 489);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(354, 77);
             groupBox3.TabIndex = 34;
             groupBox3.TabStop = false;
             groupBox3.Text = "Asignar Curso a Profesor";
+            // 
+            // asignarcursotxt
+            // 
+            asignarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            asignarcursotxt.FormattingEnabled = true;
+            asignarcursotxt.Location = new Point(138, 48);
+            asignarcursotxt.Name = "asignarcursotxt";
+            asignarcursotxt.Size = new Size(178, 23);
+            asignarcursotxt.TabIndex = 30;
+            // 
+            // elegirprofeparacursotxt
+            // 
+            elegirprofeparacursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            elegirprofeparacursotxt.FormattingEnabled = true;
+            elegirprofeparacursotxt.Location = new Point(138, 21);
+            elegirprofeparacursotxt.Name = "elegirprofeparacursotxt";
+            elegirprofeparacursotxt.Size = new Size(178, 23);
+            elegirprofeparacursotxt.TabIndex = 29;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(42, 48);
+            label11.Name = "label11";
+            label11.Size = new Size(51, 21);
+            label11.TabIndex = 27;
+            label11.Text = "Curso";
             // 
             // label24
             // 
@@ -234,76 +363,202 @@
             btnregistrar.BackColor = Color.Black;
             btnregistrar.FlatStyle = FlatStyle.Flat;
             btnregistrar.ForeColor = Color.White;
-            btnregistrar.Location = new Point(126, 469);
+            btnregistrar.Location = new Point(126, 439);
             btnregistrar.Name = "btnregistrar";
             btnregistrar.Size = new Size(78, 27);
             btnregistrar.TabIndex = 32;
             btnregistrar.Text = "Registrar";
             btnregistrar.UseVisualStyleBackColor = false;
+            btnregistrar.Click += btnregistrar_Click;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(descripcioncursotxt);
-            groupBox1.Controls.Add(label22);
+            groupBox1.Controls.Add(btncrearcontraseña);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(contraseñaTemporaltxt);
+            groupBox1.Controls.Add(emailtxt);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(direcciontxt);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(especializaciontxt);
+            groupBox1.Controls.Add(telefonotxt);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(profesorcursotxt);
-            groupBox1.Controls.Add(codigocursotxt);
+            groupBox1.Controls.Add(apellidotxt);
+            groupBox1.Controls.Add(nombretxt);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(nombrecursotxt);
+            groupBox1.Controls.Add(usuariotxt);
             groupBox1.Controls.Add(label2);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(12, 47);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(307, 416);
+            groupBox1.Size = new Size(307, 386);
             groupBox1.TabIndex = 31;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Profesor";
             // 
-            // descripcioncursotxt
+            // btncrearcontraseña
             // 
-            descripcioncursotxt.BackColor = Color.White;
-            descripcioncursotxt.ForeColor = Color.Black;
-            descripcioncursotxt.Location = new Point(9, 320);
-            descripcioncursotxt.Multiline = true;
-            descripcioncursotxt.Name = "descripcioncursotxt";
-            descripcioncursotxt.Size = new Size(282, 90);
-            descripcioncursotxt.TabIndex = 24;
+            btncrearcontraseña.FlatStyle = FlatStyle.Flat;
+            btncrearcontraseña.ForeColor = Color.White;
+            btncrearcontraseña.Location = new Point(123, 355);
+            btncrearcontraseña.Name = "btncrearcontraseña";
+            btncrearcontraseña.Size = new Size(63, 23);
+            btncrearcontraseña.TabIndex = 44;
+            btncrearcontraseña.Text = "Generar";
+            btncrearcontraseña.UseVisualStyleBackColor = true;
+            btncrearcontraseña.Click += btncrearcontraseña_Click;
             // 
-            // label22
+            // label13
             // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.ForeColor = Color.White;
-            label22.Location = new Point(9, 296);
-            label22.Name = "label22";
-            label22.Size = new Size(91, 21);
-            label22.TabIndex = 23;
-            label22.Text = "Descripcion";
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(65, 302);
+            label13.Name = "label13";
+            label13.Size = new Size(177, 21);
+            label13.TabIndex = 43;
+            label13.Text = "Contraseña Provisoria";
+            // 
+            // contraseñaTemporaltxt
+            // 
+            contraseñaTemporaltxt.BackColor = Color.Black;
+            contraseñaTemporaltxt.ForeColor = Color.White;
+            contraseñaTemporaltxt.Location = new Point(42, 326);
+            contraseñaTemporaltxt.Name = "contraseñaTemporaltxt";
+            contraseñaTemporaltxt.Size = new Size(217, 23);
+            contraseñaTemporaltxt.TabIndex = 42;
+            // 
+            // emailtxt
+            // 
+            emailtxt.BackColor = Color.White;
+            emailtxt.ForeColor = Color.Black;
+            emailtxt.Location = new Point(113, 182);
+            emailtxt.Name = "emailtxt";
+            emailtxt.Size = new Size(178, 23);
+            emailtxt.TabIndex = 41;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(9, 181);
+            label8.Name = "label8";
+            label8.Size = new Size(48, 21);
+            label8.TabIndex = 40;
+            label8.Text = "Email";
+            // 
+            // direcciontxt
+            // 
+            direcciontxt.BackColor = Color.White;
+            direcciontxt.ForeColor = Color.Black;
+            direcciontxt.Location = new Point(113, 150);
+            direcciontxt.Name = "direcciontxt";
+            direcciontxt.Size = new Size(178, 23);
+            direcciontxt.TabIndex = 39;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(9, 149);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 21);
+            label7.TabIndex = 38;
+            label7.Text = "Direccion";
+            // 
+            // especializaciontxt
+            // 
+            especializaciontxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            especializaciontxt.FormattingEnabled = true;
+            especializaciontxt.Items.AddRange(new object[] { "Programacion", "Ingles", "Matematica", "Arquitectura y S.O" });
+            especializaciontxt.Location = new Point(9, 269);
+            especializaciontxt.Name = "especializaciontxt";
+            especializaciontxt.Size = new Size(282, 23);
+            especializaciontxt.TabIndex = 37;
+            // 
+            // telefonotxt
+            // 
+            telefonotxt.BackColor = Color.White;
+            telefonotxt.ForeColor = Color.Black;
+            telefonotxt.Location = new Point(113, 119);
+            telefonotxt.Name = "telefonotxt";
+            telefonotxt.Size = new Size(178, 23);
+            telefonotxt.TabIndex = 34;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(90, 173);
+            label10.Location = new Point(98, 234);
             label10.Name = "label10";
             label10.Size = new Size(113, 21);
             label10.TabIndex = 20;
             label10.Text = "Especializacion";
             // 
-            // nombrecursotxt
+            // label5
             // 
-            nombrecursotxt.BackColor = Color.White;
-            nombrecursotxt.ForeColor = Color.Black;
-            nombrecursotxt.Location = new Point(113, 28);
-            nombrecursotxt.Name = "nombrecursotxt";
-            nombrecursotxt.Size = new Size(178, 23);
-            nombrecursotxt.TabIndex = 5;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(9, 118);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 21);
+            label5.TabIndex = 11;
+            label5.Text = "Telefono";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(9, 89);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 21);
+            label4.TabIndex = 9;
+            label4.Text = "Apellido";
+            // 
+            // apellidotxt
+            // 
+            apellidotxt.BackColor = Color.White;
+            apellidotxt.ForeColor = Color.Black;
+            apellidotxt.Location = new Point(113, 89);
+            apellidotxt.Name = "apellidotxt";
+            apellidotxt.Size = new Size(178, 23);
+            apellidotxt.TabIndex = 8;
+            // 
+            // nombretxt
+            // 
+            nombretxt.BackColor = Color.White;
+            nombretxt.ForeColor = Color.Black;
+            nombretxt.Location = new Point(113, 59);
+            nombretxt.Name = "nombretxt";
+            nombretxt.Size = new Size(178, 23);
+            nombretxt.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(9, 59);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 21);
+            label3.TabIndex = 6;
+            label3.Text = "Nombre";
+            // 
+            // usuariotxt
+            // 
+            usuariotxt.BackColor = Color.White;
+            usuariotxt.ForeColor = Color.Black;
+            usuariotxt.Location = new Point(113, 28);
+            usuariotxt.Name = "usuariotxt";
+            usuariotxt.Size = new Size(178, 23);
+            usuariotxt.TabIndex = 5;
             // 
             // label2
             // 
@@ -313,46 +568,44 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(9, 28);
             label2.Name = "label2";
-            label2.Size = new Size(68, 21);
+            label2.Size = new Size(64, 21);
             label2.TabIndex = 4;
-            label2.Text = "Nombre";
+            label2.Text = "Usuario";
             // 
-            // label11
+            // btneliminarprofe
             // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(42, 48);
-            label11.Name = "label11";
-            label11.Size = new Size(51, 21);
-            label11.TabIndex = 27;
-            label11.Text = "Curso";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(680, 580);
-            button1.Name = "button1";
-            button1.Size = new Size(78, 27);
-            button1.TabIndex = 37;
-            button1.Text = "Eliminar";
-            button1.UseVisualStyleBackColor = false;
+            btneliminarprofe.BackColor = Color.Black;
+            btneliminarprofe.FlatStyle = FlatStyle.Flat;
+            btneliminarprofe.ForeColor = Color.White;
+            btneliminarprofe.Location = new Point(731, 567);
+            btneliminarprofe.Name = "btneliminarprofe";
+            btneliminarprofe.Size = new Size(78, 27);
+            btneliminarprofe.TabIndex = 37;
+            btneliminarprofe.Text = "Eliminar";
+            btneliminarprofe.UseVisualStyleBackColor = false;
+            btneliminarprofe.Click += btneliminarprofe_Click;
             // 
             // groupBox4
             // 
             groupBox4.BackColor = Color.Black;
-            groupBox4.Controls.Add(comboBox4);
+            groupBox4.Controls.Add(elegirprofeeliminartxt);
             groupBox4.Controls.Add(label25);
             groupBox4.ForeColor = Color.White;
-            groupBox4.Location = new Point(542, 502);
+            groupBox4.Location = new Point(593, 489);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(354, 77);
             groupBox4.TabIndex = 36;
             groupBox4.TabStop = false;
             groupBox4.Text = "Eliminar Profesor";
+            // 
+            // elegirprofeeliminartxt
+            // 
+            elegirprofeeliminartxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            elegirprofeeliminartxt.FormattingEnabled = true;
+            elegirprofeeliminartxt.Location = new Point(138, 30);
+            elegirprofeeliminartxt.Name = "elegirprofeeliminartxt";
+            elegirprofeeliminartxt.Size = new Size(178, 23);
+            elegirprofeeliminartxt.TabIndex = 30;
             // 
             // label25
             // 
@@ -366,204 +619,29 @@
             label25.TabIndex = 25;
             label25.Text = "Profesor";
             // 
-            // profesoreditarcursotxt
-            // 
-            profesoreditarcursotxt.BackColor = Color.White;
-            profesoreditarcursotxt.ForeColor = Color.Black;
-            profesoreditarcursotxt.Location = new Point(113, 89);
-            profesoreditarcursotxt.Name = "profesoreditarcursotxt";
-            profesoreditarcursotxt.Size = new Size(178, 23);
-            profesoreditarcursotxt.TabIndex = 8;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.ForeColor = Color.White;
-            label20.Location = new Point(9, 89);
-            label20.Name = "label20";
-            label20.Size = new Size(68, 21);
-            label20.TabIndex = 9;
-            label20.Text = "Telefono";
-            // 
-            // profesorcursotxt
-            // 
-            profesorcursotxt.BackColor = Color.White;
-            profesorcursotxt.ForeColor = Color.Black;
-            profesorcursotxt.Location = new Point(113, 89);
-            profesorcursotxt.Name = "profesorcursotxt";
-            profesorcursotxt.Size = new Size(178, 23);
-            profesorcursotxt.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(9, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(68, 21);
-            label4.TabIndex = 9;
-            label4.Text = "Telefono";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(9, 60);
-            label21.Name = "label21";
-            label21.Size = new Size(75, 21);
-            label21.TabIndex = 6;
-            label21.Text = "Direccion";
-            // 
-            // codigoeditarcursotxt
-            // 
-            codigoeditarcursotxt.BackColor = Color.White;
-            codigoeditarcursotxt.ForeColor = Color.Black;
-            codigoeditarcursotxt.Location = new Point(113, 60);
-            codigoeditarcursotxt.Name = "codigoeditarcursotxt";
-            codigoeditarcursotxt.Size = new Size(178, 23);
-            codigoeditarcursotxt.TabIndex = 7;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(9, 60);
-            label3.Name = "label3";
-            label3.Size = new Size(75, 21);
-            label3.TabIndex = 6;
-            label3.Text = "Direccion";
-            // 
-            // codigocursotxt
-            // 
-            codigocursotxt.BackColor = Color.White;
-            codigocursotxt.ForeColor = Color.Black;
-            codigocursotxt.Location = new Point(113, 60);
-            codigocursotxt.Name = "codigocursotxt";
-            codigocursotxt.Size = new Size(178, 23);
-            codigocursotxt.TabIndex = 7;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(9, 118);
-            label19.Name = "label19";
-            label19.Size = new Size(48, 21);
-            label19.TabIndex = 11;
-            label19.Text = "Email";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(9, 118);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 21);
-            label5.TabIndex = 11;
-            label5.Text = "Email";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.White;
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(113, 119);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(178, 23);
-            textBox2.TabIndex = 34;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.White;
-            textBox4.ForeColor = Color.Black;
-            textBox4.Location = new Point(113, 119);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(178, 23);
-            textBox4.TabIndex = 35;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(92, 173);
-            label6.Name = "label6";
-            label6.Size = new Size(113, 21);
-            label6.TabIndex = 35;
-            label6.Text = "Especializacion";
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(9, 208);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(282, 23);
-            comboBox1.TabIndex = 36;
-            // 
-            // comboBox2
-            // 
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(9, 208);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(282, 23);
-            comboBox2.TabIndex = 37;
-            // 
-            // comboBox3
-            // 
-            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(138, 21);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(178, 23);
-            comboBox3.TabIndex = 29;
-            // 
-            // comboBox4
-            // 
-            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(138, 30);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(178, 23);
-            comboBox4.TabIndex = 30;
-            // 
-            // comboBox5
-            // 
-            comboBox5.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(138, 48);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(178, 23);
-            comboBox5.TabIndex = 30;
-            // 
             // perfilesDeProfes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
-            Controls.Add(button1);
-            Controls.Add(cursos);
+            Controls.Add(btneliminarprofe);
+            Controls.Add(panelprofes);
             Controls.Add(groupBox4);
             Controls.Add(groupBox2);
             Controls.Add(btneditar);
-            Controls.Add(btneliminar);
+            Controls.Add(btnasignar);
             Controls.Add(groupBox3);
             Controls.Add(btnregistrar);
             Controls.Add(groupBox1);
             Controls.Add(label1);
-            ForeColor = Color.White;
+            ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
             Name = "perfilesDeProfes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "perfilesDeProfes";
-            ((System.ComponentModel.ISupportInitialize)cursos).EndInit();
+            Load += perfilesDeProfes_Load;
+            ((System.ComponentModel.ISupportInitialize)panelprofes).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -579,45 +657,51 @@
         #endregion
 
         private Label label1;
-        private DataGridView cursos;
+        private DataGridView panelprofes;
         private GroupBox groupBox2;
-        private TextBox descripcioneditarcursotxt;
-        private Label label12;
-        private Label label13;
-        private TextBox nombreeditarcursotxt;
+        private TextBox usuarioeditartxt;
         private Label label23;
         private Button btneditar;
-        private Button btneliminar;
+        private Button btnasignar;
         private GroupBox groupBox3;
         private Label label11;
         private Label label24;
         private Button btnregistrar;
         private GroupBox groupBox1;
-        private TextBox descripcioncursotxt;
-        private Label label22;
         private Label label10;
-        private TextBox nombrecursotxt;
+        private TextBox usuariotxt;
         private Label label2;
         private Label label20;
-        private TextBox profesoreditarcursotxt;
-        private TextBox codigoeditarcursotxt;
+        private TextBox apellidoeditartxt;
+        private TextBox nombreeditartxt;
         private Label label21;
         private Label label4;
-        private TextBox profesorcursotxt;
-        private TextBox codigocursotxt;
+        private TextBox apellidotxt;
+        private TextBox nombretxt;
         private Label label3;
-        private Button button1;
+        private Button btneliminarprofe;
         private GroupBox groupBox4;
         private Label label25;
-        private ComboBox comboBox1;
+        private ComboBox especializacioneditartxt;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox telefonoeditartxt;
         private Label label19;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
+        private ComboBox especializaciontxt;
+        private TextBox telefonotxt;
         private Label label5;
-        private ComboBox comboBox5;
-        private ComboBox comboBox3;
-        private ComboBox comboBox4;
+        private ComboBox asignarcursotxt;
+        private ComboBox elegirprofeparacursotxt;
+        private ComboBox elegirprofeeliminartxt;
+        private TextBox emailtxt;
+        private Label label8;
+        private TextBox direcciontxt;
+        private Label label7;
+        private TextBox emaileditartxt;
+        private Label label9;
+        private TextBox direccioneditartxt;
+        private Label label12;
+        private Button btncrearcontraseña;
+        private Label label13;
+        private TextBox contraseñaTemporaltxt;
     }
 }

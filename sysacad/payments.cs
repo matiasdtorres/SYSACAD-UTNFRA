@@ -13,6 +13,7 @@ namespace sysacad
 {
     public partial class payments : Form
     {
+
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         public payments(string legajoLogeado)
@@ -39,7 +40,26 @@ namespace sysacad
                 return;
             }
 
+            if (nombretarjeta.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("El nombre no puede contener numeros.");
+                return;
+            }
+
+            if (!numerotarjeta.Text.All(char.IsDigit) || numerotarjeta.Text.Length != 16)
+            {
+                MessageBox.Show("El numero de tarjeta debe contener 16 digitos numericos.");
+                return;
+            }
+
+            if (!codigotarjeta.Text.All(char.IsDigit) || codigotarjeta.Text.Length != 3)
+            {
+                MessageBox.Show("El codigo debe contener 3 digitos numericos.");
+                return;
+            }
+
             conexion.Open();
+
             string query = "UPDATE datos_pagos SET tipo = @Tipo, numero = @Numero, nombre = @Nombre, codigo = @Codigo, vencimiento = @Vencimiento WHERE legajo = @Legajo";
             MySqlCommand comando = new MySqlCommand(query, conexion);
             comando.Parameters.AddWithValue("@Legajo", legajoescondido.Text);
