@@ -594,6 +594,7 @@
             nombreeditarcursotxt.ForeColor = Color.Black;
             nombreeditarcursotxt.Location = new Point(113, 28);
             nombreeditarcursotxt.Name = "nombreeditarcursotxt";
+            nombreeditarcursotxt.ReadOnly = true;
             nombreeditarcursotxt.Size = new Size(178, 23);
             nombreeditarcursotxt.TabIndex = 5;
             // 

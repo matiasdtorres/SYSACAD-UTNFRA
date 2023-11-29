@@ -24,12 +24,11 @@ namespace sysacad
 
         private bool ValidarTurno(string dia, string turno, string codigoCursoEditado)
         {
-            List<Curso> cursosDia = ObtenerCursosPorDia(dia);
+            List<Curso> cursosDia = ObtenerCursosPorDiaExcluyendoCurso(dia, codigoCursoEditado);
 
             foreach (Curso curso in cursosDia)
             {
-                // Excluir el curso editado de la comparación
-                if (curso.Codigo != codigoCursoEditado && curso.Turno == turno)
+                if (curso.Turno == turno && curso.Codigo != codigoCursoEditado)
                 {
                     MessageBox.Show($"Ya hay un curso registrado en el turno {turno} para el día seleccionado.");
                     return false;
@@ -39,16 +38,17 @@ namespace sysacad
             return true;
         }
 
-        private List<Curso> ObtenerCursosPorDia(string dia)
+        private List<Curso> ObtenerCursosPorDiaExcluyendoCurso(string dia, string codigoCursoEditado)
         {
             List<Curso> cursosDia = new List<Curso>();
 
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "SELECT * FROM cursos WHERE dia = @dia";
+                string query = "SELECT * FROM cursos WHERE dia = @dia AND codigo != @codigo";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
                 comando.Parameters.AddWithValue("@dia", dia);
+                comando.Parameters.AddWithValue("@codigo", codigoCursoEditado);
                 MySqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
@@ -146,7 +146,7 @@ namespace sysacad
 
                 try
                 {
-                    string codigo = ObtenerCodigoCursoEditadoDesdeBD(dia);
+                    string codigo = ObtenerCodigoCursoEditadoDesdeBD(nombre);
                     if (ValidarTurno(dia, turno, codigo))
                     {
                         Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
@@ -299,7 +299,7 @@ namespace sysacad
             }
         }
 
-        private string ObtenerCodigoCursoEditadoDesdeBD(string dia)
+        private string ObtenerCodigoCursoEditadoDesdeBD(string nombreCursoEditado)
         {
             string codigoCursoEditado = null;
 
@@ -308,9 +308,9 @@ namespace sysacad
                 try
                 {
                     conexion.Open();
-                    string query = "SELECT codigo FROM cursos WHERE dia = @dia";
+                    string query = "SELECT codigo FROM cursos WHERE nombre = @nombre";
                     MySqlCommand command = new MySqlCommand(query, conexion);
-                    command.Parameters.AddWithValue("@dia", dia);
+                    command.Parameters.AddWithValue("@nombre", nombreCursoEditado);
 
                     object result = command.ExecuteScalar();
                     if (result != null)
