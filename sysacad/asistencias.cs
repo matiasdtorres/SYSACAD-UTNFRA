@@ -37,7 +37,7 @@ namespace sysacad
             // Obtener el nombre completo del alumno seleccionado
             string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
 
-            // Obtener el número de asistencia seleccionado
+            // Obtener el numero de asistencia seleccionado
             string numeroAsistencia = numeroasistenciatxt.SelectedItem.ToString();
 
             // Obtener el estado de asistencia seleccionado
@@ -55,7 +55,6 @@ namespace sysacad
             // Limpia la lista de alumnos antes de cargar nuevos alumnos
             alumnotxt.Items.Clear();
 
-            // Llama a la función para cargar los alumnos de la materia seleccionada
             CargarAlumnosPorMateria(materiatxt.SelectedItem.ToString());
         }
 
@@ -213,13 +212,12 @@ namespace sysacad
                         {
                             while (reader.Read())
                             {
-                                // Obtener el legajo
                                 legajo = reader["legajo"].ToString();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("No se encontró el legajo del alumno seleccionado.");
+                            MessageBox.Show("No se encontro el legajo del alumno seleccionado.");
                         }
                     }
                 }
@@ -246,6 +244,47 @@ namespace sysacad
                 {
                     conexion.Open();
 
+                    // Obtener el número de la asistencia actual (por ejemplo, 1 para asistencia1)
+                    int numeroAsistenciaActual = int.Parse(numeroasistencia.Substring(numeroasistencia.Length - 1));
+
+                    // Verificar si las asistencias anteriores han sido registradas
+                    for (int i = 1; i < numeroAsistenciaActual; i++)
+                    {
+                        string nombreAsistenciaAnterior = $"asistencia{i}";
+
+                        string queryVerificarAsistenciaAnterior = $@"
+                        SELECT COUNT(*) FROM {nombreTabla.Replace(" ", "_")} 
+                        WHERE legajo = '{legajoseleccionado}' AND {nombreAsistenciaAnterior} IS NOT NULL";
+
+                        using (MySqlCommand verificarAsistenciaAnterior = new MySqlCommand(queryVerificarAsistenciaAnterior, conexion))
+                        {
+                            int countAsistenciaAnterior = Convert.ToInt32(verificarAsistenciaAnterior.ExecuteScalar());
+
+                            if (countAsistenciaAnterior == 0)
+                            {
+                                MessageBox.Show($"Primero debe cargar la {nombreAsistenciaAnterior}.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                    }
+
+                    // Verificar si ya existe un valor en la asistencia especificada
+                    string queryVerificarAsistencia = $@"
+                    SELECT COUNT(*) FROM {nombreTabla.Replace(" ", "_")} 
+                    WHERE legajo = '{legajoseleccionado}' AND {numeroasistencia} IS NOT NULL";
+
+                    using (MySqlCommand verificarAsistencia = new MySqlCommand(queryVerificarAsistencia, conexion))
+                    {
+                        int count = Convert.ToInt32(verificarAsistencia.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show($"La {numeroasistencia} ya ha sido registrada anteriormente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // pongo asistencia
                     string queryInsertarAsistencia = $@"
                     UPDATE {nombreTabla.Replace(" ", "_")} SET {numeroasistencia} = '{estadoasistencia}' WHERE legajo = '{legajoseleccionado}'";
 
@@ -253,8 +292,7 @@ namespace sysacad
                     {
                         insertarEstudiante.ExecuteNonQuery();
 
-                        // Mostrar mensaje de éxito
-                        MessageBox.Show("Asistencia cargada correctamente.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Asistencia {numeroasistencia} cargada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
