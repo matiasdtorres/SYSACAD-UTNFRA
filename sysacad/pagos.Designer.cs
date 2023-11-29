@@ -76,6 +76,7 @@
             groupBox8 = new GroupBox();
             tipotxt = new Label();
             btnagregarmetodopago = new Button();
+            btnrefresh = new Button();
             groupBox1.SuspendLayout();
             groupBox13.SuspendLayout();
             groupBox6.SuspendLayout();
@@ -513,7 +514,7 @@
             // 
             legajoescondido.AutoSize = true;
             legajoescondido.ForeColor = Color.Black;
-            legajoescondido.Location = new Point(487, 41);
+            legajoescondido.Location = new Point(487, 35);
             legajoescondido.Name = "legajoescondido";
             legajoescondido.Size = new Size(38, 15);
             legajoescondido.TabIndex = 10;
@@ -522,6 +523,7 @@
             // groupBox7
             // 
             groupBox7.Controls.Add(groupBox12);
+            groupBox7.Controls.Add(btnagregarmetodopago);
             groupBox7.Controls.Add(groupBox11);
             groupBox7.Controls.Add(groupBox10);
             groupBox7.Controls.Add(groupBox9);
@@ -529,7 +531,7 @@
             groupBox7.ForeColor = Color.White;
             groupBox7.Location = new Point(826, 128);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(229, 375);
+            groupBox7.Size = new Size(229, 397);
             groupBox7.TabIndex = 11;
             groupBox7.TabStop = false;
             groupBox7.Text = "Metodo de Pago Actual";
@@ -639,13 +641,26 @@
             btnagregarmetodopago.BackColor = Color.Black;
             btnagregarmetodopago.FlatStyle = FlatStyle.Flat;
             btnagregarmetodopago.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnagregarmetodopago.Location = new Point(872, 509);
+            btnagregarmetodopago.Location = new Point(46, 356);
             btnagregarmetodopago.Name = "btnagregarmetodopago";
             btnagregarmetodopago.Size = new Size(140, 27);
             btnagregarmetodopago.TabIndex = 15;
-            btnagregarmetodopago.Text = "Agregar / Modificar";
+            btnagregarmetodopago.Text = "Agregar";
             btnagregarmetodopago.UseVisualStyleBackColor = false;
             btnagregarmetodopago.Click += btnagregarmetodopago_Click;
+            // 
+            // btnrefresh
+            // 
+            btnrefresh.BackColor = Color.Black;
+            btnrefresh.FlatStyle = FlatStyle.Flat;
+            btnrefresh.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnrefresh.Location = new Point(872, 555);
+            btnrefresh.Name = "btnrefresh";
+            btnrefresh.Size = new Size(140, 27);
+            btnrefresh.TabIndex = 16;
+            btnrefresh.Text = "Refrescar";
+            btnrefresh.UseVisualStyleBackColor = false;
+            btnrefresh.Click += btnrefresh_Click;
             // 
             // pagos
             // 
@@ -653,7 +668,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1060, 614);
-            Controls.Add(btnagregarmetodopago);
+            Controls.Add(btnrefresh);
             Controls.Add(groupBox7);
             Controls.Add(legajoescondido);
             Controls.Add(groupBox1);
@@ -750,5 +765,6 @@
         private Label label8;
         private Label label7;
         private Label label6;
+        private Button btnrefresh;
     }
 }

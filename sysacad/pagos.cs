@@ -332,5 +332,10 @@ namespace sysacad
             string legajoLogeado = legajoescondido.Text;
             mostrardatosdepago(legajoLogeado);
         }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            mostrardatosdepago(legajoescondido.Text);
+        }
     }
 }

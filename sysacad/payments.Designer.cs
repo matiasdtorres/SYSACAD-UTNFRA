@@ -186,7 +186,7 @@
             btnagregar.Name = "btnagregar";
             btnagregar.Size = new Size(176, 58);
             btnagregar.TabIndex = 7;
-            btnagregar.Text = "Agregar";
+            btnagregar.Text = "Listo";
             btnagregar.UseVisualStyleBackColor = false;
             btnagregar.Click += btnagregar_Click;
             // 
