@@ -103,5 +103,38 @@ namespace biblioteca
                 return filasAfectadas;
             }
         }
+
+        //Metodo para que el profesor inserte asistencia de un legajo
+        internal int InsertarAsistencia(string legajo, string fecha, string columnaAsistencia)
+        {
+            using (conexion)
+            {
+                conexion.Open();
+
+                if (!EsColumnaAsistenciaValida(columnaAsistencia))
+                {
+                    return 0;
+                }
+
+                // Utiliza parámetros para evitar la inyección de SQL
+                string query = $"UPDATE asistencia SET {columnaAsistencia} = @Fecha WHERE legajo = @Legajo";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Fecha", fecha);
+                comando.Parameters.AddWithValue("@Legajo", legajo);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
+
+        // Método para validar que la columnaAsistencia sea segura
+        private bool EsColumnaAsistenciaValida(string columnaAsistencia)
+        {
+
+            List<string> columnasPermitidas = new List<string> { "asistencia1", "asistencia2", "asistencia3", "asistencia4", "asistencia5" };
+            return columnasPermitidas.Contains(columnaAsistencia);
+        }
     }
 }
