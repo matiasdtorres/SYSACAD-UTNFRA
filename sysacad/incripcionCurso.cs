@@ -231,7 +231,7 @@ namespace sysacad
                     comandoUpdateCursos.ExecuteNonQuery();
                     //agregar estudiante a la base de datos
 
-                    AgregarEstudiante(nombremateria1.Text, legajo.Text);
+                    AgregarEstudianteAMateria(nombremateria1.Text, legajo.Text);
                     MessageBox.Show($"Te inscribiste en el curso de {nombremateria1.Text}");
                 }
                 catch (Exception ex)
@@ -369,7 +369,7 @@ namespace sysacad
                     comandoUpdateCursos.ExecuteNonQuery();
                     //agregar estudiante a la base de datos
 
-                    AgregarEstudiante(nombremateria2.Text, legajo.Text);
+                    AgregarEstudianteAMateria(nombremateria2.Text, legajo.Text);
                     MessageBox.Show($"Te inscribiste en el curso de {nombremateria2.Text}");
                 }
                 catch (Exception ex)
@@ -506,7 +506,7 @@ namespace sysacad
                     comandoUpdateCursos.ExecuteNonQuery();
                     //agregar estudiante a la base de datos
 
-                    AgregarEstudiante(nombremateria3.Text, legajo.Text);
+                    AgregarEstudianteAMateria(nombremateria3.Text, legajo.Text);
                     MessageBox.Show($"Te inscribiste en el curso de {nombremateria3.Text}");
                 }
                 catch (Exception ex)
@@ -643,7 +643,7 @@ namespace sysacad
                     comandoUpdateCursos.ExecuteNonQuery();
                     //agregar estudiante a la base de datos
 
-                    AgregarEstudiante(nombremateria4.Text, legajo.Text);
+                    AgregarEstudianteAMateria(nombremateria4.Text, legajo.Text);
                     MessageBox.Show($"Te inscribiste en el curso de {nombremateria4.Text}");
                 }
                 catch (Exception ex)
@@ -658,14 +658,14 @@ namespace sysacad
         }
 
         //Metodo para agregar un estudiante a una tabla de Materias
-        private void AgregarEstudiante(string nombreTabla, string legajoLogeado)
+        private void AgregarEstudianteAMateria(string nombreTabla, string legajoLogeado)
         {
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
             {
                 conexion.Open();
 
                 string queryInsertarEstudiante = $@"
-                INSERT INTO {nombreTabla.Replace(" ", "_")} (estudiante) 
+                INSERT INTO {nombreTabla.Replace(" ", "_")} (legajo) 
                 VALUES ('{legajoLogeado}')";
 
                 using (MySqlCommand insertarEstudiante = new MySqlCommand(queryInsertarEstudiante, conexion))

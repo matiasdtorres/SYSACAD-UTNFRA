@@ -115,7 +115,7 @@ namespace biblioteca
                 CREATE TABLE {Nombre.Replace(" ", "_")}  -- Reemplaza los espacios en blanco con guiones bajos
                 (
                     ID int AUTO_INCREMENT primary key,
-                    estudiante VARCHAR(50),
+                    legajo VARCHAR(50),
                     asistencia1 VARCHAR(50),
                     asistencia2 VARCHAR(50),
                     asistencia3 VARCHAR(50),
@@ -148,5 +148,46 @@ namespace biblioteca
             }
         }
 
+        //metodo para eliminar de la tabla estudiantes
+        public void EliminarMateria()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+
+                string queryeliminarmateria = $@"
+                UPDATE estudiantes SET materia1 = NULL WHERE materia1 = @Nombre;
+                UPDATE estudiantes SET materia2 = NULL WHERE materia2 = @Nombre;
+                UPDATE estudiantes SET materia3 = NULL WHERE materia3 = @Nombre;
+                UPDATE estudiantes SET materia4 = NULL WHERE materia4 = @Nombre;
+                UPDATE estudiantes SET materia5 = NULL WHERE materia5 = @Nombre;
+                UPDATE estudiantes SET materia6 = NULL WHERE materia1 = @Nombre;
+                UPDATE estudiantes SET materia7 = NULL WHERE materia2 = @Nombre;
+                UPDATE estudiantes SET materia8 = NULL WHERE materia3 = @Nombre;";
+
+                using (MySqlCommand eliminarmateria = new MySqlCommand(queryeliminarmateria, conexion))
+                {
+                    eliminarmateria.Parameters.AddWithValue("@Nombre", Nombre);
+                    eliminarmateria.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //metodo para eliminar la materia de la tabla de listadeespera
+        public int EliminarMateriaListaDeEspera()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "DELETE FROM listadeespera WHERE nombremateria = @Nombremateria";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Nombremateria", Nombre);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
     }
 }

@@ -238,7 +238,8 @@ namespace sysacad
                 }
 
 
-                // Eliminar la tabla antes de eliminar el curso
+                EliminarCurso.EliminarMateria();
+                EliminarCurso.EliminarMateriaListaDeEspera();
                 EliminarCurso.DropTable();
 
                 // Eliminar el curso

@@ -590,7 +590,7 @@
             // 
             // nombreeditarcursotxt
             // 
-            nombreeditarcursotxt.BackColor = Color.White;
+            nombreeditarcursotxt.BackColor = Color.LightGray;
             nombreeditarcursotxt.ForeColor = Color.Black;
             nombreeditarcursotxt.Location = new Point(113, 28);
             nombreeditarcursotxt.Name = "nombreeditarcursotxt";
