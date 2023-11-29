@@ -34,7 +34,20 @@ namespace sysacad
 
         private void btncargar_Click(object sender, EventArgs e)
         {
-            // Lógica para cargar asistencias
+            // Obtener el nombre completo del alumno seleccionado
+            string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
+
+            // Obtener el número de asistencia seleccionado
+            string numeroAsistencia = numeroasistenciatxt.SelectedItem.ToString();
+
+            // Obtener el estado de asistencia seleccionado
+            string estadoAsistencia = asistenciatxt.SelectedItem.ToString();
+
+            // Obtener el nombre de la materia seleccionada
+            string materiaSeleccionada = materiatxt.SelectedItem.ToString();
+
+            // Agregar el estudiante a la materia seleccionada
+            AgregarEstudianteAMateria(materiaSeleccionada, nombreCompletoAlumno, numeroAsistencia, estadoAsistencia);
         }
 
         private void materiatxt_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,5 +191,82 @@ namespace sysacad
                 conexion3.Close();
             }
         }
+
+        private string CargarLegajoAlumnoSeleccionado(string nombreCompletoAlumno)
+        {
+            string legajo = "";
+
+            try
+            {
+                conexion.Open();
+
+                string selectLegajoQuery = "SELECT legajo FROM estudiantes WHERE nombre = @Nombre AND apellido = @Apellido";
+
+                using (MySqlCommand comando = new MySqlCommand(selectLegajoQuery, conexion))
+                {
+                    comando.Parameters.AddWithValue("@Nombre", nombreCompletoAlumno.Split(' ')[0]);
+                    comando.Parameters.AddWithValue("@Apellido", nombreCompletoAlumno.Split(' ')[1]);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                // Obtener el legajo
+                                legajo = reader["legajo"].ToString();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el legajo del alumno seleccionado.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el legajo del alumno: {ex.Message}");
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return legajo;
+        }
+
+
+        //actualizar la tabla de asistencia
+        private void AgregarEstudianteAMateria(string nombreTabla, string legajoseleccionado, string numeroasistencia, string estadoasistencia)
+        {
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
+                {
+                    conexion.Open();
+
+                    string queryInsertarAsistencia = $@"
+                    UPDATE {nombreTabla.Replace(" ", "_")} SET {numeroasistencia} = '{estadoasistencia}' WHERE legajo = '{legajoseleccionado}'";
+
+                    using (MySqlCommand insertarEstudiante = new MySqlCommand(queryInsertarAsistencia, conexion))
+                    {
+                        insertarEstudiante.ExecuteNonQuery();
+
+                        // Mostrar mensaje de éxito
+                        MessageBox.Show("Asistencia cargada correctamente.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error al actualizar la asistencia: {ex.Message}", "Error de MySQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

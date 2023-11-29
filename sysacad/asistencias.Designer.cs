@@ -32,6 +32,10 @@
             usuarioescondidotxt = new Label();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            label5 = new Label();
+            numeroasistenciatxt = new ComboBox();
+            label4 = new Label();
+            asistenciatxt = new ComboBox();
             btncargar = new Button();
             label3 = new Label();
             label2 = new Label();
@@ -69,7 +73,7 @@
             // 
             groupBox1.Controls.Add(groupBox2);
             groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(35, 92);
+            groupBox1.Location = new Point(35, 74);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(994, 490);
             groupBox1.TabIndex = 6;
@@ -78,24 +82,68 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(numeroasistenciatxt);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(asistenciatxt);
             groupBox2.Controls.Add(btncargar);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(materiatxt);
             groupBox2.Controls.Add(alumnotxt);
             groupBox2.ForeColor = Color.White;
-            groupBox2.Location = new Point(300, 46);
+            groupBox2.Location = new Point(300, 22);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(384, 394);
+            groupBox2.Size = new Size(384, 462);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "-";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(107, 231);
+            label5.Name = "label5";
+            label5.Size = new Size(171, 37);
+            label5.TabIndex = 8;
+            label5.Text = "N° Asistencia";
+            // 
+            // numeroasistenciatxt
+            // 
+            numeroasistenciatxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            numeroasistenciatxt.FormattingEnabled = true;
+            numeroasistenciatxt.Items.AddRange(new object[] { "asistencia1", "asistencia2", "asistencia3", "asistencia4", "asistencia5" });
+            numeroasistenciatxt.Location = new Point(61, 271);
+            numeroasistenciatxt.Name = "numeroasistenciatxt";
+            numeroasistenciatxt.Size = new Size(264, 23);
+            numeroasistenciatxt.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(151, 308);
+            label4.Name = "label4";
+            label4.Size = new Size(97, 37);
+            label4.TabIndex = 6;
+            label4.Text = "Estado";
+            // 
+            // asistenciatxt
+            // 
+            asistenciatxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            asistenciatxt.FormattingEnabled = true;
+            asistenciatxt.Items.AddRange(new object[] { "Presente", "Tardío", "Ausente" });
+            asistenciatxt.Location = new Point(61, 348);
+            asistenciatxt.Name = "asistenciatxt";
+            asistenciatxt.Size = new Size(264, 23);
+            asistenciatxt.TabIndex = 5;
             // 
             // btncargar
             // 
             btncargar.BackColor = Color.Black;
             btncargar.FlatStyle = FlatStyle.Flat;
-            btncargar.Location = new Point(142, 339);
+            btncargar.Location = new Point(142, 407);
             btncargar.Name = "btncargar";
             btncargar.Size = new Size(110, 36);
             btncargar.TabIndex = 4;
@@ -173,5 +221,9 @@
         private ComboBox alumnotxt;
         private ComboBox materiatxt;
         private Button btncargar;
+        private Label label4;
+        private ComboBox asistenciatxt;
+        private Label label5;
+        private ComboBox numeroasistenciatxt;
     }
 }

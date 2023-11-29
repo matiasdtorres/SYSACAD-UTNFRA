@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -116,7 +117,6 @@ namespace biblioteca
                     return 0;
                 }
 
-                // Utiliza parámetros para evitar la inyección de SQL
                 string query = $"UPDATE asistencia SET {columnaAsistencia} = @Fecha WHERE legajo = @Legajo";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
@@ -136,5 +136,6 @@ namespace biblioteca
             List<string> columnasPermitidas = new List<string> { "asistencia1", "asistencia2", "asistencia3", "asistencia4", "asistencia5" };
             return columnasPermitidas.Contains(columnaAsistencia);
         }
+
     }
 }
