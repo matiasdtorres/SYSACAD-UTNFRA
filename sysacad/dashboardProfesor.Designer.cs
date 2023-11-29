@@ -202,6 +202,7 @@
             DoubleBuffered = true;
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Name = "dashboardProfesor";
             StartPosition = FormStartPosition.CenterScreen;

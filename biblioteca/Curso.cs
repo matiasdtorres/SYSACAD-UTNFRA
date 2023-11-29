@@ -121,7 +121,11 @@ namespace biblioteca
                     asistencia3 VARCHAR(50),
                     asistencia4 VARCHAR(50),
                     asistencia5 VARCHAR(50),
-                    nota VARCHAR(50) 
+                    parcial1 VARCHAR(50),
+                    recu1 VARCHAR(50),
+                    parcial2 VARCHAR(50),
+                    recu2 VARCHAR(50),
+                    notafinal VARCHAR(50)
                 )";
 
                 using (MySqlCommand creartabla = new MySqlCommand(querycreartabla, conexion))

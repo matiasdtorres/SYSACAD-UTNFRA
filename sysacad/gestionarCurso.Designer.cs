@@ -31,6 +31,8 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
+            divcursotxt = new ComboBox();
+            aulacursotxt = new ComboBox();
             profesorcursotxt = new ComboBox();
             turnocursotxt = new ComboBox();
             diacursotxt = new ComboBox();
@@ -42,8 +44,6 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            divcursotxt = new TextBox();
-            aulacursotxt = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -56,6 +56,8 @@
             btneliminar = new Button();
             btneditar = new Button();
             groupBox2 = new GroupBox();
+            diveditarcursotxt = new ComboBox();
+            aulaeditarcursotxt = new ComboBox();
             profesoreditarcursotxt = new ComboBox();
             turnoeditarcursotxt = new ComboBox();
             diaeditarcursotxt = new ComboBox();
@@ -67,8 +69,6 @@
             label14 = new Label();
             label15 = new Label();
             label17 = new Label();
-            diveditarcursotxt = new TextBox();
-            aulaeditarcursotxt = new TextBox();
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
@@ -111,6 +111,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(divcursotxt);
+            groupBox1.Controls.Add(aulacursotxt);
             groupBox1.Controls.Add(profesorcursotxt);
             groupBox1.Controls.Add(turnocursotxt);
             groupBox1.Controls.Add(diacursotxt);
@@ -122,8 +124,6 @@
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(divcursotxt);
-            groupBox1.Controls.Add(aulacursotxt);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -136,6 +136,26 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
+            // 
+            // divcursotxt
+            // 
+            divcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            divcursotxt.FormattingEnabled = true;
+            divcursotxt.Items.AddRange(new object[] { "A", "B", "C", "D" });
+            divcursotxt.Location = new Point(113, 144);
+            divcursotxt.Name = "divcursotxt";
+            divcursotxt.Size = new Size(178, 23);
+            divcursotxt.TabIndex = 36;
+            // 
+            // aulacursotxt
+            // 
+            aulacursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            aulacursotxt.FormattingEnabled = true;
+            aulacursotxt.Items.AddRange(new object[] { "300", "301", "302", "303", "304", "305", "306", "307", "308" });
+            aulacursotxt.Location = new Point(114, 115);
+            aulacursotxt.Name = "aulacursotxt";
+            aulacursotxt.Size = new Size(178, 23);
+            aulacursotxt.TabIndex = 35;
             // 
             // profesorcursotxt
             // 
@@ -170,7 +190,7 @@
             // 
             cuatricursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
             cuatricursotxt.FormattingEnabled = true;
-            cuatricursotxt.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            cuatricursotxt.Items.AddRange(new object[] { "1", "2" });
             cuatricursotxt.Location = new Point(113, 86);
             cuatricursotxt.Name = "cuatricursotxt";
             cuatricursotxt.Size = new Size(178, 23);
@@ -249,24 +269,6 @@
             label7.Size = new Size(66, 21);
             label7.TabIndex = 15;
             label7.Text = "Division";
-            // 
-            // divcursotxt
-            // 
-            divcursotxt.BackColor = Color.White;
-            divcursotxt.ForeColor = Color.Black;
-            divcursotxt.Location = new Point(113, 145);
-            divcursotxt.Name = "divcursotxt";
-            divcursotxt.Size = new Size(178, 23);
-            divcursotxt.TabIndex = 14;
-            // 
-            // aulacursotxt
-            // 
-            aulacursotxt.BackColor = Color.White;
-            aulacursotxt.ForeColor = Color.Black;
-            aulacursotxt.Location = new Point(113, 116);
-            aulacursotxt.Name = "aulacursotxt";
-            aulacursotxt.Size = new Size(178, 23);
-            aulacursotxt.TabIndex = 13;
             // 
             // label6
             // 
@@ -398,6 +400,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Black;
+            groupBox2.Controls.Add(diveditarcursotxt);
+            groupBox2.Controls.Add(aulaeditarcursotxt);
             groupBox2.Controls.Add(profesoreditarcursotxt);
             groupBox2.Controls.Add(turnoeditarcursotxt);
             groupBox2.Controls.Add(diaeditarcursotxt);
@@ -409,8 +413,6 @@
             groupBox2.Controls.Add(label14);
             groupBox2.Controls.Add(label15);
             groupBox2.Controls.Add(label17);
-            groupBox2.Controls.Add(diveditarcursotxt);
-            groupBox2.Controls.Add(aulaeditarcursotxt);
             groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label20);
@@ -423,6 +425,26 @@
             groupBox2.TabIndex = 25;
             groupBox2.TabStop = false;
             groupBox2.Text = "Editar Curso";
+            // 
+            // diveditarcursotxt
+            // 
+            diveditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            diveditarcursotxt.FormattingEnabled = true;
+            diveditarcursotxt.Items.AddRange(new object[] { "A", "B", "C", "D" });
+            diveditarcursotxt.Location = new Point(113, 144);
+            diveditarcursotxt.Name = "diveditarcursotxt";
+            diveditarcursotxt.Size = new Size(178, 23);
+            diveditarcursotxt.TabIndex = 37;
+            // 
+            // aulaeditarcursotxt
+            // 
+            aulaeditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            aulaeditarcursotxt.FormattingEnabled = true;
+            aulaeditarcursotxt.Items.AddRange(new object[] { "300", "301", "302", "303", "304", "305", "306", "307", "308" });
+            aulaeditarcursotxt.Location = new Point(113, 116);
+            aulaeditarcursotxt.Name = "aulaeditarcursotxt";
+            aulaeditarcursotxt.Size = new Size(178, 23);
+            aulaeditarcursotxt.TabIndex = 37;
             // 
             // profesoreditarcursotxt
             // 
@@ -457,7 +479,7 @@
             // 
             cuatrieditarcursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
             cuatrieditarcursotxt.FormattingEnabled = true;
-            cuatrieditarcursotxt.Items.AddRange(new object[] { "1", "2", "3", "4" });
+            cuatrieditarcursotxt.Items.AddRange(new object[] { "1", "2" });
             cuatrieditarcursotxt.Location = new Point(113, 87);
             cuatrieditarcursotxt.Name = "cuatrieditarcursotxt";
             cuatrieditarcursotxt.Size = new Size(178, 23);
@@ -536,24 +558,6 @@
             label17.Size = new Size(66, 21);
             label17.TabIndex = 15;
             label17.Text = "Division";
-            // 
-            // diveditarcursotxt
-            // 
-            diveditarcursotxt.BackColor = Color.White;
-            diveditarcursotxt.ForeColor = Color.Black;
-            diveditarcursotxt.Location = new Point(113, 145);
-            diveditarcursotxt.Name = "diveditarcursotxt";
-            diveditarcursotxt.Size = new Size(178, 23);
-            diveditarcursotxt.TabIndex = 14;
-            // 
-            // aulaeditarcursotxt
-            // 
-            aulaeditarcursotxt.BackColor = Color.White;
-            aulaeditarcursotxt.ForeColor = Color.Black;
-            aulaeditarcursotxt.Location = new Point(113, 116);
-            aulaeditarcursotxt.Name = "aulaeditarcursotxt";
-            aulaeditarcursotxt.Size = new Size(178, 23);
-            aulaeditarcursotxt.TabIndex = 13;
             // 
             // label18
             // 
@@ -665,8 +669,6 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private TextBox divcursotxt;
-        private TextBox aulacursotxt;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -687,8 +689,6 @@
         private Label label14;
         private Label label15;
         private Label label17;
-        private TextBox diveditarcursotxt;
-        private TextBox aulaeditarcursotxt;
         private Label label18;
         private Label label19;
         private Label label20;
@@ -704,5 +704,9 @@
         private ComboBox profesorcursotxt;
         private ComboBox profesoreditarcursotxt;
         private ComboBox nombreeliminarcursotxt;
+        private ComboBox divcursotxt;
+        private ComboBox aulacursotxt;
+        private ComboBox diveditarcursotxt;
+        private ComboBox aulaeditarcursotxt;
     }
 }
