@@ -62,9 +62,9 @@ namespace sysacad
                 clApellido.BorderWidth = 0;
                 clApellido.BorderWidthBottom = 0.75f;
 
+                tblPrueba.AddCell(clLegajo);
                 tblPrueba.AddCell(clNombre);
                 tblPrueba.AddCell(clApellido);
-                tblPrueba.AddCell(clLegajo);
 
                 conexion.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM estudiantes WHERE materia1 = @curso", conexion);

@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            label10 = new Label();
             cursostxt = new ComboBox();
             label3 = new Label();
             label2 = new Label();
@@ -46,7 +47,6 @@
             label9 = new Label();
             legajopagostxt = new TextBox();
             btnpagos = new Button();
-            label10 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -60,7 +60,7 @@
             label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.ImageAlign = ContentAlignment.MiddleRight;
-            label1.Location = new Point(441, 4);
+            label1.Location = new Point(469, 4);
             label1.Name = "label1";
             label1.Size = new Size(134, 37);
             label1.TabIndex = 3;
@@ -80,6 +80,15 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Estudiantes Inscriptos";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(1, 36);
+            label10.Name = "label10";
+            label10.Size = new Size(108, 15);
+            label10.TabIndex = 9;
+            label10.Text = "en curso especifico";
             // 
             // cursostxt
             // 
@@ -241,15 +250,6 @@
             btnpagos.Text = "Descargar";
             btnpagos.UseVisualStyleBackColor = false;
             btnpagos.Click += btnpagos_Click;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(1, 36);
-            label10.Name = "label10";
-            label10.Size = new Size(108, 15);
-            label10.TabIndex = 9;
-            label10.Text = "en curso especifico";
             // 
             // reportes
             // 
