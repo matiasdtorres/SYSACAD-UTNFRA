@@ -125,7 +125,7 @@
             cuposmateria1.AutoSize = true;
             cuposmateria1.Location = new Point(6, 178);
             cuposmateria1.Name = "cuposmateria1";
-            cuposmateria1.Size = new Size(85, 15);
+            cuposmateria1.Size = new Size(0, 15);
             cuposmateria1.TabIndex = 7;
             cuposmateria1.Text = "cuposmateria1";
             // 
@@ -143,7 +143,7 @@
             descripcionmateria1.AutoSize = true;
             descripcionmateria1.Location = new Point(6, 133);
             descripcionmateria1.Name = "descripcionmateria1";
-            descripcionmateria1.Size = new Size(114, 15);
+            descripcionmateria1.Size = new Size(0, 15);
             descripcionmateria1.TabIndex = 5;
             descripcionmateria1.Text = "descripcionmateria1";
             // 
@@ -161,7 +161,7 @@
             codigomateria1.AutoSize = true;
             codigomateria1.Location = new Point(6, 90);
             codigomateria1.Name = "codigomateria1";
-            codigomateria1.Size = new Size(90, 15);
+            codigomateria1.Size = new Size(0, 15);
             codigomateria1.TabIndex = 3;
             codigomateria1.Text = "codigomateria1";
             // 
@@ -179,7 +179,7 @@
             nombremateria1.AutoSize = true;
             nombremateria1.Location = new Point(6, 43);
             nombremateria1.Name = "nombremateria1";
-            nombremateria1.Size = new Size(95, 15);
+            nombremateria1.Size = new Size(0, 15);
             nombremateria1.TabIndex = 1;
             nombremateria1.Text = "nombremateria1";
             // 
@@ -241,7 +241,7 @@
             cuposmateria2.AutoSize = true;
             cuposmateria2.Location = new Point(6, 178);
             cuposmateria2.Name = "cuposmateria2";
-            cuposmateria2.Size = new Size(85, 15);
+            cuposmateria2.Size = new Size(0, 15);
             cuposmateria2.TabIndex = 7;
             cuposmateria2.Text = "cuposmateria2";
             // 
@@ -259,7 +259,7 @@
             descripcionmateria2.AutoSize = true;
             descripcionmateria2.Location = new Point(6, 133);
             descripcionmateria2.Name = "descripcionmateria2";
-            descripcionmateria2.Size = new Size(114, 15);
+            descripcionmateria2.Size = new Size(0, 15);
             descripcionmateria2.TabIndex = 5;
             descripcionmateria2.Text = "descripcionmateria2";
             // 
@@ -277,7 +277,7 @@
             codigomateria2.AutoSize = true;
             codigomateria2.Location = new Point(6, 90);
             codigomateria2.Name = "codigomateria2";
-            codigomateria2.Size = new Size(90, 15);
+            codigomateria2.Size = new Size(0, 15);
             codigomateria2.TabIndex = 3;
             codigomateria2.Text = "codigomateria2";
             // 
@@ -295,7 +295,7 @@
             nombremateria2.AutoSize = true;
             nombremateria2.Location = new Point(6, 43);
             nombremateria2.Name = "nombremateria2";
-            nombremateria2.Size = new Size(95, 15);
+            nombremateria2.Size = new Size(0, 15);
             nombremateria2.TabIndex = 1;
             nombremateria2.Text = "nombremateria2";
             // 
@@ -343,7 +343,7 @@
             cuposmateria3.AutoSize = true;
             cuposmateria3.Location = new Point(6, 178);
             cuposmateria3.Name = "cuposmateria3";
-            cuposmateria3.Size = new Size(85, 15);
+            cuposmateria3.Size = new Size(0, 15);
             cuposmateria3.TabIndex = 7;
             cuposmateria3.Text = "cuposmateria3";
             // 
@@ -361,7 +361,7 @@
             descripcionmateria3.AutoSize = true;
             descripcionmateria3.Location = new Point(6, 133);
             descripcionmateria3.Name = "descripcionmateria3";
-            descripcionmateria3.Size = new Size(114, 15);
+            descripcionmateria3.Size = new Size(0, 15);
             descripcionmateria3.TabIndex = 5;
             descripcionmateria3.Text = "descripcionmateria3";
             // 
@@ -379,7 +379,7 @@
             codigomateria3.AutoSize = true;
             codigomateria3.Location = new Point(6, 90);
             codigomateria3.Name = "codigomateria3";
-            codigomateria3.Size = new Size(90, 15);
+            codigomateria3.Size = new Size(0, 15);
             codigomateria3.TabIndex = 3;
             codigomateria3.Text = "codigomateria3";
             // 
@@ -397,7 +397,7 @@
             nombremateria3.AutoSize = true;
             nombremateria3.Location = new Point(6, 43);
             nombremateria3.Name = "nombremateria3";
-            nombremateria3.Size = new Size(95, 15);
+            nombremateria3.Size = new Size(0, 15);
             nombremateria3.TabIndex = 1;
             nombremateria3.Text = "nombremateria3";
             // 
