@@ -292,6 +292,13 @@ namespace sysacad
                 {
                     conexion.Open();
 
+                    // Verificar si ya existe una nota para el estudiante y el tipo de nota
+                    if (ExisteNotaEnTabla(nombreTabla, legajoseleccionado, numeronota))
+                    {
+                        MessageBox.Show($"Ya existe una nota para el estudiante y el tipo de nota seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     string queryInsertarNota = $@"
                     UPDATE {nombreTabla.Replace(" ", "_")} SET {numeronota} = '{estadonota}' WHERE legajo = '{legajoseleccionado}'";
 
@@ -299,8 +306,7 @@ namespace sysacad
                     {
                         insertarEstudiante.ExecuteNonQuery();
 
-                        // Mostrar mensaje de éxito
-                        MessageBox.Show("nota cargada correctamente.", "exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Nota cargada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -312,6 +318,44 @@ namespace sysacad
             {
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool ExisteNotaEnTabla(string nombreTabla, string legajo, string tipoNota)
+        {
+            bool existeNota = false;
+
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
+                {
+                    conexion.Open();
+
+                    string selectNotaQuery = $@"
+                    SELECT {tipoNota} FROM {nombreTabla.Replace(" ", "_")} WHERE legajo = @Legajo";
+
+                    using (MySqlCommand comando = new MySqlCommand(selectNotaQuery, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Legajo", legajo);
+
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    existeNota = !string.IsNullOrEmpty(reader[tipoNota].ToString());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al verificar la existencia de la nota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return existeNota;
         }
 
     }
