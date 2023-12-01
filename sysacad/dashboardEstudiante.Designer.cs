@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardEstudiante));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label5 = new Label();
             bienvenidolegajo = new Label();
             label3 = new Label();
@@ -41,16 +42,18 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnmisdatos = new Button();
             btnincribircurso = new Button();
+            btnincribircurso2 = new Button();
             btnconsultarhorarios = new Button();
             btnrealizarpagos = new Button();
-            btnincribircurso2 = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(bienvenidolegajo);
             panel1.Controls.Add(label3);
@@ -65,12 +68,24 @@
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Black;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(241, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(43, 37);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(528, 13);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(922, 13);
             label5.Name = "label5";
             label5.Size = new Size(88, 21);
             label5.TabIndex = 11;
@@ -80,8 +95,8 @@
             // 
             bienvenidolegajo.AutoSize = true;
             bienvenidolegajo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            bienvenidolegajo.ForeColor = Color.White;
-            bienvenidolegajo.Location = new Point(614, 14);
+            bienvenidolegajo.ForeColor = Color.Black;
+            bienvenidolegajo.Location = new Point(1008, 14);
             bienvenidolegajo.Name = "bienvenidolegajo";
             bienvenidolegajo.Size = new Size(69, 21);
             bienvenidolegajo.TabIndex = 10;
@@ -102,11 +117,11 @@
             // bienvenidonombre
             // 
             bienvenidonombre.AutoSize = true;
-            bienvenidonombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bienvenidonombre.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             bienvenidonombre.ForeColor = Color.White;
-            bienvenidonombre.Location = new Point(341, 14);
+            bienvenidonombre.Location = new Point(699, 5);
             bienvenidonombre.Name = "bienvenidonombre";
-            bienvenidonombre.Size = new Size(81, 21);
+            bienvenidonombre.Size = new Size(137, 37);
             bienvenidonombre.TabIndex = 8;
             bienvenidonombre.Text = "USUARIO";
             // 
@@ -125,11 +140,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(231, 14);
+            label2.Location = new Point(510, 5);
             label2.Name = "label2";
-            label2.Size = new Size(113, 21);
+            label2.Size = new Size(187, 37);
             label2.TabIndex = 7;
             label2.Text = "BIENVENIDO:";
             // 
@@ -201,6 +216,20 @@
             btnincribircurso.UseVisualStyleBackColor = false;
             btnincribircurso.Click += btnincribircurso_Click;
             // 
+            // btnincribircurso2
+            // 
+            btnincribircurso2.BackColor = Color.White;
+            btnincribircurso2.FlatAppearance.BorderSize = 0;
+            btnincribircurso2.FlatStyle = FlatStyle.Flat;
+            btnincribircurso2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnincribircurso2.Location = new Point(3, 81);
+            btnincribircurso2.Name = "btnincribircurso2";
+            btnincribircurso2.Size = new Size(215, 33);
+            btnincribircurso2.TabIndex = 7;
+            btnincribircurso2.Text = "Inscripcion 2do Cuatri";
+            btnincribircurso2.UseVisualStyleBackColor = false;
+            btnincribircurso2.Click += btnincribircurso2_Click;
+            // 
             // btnconsultarhorarios
             // 
             btnconsultarhorarios.BackColor = Color.White;
@@ -229,20 +258,6 @@
             btnrealizarpagos.UseVisualStyleBackColor = false;
             btnrealizarpagos.Click += btnrealizarpagos_Click;
             // 
-            // btnincribircurso2
-            // 
-            btnincribircurso2.BackColor = Color.White;
-            btnincribircurso2.FlatAppearance.BorderSize = 0;
-            btnincribircurso2.FlatStyle = FlatStyle.Flat;
-            btnincribircurso2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnincribircurso2.Location = new Point(3, 81);
-            btnincribircurso2.Name = "btnincribircurso2";
-            btnincribircurso2.Size = new Size(215, 33);
-            btnincribircurso2.TabIndex = 7;
-            btnincribircurso2.Text = "Inscripcion 2do Cuatri";
-            btnincribircurso2.UseVisualStyleBackColor = false;
-            btnincribircurso2.Click += btnincribircurso2_Click;
-            // 
             // dashboardEstudiante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,6 +276,7 @@
             Text = "dashboardEstudiante";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -282,5 +298,6 @@
         private Button btnconsultarhorarios;
         private Button btnrealizarpagos;
         private Button btnincribircurso2;
+        private PictureBox pictureBox1;
     }
 }

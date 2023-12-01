@@ -37,6 +37,9 @@
     <Compile Update="notas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="notificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="pagos.cs">
       <SubType>Form</SubType>
     </Compile>

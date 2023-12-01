@@ -53,7 +53,7 @@
             label1.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.ImageAlign = ContentAlignment.MiddleRight;
-            label1.Location = new Point(392, 9);
+            label1.Location = new Point(429, 9);
             label1.Name = "label1";
             label1.Size = new Size(195, 37);
             label1.TabIndex = 3;

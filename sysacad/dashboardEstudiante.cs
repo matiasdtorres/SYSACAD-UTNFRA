@@ -23,6 +23,7 @@ namespace sysacad
         datosEstudiante datosAlumno;
         horarios consultarHorarios;
         pagos realizarPagos;
+        notificaciones verNotificaciones;
 
 
         public dashboardEstudiante(string legajoLogeado)
@@ -175,6 +176,26 @@ namespace sysacad
         private void Incribirme2_FormClosed(object sender, FormClosedEventArgs e)
         {
             inscribirme2 = null;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (verNotificaciones == null)
+            {
+                verNotificaciones = new notificaciones(bienvenidolegajo.Text);
+                verNotificaciones.FormClosed += VerNotificaciones_FormClosed;
+                verNotificaciones.MdiParent = this;
+                verNotificaciones.Show();
+            }
+            else
+            {
+                verNotificaciones.Activate();
+            }
+        }
+
+        private void VerNotificaciones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            verNotificaciones = null;
         }
     }
 }
