@@ -213,7 +213,7 @@
             btnvalidar.Name = "btnvalidar";
             btnvalidar.Size = new Size(215, 33);
             btnvalidar.TabIndex = 6;
-            btnvalidar.Text = "Validar";
+            btnvalidar.Text = "Validar Asistencias";
             btnvalidar.UseVisualStyleBackColor = false;
             btnvalidar.Click += btnvalidar_Click;
             // 

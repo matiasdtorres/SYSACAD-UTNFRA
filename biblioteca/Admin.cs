@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace biblioteca
         {
             Usuario = usuario;
         }
+
 
         //Metodo para que el admin cambie su contraseña
         public void CambiarContraseña(string nuevaContraseña)

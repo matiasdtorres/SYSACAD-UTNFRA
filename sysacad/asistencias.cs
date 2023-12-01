@@ -23,7 +23,6 @@ namespace sysacad
             usuarioescondio(profeLogeado);
             CargarMaterias();
 
-            // Suscribe el evento SelectedIndexChanged al ComboBox materiatxt
             materiatxt.SelectedIndexChanged += materiatxt_SelectedIndexChanged;
         }
 
