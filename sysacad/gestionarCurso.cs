@@ -63,7 +63,8 @@ namespace sysacad
                         reader["division"].ToString(),
                         reader["dia"].ToString(),
                         reader["turno"].ToString(),
-                        reader["cuatrimestre"].ToString()
+                        reader["cuatrimestre"].ToString(),
+                        reader["fechalimite"].ToString()
                     );
 
                     cursosDia.Add(curso);
@@ -75,9 +76,17 @@ namespace sysacad
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
+
+            DateTime fechaSeleccionada = fechalimitetxt.Value;
+
             if (string.IsNullOrEmpty(nombrecursotxt.Text) || string.IsNullOrEmpty(descripcioncursotxt.Text) || string.IsNullOrEmpty(cuposcursotxt.Text) || string.IsNullOrEmpty(profesorcursotxt.Text) || string.IsNullOrEmpty(aulacursotxt.Text) || string.IsNullOrEmpty(divcursotxt.Text) || string.IsNullOrEmpty(diacursotxt.Text) || string.IsNullOrEmpty(cuatricursotxt.Text) || string.IsNullOrEmpty(turnocursotxt.Text))
             {
-                MessageBox.Show("Debe completar todos los campos");
+                 MessageBox.Show("Debe completar todos los campos");
+            }
+            else if (fechaSeleccionada < fechaActual.AddDays(-1))
+            {
+                MessageBox.Show("La fecha seleccionada no puede ser de un dia anterior al actual");
             }
             else
             {
@@ -91,12 +100,13 @@ namespace sysacad
                 string dia = diacursotxt.Text;
                 string turno = turnocursotxt.Text;
                 string cuatrimestre = cuatricursotxt.Text;
+                string fechaLimite = fechalimitetxt.Value.ToString("dd-MM-yyyy");
 
                 try
                 {
                     if (ValidarTurno(dia, turno, codigo))
                     {
-                        Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+                        Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechaLimite);
 
                         // Crear la tabla antes de agregar el curso
                         nuevoCurso.CreateTable();
@@ -125,12 +135,20 @@ namespace sysacad
 
         private void btneditar_Click(object sender, EventArgs e)
         {
+            DateTime fechaActual = DateTime.Now;
+
+            DateTime fechaSeleccionada = Convert.ToDateTime(fechalimiteeditartxt.Text);
+
             if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text)
                 || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text)
                 || string.IsNullOrEmpty(diveditarcursotxt.Text) || string.IsNullOrEmpty(diaeditarcursotxt.Text) || string.IsNullOrEmpty(cuatrieditarcursotxt.Text)
                 || string.IsNullOrEmpty(turnoeditarcursotxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
+            }
+            else if (fechaSeleccionada < fechaActual.AddDays(-1))
+            {
+                MessageBox.Show("La fecha seleccionada no puede ser de un dia anterior al actual");
             }
             else
             {
@@ -143,13 +161,14 @@ namespace sysacad
                 string dia = diaeditarcursotxt.Text;
                 string turno = turnoeditarcursotxt.Text;
                 string cuatrimestre = cuatrieditarcursotxt.Text;
+                string fechalimite = fechalimiteeditartxt.Text;
 
                 try
                 {
                     string codigo = ObtenerCodigoCursoEditadoDesdeBD(nombre);
                     if (ValidarTurno(dia, turno, codigo))
                     {
-                        Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+                        Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite);
 
                         int filasAfectadas = EditarCurso.EditarCurso();
 
@@ -202,6 +221,7 @@ namespace sysacad
             diaeditarcursotxt.Text = cursos.CurrentRow.Cells[7].Value.ToString();
             turnoeditarcursotxt.Text = cursos.CurrentRow.Cells[8].Value.ToString();
             cuatrieditarcursotxt.Text = cursos.CurrentRow.Cells[9].Value.ToString();
+            fechalimiteeditartxt.Text = cursos.CurrentRow.Cells[10].Value.ToString();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -226,9 +246,10 @@ namespace sysacad
                 string turno = turnocursotxt.Text;
                 string cuatrimestre = cuatricursotxt.Text;
                 string codigo = "";
+                string fechalimite = fechalimitetxt.Text;
 
                 // Crear un objeto Curso
-                Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre);
+                Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite);
 
                 // Validar el nombre de la tabla antes de eliminarla
                 if (string.IsNullOrWhiteSpace(EliminarCurso.Nombre))

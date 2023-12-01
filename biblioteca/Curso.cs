@@ -20,8 +20,9 @@ namespace biblioteca
         public string Dia { get; set; }
         public string Turno { get; set; }
         public string Cuatrimestre { get; set; }
+        public string Fechalimite { get; set; }
 
-        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre)
+        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre, string fechalimite)
         {
             Nombre = nombre;
             Codigo = codigo;
@@ -33,6 +34,7 @@ namespace biblioteca
             Dia = dia;
             Cuatrimestre = cuatrimestre;
             Turno = turno;
+            Fechalimite = fechalimite;
         }
 
         //Metodo para Agregar un curso a la base de datos
@@ -41,7 +43,7 @@ namespace biblioteca
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "INSERT INTO cursos (nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre) VALUES (@Nombre, @Codigo, @Descripcion, @CupoMaximo, @Profesor, @Aula, @Division, @Dia, @Turno, @Cuatrimestre)";
+                string query = "INSERT INTO cursos (nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite) VALUES (@Nombre, @Codigo, @Descripcion, @CupoMaximo, @Profesor, @Aula, @Division, @Dia, @Turno, @Cuatrimestre, @FechaLimite)";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Nombre", Nombre);
@@ -54,6 +56,7 @@ namespace biblioteca
                 comando.Parameters.AddWithValue("@Dia", Dia);
                 comando.Parameters.AddWithValue("@Turno", Turno);
                 comando.Parameters.AddWithValue("@Cuatrimestre", Cuatrimestre);
+                comando.Parameters.AddWithValue("@FechaLimite", Fechalimite);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
 
@@ -67,7 +70,7 @@ namespace biblioteca
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "UPDATE cursos SET nombre = @Nombre, codigo = @Codigo, descripcion = @Descripcion, cupoMaximo = @CupoMaximo, profesor = @Profesor, aula = @Aula, division = @Division, dia = @Dia, turno = @Turno, cuatrimestre = @Cuatrimestre WHERE codigo = @Codigo";
+                string query = "UPDATE cursos SET nombre = @Nombre, codigo = @Codigo, descripcion = @Descripcion, cupoMaximo = @CupoMaximo, profesor = @Profesor, aula = @Aula, division = @Division, dia = @Dia, turno = @Turno, cuatrimestre = @Cuatrimestre, fechalimite = @FechaLimite WHERE codigo = @Codigo";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Nombre", Nombre);
@@ -80,6 +83,7 @@ namespace biblioteca
                 comando.Parameters.AddWithValue("@Dia", Dia);
                 comando.Parameters.AddWithValue("@Turno", Turno);
                 comando.Parameters.AddWithValue("@Cuatrimestre", Cuatrimestre);
+                comando.Parameters.AddWithValue("@FechaLimite", Fechalimite);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
 
