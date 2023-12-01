@@ -19,6 +19,7 @@ namespace sysacad
         requisitosAcademicos gestionarRequisitosAcademicos;
         listasDeEspera gestionarListasDeEspera;
         perfilesDeProfes gestionarPerfilesDeProfes;
+        validar validaciones;
 
         public dashboardAdmin()
         {
@@ -163,6 +164,26 @@ namespace sysacad
         private void GestionarPerfilesDeProfes_FormClosed(object sender, FormClosedEventArgs e)
         {
             gestionarPerfilesDeProfes = null;
+        }
+
+        private void btnvalidar_Click(object sender, EventArgs e)
+        {
+            if (validaciones == null)
+            {
+                validaciones = new validar();
+                validaciones.FormClosed += Validaciones_FormClosed;
+                validaciones.MdiParent = this;
+                validaciones.Show();
+            }
+            else
+            {
+                validaciones.Activate();
+            }
+        }
+
+        private void Validaciones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            validaciones = null;
         }
     }
 }

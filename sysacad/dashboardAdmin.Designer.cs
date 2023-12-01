@@ -40,6 +40,7 @@
             btngestionarrequisitosacademicos = new Button();
             btnlistasdeespera = new Button();
             btnperfilesdeprofes = new Button();
+            btnvalidar = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -104,6 +105,7 @@
             flowLayoutPanel1.Controls.Add(btngestionarrequisitosacademicos);
             flowLayoutPanel1.Controls.Add(btnlistasdeespera);
             flowLayoutPanel1.Controls.Add(btnperfilesdeprofes);
+            flowLayoutPanel1.Controls.Add(btnvalidar);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -200,6 +202,21 @@
             btnperfilesdeprofes.UseVisualStyleBackColor = false;
             btnperfilesdeprofes.Click += btnperfilesdeprofes_Click;
             // 
+            // btnvalidar
+            // 
+            btnvalidar.BackColor = Color.White;
+            btnvalidar.FlatAppearance.BorderSize = 0;
+            btnvalidar.FlatStyle = FlatStyle.Flat;
+            btnvalidar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnvalidar.ForeColor = Color.Black;
+            btnvalidar.Location = new Point(3, 237);
+            btnvalidar.Name = "btnvalidar";
+            btnvalidar.Size = new Size(215, 33);
+            btnvalidar.TabIndex = 6;
+            btnvalidar.Text = "Validar";
+            btnvalidar.UseVisualStyleBackColor = false;
+            btnvalidar.Click += btnvalidar_Click;
+            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -235,5 +252,6 @@
         private Button btngestionarrequisitosacademicos;
         private Button btnlistasdeespera;
         private Button btnperfilesdeprofes;
+        private Button btnvalidar;
     }
 }

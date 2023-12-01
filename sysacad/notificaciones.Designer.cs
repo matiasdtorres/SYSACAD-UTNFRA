@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(notificaciones));
             label1 = new Label();
             legajoescondidotxt = new Label();
-            label2 = new Label();
             label3 = new Label();
             fecha1txt = new Label();
             fecha2txt = new Label();
             fecha3txt = new Label();
             fecha4txt = new Label();
             grupofechas = new GroupBox();
+            nofechas = new Label();
             grupocuotas = new GroupBox();
             label4 = new Label();
             cuotascompletas = new Label();
@@ -72,20 +72,6 @@
             legajoescondidotxt.TabIndex = 5;
             legajoescondidotxt.Text = "label2";
             // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Black;
-            label2.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.ImageAlign = ContentAlignment.MiddleRight;
-            label2.Location = new Point(55, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(298, 37);
-            label2.TabIndex = 6;
-            label2.Text = "no hay notificaciones";
-            // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
@@ -108,7 +94,7 @@
             fecha1txt.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             fecha1txt.ForeColor = Color.White;
             fecha1txt.ImageAlign = ContentAlignment.MiddleRight;
-            fecha1txt.Location = new Point(174, 78);
+            fecha1txt.Location = new Point(72, 78);
             fecha1txt.Name = "fecha1txt";
             fecha1txt.Size = new Size(55, 19);
             fecha1txt.TabIndex = 8;
@@ -122,7 +108,7 @@
             fecha2txt.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             fecha2txt.ForeColor = Color.White;
             fecha2txt.ImageAlign = ContentAlignment.MiddleRight;
-            fecha2txt.Location = new Point(173, 115);
+            fecha2txt.Location = new Point(71, 115);
             fecha2txt.Name = "fecha2txt";
             fecha2txt.Size = new Size(56, 19);
             fecha2txt.TabIndex = 9;
@@ -136,7 +122,7 @@
             fecha3txt.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             fecha3txt.ForeColor = Color.White;
             fecha3txt.ImageAlign = ContentAlignment.MiddleRight;
-            fecha3txt.Location = new Point(174, 159);
+            fecha3txt.Location = new Point(72, 159);
             fecha3txt.Name = "fecha3txt";
             fecha3txt.Size = new Size(55, 19);
             fecha3txt.TabIndex = 10;
@@ -150,7 +136,7 @@
             fecha4txt.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             fecha4txt.ForeColor = Color.White;
             fecha4txt.ImageAlign = ContentAlignment.MiddleRight;
-            fecha4txt.Location = new Point(173, 194);
+            fecha4txt.Location = new Point(71, 194);
             fecha4txt.Name = "fecha4txt";
             fecha4txt.Size = new Size(56, 19);
             fecha4txt.TabIndex = 11;
@@ -158,8 +144,8 @@
             // 
             // grupofechas
             // 
+            grupofechas.Controls.Add(nofechas);
             grupofechas.Controls.Add(label3);
-            grupofechas.Controls.Add(label2);
             grupofechas.Controls.Add(fecha4txt);
             grupofechas.Controls.Add(fecha1txt);
             grupofechas.Controls.Add(fecha3txt);
@@ -171,6 +157,20 @@
             grupofechas.TabIndex = 12;
             grupofechas.TabStop = false;
             grupofechas.Text = "Fechas";
+            // 
+            // nofechas
+            // 
+            nofechas.Anchor = AnchorStyles.None;
+            nofechas.AutoSize = true;
+            nofechas.BackColor = Color.Black;
+            nofechas.Font = new Font("Segoe UI Black", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            nofechas.ForeColor = Color.White;
+            nofechas.ImageAlign = ContentAlignment.MiddleRight;
+            nofechas.Location = new Point(64, 126);
+            nofechas.Name = "nofechas";
+            nofechas.Size = new Size(298, 37);
+            nofechas.TabIndex = 12;
+            nofechas.Text = "no hay notificaciones";
             // 
             // grupocuotas
             // 
@@ -299,7 +299,6 @@
 
         private Label label1;
         private Label legajoescondidotxt;
-        private Label label2;
         private Label label3;
         private Label fecha1txt;
         private Label fecha2txt;
@@ -313,5 +312,6 @@
         private Label cuota1txt;
         private Label cuota3txt;
         private Label cuota2txt;
+        private Label nofechas;
     }
 }

@@ -16,6 +16,7 @@ namespace sysacad
 {
     public partial class gestionarCurso : Form
     {
+
         public gestionarCurso()
         {
             InitializeComponent();
@@ -118,7 +119,6 @@ namespace sysacad
                         if (filasAfectadas > 0)
                         {
                             MessageBox.Show("Curso agregado correctamente");
-                            this.Close();
                         }
                         else
                         {
