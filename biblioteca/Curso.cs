@@ -125,7 +125,8 @@ namespace biblioteca
                     recu1 VARCHAR(50),
                     parcial2 VARCHAR(50),
                     recu2 VARCHAR(50),
-                    notafinal VARCHAR(50)
+                    notafinal VARCHAR(50),
+                    validacion VARCHAR(50)
                 )";
 
                 using (MySqlCommand creartabla = new MySqlCommand(querycreartabla, conexion))

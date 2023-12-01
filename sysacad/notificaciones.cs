@@ -19,7 +19,7 @@ namespace sysacad
         {
             InitializeComponent();
             legajoescondido(legajoLogeado);
-            chequearSiPago();
+            chequearSiPago1ercuatri();
         }
 
         private void legajoescondido(string legajoLogeado)
@@ -28,7 +28,7 @@ namespace sysacad
         }
 
         //chequeo si el estudiante pago las cuotas y los muestro en cada label
-        private void chequearSiPago()
+        private void chequearSiPago1ercuatri()
         {
             bool todasLasCuotasPagadas = true;
 

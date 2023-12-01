@@ -54,7 +54,8 @@ namespace consolaCrearDB_Cursos
                 division VARCHAR(50),
                 dia VARCHAR(50),
                 turno VARCHAR(50),
-                cuatrimestre VARCHAR(50)
+                cuatrimestre VARCHAR(50),
+                fechalimite VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
