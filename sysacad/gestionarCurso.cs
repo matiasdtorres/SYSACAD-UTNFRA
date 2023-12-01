@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using biblioteca;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 
 namespace sysacad
@@ -161,7 +162,7 @@ namespace sysacad
                 string dia = diaeditarcursotxt.Text;
                 string turno = turnoeditarcursotxt.Text;
                 string cuatrimestre = cuatrieditarcursotxt.Text;
-                string fechalimite = fechalimiteeditartxt.Text;
+                string fechalimite = fechalimiteeditartxt.Value.ToString("dd-MM-yyyy");
 
                 try
                 {
@@ -246,7 +247,7 @@ namespace sysacad
                 string turno = turnocursotxt.Text;
                 string cuatrimestre = cuatricursotxt.Text;
                 string codigo = "";
-                string fechalimite = fechalimitetxt.Text;
+                string fechalimite = fechalimitetxt.Value.ToString("dd-MM-yyyy");
 
                 // Crear un objeto Curso
                 Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite);
