@@ -40,6 +40,25 @@ namespace sysacad
             return true;
         }
 
+        private bool CursoExistente(string nombre)
+        {
+            string consulta = "SELECT COUNT(*) FROM cursos WHERE nombre = @NombreCurso";
+
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    cmd.Parameters.AddWithValue("@NombreCurso", nombre);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+        }
+
+
         private List<Curso> ObtenerCursosPorDiaExcluyendoCurso(string dia, string codigoCursoEditado)
         {
             List<Curso> cursosDia = new List<Curso>();
@@ -66,7 +85,9 @@ namespace sysacad
                         reader["dia"].ToString(),
                         reader["turno"].ToString(),
                         reader["cuatrimestre"].ToString(),
-                        reader["fechalimite"].ToString()
+                        reader["fechalimite"].ToString(),
+                        reader["postmateria"].ToString(),
+                        reader["prenota"].ToString()
                     );
 
                     cursosDia.Add(curso);
@@ -82,48 +103,69 @@ namespace sysacad
 
             DateTime fechaSeleccionada = fechalimitetxt.Value;
 
+            string nombre = nombrecursotxt.Text;
+
             if (string.IsNullOrEmpty(nombrecursotxt.Text) || string.IsNullOrEmpty(descripcioncursotxt.Text) || string.IsNullOrEmpty(cuposcursotxt.Text) || string.IsNullOrEmpty(profesorcursotxt.Text) || string.IsNullOrEmpty(aulacursotxt.Text) || string.IsNullOrEmpty(divcursotxt.Text) || string.IsNullOrEmpty(diacursotxt.Text) || string.IsNullOrEmpty(cuatricursotxt.Text) || string.IsNullOrEmpty(turnocursotxt.Text))
             {
-                 MessageBox.Show("Debe completar todos los campos");
+                MessageBox.Show("Debe completar todos los campos");
             }
             else if (fechaSeleccionada < fechaActual.AddDays(-1))
             {
                 MessageBox.Show("La fecha seleccionada no puede ser de un dia anterior al actual");
             }
+            else if (CursoExistente(nombre))
+            {
+                MessageBox.Show("Ya existe un curso con ese nombre");
+            }
             else
             {
-                string nombre = nombrecursotxt.Text;
-                string codigo = "";
-                string descripcion = descripcioncursotxt.Text;
-                int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
-                string profesor = profesorcursotxt.Text;
-                string aula = aulacursotxt.Text;
-                string division = divcursotxt.Text;
-                string dia = diacursotxt.Text;
-                string turno = turnocursotxt.Text;
-                string cuatrimestre = cuatricursotxt.Text;
-                string fechaLimite = fechalimitetxt.Value.ToString("dd-MM-yyyy");
-
                 try
                 {
+
+                    string codigo = "";
+                    string descripcion = descripcioncursotxt.Text;
+                    int cupoMaximo = Convert.ToInt32(cuposcursotxt.Text);
+                    string profesor = profesorcursotxt.Text;
+                    string aula = aulacursotxt.Text;
+                    string division = divcursotxt.Text;
+                    string dia = diacursotxt.Text;
+                    string turno = turnocursotxt.Text;
+                    string cuatrimestre = cuatricursotxt.Text;
+                    string fechaLimite = fechalimitetxt.Value.ToString("dd-MM-yyyy");
+                    string postmateria = "";
+                    string prenota = "";
+
                     if (ValidarTurno(dia, turno, codigo))
                     {
-                        Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechaLimite);
+                        Curso nuevoCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechaLimite, postmateria, prenota);
 
-                        // Crear la tabla antes de agregar el curso
-                        nuevoCurso.CreateTable();
-
-                        // Agregar el curso a la base de datos
-                        int filasAfectadas = nuevoCurso.AgregarCurso();
-
-                        if (filasAfectadas > 0)
+                        try
                         {
-                            MessageBox.Show("Curso agregado correctamente");
+                            int cursosEnCuatrimestre1 = nuevoCurso.VerificarCursos();
+
+                            if (cursosEnCuatrimestre1 >= 4)
+                            {
+                                MessageBox.Show("Ya hay 4 cursos registrados para el cuatrimestre 1. No se puede agregar más.");
+                                return;
+                            }
+                            nuevoCurso.CreateTable();
+                            int filasAfectadas = nuevoCurso.AgregarCurso();
+
+                            if (filasAfectadas > 0)
+                            {
+                                MessageBox.Show("Curso agregado correctamente");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo agregar el curso");
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("No se pudo agregar el curso");
+                            MessageBox.Show($"Error: {ex.Message}");
                         }
+
                     }
                 }
                 catch (Exception ex)
@@ -163,13 +205,15 @@ namespace sysacad
                 string turno = turnoeditarcursotxt.Text;
                 string cuatrimestre = cuatrieditarcursotxt.Text;
                 string fechalimite = fechalimiteeditartxt.Value.ToString("dd-MM-yyyy");
+                string postmateria = "";
+                string prenota = "";
 
                 try
                 {
                     string codigo = ObtenerCodigoCursoEditadoDesdeBD(nombre);
                     if (ValidarTurno(dia, turno, codigo))
                     {
-                        Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite);
+                        Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite, postmateria, prenota);
 
                         int filasAfectadas = EditarCurso.EditarCurso();
 
@@ -248,9 +292,11 @@ namespace sysacad
                 string cuatrimestre = cuatricursotxt.Text;
                 string codigo = "";
                 string fechalimite = fechalimitetxt.Value.ToString("dd-MM-yyyy");
+                string postmateria = "";
+                string prenota = "";
 
                 // Crear un objeto Curso
-                Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite);
+                Curso EliminarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite, postmateria, prenota);
 
                 // Validar el nombre de la tabla antes de eliminarla
                 if (string.IsNullOrWhiteSpace(EliminarCurso.Nombre))

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,10 @@ namespace biblioteca
         public string Turno { get; set; }
         public string Cuatrimestre { get; set; }
         public string Fechalimite { get; set; }
+        public string Postmateria { get; set; }
+        public string Prenota { get; set; }
 
-        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre, string fechalimite)
+        public Curso(string nombre, string codigo, string descripcion, int cupoMaximo, string profesor, string aula, string division, string dia, string turno, string cuatrimestre, string fechalimite, string postmateria, string prenota)
         {
             Nombre = nombre;
             Codigo = codigo;
@@ -35,6 +38,8 @@ namespace biblioteca
             Cuatrimestre = cuatrimestre;
             Turno = turno;
             Fechalimite = fechalimite;
+            Postmateria = postmateria;
+            Prenota = prenota;
         }
 
         //Metodo para Agregar un curso a la base de datos
@@ -199,5 +204,19 @@ namespace biblioteca
             }
         }
 
+        //metodo para verificar si hay 4 materias en la tabla cursos WHERE cuatrimestre = "1"
+        public int VerificarCursos()
+        {
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "SELECT COUNT(*) FROM cursos WHERE cuatrimestre = '1'";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                int filasAfectadas = Convert.ToInt32(comando.ExecuteScalar());
+
+                return filasAfectadas;
+            }
+        }
     }
 }

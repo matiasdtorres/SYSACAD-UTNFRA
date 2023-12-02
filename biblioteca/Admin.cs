@@ -18,6 +18,7 @@ namespace biblioteca
             Usuario = usuario;
         }
 
+        MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         //Metodo para que el admin cambie su contraseña
         public void CambiarContraseña(string nuevaContraseña)

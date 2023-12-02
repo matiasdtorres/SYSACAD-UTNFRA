@@ -31,6 +31,8 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
+            label3 = new Label();
+            fechalimitetxt = new DateTimePicker();
             divcursotxt = new ComboBox();
             aulacursotxt = new ComboBox();
             profesorcursotxt = new ComboBox();
@@ -47,7 +49,6 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            nombrecursotxt = new TextBox();
             label2 = new Label();
             btnregistrar = new Button();
             groupBox3 = new GroupBox();
@@ -56,6 +57,8 @@
             btneliminar = new Button();
             btneditar = new Button();
             groupBox2 = new GroupBox();
+            label11 = new Label();
+            fechalimiteeditartxt = new DateTimePicker();
             diveditarcursotxt = new ComboBox();
             aulaeditarcursotxt = new ComboBox();
             profesoreditarcursotxt = new ComboBox();
@@ -75,10 +78,7 @@
             nombreeditarcursotxt = new TextBox();
             label23 = new Label();
             cursos = new DataGridView();
-            fechalimitetxt = new DateTimePicker();
-            fechalimiteeditartxt = new DateTimePicker();
-            label3 = new Label();
-            label11 = new Label();
+            nombrecursotxt = new ComboBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cuposcursotxt).BeginInit();
@@ -115,6 +115,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Black;
+            groupBox1.Controls.Add(nombrecursotxt);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(fechalimitetxt);
             groupBox1.Controls.Add(divcursotxt);
@@ -133,7 +134,6 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(nombrecursotxt);
             groupBox1.Controls.Add(label2);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(13, 52);
@@ -142,6 +142,24 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Agregar Curso";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(63, 270);
+            label3.Name = "label3";
+            label3.Size = new Size(190, 21);
+            label3.TabIndex = 37;
+            label3.Text = "Fecha limite inscripciones:";
+            // 
+            // fechalimitetxt
+            // 
+            fechalimitetxt.Location = new Point(58, 294);
+            fechalimitetxt.Name = "fechalimitetxt";
+            fechalimitetxt.Size = new Size(200, 23);
+            fechalimitetxt.TabIndex = 31;
             // 
             // divcursotxt
             // 
@@ -309,15 +327,6 @@
             label4.TabIndex = 9;
             label4.Text = "Profesor";
             // 
-            // nombrecursotxt
-            // 
-            nombrecursotxt.BackColor = Color.White;
-            nombrecursotxt.ForeColor = Color.Black;
-            nombrecursotxt.Location = new Point(113, 28);
-            nombrecursotxt.Name = "nombrecursotxt";
-            nombrecursotxt.Size = new Size(178, 23);
-            nombrecursotxt.TabIndex = 5;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -433,6 +442,24 @@
             groupBox2.TabIndex = 25;
             groupBox2.TabStop = false;
             groupBox2.Text = "Editar Curso";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(62, 270);
+            label11.Name = "label11";
+            label11.Size = new Size(190, 21);
+            label11.TabIndex = 38;
+            label11.Text = "Fecha limite inscripciones:";
+            // 
+            // fechalimiteeditartxt
+            // 
+            fechalimiteeditartxt.Location = new Point(57, 294);
+            fechalimiteeditartxt.Name = "fechalimiteeditartxt";
+            fechalimiteeditartxt.Size = new Size(200, 23);
+            fechalimiteeditartxt.TabIndex = 37;
             // 
             // diveditarcursotxt
             // 
@@ -634,41 +661,15 @@
             cursos.TabIndex = 30;
             cursos.CellClick += cursos_CellClick;
             // 
-            // fechalimitetxt
+            // nombrecursotxt
             // 
-            fechalimitetxt.Location = new Point(58, 294);
-            fechalimitetxt.Name = "fechalimitetxt";
-            fechalimitetxt.Size = new Size(200, 23);
-            fechalimitetxt.TabIndex = 31;
-            // 
-            // fechalimiteeditartxt
-            // 
-            fechalimiteeditartxt.Location = new Point(57, 294);
-            fechalimiteeditartxt.Name = "fechalimiteeditartxt";
-            fechalimiteeditartxt.Size = new Size(200, 23);
-            fechalimiteeditartxt.TabIndex = 37;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(63, 270);
-            label3.Name = "label3";
-            label3.Size = new Size(190, 21);
-            label3.TabIndex = 37;
-            label3.Text = "Fecha limite inscripciones:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(62, 270);
-            label11.Name = "label11";
-            label11.Size = new Size(190, 21);
-            label11.TabIndex = 38;
-            label11.Text = "Fecha limite inscripciones:";
+            nombrecursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            nombrecursotxt.FormattingEnabled = true;
+            nombrecursotxt.Items.AddRange(new object[] { "Programacion 1", "Programacion 2", "Laboratorio 1", "Laboratorio 2", "Ingles 1", "Ingles 2", "Matematica 1", "Matematica 2" });
+            nombrecursotxt.Location = new Point(113, 27);
+            nombrecursotxt.Name = "nombrecursotxt";
+            nombrecursotxt.Size = new Size(178, 23);
+            nombrecursotxt.TabIndex = 38;
             // 
             // gestionarCurso
             // 
@@ -708,7 +709,6 @@
         private Label label1;
         private Panel panel1;
         private GroupBox groupBox1;
-        private TextBox nombrecursotxt;
         private Label label2;
         private Label label9;
         private Label label8;
@@ -756,5 +756,6 @@
         private Label label3;
         private Label label11;
         private DateTimePicker fechalimiteeditartxt;
+        private ComboBox nombrecursotxt;
     }
 }

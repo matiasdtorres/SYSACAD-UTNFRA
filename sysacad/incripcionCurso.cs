@@ -107,6 +107,37 @@ namespace sysacad
             }
         }
 
+        private bool VerificarCorrelativa(string materiaObjetivo)
+        {
+            if (materiaObjetivo.EndsWith("1"))
+            {
+                return true;
+            }
+
+            string consultaCorrelativa = "SELECT * FROM cursos WHERE postmateria = @MateriaObjetivo";
+
+            using (MySqlCommand comandoCorrelativa = new MySqlCommand(consultaCorrelativa, conexion))
+            {
+                comandoCorrelativa.Parameters.AddWithValue("@MateriaObjetivo", materiaObjetivo);
+
+                try
+                {
+                    conexion.Open();
+                    int countCorrelativa = Convert.ToInt32(comandoCorrelativa.ExecuteScalar());
+                    return countCorrelativa > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al verificar correlativa: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -128,6 +159,7 @@ namespace sysacad
                 conexion.Close();
             }
 
+
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
             int cupoMaximo = 0;
@@ -142,6 +174,12 @@ namespace sysacad
                     cupoMaximo = Convert.ToInt32(cupoMaximoResult);
                 }
                 conexion.Close();
+            }
+
+            if (!VerificarCorrelativa(nombremateria1.Text))
+            {
+                MessageBox.Show($"No puedes inscribirte a {nombremateria1.Text} porque no cursaste la correlativa.");
+                return;
             }
 
             // Verificar si hay cupo disponible o preguntar si quiere entrar en la lista de espera
@@ -264,6 +302,12 @@ namespace sysacad
                 }
 
                 conexion.Close();
+            }
+
+            if (!VerificarCorrelativa(nombremateria2.Text))
+            {
+                MessageBox.Show($"No puedes inscribirte a {nombremateria2.Text} porque no cursaste la correlativa.");
+                return;
             }
 
             // Obtener el cupoMaximo actual del curso
@@ -403,6 +447,12 @@ namespace sysacad
                 conexion.Close();
             }
 
+            if (!VerificarCorrelativa(nombremateria3.Text))
+            {
+                MessageBox.Show($"No puedes inscribirte a {nombremateria3.Text} porque no cursaste la correlativa.");
+                return;
+            }
+
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
             int cupoMaximo = 0;
@@ -538,6 +588,12 @@ namespace sysacad
                 }
 
                 conexion.Close();
+            }
+
+            if (!VerificarCorrelativa(nombremateria4.Text))
+            {
+                MessageBox.Show($"No puedes inscribirte a {nombremateria4.Text} porque no cursaste la correlativa.");
+                return;
             }
 
             // Obtener el cupoMaximo actual del curso

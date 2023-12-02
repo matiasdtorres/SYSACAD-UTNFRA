@@ -55,7 +55,9 @@ namespace consolaCrearDB_Cursos
                 dia VARCHAR(50),
                 turno VARCHAR(50),
                 cuatrimestre VARCHAR(50),
-                fechalimite VARCHAR(50)
+                fechalimite VARCHAR(50),
+                postmateria VARCHAR(50),
+                prenota VARCHAR(50)
             )";
 
             using (MySqlCommand createTableCommand = new MySqlCommand(createTableQuery, connection))
