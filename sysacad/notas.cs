@@ -46,13 +46,6 @@ namespace sysacad
             // Obtener el nombre de la materia seleccionada
             string materiaSeleccionada = materiatxt.SelectedItem.ToString();
 
-            // Validar que haya notas en parcial1 o recu1 antes de permitir la nota del parcial2
-            if (numeronota == "parcial2" && !ExisteNota(materiaSeleccionada, nombreCompletoAlumno, "parcial1") && !ExisteNota(materiaSeleccionada, nombreCompletoAlumno, "recu1"))
-            {
-                MessageBox.Show("Debe cargar la nota del parcial1 o recu1 antes de cargar la nota del parcial2.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             // Agregar la nota al estudiante en la materia seleccionada
             AgregarNotaFinal(materiaSeleccionada, nombreCompletoAlumno, numeronota, estadonota);
         }
@@ -276,6 +269,12 @@ namespace sysacad
                             if (numeronota == "recu2" && (!ExisteNota(nombreTabla, legajoseleccionado, "parcial1") || !ExisteNota(nombreTabla, legajoseleccionado, "recu1") || !ExisteNota(nombreTabla, legajoseleccionado, "parcial2")))
                             {
                                 MessageBox.Show("No se puede ingresar del recu2 si no hay notas en parcial1 (o recu1) y parcial2.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            if (numeronota == "parcial2" && !ExisteNota(nombreTabla, legajoseleccionado, "parcial1") && !ExisteNota(nombreTabla, legajoseleccionado, "recu1"))
+                            {
+                                MessageBox.Show("Debe cargar la nota del parcial1 o recu1 antes de cargar la nota del parcial2.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
 
