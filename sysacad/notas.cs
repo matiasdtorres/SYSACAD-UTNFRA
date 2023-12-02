@@ -46,56 +46,19 @@ namespace sysacad
             // Obtener el nombre de la materia seleccionada
             string materiaSeleccionada = materiatxt.SelectedItem.ToString();
 
-            // Validar que haya notas en parcial1 y parcial2 antes de permitir la nota final
-            if (numeronota == "notafinal" && (!ExisteNota(nombreCompletoAlumno, "parcial1") || !ExisteNota(nombreCompletoAlumno, "parcial2")))
+            // Validar que haya notas en parcial1 o recu1 antes de permitir la nota del parcial2
+            if (numeronota == "parcial2" && !ExisteNota(materiaSeleccionada, nombreCompletoAlumno, "parcial1") && !ExisteNota(materiaSeleccionada, nombreCompletoAlumno, "recu1"))
             {
-                MessageBox.Show("No se puede ingresar la nota final si no hay notas en parcial1 y parcial2.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe cargar la nota del parcial1 o recu1 antes de cargar la nota del parcial2.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Agregar el estudiante a la materia seleccionada
-            AgregarEstudianteAMateria(materiaSeleccionada, nombreCompletoAlumno, numeronota, estadonota);
+            // Agregar la nota al estudiante en la materia seleccionada
+            AgregarNotaFinal(materiaSeleccionada, nombreCompletoAlumno, numeronota, estadonota);
         }
+
 
         // Función para verificar si existe una nota para un estudiante y un tipo de nota específico
-        private bool ExisteNota(string nombreCompletoAlumno, string tipoNota)
-        {
-            bool existeNota = false;
-
-            try
-            {
-                conexion.Open();
-
-                string selectNotaQuery = $"SELECT {tipoNota} FROM estudiantes WHERE nombre = @Nombre AND apellido = @Apellido";
-
-                using (MySqlCommand comando = new MySqlCommand(selectNotaQuery, conexion))
-                {
-                    comando.Parameters.AddWithValue("@Nombre", nombreCompletoAlumno.Split(' ')[0]);
-                    comando.Parameters.AddWithValue("@Apellido", nombreCompletoAlumno.Split(' ')[1]);
-
-                    using (MySqlDataReader reader = comando.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                existeNota = !string.IsNullOrEmpty(reader[tipoNota].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al verificar la existencia de la nota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conexion.Close();
-            }
-
-            return existeNota;
-        }
 
         private void materiatxt_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -283,8 +246,7 @@ namespace sysacad
         }
 
 
-        //actualizar la tabla de nota
-        private void AgregarEstudianteAMateria(string nombreTabla, string legajoseleccionado, string numeronota, string estadonota)
+        private void AgregarNotaFinal(string nombreTabla, string legajoseleccionado, string numeronota, string notaFinal)
         {
             try
             {
@@ -292,21 +254,59 @@ namespace sysacad
                 {
                     conexion.Open();
 
-                    // Verificar si ya existe una nota para el estudiante y el tipo de nota
-                    if (ExisteNotaEnTabla(nombreTabla, legajoseleccionado, numeronota))
+                    using (MySqlTransaction transaccion = conexion.BeginTransaction())
                     {
-                        MessageBox.Show($"Ya existe una nota para el estudiante y el tipo de nota seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                        try
+                        {
+                            // Verificar si las notas parciales han sido registradas
+                            if (numeronota == "notafinal" && (!ExisteNota(nombreTabla, legajoseleccionado, "parcial1") || !ExisteNota(nombreTabla, legajoseleccionado, "parcial2")))
+                            {
+                                MessageBox.Show("No se puede ingresar la nota final si no hay notas en parcial1 y parcial2.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
-                    string queryInsertarNota = $@"
-                    UPDATE {nombreTabla.Replace(" ", "_")} SET {numeronota} = '{estadonota}' WHERE legajo = '{legajoseleccionado}'";
+                            // Verificar si hay notas del parcial1 para permitir la nota del recu1
+                            if (numeronota == "recu1" && !ExisteNota(nombreTabla, legajoseleccionado, "parcial1"))
+                            {
+                                MessageBox.Show("No se puede ingresar el recu1 si no hay notas en parcial1.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
-                    using (MySqlCommand insertarEstudiante = new MySqlCommand(queryInsertarNota, conexion))
-                    {
-                        insertarEstudiante.ExecuteNonQuery();
+                            // Verificar si las notas parciales han sido registradas
+                            if (numeronota == "recu2" && (!ExisteNota(nombreTabla, legajoseleccionado, "parcial1") || !ExisteNota(nombreTabla, legajoseleccionado, "recu1") || !ExisteNota(nombreTabla, legajoseleccionado, "parcial2")))
+                            {
+                                MessageBox.Show("No se puede ingresar del recu2 si no hay notas en parcial1 (o recu1) y parcial2.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
 
-                        MessageBox.Show("Nota cargada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Verificar si la nota final ya ha sido registrada anteriormente
+                            if (ExisteNota(nombreTabla, legajoseleccionado, numeronota))
+                            {
+                                MessageBox.Show($"La {numeronota} ya ha sido registrada anteriormente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+
+                            // Insertar la nota final
+                            string queryInsertarNotaFinal = $@"
+                            UPDATE {nombreTabla.Replace(" ", "_")} SET {numeronota} = @notaFinal WHERE legajo = @legajoseleccionado";
+
+                            using (MySqlCommand insertarNotaFinal = new MySqlCommand(queryInsertarNotaFinal, conexion, transaccion))
+                            {
+                                insertarNotaFinal.Parameters.AddWithValue("@notaFinal", notaFinal);
+                                insertarNotaFinal.Parameters.AddWithValue("@legajoseleccionado", legajoseleccionado);
+
+                                insertarNotaFinal.ExecuteNonQuery();
+
+                                MessageBox.Show($"Nota {numeronota} cargada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                transaccion.Commit();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            transaccion.Rollback();
+                            throw; // Lanzar la excepción para que se maneje en el bloque catch externo
+                        }
                     }
                 }
             }
@@ -320,42 +320,22 @@ namespace sysacad
             }
         }
 
-        private bool ExisteNotaEnTabla(string nombreTabla, string legajo, string tipoNota)
+        private bool ExisteNota(string nombreTabla, string legajoseleccionado, string nombreNota)
         {
-            bool existeNota = false;
+            string queryVerificarNota = $@"SELECT COUNT(*) FROM {nombreTabla.Replace(" ", "_")} WHERE legajo = @legajoseleccionado AND {nombreNota} IS NOT NULL";
 
-            try
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
             {
-                using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;"))
+                conexion.Open();
+
+                using (MySqlCommand verificarNota = new MySqlCommand(queryVerificarNota, conexion))
                 {
-                    conexion.Open();
+                    verificarNota.Parameters.AddWithValue("@legajoseleccionado", legajoseleccionado);
 
-                    string selectNotaQuery = $@"
-                    SELECT {tipoNota} FROM {nombreTabla.Replace(" ", "_")} WHERE legajo = @Legajo";
-
-                    using (MySqlCommand comando = new MySqlCommand(selectNotaQuery, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@Legajo", legajo);
-
-                        using (MySqlDataReader reader = comando.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                                    existeNota = !string.IsNullOrEmpty(reader[tipoNota].ToString());
-                                }
-                            }
-                        }
-                    }
+                    int count = Convert.ToInt32(verificarNota.ExecuteScalar());
+                    return count > 0;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al verificar la existencia de la nota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return existeNota;
         }
 
     }

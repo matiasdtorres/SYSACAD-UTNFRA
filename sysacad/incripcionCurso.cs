@@ -182,6 +182,11 @@ namespace sysacad
                 return;
             }
 
+            if (!VerificarFechaLimite(nombremateria1.Text))
+            {
+                return;
+            }
+
             // Verificar si hay cupo disponible o preguntar si quiere entrar en la lista de espera
             if (cupoMaximo <= 0)
             {
@@ -307,6 +312,11 @@ namespace sysacad
             if (!VerificarCorrelativa(nombremateria2.Text))
             {
                 MessageBox.Show($"No puedes inscribirte a {nombremateria2.Text} porque no cursaste la correlativa.");
+                return;
+            }
+
+            if (!VerificarFechaLimite(nombremateria2.Text))
+            {
                 return;
             }
 
@@ -453,6 +463,11 @@ namespace sysacad
                 return;
             }
 
+            if (!VerificarFechaLimite(nombremateria3.Text))
+            {
+                return;
+            }
+
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
             int cupoMaximo = 0;
@@ -596,6 +611,11 @@ namespace sysacad
                 return;
             }
 
+            if (!VerificarFechaLimite(nombremateria4.Text))
+            {
+                return;
+            }
+
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
             int cupoMaximo = 0;
@@ -729,6 +749,45 @@ namespace sysacad
                     insertarEstudiante.ExecuteNonQuery();
                 }
             }
+        }
+
+        private bool VerificarFechaLimite(string nombreCurso)
+        {
+            string queryFechaLimite = "SELECT fechalimite FROM cursos WHERE nombre = @Nombre";
+            DateTime fechaLimite;
+
+            using (MySqlCommand comandoFechaLimite = new MySqlCommand(queryFechaLimite, conexion))
+            {
+                comandoFechaLimite.Parameters.AddWithValue("@Nombre", nombreCurso);
+
+                try
+                {
+                    conexion.Open();
+                    object fechaLimiteResult = comandoFechaLimite.ExecuteScalar();
+
+                    if (fechaLimiteResult != null && fechaLimiteResult != DBNull.Value)
+                    {
+                        fechaLimite = Convert.ToDateTime(fechaLimiteResult);
+
+                        if (DateTime.Now > fechaLimite)
+                        {
+                            MessageBox.Show($"La fecha limite para inscribirse en {nombreCurso} ya paso.");
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al verificar la fecha límite: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    conexion.Close();
+                }
+            }
+
+            return true;
         }
 
         //valido que el estudiante no se inscriba a dos cursos en el mismo horario

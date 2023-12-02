@@ -15,6 +15,8 @@ namespace sysacad
     {
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
         MySqlConnection conexion2 = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
+        MySqlConnection conexion3 = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
+        MySqlConnection conexion4 = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
         System.Windows.Forms.Timer refreshTimer = new System.Windows.Forms.Timer();
 
 
@@ -24,11 +26,14 @@ namespace sysacad
             legajoescondido(legajoLogeado);
             chequearSiPago1ercuatri();
             chequearFechasLimite();
+            chequearFechasLimite2();
+
 
             refreshTimer.Interval = 2000; // 2 segundos en milisegundos
             refreshTimer.Tick += (sender, e) =>
             {
                 chequearFechasLimite();
+                chequearFechasLimite2();
             };
             refreshTimer.Start();
         }
@@ -196,6 +201,13 @@ namespace sysacad
               conexion.Close();
             }
         }
+
+        //si la fecha ya paso entonces no muestro nada
+        private void chequearFechasLimite2()
+        {
+            //NO TE OLVIDES MATIAAAASSSSS
+        }
+
 
     }
 }

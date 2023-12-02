@@ -130,11 +130,43 @@ namespace biblioteca
         }
 
         // Método para validar que la columnaAsistencia sea segura
-        private bool EsColumnaAsistenciaValida(string columnaAsistencia)
+        internal bool EsColumnaAsistenciaValida(string columnaAsistencia)
         {
 
             List<string> columnasPermitidas = new List<string> { "asistencia1", "asistencia2", "asistencia3", "asistencia4", "asistencia5" };
             return columnasPermitidas.Contains(columnaAsistencia);
+        }
+
+        //Metodo para que el profesor inserte una nota de un legajo
+        internal int InsertarNota(string legajo, string nota, string columnaNota)
+        {
+            using (conexion)
+            {
+                conexion.Open();
+
+                if (!EsColumnaNotaValida(columnaNota))
+                {
+                    return 0;
+                }
+
+                string query = $"UPDATE notas SET {columnaNota} = @Nota WHERE legajo = @Legajo";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Nota", nota);
+                comando.Parameters.AddWithValue("@Legajo", legajo);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas;
+            }
+        }
+
+        // Método para validar que la columnaNota sea segura
+        internal bool EsColumnaNotaValida(string columnaNota)
+        {
+
+            List<string> columnasPermitidas = new List<string> { "parcial1", "parcial2" };
+            return columnasPermitidas.Contains(columnaNota);
         }
 
     }
