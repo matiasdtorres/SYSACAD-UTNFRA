@@ -14,6 +14,7 @@ namespace sysacad
     public partial class incripcionCurso : Form
     {
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
+        MySqlConnection conexion2 = new MySqlConnection("server=localhost;port=3306;database=materias;Uid=root;pwd=;");
 
         public incripcionCurso(string legajoLogeado)
         {
@@ -139,6 +140,45 @@ namespace sysacad
         }
 
 
+        //private bool VerificarNotasIguales(string nombreMateria, string legajoLogeado)
+        //{
+        //    string queryNotaFinal = $"SELECT notafinal FROM {nombreMateria.Replace(" ", "_")} WHERE legajo = {legajoLogeado}";
+        //    string queryPrenota = $"SELECT prenota FROM cursos WHERE nombre = '{nombreMateria}'";
+
+        //    try
+        //    {
+        //            conexion2.Open();
+
+        //            using (MySqlCommand commandNotaFinal = new MySqlCommand(queryNotaFinal, conexion2))
+        //            {
+        //                object notaFinal = commandNotaFinal.ExecuteScalar();
+        //                    conexion.Open();
+
+        //                    using (MySqlCommand commandPrenota = new MySqlCommand(queryPrenota, conexion))
+        //                    {
+        //                        object prenota = commandPrenota.ExecuteScalar();
+
+        //                        if (notaFinal != null && notaFinal.ToString().Equals("PROMOCIONADA"))
+        //                        {
+        //                            return true;
+        //                        }
+        //                        else
+        //                        {
+        //                            return false;
+        //                        }
+        //                    }
+        //            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error: {ex.Message}");
+        //        return false;
+        //    }
+        //}
+
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             // Validar que el estudiante no esté inscrito en el curso
@@ -186,6 +226,7 @@ namespace sysacad
             {
                 return;
             }
+
 
             // Verificar si hay cupo disponible o preguntar si quiere entrar en la lista de espera
             if (cupoMaximo <= 0)
@@ -468,6 +509,7 @@ namespace sysacad
                 return;
             }
 
+
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
             int cupoMaximo = 0;
@@ -615,6 +657,7 @@ namespace sysacad
             {
                 return;
             }
+
 
             // Obtener el cupoMaximo actual del curso
             string queryCupoMaximo = "SELECT cupoMaximo FROM cursos WHERE nombre = @Nombre";
@@ -790,33 +833,5 @@ namespace sysacad
             return true;
         }
 
-        //valido que el estudiante no se inscriba a dos cursos en el mismo horario
-        //private void validarHorario()
-        //{
-        //    //chequeo el horarioMin y HorarioMax de todas las materias
-        //    string query = "SELECT horarioMin, horarioMax FROM cursos";
-        //    using (MySqlCommand comando = new MySqlCommand(query, conexion))
-        //    {
-        //        conexion.Open();
-        //        MySqlDataReader reader = comando.ExecuteReader();
-        //        while (reader.Read())
-        //        {
-        //            //si el horarioMin de la materia es mayor al horarioMax de la materia anterior
-        //            //o si el horarioMax de la materia es menor al horarioMin de la materia anterior
-        //            //entonces no hay conflicto de horarios
-        //            if (horarioMin.Text > horarioMax.Text || horarioMax.Text < horarioMin.Text)
-        //            {
-        //                MessageBox.Show("No hay conflicto de horarios");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("Hay conflicto de horarios");
-        //            }
-        //        }
-        //        conexion.Close();
-        //    }
-
-
-        //}
     }
 }

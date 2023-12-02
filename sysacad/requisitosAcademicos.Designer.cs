@@ -30,9 +30,13 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            btncargar = new Button();
             groupBox3 = new GroupBox();
             button3 = new Button();
+            cursotxt = new ComboBox();
+            correlativatxt = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
@@ -53,7 +57,11 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(correlativatxt);
+            groupBox1.Controls.Add(cursotxt);
+            groupBox1.Controls.Add(btncargar);
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(62, 77);
             groupBox1.Name = "groupBox1";
@@ -62,17 +70,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cursos pre-requisitos";
             // 
-            // button1
+            // btncargar
             // 
-            button1.BackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(102, 451);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 33);
-            button1.TabIndex = 0;
-            button1.Text = "cargar";
-            button1.UseVisualStyleBackColor = false;
+            btncargar.BackColor = Color.Black;
+            btncargar.FlatStyle = FlatStyle.Flat;
+            btncargar.ForeColor = Color.White;
+            btncargar.Location = new Point(102, 451);
+            btncargar.Name = "btncargar";
+            btncargar.Size = new Size(121, 33);
+            btncargar.TabIndex = 0;
+            btncargar.Text = "cargar";
+            btncargar.UseVisualStyleBackColor = false;
+            btncargar.Click += btncargar_Click;
             // 
             // groupBox3
             // 
@@ -97,6 +106,44 @@
             button3.Text = "cargar";
             button3.UseVisualStyleBackColor = false;
             // 
+            // cursotxt
+            // 
+            cursotxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cursotxt.FormattingEnabled = true;
+            cursotxt.Location = new Point(48, 137);
+            cursotxt.Name = "cursotxt";
+            cursotxt.Size = new Size(232, 23);
+            cursotxt.TabIndex = 1;
+            // 
+            // correlativatxt
+            // 
+            correlativatxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            correlativatxt.FormattingEnabled = true;
+            correlativatxt.Location = new Point(48, 277);
+            correlativatxt.Name = "correlativatxt";
+            correlativatxt.Size = new Size(232, 23);
+            correlativatxt.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(86, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 37);
+            label2.TabIndex = 3;
+            label2.Text = "Eligir Curso";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(41, 237);
+            label3.Name = "label3";
+            label3.Size = new Size(245, 37);
+            label3.TabIndex = 4;
+            label3.Text = "Eligir Correlitividad";
+            // 
             // requisitosAcademicos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -112,6 +159,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "requisitosAcademicos";
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -122,7 +170,11 @@
         private Label label1;
         private GroupBox groupBox1;
         private GroupBox groupBox3;
-        private Button button1;
+        private Button btncargar;
         private Button button3;
+        private ComboBox cursotxt;
+        private Label label3;
+        private Label label2;
+        private ComboBox correlativatxt;
     }
 }
