@@ -64,7 +64,7 @@ namespace sysacad
 
                     Estudiante nuevoEstudiante = new Estudiante(legajo, nombre, apellido, direccion, telefono, email, contraseña);
 
-                    int filasAfectadas = nuevoEstudiante.AgregarEstudiante();
+                    int filasAfectadas = nuevoEstudiante.AgregarRol();
 
                     if (filasAfectadas > 0)
                     {

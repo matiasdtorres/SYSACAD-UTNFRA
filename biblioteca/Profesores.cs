@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace biblioteca
 {
-    public class Profesores : Usuarios
+    public class Profesores : Usuarios, IagregarRol
     {
         //Atributos propios de la clase Profesores
         public string Usuario { get; set; }
@@ -40,7 +40,7 @@ namespace biblioteca
         }
 
         //Metodo para agregar un profesor a la base de datos
-        public int AgregarProfesor()
+        public int AgregarRol()
         {
             using (conexion)
             {

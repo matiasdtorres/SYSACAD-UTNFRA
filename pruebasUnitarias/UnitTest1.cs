@@ -39,7 +39,7 @@ namespace pruebasUnitarias
             Profesores profesor = new Profesores("profecapo", "Mauro", "Bustos", "123456789", "direccion", "correo@m.com", "contraseña", "especializacion");
 
             // Act
-            int filasAfectadas = profesor.AgregarProfesor();
+            int filasAfectadas = profesor.AgregarRol();
 
             // Assert
             Assert.AreEqual(1, filasAfectadas);

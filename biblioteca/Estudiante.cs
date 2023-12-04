@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace biblioteca
 {
     //Clase estudiante que hereda de la clase Usuarios
-    public class Estudiante : Usuarios
+    public class Estudiante : Usuarios, IagregarRol
     {
         //Atributos propios de la clase Estudiante
         public string Apellido { get; set; }
@@ -31,7 +31,7 @@ namespace biblioteca
         }
 
         //Metodo para agregar un estudiante a la base de datos
-        public int AgregarEstudiante()
+        public int AgregarRol()
         {
             using (conexion)
             {

@@ -13,7 +13,7 @@ namespace biblioteca
         public string Usuario { get; set; }
 
         //Constructor de la clase Admin
-        public Admin(string usuario, string contraseña) : base("", contraseña) //El nombre del admin no es necesario
+        public Admin(string usuario, string contraseña) : base("", contraseña)
         {
             Usuario = usuario;
         }

@@ -77,7 +77,7 @@ namespace sysacad
 
                     Profesores nuevoProfesor = new Profesores(usuario, nombre, apellido, direccion, telefono, email, contraseña, especializacion);
 
-                    int filasAfectadas = nuevoProfesor.AgregarProfesor();
+                    int filasAfectadas = nuevoProfesor.AgregarRol();
 
                     if (filasAfectadas > 0)
                     {

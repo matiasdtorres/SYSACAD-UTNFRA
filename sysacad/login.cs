@@ -35,14 +35,14 @@ namespace sysacad
                 }
                 else if (VerificarDatos.VerificoEstudiante(usuarioylegajotxt.Text, passwordtxt.Text))
                 {
-                    string legajoLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el legajoLogeado
+                    string legajoLogeado = usuarioylegajotxt.Text;
                     dashboardAlumno = new dashboardEstudiante(legajoLogeado);
                     dashboardAlumno.Show();
                     this.Hide();
                 }
                 else if (VerificarDatos.VerificoProfesor(usuarioylegajotxt.Text, passwordtxt.Text))
                 {
-                    string profeLogeado = usuarioylegajotxt.Text; //GRACIAS A ESTO PEUDO TRABAJAR CON 'SESIONES' puedo hacer consultas mas adelante con el profeLogeado
+                    string profeLogeado = usuarioylegajotxt.Text;
                     dashboardProfesor = new dashboardProfesor(profeLogeado);
                     dashboardProfesor.Show();
                     this.Hide();
