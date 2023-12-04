@@ -205,13 +205,16 @@ namespace biblioteca
         }
 
         //metodo para verificar si hay 4 materias en la tabla cursos WHERE cuatrimestre = "1"
-        public int VerificarCursos()
+        public int VerificarCursos(string cuatrimestre)
         {
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
                 conexion.Open();
-                string query = "SELECT COUNT(*) FROM cursos WHERE cuatrimestre = '1'";
+                string query = "SELECT COUNT(*) FROM cursos WHERE cuatrimestre = @Cuatrimestre";
+
                 MySqlCommand comando = new MySqlCommand(query, conexion);
+
+                comando.Parameters.AddWithValue("@Cuatrimestre", cuatrimestre);
 
                 int filasAfectadas = Convert.ToInt32(comando.ExecuteScalar());
 

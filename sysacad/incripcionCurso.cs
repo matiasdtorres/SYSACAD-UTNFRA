@@ -193,7 +193,7 @@ namespace sysacad
                 {
                     MessageBox.Show($"Ya estás inscrito en el curso de {nombremateria1.Text}");
                     conexion.Close();
-                    return; // Salir del método si el estudiante ya está inscrito
+                    return;
                 }
 
                 conexion.Close();
@@ -234,7 +234,7 @@ namespace sysacad
                 DialogResult dialogResult = MessageBox.Show("El curso esta completo. ¿Quieres entrar en la lista de espera?", "Cupo completo", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
-                    return; // Salir del método si no quiere entrar en la lista de espera
+                    return;
                 }
                 else
                 {
@@ -265,7 +265,7 @@ namespace sysacad
                     if (countExistencia > 0)
                     {
                         MessageBox.Show($"Ya estas en la lista de espera para el curso de {nombremateria1.Text}");
-                        return; // Salir del método si el estudiante ya está en la lista de espera
+                        return;
                     }
                     else
                     {
@@ -290,7 +290,7 @@ namespace sysacad
                             {
                                 conexion.Close();
                             }
-                            return; // Salir del método después de agregar a la lista de espera
+                            return;
                         }
                     }
                 }

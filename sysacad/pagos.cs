@@ -230,7 +230,9 @@ namespace sysacad
         internal void mostrardatosdepago(string legajoLogeado)
         {
             //busco en la tabla datos_pagos donde el legajo sea el legajo del estudiante logeado
+
             conexion.Open();
+
             string query = "SELECT * FROM datos_pagos WHERE legajo = @Legajo";
             MySqlCommand comando = new MySqlCommand(query, conexion);
             comando.Parameters.AddWithValue("@Legajo", legajoLogeado);

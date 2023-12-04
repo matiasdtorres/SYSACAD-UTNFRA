@@ -27,6 +27,26 @@ namespace sysacad
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
+            else if (nombretxt.Text.Any(char.IsDigit) || apellidotxt.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("El nombre no puede contener numeros");
+            }
+            else if (telefonotxt.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("El telefono no puede contener letras");
+            }
+            else if (telefonotxt.Text.Length != 10)
+            {
+                MessageBox.Show("El teléfono debe tener exactamente 10 caracteres");
+            }
+            else if (legajotxt.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("El legajo no puede contener letras");
+            }
+            else if (emailtxt.Text.Contains("@") == false || emailtxt.Text.Contains(".com") == false)
+            {
+                MessageBox.Show("El email debe contener un @ y un .com");
+            }
             else
             {
                 string nombre = nombretxt.Text;

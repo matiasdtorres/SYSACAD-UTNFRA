@@ -73,70 +73,89 @@ namespace sysacad
             }
             else
             {
-                string direccion = direcciontxt.Text;
-                string telefono = telefonotxt.Text;
-                string email = emailtxt.Text;
-
-                try
+                if (nombretxt.Text.Any(char.IsDigit) || apellidotxt.Text.Any(char.IsDigit))
                 {
-                    // Establece la cadena de conexión a la base de datos MySQL
-                    using (conexion)
+                    MessageBox.Show("El nombre y el apellido no pueden contener numeros.");
+                    return;
+                }
+                else if (!telefonotxt.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("El telefono solo puede contener numeros.");
+                    return;
+                }
+                else if (!emailtxt.Text.Contains("@"))
+                {
+                    MessageBox.Show("El email debe contener un @.");
+                    return;
+                }
+                else
+                {
+
+                    string direccion = direcciontxt.Text;
+                    string telefono = telefonotxt.Text;
+                    string email = emailtxt.Text;
+
+                    try
                     {
-                        conexion.Open();
-
-                        // Consulta SQL para actualizar los datos del estudiante
-                        string query = "UPDATE estudiantes SET direccion = @Direccion, telefono = @Telefono, email = @Email WHERE legajo = @Legajo";
-                        MySqlCommand cmd = new MySqlCommand(query, conexion);
-                        cmd.Parameters.AddWithValue("@Direccion", direccion);
-                        cmd.Parameters.AddWithValue("@Telefono", telefono);
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Legajo", legajotxt.Text);
-
-                        int filasAfectadas = cmd.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
+                        // Establece la cadena de conexión a la base de datos MySQL
+                        using (conexion)
                         {
-                            MessageBox.Show("Datos actualizados correctamente");
+                            conexion.Open();
 
-                            // Cambiar la contraseña si se proporciona una nueva contraseña
-                            if (!string.IsNullOrEmpty(cambiarpasstxt.Text))
+                            // Consulta SQL para actualizar los datos del estudiante
+                            string query = "UPDATE estudiantes SET direccion = @Direccion, telefono = @Telefono, email = @Email WHERE legajo = @Legajo";
+                            MySqlCommand cmd = new MySqlCommand(query, conexion);
+                            cmd.Parameters.AddWithValue("@Direccion", direccion);
+                            cmd.Parameters.AddWithValue("@Telefono", telefono);
+                            cmd.Parameters.AddWithValue("@Email", email);
+                            cmd.Parameters.AddWithValue("@Legajo", legajotxt.Text);
+
+                            int filasAfectadas = cmd.ExecuteNonQuery();
+
+                            if (filasAfectadas > 0)
                             {
-                                string nuevaContraseña = cambiarpasstxt.Text;
+                                MessageBox.Show("Datos actualizados correctamente");
 
-                                // Hash de la nueva contraseña
-                                string hash = Hash.GetHash(nuevaContraseña);
-
-                                // Consulta SQL para actualizar la contraseña del estudiante
-                                string query2 = "UPDATE estudiantes SET contraseña = @Contraseña WHERE legajo = @Legajo";
-                                MySqlCommand cmd2 = new MySqlCommand(query2, conexion);
-                                cmd2.Parameters.AddWithValue("@Contraseña", hash);
-                                cmd2.Parameters.AddWithValue("@Legajo", legajotxt.Text);
-
-                                int filasAfectadas2 = cmd2.ExecuteNonQuery();
-
-                                if (filasAfectadas2 > 0)
+                                // Cambiar la contraseña si se proporciona una nueva contraseña
+                                if (!string.IsNullOrEmpty(cambiarpasstxt.Text))
                                 {
-                                    MessageBox.Show("Contraseña actualizada correctamente");
+                                    string nuevaContraseña = cambiarpasstxt.Text;
+
+                                    // Hash de la nueva contraseña
+                                    string hash = Hash.GetHash(nuevaContraseña);
+
+                                    // Consulta SQL para actualizar la contraseña del estudiante
+                                    string query2 = "UPDATE estudiantes SET contraseña = @Contraseña WHERE legajo = @Legajo";
+                                    MySqlCommand cmd2 = new MySqlCommand(query2, conexion);
+                                    cmd2.Parameters.AddWithValue("@Contraseña", hash);
+                                    cmd2.Parameters.AddWithValue("@Legajo", legajotxt.Text);
+
+                                    int filasAfectadas2 = cmd2.ExecuteNonQuery();
+
+                                    if (filasAfectadas2 > 0)
+                                    {
+                                        MessageBox.Show("Contraseña actualizada correctamente");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No se pudo actualizar la contraseña");
+                                    }
                                 }
-                                else
-                                {
-                                    MessageBox.Show("No se pudo actualizar la contraseña");
-                                }
+
+                                conexion.Close();
                             }
-
-                            conexion.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se pudo actualizar los datos");
-                            conexion.Close();
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar los datos");
+                                conexion.Close();
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al actualizar los datos del estudiante: " + ex.Message);
-                    conexion.Close();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos del estudiante: " + ex.Message);
+                        conexion.Close();
+                    }
                 }
             }
         }

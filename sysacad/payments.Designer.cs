@@ -40,10 +40,10 @@
             groupBox4 = new GroupBox();
             codigotarjeta = new TextBox();
             groupBox5 = new GroupBox();
-            vencimientotarjeta = new TextBox();
             pictureBox3 = new PictureBox();
             btnagregar = new Button();
             legajoescondido = new Label();
+            vencimientotarjeta = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
@@ -160,13 +160,6 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Vencimiento";
             // 
-            // vencimientotarjeta
-            // 
-            vencimientotarjeta.Location = new Point(6, 16);
-            vencimientotarjeta.Name = "vencimientotarjeta";
-            vencimientotarjeta.Size = new Size(225, 23);
-            vencimientotarjeta.TabIndex = 11;
-            // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
@@ -200,6 +193,13 @@
             legajoescondido.TabIndex = 8;
             legajoescondido.Text = "label1";
             // 
+            // vencimientotarjeta
+            // 
+            vencimientotarjeta.Location = new Point(6, 16);
+            vencimientotarjeta.Name = "vencimientotarjeta";
+            vencimientotarjeta.Size = new Size(225, 23);
+            vencimientotarjeta.TabIndex = 9;
+            // 
             // payments
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -230,7 +230,6 @@
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -251,7 +250,7 @@
         private TextBox numerotarjeta;
         private TextBox nombretarjeta;
         private TextBox codigotarjeta;
-        private TextBox vencimientotarjeta;
         private Label legajoescondido;
+        private DateTimePicker vencimientotarjeta;
     }
 }

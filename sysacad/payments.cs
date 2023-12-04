@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using biblioteca;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace sysacad
         {
             InitializeComponent();
             legajoescondio(legajoLogeado);
+
         }
 
         private void legajoescondio(string legajoLogeado)
@@ -39,48 +41,58 @@ namespace sysacad
                 MessageBox.Show("Por favor, complete todos los campos antes de agregar los datos de pago.");
                 return;
             }
-
-            if (nombretarjeta.Text.Any(char.IsDigit))
+            else if (nombretarjeta.Text.Any(char.IsDigit))
             {
-                MessageBox.Show("El nombre no puede contener numeros.");
+                MessageBox.Show("El nombre no puede contener numeros");
                 return;
             }
-
-            if (!numerotarjeta.Text.All(char.IsDigit) || numerotarjeta.Text.Length != 16)
+            else if (numerotarjeta.Text.Any(char.IsLetter) || codigotarjeta.Text.Any(char.IsLetter))
             {
-                MessageBox.Show("El numero de tarjeta debe contener 16 digitos numericos.");
+                MessageBox.Show("El número de tarjeta y el código de seguridad no pueden contener letras.");
                 return;
             }
-
-            if (!codigotarjeta.Text.All(char.IsDigit) || codigotarjeta.Text.Length != 3)
+            else if (numerotarjeta.Text.Length != 16)
             {
-                MessageBox.Show("El codigo debe contener 3 digitos numericos.");
+                MessageBox.Show("El número de tarjeta debe tener exactamente 16 caracteres.");
                 return;
             }
-
-            conexion.Open();
-
-            string query = "UPDATE datos_pagos SET tipo = @Tipo, numero = @Numero, nombre = @Nombre, codigo = @Codigo, vencimiento = @Vencimiento WHERE legajo = @Legajo";
-            MySqlCommand comando = new MySqlCommand(query, conexion);
-            comando.Parameters.AddWithValue("@Legajo", legajoescondido.Text);
-            comando.Parameters.AddWithValue("@Tipo", tipotarjeta.Text);
-            comando.Parameters.AddWithValue("@Numero", numerotarjeta.Text);
-            comando.Parameters.AddWithValue("@Nombre", nombretarjeta.Text);
-            comando.Parameters.AddWithValue("@Codigo", codigotarjeta.Text);
-            comando.Parameters.AddWithValue("@Vencimiento", vencimientotarjeta.Text);
-
-            try
+            else if (codigotarjeta.Text.Length != 3)
             {
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Datos de pago actualizados correctamente.");
+                MessageBox.Show("El código de seguridad debe tener exactamente 3 caracteres.");
+                return;
             }
-            catch (Exception ex)
+            else if (vencimientotarjeta.Value < DateTime.Now)
             {
-                MessageBox.Show("Error al actualizar los datos de pago: " + ex.Message);
+                MessageBox.Show("La fecha de vencimiento debe ser mayor a la fecha actual.");
+                vencimientotarjeta.Value = DateTime.Now;
+                return;
             }
-            finally
+            else
             {
-                conexion.Close();
+                conexion.Open();
+
+                string query = "UPDATE datos_pagos SET tipo = @Tipo, numero = @Numero, nombre = @Nombre, codigo = @Codigo, vencimiento = @Vencimiento WHERE legajo = @Legajo";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@Legajo", legajoescondido.Text);
+                comando.Parameters.AddWithValue("@Tipo", tipotarjeta.Text);
+                comando.Parameters.AddWithValue("@Numero", numerotarjeta.Text);
+                comando.Parameters.AddWithValue("@Nombre", nombretarjeta.Text);
+                comando.Parameters.AddWithValue("@Codigo", codigotarjeta.Text);
+                comando.Parameters.AddWithValue("@Vencimiento", vencimientotarjeta.Text);
+
+                try
+                {
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Datos de pago actualizados correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar los datos de pago: " + ex.Message);
+                }
+                finally
+                {
+                    conexion.Close();
+                }
             }
         }
 

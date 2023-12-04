@@ -99,9 +99,6 @@ namespace sysacad
 
         private void btnregistrar_Click(object sender, EventArgs e)
         {
-            DateTime fechaActual = DateTime.Now;
-
-            DateTime fechaSeleccionada = fechalimitetxt.Value;
 
             string nombre = nombrecursotxt.Text;
 
@@ -109,9 +106,11 @@ namespace sysacad
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
-            else if (fechaSeleccionada < fechaActual.AddDays(-1))
+            else if (fechalimitetxt.Value < DateTime.Now)
             {
-                MessageBox.Show("La fecha seleccionada no puede ser de un dia anterior al actual");
+                MessageBox.Show("La fecha de vencimiento debe ser mayor a la fecha actual.");
+                fechalimitetxt.Value = DateTime.Now;
+                return;
             }
             else if (CursoExistente(nombre))
             {
@@ -141,11 +140,11 @@ namespace sysacad
 
                         try
                         {
-                            int cursosEnCuatrimestre1 = nuevoCurso.VerificarCursos();
+                            int cursosEnCuatrimestre1 = nuevoCurso.VerificarCursos(cuatrimestre);
 
                             if (cursosEnCuatrimestre1 >= 4)
                             {
-                                MessageBox.Show("Ya hay 4 cursos registrados para el cuatrimestre 1. No se puede agregar más.");
+                                MessageBox.Show("Ya hay 4 cursos registrados para ese cuatrimestre. No se puede agregar más.");
                                 return;
                             }
                             nuevoCurso.CreateTable();
@@ -178,9 +177,6 @@ namespace sysacad
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            DateTime fechaActual = DateTime.Now;
-
-            DateTime fechaSeleccionada = Convert.ToDateTime(fechalimiteeditartxt.Text);
 
             if (string.IsNullOrEmpty(nombreeditarcursotxt.Text) || string.IsNullOrEmpty(descripcioneditarcursotxt.Text)
                 || string.IsNullOrEmpty(cuposeditarcursotxt.Text) || string.IsNullOrEmpty(profesoreditarcursotxt.Text) || string.IsNullOrEmpty(aulaeditarcursotxt.Text)
@@ -189,9 +185,11 @@ namespace sysacad
             {
                 MessageBox.Show("Debe completar todos los campos");
             }
-            else if (fechaSeleccionada < fechaActual.AddDays(-1))
+            else if (fechalimiteeditartxt.Value < DateTime.Now)
             {
-                MessageBox.Show("La fecha seleccionada no puede ser de un dia anterior al actual");
+                MessageBox.Show("La fecha de vencimiento debe ser mayor a la fecha actual.");
+                fechalimiteeditartxt.Value = DateTime.Now;
+                return;
             }
             else
             {
@@ -214,6 +212,14 @@ namespace sysacad
                     if (ValidarTurno(dia, turno, codigo))
                     {
                         Curso EditarCurso = new Curso(nombre, codigo, descripcion, cupoMaximo, profesor, aula, division, dia, turno, cuatrimestre, fechalimite, postmateria, prenota);
+
+                        int cursosEnCuatrimestre1 = EditarCurso.VerificarCursos(cuatrimestre);
+
+                        if (cursosEnCuatrimestre1 >= 4)
+                        {
+                            MessageBox.Show("Ya hay 4 cursos registrados para ese cuatrimestre. No se puede agregar más.");
+                            return;
+                        }
 
                         int filasAfectadas = EditarCurso.EditarCurso();
 

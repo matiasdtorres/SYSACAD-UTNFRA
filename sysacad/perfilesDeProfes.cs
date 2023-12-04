@@ -29,7 +29,6 @@ namespace sysacad
                 // Generar una contraseña temporal aleatoria utilizando la clase de utilidad
                 string contraseñaTemporal = GeneradorContraseñaTemporal.GenerarContraseña();
 
-                // Mostrar la contraseña temporal en el TextBox
                 contraseñaTemporaltxt.Text = contraseñaTemporal;
             }
             catch (Exception ex)
@@ -43,6 +42,22 @@ namespace sysacad
             if (string.IsNullOrEmpty(nombretxt.Text) || string.IsNullOrEmpty(apellidotxt.Text) || string.IsNullOrEmpty(direcciontxt.Text) || string.IsNullOrEmpty(telefonotxt.Text) || string.IsNullOrEmpty(emailtxt.Text) || string.IsNullOrEmpty(usuariotxt.Text) || string.IsNullOrEmpty(contraseñaTemporaltxt.Text) || string.IsNullOrEmpty(especializaciontxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
+            }
+            else if (nombretxt.Text.Any(char.IsDigit) || apellidotxt.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("El nombre no puede contener numeros");
+            }
+            else if (telefonotxt.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("El telefono no puede contener letras");
+            }
+            else if (telefonotxt.Text.Length != 10)
+            {
+                MessageBox.Show("El teléfono debe tener exactamente 10 caracteres");
+            }
+            else if (emailtxt.Text.Contains("@") == false || emailtxt.Text.Contains(".com") == false)
+            {
+                MessageBox.Show("El email debe contener un @ y un .com");
             }
             else
             {
@@ -105,6 +120,22 @@ namespace sysacad
             if (string.IsNullOrEmpty(usuarioeditartxt.Text) || string.IsNullOrEmpty(nombreeditartxt.Text) || string.IsNullOrEmpty(apellidoeditartxt.Text) || string.IsNullOrEmpty(direccioneditartxt.Text) || string.IsNullOrEmpty(telefonoeditartxt.Text) || string.IsNullOrEmpty(emaileditartxt.Text) || string.IsNullOrEmpty(especializacioneditartxt.Text))
             {
                 MessageBox.Show("Debe completar todos los campos");
+            }
+            else if (nombreeditartxt.Text.Any(char.IsDigit) || apellidoeditartxt.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("El nombre no puede contener numeros");
+            }
+            else if (telefonoeditartxt.Text.Any(char.IsLetter))
+            {
+                MessageBox.Show("El telefono no puede contener letras");
+            }
+            else if (telefonoeditartxt.Text.Length != 10)
+            {
+                MessageBox.Show("El teléfono debe tener exactamente 10 caracteres");
+            }
+            else if (emaileditartxt.Text.Contains("@") == false || emaileditartxt.Text.Contains(".com") == false)
+            {
+                MessageBox.Show("El email debe contener un @ y un .com");
             }
             else
             {
