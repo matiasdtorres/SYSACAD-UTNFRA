@@ -19,6 +19,7 @@ namespace sysacad
         {
             InitializeComponent();
             traernombreprofesores();
+            traerusuarioprofesores();
             traercursos();
         }
 
@@ -117,13 +118,17 @@ namespace sysacad
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(usuarioeditartxt.Text) || string.IsNullOrEmpty(nombreeditartxt.Text) || string.IsNullOrEmpty(apellidoeditartxt.Text) || string.IsNullOrEmpty(direccioneditartxt.Text) || string.IsNullOrEmpty(telefonoeditartxt.Text) || string.IsNullOrEmpty(emaileditartxt.Text) || string.IsNullOrEmpty(especializacioneditartxt.Text))
+            if (CamposVacios(usuarioeditartxt, nombreeditartxt, apellidoeditartxt, direccioneditartxt, telefonoeditartxt, emaileditartxt))
             {
-                MessageBox.Show("Debe completar todos los campos");
+                return;
+            }
+            else if (string.IsNullOrEmpty(especializacioneditartxt.Text))
+            {
+                MessageBox.Show("Debe completar la especializacion");
             }
             else if (nombreeditartxt.Text.Any(char.IsDigit) || apellidoeditartxt.Text.Any(char.IsDigit))
             {
-                MessageBox.Show("El nombre no puede contener numeros");
+                MessageBox.Show("El nombre o apellido no puede contener numeros");
             }
             else if (telefonoeditartxt.Text.Any(char.IsLetter))
             {
@@ -196,12 +201,28 @@ namespace sysacad
                 {
                     string nombreCompleto = reader.GetString("nombre") + " " + reader.GetString("apellido");
 
-                    elegirprofeeliminartxt.Items.Add(nombreCompleto);
                     elegirprofeparacursotxt.Items.Add(nombreCompleto);
                 }
             }
         }
 
+        private void traerusuarioprofesores()
+        {
+            //traigo de la tabla profesores el usuario y lo muestro en el combobox
+            using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
+            {
+                conexion.Open();
+                string query = "SELECT usuario FROM profesores";
+                MySqlCommand comando = new MySqlCommand(query, conexion);
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    string usuario = reader.GetString("usuario");
+
+                    elegirprofeeliminartxt.Items.Add(usuario);
+                }
+            }
+        }
         private void btneliminarprofe_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(elegirprofeeliminartxt.Text))
@@ -306,6 +327,19 @@ namespace sysacad
                     this.Close();
                 }
             }
+        }
+
+        private bool CamposVacios(params TextBox[] textBoxes)
+        {
+            foreach (var textBox in textBoxes)
+            {
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

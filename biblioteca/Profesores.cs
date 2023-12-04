@@ -45,7 +45,7 @@ namespace biblioteca
             using (conexion)
             {
                 conexion.Open();
-                string query = "INSERT INTO profesores (usuario, nombre, apellido, telefono, direccion, email, especializacion, contraseña) VALUES (@Usuario, @Nombre, @Apellido, @Telefono, @Direccion, @Email, @Especializacion, @Contraseña)";
+                string query = "INSERT INTO profesores (usuario, nombre, apellido, telefono, direccion, email, contraseña, especializacion) VALUES (@Usuario, @Nombre, @Apellido, @Telefono, @Direccion, @Email, @Contraseña, @Especializacion)";
                 MySqlCommand comando = new MySqlCommand(query, conexion);
 
                 comando.Parameters.AddWithValue("@Usuario", Usuario);
@@ -105,7 +105,7 @@ namespace biblioteca
         }
 
         //Metodo para que el profesor inserte asistencia de un legajo
-        internal int InsertarAsistencia(string legajo, string fecha, string columnaAsistencia)
+        public int InsertarAsistencia(string legajo, string fecha, string columnaAsistencia)
         {
             using (conexion)
             {
@@ -129,7 +129,7 @@ namespace biblioteca
         }
 
         // Método para validar que la columnaAsistencia sea segura
-        internal bool EsColumnaAsistenciaValida(string columnaAsistencia)
+        public bool EsColumnaAsistenciaValida(string columnaAsistencia)
         {
 
             List<string> columnasPermitidas = new List<string> { "asistencia1", "asistencia2", "asistencia3", "asistencia4", "asistencia5" };
@@ -137,7 +137,7 @@ namespace biblioteca
         }
 
         //Metodo para que el profesor inserte una nota de un legajo
-        internal int InsertarNota(string legajo, string nota, string columnaNota)
+        public int InsertarNota(string legajo, string nota, string columnaNota)
         {
             using (conexion)
             {
@@ -161,7 +161,7 @@ namespace biblioteca
         }
 
         // Método para validar que la columnaNota sea segura
-        internal bool EsColumnaNotaValida(string columnaNota)
+        public bool EsColumnaNotaValida(string columnaNota)
         {
 
             List<string> columnasPermitidas = new List<string> { "parcial1", "parcial2" };
