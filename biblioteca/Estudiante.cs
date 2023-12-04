@@ -11,7 +11,6 @@ namespace biblioteca
     public class Estudiante : Usuarios
     {
         //Atributos propios de la clase Estudiante
-        public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int Legajo { get; set; }
         public string Direccion { get; set; }

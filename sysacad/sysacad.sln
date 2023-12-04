@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consolaCrearDB_ListaEspera"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consolaCrearDB_Profesores", "..\consolaCrearDB_Profesores\consolaCrearDB_Profesores.csproj", "{09449722-A73C-4085-A027-23193EEDE17D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pruebasUnitarias", "..\pruebasUnitarias\pruebasUnitarias.csproj", "{F3405C16-745A-4F6C-88C8-327F079E0452}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{09449722-A73C-4085-A027-23193EEDE17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09449722-A73C-4085-A027-23193EEDE17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09449722-A73C-4085-A027-23193EEDE17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3405C16-745A-4F6C-88C8-327F079E0452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3405C16-745A-4F6C-88C8-327F079E0452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3405C16-745A-4F6C-88C8-327F079E0452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3405C16-745A-4F6C-88C8-327F079E0452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

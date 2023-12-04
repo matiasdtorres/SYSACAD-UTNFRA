@@ -36,7 +36,6 @@ namespace biblioteca
             return false;
         }
 
-        //ahora para Estudiante
         public static bool VerificoEstudiante(string legajo, string contraseña)
         {
             using (MySqlConnection conexion = new MySqlConnection(ConnectionString))
@@ -61,7 +60,6 @@ namespace biblioteca
             return false;
         }
 
-        //ahora para Profesor
         public static bool VerificoProfesor(string usuario, string contraseña)
         {
             using (MySqlConnection conexion = new MySqlConnection(ConnectionString))

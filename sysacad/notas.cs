@@ -301,10 +301,10 @@ namespace sysacad
                                 transaccion.Commit();
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             transaccion.Rollback();
-                            throw; // Lanzar la excepción para que se maneje en el bloque catch externo
+                            throw;
                         }
                     }
                 }
