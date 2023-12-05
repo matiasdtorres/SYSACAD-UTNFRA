@@ -42,3 +42,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Profesores\o
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Profesores\obj\Debug\net6.0\consolaCrearDB_Profesores.pdb
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Profesores\obj\Debug\net6.0\consolaCrearDB_Profesores.genruntimeconfig.cache
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Profesores\obj\Debug\net6.0\ref\consolaCrearDB_Profesores.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Profesores\bin\Debug\net6.0\Newtonsoft.Json.dll

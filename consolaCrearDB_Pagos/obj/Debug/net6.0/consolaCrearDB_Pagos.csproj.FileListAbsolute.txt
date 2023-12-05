@@ -44,3 +44,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Pagos\obj\De
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Pagos\obj\Debug\net6.0\ref\consolaCrearDB_Pagos.dll
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Pagos\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Pagos\bin\Debug\net6.0\itextsharp.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_Pagos\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -42,3 +42,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_ListaEspera\
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_ListaEspera\obj\Debug\net6.0\consolaCrearDB_ListaEspera.pdb
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_ListaEspera\obj\Debug\net6.0\consolaCrearDB_ListaEspera.genruntimeconfig.cache
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_ListaEspera\obj\Debug\net6.0\ref\consolaCrearDB_ListaEspera.dll
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\consolaCrearDB_ListaEspera\bin\Debug\net6.0\Newtonsoft.Json.dll
