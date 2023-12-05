@@ -43,6 +43,26 @@ namespace sysacad
         {
             try
             {
+                nombremateria1.Text = null;
+                diamateria1.Text = null;
+                turnomateria1.Text = null;
+                cuposmateria1.Text = null;
+
+                nombremateria2.Text = null;
+                diamateria2.Text = null;
+                turnomateria2.Text = null;
+                cuposmateria2.Text = null;
+
+                nombremateria3.Text = null;
+                diamateria3.Text = null;
+                turnomateria3.Text = null;
+                cuposmateria3.Text = null;
+
+                nombremateria4.Text = null;
+                diamateria4.Text = null;
+                turnomateria4.Text = null;
+                cuposmateria4.Text = null;
+
                 conexion.Open();
                 string query = "SELECT * FROM cursos WHERE Cuatrimestre = '2'";
                 using (MySqlCommand comando = new MySqlCommand(query, conexion))
@@ -110,8 +130,9 @@ namespace sysacad
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             // Validar que el estudiante no esté inscrito en el curso
-            string queryValidation = "SELECT materia1 FROM estudiantes WHERE legajo = @Legajo";
+            string queryValidation = "SELECT materia5 FROM estudiantes WHERE legajo = @Legajo";
             using (MySqlCommand comandoValidation = new MySqlCommand(queryValidation, conexion))
             {
                 comandoValidation.Parameters.AddWithValue("@Legajo", legajo.Text);
@@ -129,7 +150,7 @@ namespace sysacad
             }
 
             // Actualizar la tabla estudiantes y cursos
-            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia1 = @Materia1 WHERE legajo = @Legajo";
+            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia5 = @Materia1 WHERE legajo = @Legajo";
             string queryUpdateCursos = "UPDATE cursos SET cupoMaximo = cupoMaximo - 1 WHERE nombre = @Nombre";
 
             using (MySqlCommand comandoUpdateEstudiantes = new MySqlCommand(queryUpdateEstudiantes, conexion))
@@ -160,8 +181,9 @@ namespace sysacad
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             // Validar que el estudiante no esté inscrito en el curso
-            string queryValidation = "SELECT materia2 FROM estudiantes WHERE legajo = @Legajo";
+            string queryValidation = "SELECT materia6 FROM estudiantes WHERE legajo = @Legajo";
             using (MySqlCommand comandoValidation = new MySqlCommand(queryValidation, conexion))
             {
                 comandoValidation.Parameters.AddWithValue("@Legajo", legajo.Text);
@@ -177,7 +199,7 @@ namespace sysacad
             }
 
             // Actualizar la tabla estudiantes y cursos
-            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia2 = @Materia2 WHERE legajo = @Legajo";
+            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia6 = @Materia2 WHERE legajo = @Legajo";
             string queryUpdateCursos = "UPDATE cursos SET cupoMaximo = cupoMaximo - 1 WHERE nombre = @Nombre";
 
             using (MySqlCommand comandoUpdateEstudiantes = new MySqlCommand(queryUpdateEstudiantes, conexion))
@@ -209,7 +231,7 @@ namespace sysacad
         private void button3_Click(object sender, EventArgs e)
         {
             // Validar que el estudiante no esté inscrito en el curso
-            string queryValidation = "SELECT materia3 FROM estudiantes WHERE legajo = @Legajo";
+            string queryValidation = "SELECT materia7 FROM estudiantes WHERE legajo = @Legajo";
             using (MySqlCommand comandoValidation = new MySqlCommand(queryValidation, conexion))
             {
                 comandoValidation.Parameters.AddWithValue("@Legajo", legajo.Text);
@@ -225,7 +247,7 @@ namespace sysacad
             }
 
             // Actualizar la tabla estudiantes y cursos
-            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia3 = @Materia3 WHERE legajo = @Legajo";
+            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia7 = @Materia3 WHERE legajo = @Legajo";
             string queryUpdateCursos = "UPDATE cursos SET cupoMaximo = cupoMaximo - 1 WHERE nombre = @Nombre";
 
             using (MySqlCommand comandoUpdateEstudiantes = new MySqlCommand(queryUpdateEstudiantes, conexion))
@@ -257,7 +279,7 @@ namespace sysacad
         private void button4_Click(object sender, EventArgs e)
         {
             // Validar que el estudiante no esté inscrito en el curso
-            string queryValidation = "SELECT materia4 FROM estudiantes WHERE legajo = @Legajo";
+            string queryValidation = "SELECT materia8 FROM estudiantes WHERE legajo = @Legajo";
             using (MySqlCommand comandoValidation = new MySqlCommand(queryValidation, conexion))
             {
                 comandoValidation.Parameters.AddWithValue("@Legajo", legajo.Text);
@@ -273,7 +295,7 @@ namespace sysacad
             }
 
             // Actualizar la tabla estudiantes y cursos
-            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia4 = @Materia4 WHERE legajo = @Legajo";
+            string queryUpdateEstudiantes = "UPDATE estudiantes SET materia8 = @Materia4 WHERE legajo = @Legajo";
             string queryUpdateCursos = "UPDATE cursos SET cupoMaximo = cupoMaximo - 1 WHERE nombre = @Nombre";
 
             using (MySqlCommand comandoUpdateEstudiantes = new MySqlCommand(queryUpdateEstudiantes, conexion))
@@ -330,5 +352,6 @@ namespace sysacad
 
 
         //}
+
     }
 }
