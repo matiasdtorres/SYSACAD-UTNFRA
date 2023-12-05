@@ -221,7 +221,7 @@ namespace sysacad
                             return;
                         }
 
-                        int filasAfectadas = EditarCurso.EditarCurso();
+                        int filasAfectadas = EditarCurso.EditarEnDB();
 
                         if (filasAfectadas > 0)
                         {
@@ -317,7 +317,7 @@ namespace sysacad
                 EliminarCurso.DropTable();
 
                 // Eliminar el curso
-                int filasAfectadas = EliminarCurso.EliminarCurso();
+                int filasAfectadas = EliminarCurso.eliminarEnDB();
 
                 // Verificar el resultado de la eliminación
                 if (filasAfectadas > 0)

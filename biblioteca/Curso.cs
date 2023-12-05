@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace biblioteca
 {
-    public class Curso
+    public class Curso : IeliminarEnDB, IeditarEnDB
     {
         //Atributos de la clase Curso
         public string Nombre { get; set; }
@@ -70,7 +70,7 @@ namespace biblioteca
         }
 
         //Metodo para Editar un curso de la base de datos
-        public int EditarCurso()
+        public int EditarEnDB()
         {
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {
@@ -97,7 +97,7 @@ namespace biblioteca
         }
 
         //Metodo para eliminar Curso de la base de datos por nombre
-        public int EliminarCurso()
+        public int eliminarEnDB()
         {
             using (MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;"))
             {

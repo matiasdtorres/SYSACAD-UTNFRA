@@ -19,5 +19,10 @@ namespace biblioteca
             Nombre = nombre;
             Contraseña = contraseña;
         }
+
+        public virtual void CambiarContraseña(string nuevaContraseña)
+        {
+            Contraseña = Hash.GetHash(nuevaContraseña);
+        }
     }
 }

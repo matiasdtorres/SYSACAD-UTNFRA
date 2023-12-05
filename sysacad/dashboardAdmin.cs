@@ -1,4 +1,5 @@
-﻿using System;
+﻿using biblioteca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace sysacad
         listasDeEspera gestionarListasDeEspera;
         perfilesDeProfes gestionarPerfilesDeProfes;
         validar validaciones;
+        correccionProfe serializacion;
 
         public dashboardAdmin()
         {
@@ -184,6 +186,26 @@ namespace sysacad
         private void Validaciones_FormClosed(object sender, FormClosedEventArgs e)
         {
             validaciones = null;
+        }
+
+        private void btnprofecorreccion_Click(object sender, EventArgs e)
+        {
+            if (serializacion == null)
+            {
+                serializacion = new correccionProfe();
+                serializacion.FormClosed += serializacion_FormClosed;
+                serializacion.MdiParent = this;
+                serializacion.Show();
+            }
+            else
+            {
+                serializacion.Activate();
+            }
+        }
+
+        private void serializacion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            serializacion = null;
         }
     }
 }

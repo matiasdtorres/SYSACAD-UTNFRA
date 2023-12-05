@@ -157,7 +157,7 @@ namespace sysacad
                 {
                     Profesores profesorEditado = new Profesores(usuario, nombre, apellido, direccion, telefono, email, especializacion, contraseña);
 
-                    int filasAfectadas = profesorEditado.EditarProfesor();
+                    int filasAfectadas = profesorEditado.EditarEnDB();
 
                     if (filasAfectadas > 0)
                     {
@@ -244,7 +244,7 @@ namespace sysacad
                 {
                     Profesores profesorEliminado = new Profesores(usuario, nombre, apellido, direccion, telefono, email, especializacion, contraseña);
 
-                    int filasAfectadas = profesorEliminado.EliminarProfesor();
+                    int filasAfectadas = profesorEliminado.eliminarEnDB();
 
                     if (filasAfectadas > 0)
                     {

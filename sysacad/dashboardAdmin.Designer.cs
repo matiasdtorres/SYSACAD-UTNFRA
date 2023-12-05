@@ -41,6 +41,7 @@
             btnlistasdeespera = new Button();
             btnperfilesdeprofes = new Button();
             btnvalidar = new Button();
+            btnprofecorreccion = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -106,6 +107,7 @@
             flowLayoutPanel1.Controls.Add(btnlistasdeespera);
             flowLayoutPanel1.Controls.Add(btnperfilesdeprofes);
             flowLayoutPanel1.Controls.Add(btnvalidar);
+            flowLayoutPanel1.Controls.Add(btnprofecorreccion);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 46);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -217,6 +219,21 @@
             btnvalidar.UseVisualStyleBackColor = false;
             btnvalidar.Click += btnvalidar_Click;
             // 
+            // btnprofecorreccion
+            // 
+            btnprofecorreccion.BackColor = Color.White;
+            btnprofecorreccion.FlatAppearance.BorderSize = 0;
+            btnprofecorreccion.FlatStyle = FlatStyle.Flat;
+            btnprofecorreccion.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnprofecorreccion.ForeColor = Color.Black;
+            btnprofecorreccion.Location = new Point(3, 276);
+            btnprofecorreccion.Name = "btnprofecorreccion";
+            btnprofecorreccion.Size = new Size(215, 33);
+            btnprofecorreccion.TabIndex = 7;
+            btnprofecorreccion.Text = "Profe Correccion";
+            btnprofecorreccion.UseVisualStyleBackColor = false;
+            btnprofecorreccion.Click += btnprofecorreccion_Click;
+            // 
             // dashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -253,5 +270,6 @@
         private Button btnlistasdeespera;
         private Button btnperfilesdeprofes;
         private Button btnvalidar;
+        private Button btnprofecorreccion;
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ot0IiQZZdyQlJGGXOpQkc9jmfm6QCzBA9nZlEVjtvY1zuG5QaEG7HclBTIeDjoDnKLf36HT+DjYTYGFsoU24YA==",
+  "dgSpecHash": "7/bZHiuN51Ksc8tLY0yJNYOkB7FdRJvH5tpQhSh5Afpc6YEEJf1Qg5B5lQiChoCSsZYKlZSYYCcmx5ZiXEgR/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\consolaCrearDB_Pagos\\consolaCrearDB_Pagos.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\mysql.data\\8.2.0\\mysql.data.8.2.0.nupkg.sha512",
+    "C:\\Users\\matia\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",

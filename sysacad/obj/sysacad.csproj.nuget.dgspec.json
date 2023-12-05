@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[8.2.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "iTextSharp": {
               "target": "Package",
               "version": "[5.5.13.3, )"
@@ -128,6 +132,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9wPdDq1ZVkDAHW5L64l+AXmeGCQyT/8/z8FkKgl4H+s4IycxE7c7J6jgrIn5/bep67NP899QthRKlHwfqlCCNA==",
+  "dgSpecHash": "lz6kvbaiRTpMioEldv6nUG2XqwrxKk8zHzIVBGBudsxvHsyushUraFAZh9Dn9BfvyjBUH8jhJg7tOul0DGsrYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\matia\\Desktop\\UTN\\2do_cuatri\\SYSACAD-UTNFRA\\sysacad\\sysacad.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\mysql.data\\8.2.0\\mysql.data.8.2.0.nupkg.sha512",
+    "C:\\Users\\matia\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

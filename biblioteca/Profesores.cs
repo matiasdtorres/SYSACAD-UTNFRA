@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace biblioteca
 {
-    public class Profesores : Usuarios, IagregarRol
+    public class Profesores : Usuarios, IagregarRol, IeliminarEnDB, IeditarEnDB
     {
         //Atributos propios de la clase Profesores
         public string Usuario { get; set; }
@@ -33,7 +33,7 @@ namespace biblioteca
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
         //Metodo para que el profesor cambie su contraseña
-        public void CambiarContraseña(string nuevaContraseña)
+        public override void CambiarContraseña(string nuevaContraseña)
         {
             // Hash de la nueva contraseña
             Contraseña = Hash.GetHash(nuevaContraseña);
@@ -64,7 +64,7 @@ namespace biblioteca
         }
 
         //Metodo para Editar un profesor de la base de datos
-        public int EditarProfesor()
+        public int EditarEnDB()
         {
             using (conexion)
             {
@@ -88,7 +88,7 @@ namespace biblioteca
         }
 
         //Metodo para eliminar Profesor de la base de datos por usuario
-        public int EliminarProfesor()
+        public int eliminarEnDB()
         {
             using (conexion)
             {

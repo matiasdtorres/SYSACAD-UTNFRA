@@ -20,8 +20,7 @@ namespace biblioteca
 
         MySqlConnection conexion = new MySqlConnection("server=localhost;port=3306;database=sysacad;Uid=root;pwd=;");
 
-        //Metodo para que el admin cambie su contraseña
-        public void CambiarContraseña(string nuevaContraseña)
+        public override void CambiarContraseña(string nuevaContraseña)
         {
             // Hash de la nueva contraseña
             Contraseña = Hash.GetHash(nuevaContraseña);
