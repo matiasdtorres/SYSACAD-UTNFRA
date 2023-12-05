@@ -33,21 +33,35 @@ namespace sysacad
 
         private void btncargar_Click(object sender, EventArgs e)
         {
-            // Obtener el nombre completo del alumno seleccionado
-            string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
+            try
+            {
+                // Obtener el nombre completo del alumno seleccionado
+                string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
 
-            // Obtener el numero de asistencia seleccionado
-            string numeroAsistencia = numeroasistenciatxt.SelectedItem.ToString();
+                // Obtener el numero de asistencia seleccionado
+                string numeroAsistencia = numeroasistenciatxt.SelectedItem.ToString();
 
-            // Obtener el estado de asistencia seleccionado
-            string estadoAsistencia = asistenciatxt.SelectedItem.ToString();
+                // Obtener el estado de asistencia seleccionado
+                string estadoAsistencia = asistenciatxt.SelectedItem.ToString();
 
-            // Obtener el nombre de la materia seleccionada
-            string materiaSeleccionada = materiatxt.SelectedItem.ToString();
+                // Obtener el nombre de la materia seleccionada
+                string materiaSeleccionada = materiatxt.SelectedItem.ToString();
 
-            // Agregar el estudiante a la materia seleccionada
-            AgregarEstudianteAMateria(materiaSeleccionada, nombreCompletoAlumno, numeroAsistencia, estadoAsistencia);
+                // Agregar el estudiante a la materia seleccionada
+                AgregarEstudianteAMateria(materiaSeleccionada, nombreCompletoAlumno, numeroAsistencia, estadoAsistencia);
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Error: Selecciona un valor para todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void materiatxt_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -109,7 +123,7 @@ namespace sysacad
             {
                 conexion2.Open();
 
-                string selectProfesorQuery = "SELECT nombre, apellido FROM profesores WHERE nombre = @ProfeLogeado";
+                string selectProfesorQuery = "SELECT nombre, apellido FROM profesores WHERE usuario = @ProfeLogeado";
 
                 using (MySqlCommand comando = new MySqlCommand(selectProfesorQuery, conexion2))
                 {
@@ -234,7 +248,6 @@ namespace sysacad
         }
 
 
-        //actualizar la tabla de asistencia
         private void AgregarEstudianteAMateria(string nombreTabla, string legajoseleccionado, string numeroasistencia, string estadoasistencia)
         {
             try

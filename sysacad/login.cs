@@ -82,7 +82,7 @@ namespace sysacad
         private void btnprofesor_Click(object sender, EventArgs e)
         {
             usuarioylegajotxt.Text = "profe";
-            passwordtxt.Text = "1";
+            passwordtxt.Text = "123";
         }
     }
 }

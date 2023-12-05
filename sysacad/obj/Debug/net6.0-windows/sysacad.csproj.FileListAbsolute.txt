@@ -142,3 +142,4 @@ C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-wi
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.notas.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.notificaciones.resources
 C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.validar.resources
+C:\Users\matia\Desktop\UTN\2do_cuatri\SYSACAD-UTNFRA\sysacad\obj\Debug\net6.0-windows\sysacad.datosProfesores.resources

@@ -18,23 +18,25 @@ namespace sysacad
         login logout;
         notas cargarNotas;
         asistencias cargarAsistencias;
+        datosProfesores cargarDatosProfesores;
 
 
         public dashboardProfesor(string profeLogeado)
         {
             InitializeComponent();
-            MostrarNombreEstudiante(profeLogeado);
+            MostrarNombreProfesor(profeLogeado);
         }
 
-        private void MostrarNombreEstudiante(string profeLogeado)
+        private void MostrarNombreProfesor(string profeLogeado)
         {
-            string query = "SELECT nombre FROM profesores WHERE usuario = '" + profeLogeado + "'";
+            string query = "SELECT * FROM profesores WHERE usuario = '" + profeLogeado + "'";
             MySqlCommand comando = new MySqlCommand(query, conexion);
             conexion.Open();
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 bienvenidonombre.Text = reader["nombre"].ToString();
+                usuarioescondidotxt.Text = reader["usuario"].ToString();
             }
             conexion.Close();
         }
@@ -62,7 +64,7 @@ namespace sysacad
         {
             if (cargarAsistencias == null)
             {
-                cargarAsistencias = new asistencias(bienvenidonombre.Text);
+                cargarAsistencias = new asistencias(usuarioescondidotxt.Text);
                 cargarAsistencias.FormClosed += asistencias_FormClosed;
                 cargarAsistencias.MdiParent = this;
                 cargarAsistencias.Show();
@@ -82,7 +84,7 @@ namespace sysacad
         {
             if (cargarNotas == null)
             {
-                cargarNotas = new notas(bienvenidonombre.Text);
+                cargarNotas = new notas(usuarioescondidotxt.Text);
                 cargarNotas.FormClosed += notas_FormClosed;
                 cargarNotas.MdiParent = this;
                 cargarNotas.Show();
@@ -96,6 +98,26 @@ namespace sysacad
         private void notas_FormClosed(object sender, FormClosedEventArgs e)
         {
             cargarNotas = null;
+        }
+
+        private void btnmisdatos_Click(object sender, EventArgs e)
+        {
+            if (cargarDatosProfesores == null)
+            {
+                cargarDatosProfesores = new datosProfesores(usuarioescondidotxt.Text);
+                cargarDatosProfesores.FormClosed += datosProfesores_FormClosed;
+                cargarDatosProfesores.MdiParent = this;
+                cargarDatosProfesores.Show();
+            }
+            else
+            {
+                cargarDatosProfesores.Activate();
+            }
+        }
+
+        private void datosProfesores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargarDatosProfesores = null;
         }
     }
 }

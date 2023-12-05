@@ -34,24 +34,37 @@ namespace sysacad
 
         private void btncargar_Click(object sender, EventArgs e)
         {
-            // Obtener el nombre completo del alumno seleccionado
-            string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
+            try
+            {
+                // Obtener el nombre completo del alumno seleccionado
+                string nombreCompletoAlumno = CargarLegajoAlumnoSeleccionado(alumnotxt.SelectedItem.ToString());
 
-            // Obtener el número de nota seleccionado
-            string numeronota = numeronotatxt.SelectedItem.ToString();
+                // Obtener el número de nota seleccionado
+                string numeronota = numeronotatxt.SelectedItem.ToString();
 
-            // Obtener el estado de nota seleccionado
-            string estadonota = estadonotatxt.SelectedItem.ToString();
+                // Obtener el estado de nota seleccionado
+                string estadonota = estadonotatxt.SelectedItem.ToString();
 
-            // Obtener el nombre de la materia seleccionada
-            string materiaSeleccionada = materiatxt.SelectedItem.ToString();
+                // Obtener el nombre de la materia seleccionada
+                string materiaSeleccionada = materiatxt.SelectedItem.ToString();
 
-            // Agregar la nota al estudiante en la materia seleccionada
-            AgregarNotaFinal(materiaSeleccionada, nombreCompletoAlumno, numeronota, estadonota);
+                // Agregar la nota al estudiante en la materia seleccionada
+                AgregarNotaFinal(materiaSeleccionada, nombreCompletoAlumno, numeronota, estadonota);
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Error: Selecciona un valor para todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
-        // Función para verificar si existe una nota para un estudiante y un tipo de nota específico
+
 
         private void materiatxt_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -113,7 +126,7 @@ namespace sysacad
             {
                 conexion2.Open();
 
-                string selectProfesorQuery = "SELECT nombre, apellido FROM profesores WHERE nombre = @ProfeLogeado";
+                string selectProfesorQuery = "SELECT nombre, apellido FROM profesores WHERE usuario = @ProfeLogeado";
 
                 using (MySqlCommand comando = new MySqlCommand(selectProfesorQuery, conexion2))
                 {

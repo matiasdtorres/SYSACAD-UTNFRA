@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardProfesor));
             panel1 = new Panel();
+            usuarioescondidotxt = new Label();
             label3 = new Label();
             bienvenidonombre = new Label();
             label1 = new Label();
@@ -47,6 +48,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(usuarioescondidotxt);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(bienvenidonombre);
             panel1.Controls.Add(label1);
@@ -58,6 +60,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1284, 46);
             panel1.TabIndex = 2;
+            // 
+            // usuarioescondidotxt
+            // 
+            usuarioescondidotxt.AutoSize = true;
+            usuarioescondidotxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            usuarioescondidotxt.ForeColor = Color.Black;
+            usuarioescondidotxt.Location = new Point(1020, 14);
+            usuarioescondidotxt.Name = "usuarioescondidotxt";
+            usuarioescondidotxt.Size = new Size(79, 21);
+            usuarioescondidotxt.TabIndex = 10;
+            usuarioescondidotxt.Text = "NOMBRE";
             // 
             // label3
             // 
@@ -78,9 +91,9 @@
             bienvenidonombre.ForeColor = Color.White;
             bienvenidonombre.Location = new Point(394, 14);
             bienvenidonombre.Name = "bienvenidonombre";
-            bienvenidonombre.Size = new Size(81, 21);
+            bienvenidonombre.Size = new Size(79, 21);
             bienvenidonombre.TabIndex = 8;
-            bienvenidonombre.Text = "USUARIO";
+            bienvenidonombre.Text = "NOMBRE";
             // 
             // label1
             // 
@@ -158,6 +171,7 @@
             btnmisdatos.TabIndex = 6;
             btnmisdatos.Text = "Mis datos";
             btnmisdatos.UseVisualStyleBackColor = false;
+            btnmisdatos.Click += btnmisdatos_Click;
             // 
             // btnasistencias
             // 
@@ -226,5 +240,6 @@
         private Button btnmisdatos;
         private Button btnasistencias;
         private Button btnnotas;
+        private Label usuarioescondidotxt;
     }
 }
