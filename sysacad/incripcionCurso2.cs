@@ -53,34 +53,34 @@ namespace sysacad
                     while (reader.Read() && courseIndex < 4)
                     {
                         Label nombreLabel = null;
-                        Label codigoLabel = null;
-                        Label descripcionLabel = null;
+                        Label diaLabel = null;
+                        Label turnoLabel = null;
                         Label cupoLabel = null;
 
                         switch (courseIndex)
                         {
                             case 0:
                                 nombreLabel = nombremateria1;
-                                codigoLabel = codigomateria1;
-                                descripcionLabel = descripcionmateria1;
+                                diaLabel = diamateria1;
+                                turnoLabel = turnomateria1;
                                 cupoLabel = cuposmateria1;
                                 break;
                             case 1:
                                 nombreLabel = nombremateria2;
-                                codigoLabel = codigomateria2;
-                                descripcionLabel = descripcionmateria2;
+                                diaLabel = diamateria2;
+                                turnoLabel = turnomateria2;
                                 cupoLabel = cuposmateria2;
                                 break;
                             case 2:
                                 nombreLabel = nombremateria3;
-                                codigoLabel = codigomateria3;
-                                descripcionLabel = descripcionmateria3;
+                                diaLabel = diamateria3;
+                                turnoLabel = turnomateria3;
                                 cupoLabel = cuposmateria3;
                                 break;
                             case 3:
                                 nombreLabel = nombremateria4;
-                                codigoLabel = codigomateria4;
-                                descripcionLabel = descripcionmateria4;
+                                diaLabel = diamateria4;
+                                turnoLabel = turnomateria4;
                                 cupoLabel = cuposmateria4;
                                 break;
                         }
@@ -88,8 +88,8 @@ namespace sysacad
                         if (nombreLabel != null)
                         {
                             nombreLabel.Text = reader["nombre"].ToString();
-                            codigoLabel.Text = reader["codigo"].ToString();
-                            descripcionLabel.Text = reader["descripcion"].ToString();
+                            diaLabel.Text = reader["dia"].ToString();
+                            turnoLabel.Text = reader["turno"].ToString();
                             cupoLabel.Text = reader["cupoMaximo"].ToString();
                         }
 

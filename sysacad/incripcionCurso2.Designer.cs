@@ -33,9 +33,9 @@
             button1 = new Button();
             cuposmateria1 = new Label();
             label8 = new Label();
-            descripcionmateria1 = new Label();
+            turnomateria1 = new Label();
             label6 = new Label();
-            codigomateria1 = new Label();
+            diamateria1 = new Label();
             label4 = new Label();
             nombremateria1 = new Label();
             label2 = new Label();
@@ -44,9 +44,9 @@
             button2 = new Button();
             cuposmateria2 = new Label();
             label5 = new Label();
-            descripcionmateria2 = new Label();
+            turnomateria2 = new Label();
             label9 = new Label();
-            codigomateria2 = new Label();
+            diamateria2 = new Label();
             label11 = new Label();
             nombremateria2 = new Label();
             label13 = new Label();
@@ -54,9 +54,9 @@
             button3 = new Button();
             cuposmateria3 = new Label();
             label7 = new Label();
-            descripcionmateria3 = new Label();
+            turnomateria3 = new Label();
             label14 = new Label();
-            codigomateria3 = new Label();
+            diamateria3 = new Label();
             label16 = new Label();
             nombremateria3 = new Label();
             label18 = new Label();
@@ -64,9 +64,9 @@
             button4 = new Button();
             cuposmateria4 = new Label();
             label12 = new Label();
-            descripcionmateria4 = new Label();
+            turnomateria4 = new Label();
             label17 = new Label();
-            codigomateria4 = new Label();
+            diamateria4 = new Label();
             label20 = new Label();
             nombremateria4 = new Label();
             label22 = new Label();
@@ -95,9 +95,9 @@
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(cuposmateria1);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(descripcionmateria1);
+            groupBox1.Controls.Add(turnomateria1);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(codigomateria1);
+            groupBox1.Controls.Add(diamateria1);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(nombremateria1);
             groupBox1.Controls.Add(label2);
@@ -138,41 +138,41 @@
             label8.TabIndex = 6;
             label8.Text = "Cupos Maximos:";
             // 
-            // descripcionmateria1
+            // turnomateria1
             // 
-            descripcionmateria1.AutoSize = true;
-            descripcionmateria1.Location = new Point(6, 133);
-            descripcionmateria1.Name = "descripcionmateria1";
-            descripcionmateria1.Size = new Size(114, 15);
-            descripcionmateria1.TabIndex = 5;
-            descripcionmateria1.Text = "descripcionmateria1";
+            turnomateria1.AutoSize = true;
+            turnomateria1.Location = new Point(6, 133);
+            turnomateria1.Name = "turnomateria1";
+            turnomateria1.Size = new Size(82, 15);
+            turnomateria1.TabIndex = 5;
+            turnomateria1.Text = "turnomateria1";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(6, 116);
             label6.Name = "label6";
-            label6.Size = new Size(72, 15);
+            label6.Size = new Size(41, 15);
             label6.TabIndex = 4;
-            label6.Text = "Descripcion:";
+            label6.Text = "Turno:";
             // 
-            // codigomateria1
+            // diamateria1
             // 
-            codigomateria1.AutoSize = true;
-            codigomateria1.Location = new Point(6, 90);
-            codigomateria1.Name = "codigomateria1";
-            codigomateria1.Size = new Size(90, 15);
-            codigomateria1.TabIndex = 3;
-            codigomateria1.Text = "codigomateria1";
+            diamateria1.AutoSize = true;
+            diamateria1.Location = new Point(6, 90);
+            diamateria1.Name = "diamateria1";
+            diamateria1.Size = new Size(69, 15);
+            diamateria1.TabIndex = 3;
+            diamateria1.Text = "diamateria1";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(6, 70);
             label4.Name = "label4";
-            label4.Size = new Size(49, 15);
+            label4.Size = new Size(27, 15);
             label4.TabIndex = 2;
-            label4.Text = "Codigo:";
+            label4.Text = "Dia:";
             // 
             // nombremateria1
             // 
@@ -211,9 +211,9 @@
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(cuposmateria2);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(descripcionmateria2);
+            groupBox2.Controls.Add(turnomateria2);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(codigomateria2);
+            groupBox2.Controls.Add(diamateria2);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(nombremateria2);
             groupBox2.Controls.Add(label13);
@@ -254,41 +254,41 @@
             label5.TabIndex = 6;
             label5.Text = "Cupos Maximos:";
             // 
-            // descripcionmateria2
+            // turnomateria2
             // 
-            descripcionmateria2.AutoSize = true;
-            descripcionmateria2.Location = new Point(6, 133);
-            descripcionmateria2.Name = "descripcionmateria2";
-            descripcionmateria2.Size = new Size(114, 15);
-            descripcionmateria2.TabIndex = 5;
-            descripcionmateria2.Text = "descripcionmateria2";
+            turnomateria2.AutoSize = true;
+            turnomateria2.Location = new Point(6, 133);
+            turnomateria2.Name = "turnomateria2";
+            turnomateria2.Size = new Size(82, 15);
+            turnomateria2.TabIndex = 5;
+            turnomateria2.Text = "turnomateria2";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Location = new Point(6, 116);
             label9.Name = "label9";
-            label9.Size = new Size(72, 15);
+            label9.Size = new Size(41, 15);
             label9.TabIndex = 4;
-            label9.Text = "Descripcion:";
+            label9.Text = "Turno:";
             // 
-            // codigomateria2
+            // diamateria2
             // 
-            codigomateria2.AutoSize = true;
-            codigomateria2.Location = new Point(6, 90);
-            codigomateria2.Name = "codigomateria2";
-            codigomateria2.Size = new Size(90, 15);
-            codigomateria2.TabIndex = 3;
-            codigomateria2.Text = "codigomateria2";
+            diamateria2.AutoSize = true;
+            diamateria2.Location = new Point(6, 90);
+            diamateria2.Name = "diamateria2";
+            diamateria2.Size = new Size(69, 15);
+            diamateria2.TabIndex = 3;
+            diamateria2.Text = "diamateria2";
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Location = new Point(6, 70);
             label11.Name = "label11";
-            label11.Size = new Size(49, 15);
+            label11.Size = new Size(27, 15);
             label11.TabIndex = 2;
-            label11.Text = "Codigo:";
+            label11.Text = "Dia:";
             // 
             // nombremateria2
             // 
@@ -313,9 +313,9 @@
             groupBox3.Controls.Add(button3);
             groupBox3.Controls.Add(cuposmateria3);
             groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(descripcionmateria3);
+            groupBox3.Controls.Add(turnomateria3);
             groupBox3.Controls.Add(label14);
-            groupBox3.Controls.Add(codigomateria3);
+            groupBox3.Controls.Add(diamateria3);
             groupBox3.Controls.Add(label16);
             groupBox3.Controls.Add(nombremateria3);
             groupBox3.Controls.Add(label18);
@@ -356,41 +356,41 @@
             label7.TabIndex = 6;
             label7.Text = "Cupos Maximos:";
             // 
-            // descripcionmateria3
+            // turnomateria3
             // 
-            descripcionmateria3.AutoSize = true;
-            descripcionmateria3.Location = new Point(6, 133);
-            descripcionmateria3.Name = "descripcionmateria3";
-            descripcionmateria3.Size = new Size(114, 15);
-            descripcionmateria3.TabIndex = 5;
-            descripcionmateria3.Text = "descripcionmateria3";
+            turnomateria3.AutoSize = true;
+            turnomateria3.Location = new Point(6, 133);
+            turnomateria3.Name = "turnomateria3";
+            turnomateria3.Size = new Size(82, 15);
+            turnomateria3.TabIndex = 5;
+            turnomateria3.Text = "turnomateria3";
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Location = new Point(6, 116);
             label14.Name = "label14";
-            label14.Size = new Size(72, 15);
+            label14.Size = new Size(41, 15);
             label14.TabIndex = 4;
-            label14.Text = "Descripcion:";
+            label14.Text = "Turno:";
             // 
-            // codigomateria3
+            // diamateria3
             // 
-            codigomateria3.AutoSize = true;
-            codigomateria3.Location = new Point(6, 90);
-            codigomateria3.Name = "codigomateria3";
-            codigomateria3.Size = new Size(90, 15);
-            codigomateria3.TabIndex = 3;
-            codigomateria3.Text = "codigomateria3";
+            diamateria3.AutoSize = true;
+            diamateria3.Location = new Point(6, 90);
+            diamateria3.Name = "diamateria3";
+            diamateria3.Size = new Size(69, 15);
+            diamateria3.TabIndex = 3;
+            diamateria3.Text = "diamateria3";
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Location = new Point(6, 70);
             label16.Name = "label16";
-            label16.Size = new Size(49, 15);
+            label16.Size = new Size(27, 15);
             label16.TabIndex = 2;
-            label16.Text = "Codigo:";
+            label16.Text = "Dia:";
             // 
             // nombremateria3
             // 
@@ -415,9 +415,9 @@
             groupBox4.Controls.Add(button4);
             groupBox4.Controls.Add(cuposmateria4);
             groupBox4.Controls.Add(label12);
-            groupBox4.Controls.Add(descripcionmateria4);
+            groupBox4.Controls.Add(turnomateria4);
             groupBox4.Controls.Add(label17);
-            groupBox4.Controls.Add(codigomateria4);
+            groupBox4.Controls.Add(diamateria4);
             groupBox4.Controls.Add(label20);
             groupBox4.Controls.Add(nombremateria4);
             groupBox4.Controls.Add(label22);
@@ -458,41 +458,41 @@
             label12.TabIndex = 6;
             label12.Text = "Cupos Maximos:";
             // 
-            // descripcionmateria4
+            // turnomateria4
             // 
-            descripcionmateria4.AutoSize = true;
-            descripcionmateria4.Location = new Point(6, 133);
-            descripcionmateria4.Name = "descripcionmateria4";
-            descripcionmateria4.Size = new Size(114, 15);
-            descripcionmateria4.TabIndex = 5;
-            descripcionmateria4.Text = "descripcionmateria4";
+            turnomateria4.AutoSize = true;
+            turnomateria4.Location = new Point(6, 133);
+            turnomateria4.Name = "turnomateria4";
+            turnomateria4.Size = new Size(82, 15);
+            turnomateria4.TabIndex = 5;
+            turnomateria4.Text = "turnomateria4";
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Location = new Point(6, 116);
             label17.Name = "label17";
-            label17.Size = new Size(72, 15);
+            label17.Size = new Size(41, 15);
             label17.TabIndex = 4;
-            label17.Text = "Descripcion:";
+            label17.Text = "Turno:";
             // 
-            // codigomateria4
+            // diamateria4
             // 
-            codigomateria4.AutoSize = true;
-            codigomateria4.Location = new Point(6, 90);
-            codigomateria4.Name = "codigomateria4";
-            codigomateria4.Size = new Size(90, 15);
-            codigomateria4.TabIndex = 3;
-            codigomateria4.Text = "codigomateria4";
+            diamateria4.AutoSize = true;
+            diamateria4.Location = new Point(6, 90);
+            diamateria4.Name = "diamateria4";
+            diamateria4.Size = new Size(69, 15);
+            diamateria4.TabIndex = 3;
+            diamateria4.Text = "diamateria4";
             // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Location = new Point(6, 70);
             label20.Name = "label20";
-            label20.Size = new Size(49, 15);
+            label20.Size = new Size(27, 15);
             label20.TabIndex = 2;
-            label20.Text = "Codigo:";
+            label20.Text = "Dia:";
             // 
             // nombremateria4
             // 
@@ -512,7 +512,7 @@
             label22.TabIndex = 0;
             label22.Text = "Nombre:";
             // 
-            // incripcionCurso
+            // incripcionCurso2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -526,7 +526,7 @@
             Controls.Add(label1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "incripcionCurso";
+            Name = "incripcionCurso2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "incripcionCurso";
             groupBox1.ResumeLayout(false);
@@ -545,9 +545,9 @@
         private Label label1;
         private GroupBox groupBox1;
         private Label label8;
-        private Label descripcionmateria1;
+        private Label turnomateria1;
         private Label label6;
-        private Label codigomateria1;
+        private Label diamateria1;
         private Label label4;
         private Label nombremateria1;
         private Label label2;
@@ -558,9 +558,9 @@
         private Button button2;
         private Label cuposmateria2;
         private Label label5;
-        private Label descripcionmateria2;
+        private Label turnomateria2;
         private Label label9;
-        private Label codigomateria2;
+        private Label diamateria2;
         private Label label11;
         private Label nombremateria2;
         private Label label13;
@@ -568,9 +568,9 @@
         private Button button3;
         private Label cuposmateria3;
         private Label label7;
-        private Label descripcionmateria3;
+        private Label turnomateria3;
         private Label label14;
-        private Label codigomateria3;
+        private Label diamateria3;
         private Label label16;
         private Label nombremateria3;
         private Label label18;
@@ -578,9 +578,9 @@
         private Button button4;
         private Label cuposmateria4;
         private Label label12;
-        private Label descripcionmateria4;
+        private Label turnomateria4;
         private Label label17;
-        private Label codigomateria4;
+        private Label diamateria4;
         private Label label20;
         private Label nombremateria4;
         private Label label22;
